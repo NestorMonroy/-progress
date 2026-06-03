@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/mediaplayer/_layout.scss" as *;
+
+
+@mixin kno-media-player--layout() {
+    @include kno-media-player--layout-base();
+}

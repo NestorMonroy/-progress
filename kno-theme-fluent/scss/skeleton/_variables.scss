@@ -1,0 +1,32 @@
+@use "../core/_index.scss" as *;
+
+/// The transform scale of the Skeleton text.
+/// @group skeleton
+$kno-skeleton-text-transform: var( --kno-skeleton-text-transform, scale( 1, .6 ) ) !default;
+/// The border radius of the Skeleton text.
+/// @group skeleton
+$kno-skeleton-text-border-radius: var( --kno-skeleton-text-border-radius, k-border-radius(md) ) !default;
+
+/// The border radius of the rectangular Skeleton.
+/// @group skeleton
+$kno-skeleton-rect-border-radius: var( --kno-skeleton-rect-border-radius, k-border-radius(md) ) !default;
+
+/// The border radius of the circular Skeleton.
+/// @group skeleton
+$kno-skeleton-circle-border-radius: var( --kno-skeleton-circle-border-radius, 9999px ) !default;
+
+/// The background color of the Skeleton item.
+/// @group skeleton
+$kno-skeleton-item-bg: var( --kno-skeleton-item-bg, color-mix(in srgb, k-color(on-app-surface) 9%, transparent) ) !default;
+/// The background color of the Skeleton wave animation.
+/// @group skeleton
+$kno-skeleton-wave-bg: var( --kno-skeleton-wave-bg, k-color(base) ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/skeleton/_variables.scss" with (
+    $kno-skeleton-text-transform: $kno-skeleton-text-transform,
+    $kno-skeleton-text-border-radius: $kno-skeleton-text-border-radius,
+    $kno-skeleton-rect-border-radius: $kno-skeleton-rect-border-radius,
+    $kno-skeleton-circle-border-radius: $kno-skeleton-circle-border-radius,
+    $kno-skeleton-item-bg: $kno-skeleton-item-bg,
+    $kno-skeleton-wave-bg: $kno-skeleton-wave-bg
+);

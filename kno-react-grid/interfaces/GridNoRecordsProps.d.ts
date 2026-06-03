@@ -1,0 +1,16 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * The props of the GridNoRecords component.
+ */
+export interface GridNoRecordsProps {
+    /**
+     * The React elements that will be rendered inside the Grid when no records are available.
+     */
+    children?: React.ReactNode;
+}

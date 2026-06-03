@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Charts } from '../common/charts';
+/**
+ * @hidden
+ */
+export declare abstract class BaseEvent {
+    /**
+     * The `Chart` component that triggered the event.
+     */
+    target: Charts;
+    /**
+     * @hidden
+     */
+    constructor(target: Charts);
+}

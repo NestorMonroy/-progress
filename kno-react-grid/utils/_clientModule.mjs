@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import { ServerFragment as r } from "./_serverModule.mjs";
+const t = r;
+export {
+  t as ClientFragment
+};

@@ -1,0 +1,6 @@
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/speech-to-text-button/_layout.scss" as *;
+
+@mixin kno-speech-to-text-button--layout() {
+    @include kno-speech-to-text-button--layout-base();
+}

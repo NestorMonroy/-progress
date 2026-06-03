@@ -1,0 +1,14 @@
+@use "../core/_index.scss" as *;
+
+/// The background color of the Overlay.
+/// @group overlay
+$kno-overlay-bg: k-color(inverse) !default;
+
+/// The opacity of the Overlay.
+/// @group overlay
+$kno-overlay-opacity: .32 !default;
+
+@forward "@progress/kno-theme-core/scss/components/overlay/_variables.scss" with (
+    $kno-overlay-bg: $kno-overlay-bg,
+    $kno-overlay-opacity: $kno-overlay-opacity
+);

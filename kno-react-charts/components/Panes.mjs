@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { CollectionConfigurationComponent as n } from "./base/CollectionConfigurationComponent.mjs";
+import { ChartPane as a } from "./Pane.mjs";
+import { validateChildren as i } from "../utils/index.mjs";
+const m = (r) => /* @__PURE__ */ e.createElement(n, { ...r, _chartKey: "panes" });
+m.propTypes = {
+  children: function(r, o, t) {
+    return i(r, o, t, a);
+  }
+};
+export {
+  m as ChartPanes
+};

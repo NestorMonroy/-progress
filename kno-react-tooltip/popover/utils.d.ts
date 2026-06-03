@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export declare const getFirstFocusableElement: (element: HTMLElement) => HTMLElement | undefined;
+/**
+ * @hidden
+ */
+export declare const getLastFocusableElement: (element: HTMLElement) => HTMLElement | undefined;
+/**
+ * @hidden
+ */
+export declare const handleFocusTrap: (e: KeyboardEvent) => void;

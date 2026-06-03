@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/** @hidden */
+export type ControlledStateHook<T> = [
+    T,
+    (value: T, event?: React.SyntheticEvent | {
+        target: any;
+        syntheticEvent: React.SyntheticEvent;
+    } | {
+        preventDefault: any;
+    }) => void
+];
+/** @hidden */
+export declare const useControlledState: <T extends unknown>(defaultProp: T, prop?: T | undefined, callback?: any) => ControlledStateHook<T>;

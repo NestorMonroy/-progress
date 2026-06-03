@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const d=require("react"),i=require("@progress/kno-react-common"),f=require("@progress/kno-react-buttons");function b(e){const r=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const n in e)if(n!=="default"){const o=Object.getOwnPropertyDescriptor(e,n);Object.defineProperty(r,n,o.get?o:{enumerable:!0,get:()=>e[n]})}}return r.default=e,Object.freeze(r)}const t=b(d),s=t.forwardRef((e,r)=>{const{className:n,style:o,...u}=e,c=t.useRef(null),a=t.useRef(null);t.useImperativeHandle(c,()=>({element:a.current,props:e})),t.useImperativeHandle(r,()=>c.current);const m=t.useMemo(()=>i.classNames("k-scheduler-footer",e.className),[e.className]);return t.createElement(f.Toolbar,{ref:l=>{l&&(a.current=l.element)},className:m,style:{boxShadow:"none",...o},...u},e.children)});s.displayName="KendoReactSchedulerFooter";exports.SchedulerFooter=s;

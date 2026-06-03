@@ -1,0 +1,37 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/rating/_theme.scss" as *;
+
+@mixin kno-rating--theme() {
+
+    @include kno-rating--theme-base();
+
+    .k-rating-item {
+        @include fill(
+            $color: $kno-rating-item-text
+        );
+
+        &.k-selected {
+            @include fill(
+                $color: $kno-rating-item-selected-text
+            );
+        }
+
+        &:hover,
+        &.k-hover {
+            @include fill(
+                $color: $kno-rating-item-hover-text
+            );
+            cursor: pointer;
+        }
+
+        &:focus,
+        &.k-focus {
+            outline-color: $kno-rating-item-focus-outline;
+        }
+
+        .k-disabled & {
+            opacity: .3;
+        }
+    }
+}

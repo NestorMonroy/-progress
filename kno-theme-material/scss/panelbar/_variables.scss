@@ -1,0 +1,354 @@
+@use "sass:math";
+@use "../core/_index.scss" as *;
+
+
+// Panelbar
+
+/// The font family of the PanelBar.
+/// @group panelbar
+$kno-panelbar-font-family: var(--kno-font-family) !default;
+/// The font size of the PanelBar.
+/// @group panelbar
+$kno-panelbar-font-size: var(--kno-font-size) !default;
+/// The line height of the PanelBar.
+/// @group panelbar
+$kno-panelbar-line-height: var(--kno-line-height) !default;
+/// The width of the border around the PanelBar.
+/// @group panelbar
+$kno-panelbar-border-width: 1px !default;
+/// The border style around the the PanelBar.
+/// @group panelbar
+$kno-panelbar-border-style: solid !default;
+/// The width of the border around the PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-border-width: 0 !default;
+/// The style of the border around the PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-border-style: solid !default;
+
+/// The horizontal padding of the PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-padding-x: k-spacing(4) !default;
+/// The vertical padding of the PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-padding-y: k-spacing(3.5) !default;
+
+/// The horizontal padding of the PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-padding-x: k-spacing(4) !default;
+/// The vertical padding of the PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-padding-y: k-spacing(3.5) !default;
+
+/// The maximum nesting of the PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-level-count: 4 !default;
+
+/// The background color of the PanelBar.
+/// @group panelbar
+$kno-panelbar-bg: k-color(surface) !default;
+/// The text color of the PanelBar.
+/// @group panelbar
+$kno-panelbar-text: k-color(on-app-surface) !default;
+/// The border color of the PanelBar.
+/// @group panelbar
+$kno-panelbar-border: k-color(border) !default;
+
+/// The background color of the PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-bg: null !default;
+/// The text color of the PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-text: $kno-panelbar-text !default;
+/// The border color of the PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-border: null !default;
+/// The gradient of the PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-gradient: null !default;
+
+/// The background color of the hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-hover-bg: color-mix(in srgb, currentColor 8%, transparent) !default;
+/// The text color of the hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-hover-text: null !default;
+/// The border color of the hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-hover-border: null !default;
+/// The gradient of the hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-hover-gradient: null !default;
+
+/// The background color of the focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-focus-bg: color-mix(in srgb, currentColor 12%, transparent) !default;
+/// The text color of the focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-focus-text: null !default;
+/// The border color of the focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-focus-border: null !default;
+/// The gradient of the focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-focus-gradient: null !default;
+/// The shadow of the focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-focus-shadow: null !default;
+
+/// The background color of the focused and hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-hover-focus-bg: color-mix(in srgb, currentColor 20%, transparent) !default;
+/// The text color of the focused and hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-hover-focus-text: null !default;
+/// The border color of the focused and hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-hover-focus-border: null !default;
+/// The gradient of the focused and hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-hover-focus-gradient: null !default;
+
+/// The background color of the selected PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-bg: k-color(secondary) !default;
+/// The text color of the selected PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-text: k-color(on-secondary) !default;
+/// The border color of the selected PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-border: null !default;
+/// The gradient of the selected PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-gradient: null !default;
+
+/// The background color of the selected and hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-hover-bg: k-color(secondary-hover) !default;
+/// The text color of the selected and hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-hover-text: null !default;
+/// The border color of the selected and hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-hover-border: null !default;
+/// The gradient of the selected and hovered PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-hover-gradient: null !default;
+
+/// The background color of the selected and focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-focus-bg: k-color(secondary-active) !default;
+/// The text color of the selected and focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-focus-text: null !default;
+/// The border color of the selected and focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-focus-border: null !default;
+/// The gradient of the selected and focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-focus-gradient: null !default;
+
+/// The background color of the selected, hovered and focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-hover-focus-bg: color-mix(in srgb, k-color(secondary), k-color(secondary-emphasis)) !default;
+/// The text color of the selected, hovered and focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-hover-focus-text: null !default;
+/// The border color of the selected, hovered and focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-hover-focus-border: null !default;
+/// The gradient of the selected, hovered and focused PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-selected-hover-focus-gradient: null !default;
+
+
+/// The background color of the hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-hover-bg: $kno-panelbar-header-hover-bg !default;
+/// The text color of the hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-hover-text: null !default;
+/// The border color of the hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-hover-border: null !default;
+/// The gradient of the hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-hover-gradient: null !default;
+
+/// The background color of the focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-focus-bg: $kno-panelbar-header-focus-bg !default;
+/// The text color of the focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-focus-text: null !default;
+/// The border color of the focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-focus-border: null !default;
+/// The gradient of the focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-focus-gradient: null !default;
+/// The box shadow of the focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-focus-shadow: null !default;
+
+/// The background color of the focused and hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-hover-focus-bg: $kno-panelbar-header-hover-focus-bg !default;
+/// The text color of the focused and hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-hover-focus-text: null !default;
+/// The border color of the focused and hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-hover-focus-border: null !default;
+/// The gradient of the focused and hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-hover-focus-gradient: null !default;
+
+/// The background color of the selected PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-bg: $kno-panelbar-header-selected-bg !default;
+/// The text color of the selected PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-text: null !default;
+/// The border color of the selected PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-border: null !default;
+/// The gradient of the selected PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-gradient: null !default;
+
+/// The background color of the selected and hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-hover-bg: $kno-panelbar-header-selected-hover-bg !default;
+/// The text color of the selected and hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-hover-text: null !default;
+/// The border color of the selected and hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-hover-border: null !default;
+/// The gradient of the selected and hovered PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-hover-gradient: null !default;
+
+/// The background color of the selected and focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-focus-bg: $kno-panelbar-header-selected-focus-bg !default;
+/// The text color of the selected and focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-focus-text: null !default;
+/// The border color of the selected and focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-focus-border: null !default;
+/// The gradient of the selected and focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-focus-gradient: null !default;
+
+/// The background color of the selected, hovered and focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-hover-focus-bg: $kno-panelbar-header-selected-hover-focus-bg !default;
+/// The text color of the selected, hovered and focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-hover-focus-text: null !default;
+/// The border color of the selected, hovered and focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-hover-focus-border: null !default;
+/// The gradient of the selected, hovered and focused PanelBar items.
+/// @group panelbar
+$kno-panelbar-item-selected-hover-focus-gradient: null !default;
+
+/// The background color of the expanded PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-expanded-bg: null !default;
+/// The text color of the expanded PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-expanded-text: null !default;
+/// The border color of the expanded PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-expanded-border: null !default;
+/// The gradient of the expanded PanelBar header.
+/// @group panelbar
+$kno-panelbar-header-expanded-gradient: null !default;
+
+@forward "@progress/kno-theme-core/scss/components/panelbar/_variables.scss" with (
+    $kno-panelbar-font-family: $kno-panelbar-font-family,
+    $kno-panelbar-font-size: $kno-panelbar-font-size,
+    $kno-panelbar-line-height: $kno-panelbar-line-height,
+    $kno-panelbar-border-width: $kno-panelbar-border-width,
+    $kno-panelbar-border-style: $kno-panelbar-border-style,
+    $kno-panelbar-item-border-width: $kno-panelbar-item-border-width,
+    $kno-panelbar-item-border-style: $kno-panelbar-item-border-style,
+    $kno-panelbar-header-padding-x: $kno-panelbar-header-padding-x,
+    $kno-panelbar-header-padding-y: $kno-panelbar-header-padding-y,
+    $kno-panelbar-item-padding-x: $kno-panelbar-item-padding-x,
+    $kno-panelbar-item-padding-y: $kno-panelbar-item-padding-y,
+    $kno-panelbar-item-level-count: $kno-panelbar-item-level-count,
+    $kno-panelbar-bg: $kno-panelbar-bg,
+    $kno-panelbar-text: $kno-panelbar-text,
+    $kno-panelbar-border: $kno-panelbar-border,
+    $kno-panelbar-header-bg: $kno-panelbar-header-bg,
+    $kno-panelbar-header-text: $kno-panelbar-header-text,
+    $kno-panelbar-header-border: $kno-panelbar-header-border,
+    $kno-panelbar-header-gradient: $kno-panelbar-header-gradient,
+    $kno-panelbar-header-hover-bg: $kno-panelbar-header-hover-bg,
+    $kno-panelbar-header-hover-text: $kno-panelbar-header-hover-text,
+    $kno-panelbar-header-hover-border: $kno-panelbar-header-hover-border,
+    $kno-panelbar-header-hover-gradient: $kno-panelbar-header-hover-gradient,
+    $kno-panelbar-header-focus-bg: $kno-panelbar-header-focus-bg,
+    $kno-panelbar-header-focus-text: $kno-panelbar-header-focus-text,
+    $kno-panelbar-header-focus-border: $kno-panelbar-header-focus-border,
+    $kno-panelbar-header-focus-gradient: $kno-panelbar-header-focus-gradient,
+    $kno-panelbar-header-focus-shadow: $kno-panelbar-header-focus-shadow,
+    $kno-panelbar-header-hover-focus-bg: $kno-panelbar-header-hover-focus-bg,
+    $kno-panelbar-header-hover-focus-text: $kno-panelbar-header-hover-focus-text,
+    $kno-panelbar-header-hover-focus-border: $kno-panelbar-header-hover-focus-border,
+    $kno-panelbar-header-hover-focus-gradient: $kno-panelbar-header-hover-focus-gradient,
+    $kno-panelbar-header-selected-bg: $kno-panelbar-header-selected-bg,
+    $kno-panelbar-header-selected-text: $kno-panelbar-header-selected-text,
+    $kno-panelbar-header-selected-border: $kno-panelbar-header-selected-border,
+    $kno-panelbar-header-selected-gradient: $kno-panelbar-header-selected-gradient,
+    $kno-panelbar-header-selected-hover-bg: $kno-panelbar-header-selected-hover-bg,
+    $kno-panelbar-header-selected-hover-text: $kno-panelbar-header-selected-hover-text,
+    $kno-panelbar-header-selected-hover-border: $kno-panelbar-header-selected-hover-border,
+    $kno-panelbar-header-selected-hover-gradient: $kno-panelbar-header-selected-hover-gradient,
+    $kno-panelbar-header-selected-focus-bg: $kno-panelbar-header-selected-focus-bg,
+    $kno-panelbar-header-selected-focus-text: $kno-panelbar-header-selected-focus-text,
+    $kno-panelbar-header-selected-focus-border: $kno-panelbar-header-selected-focus-border,
+    $kno-panelbar-header-selected-focus-gradient: $kno-panelbar-header-selected-focus-gradient,
+    $kno-panelbar-header-selected-hover-focus-bg: $kno-panelbar-header-selected-hover-focus-bg,
+    $kno-panelbar-header-selected-hover-focus-text: $kno-panelbar-header-selected-hover-focus-text,
+    $kno-panelbar-header-selected-hover-focus-border: $kno-panelbar-header-selected-hover-focus-border,
+    $kno-panelbar-header-selected-hover-focus-gradient: $kno-panelbar-header-selected-hover-focus-gradient,
+    $kno-panelbar-item-hover-bg: $kno-panelbar-item-hover-bg,
+    $kno-panelbar-item-hover-text: $kno-panelbar-item-hover-text,
+    $kno-panelbar-item-hover-border: $kno-panelbar-item-hover-border,
+    $kno-panelbar-item-hover-gradient: $kno-panelbar-item-hover-gradient,
+    $kno-panelbar-item-focus-bg: $kno-panelbar-item-focus-bg,
+    $kno-panelbar-item-focus-text: $kno-panelbar-item-focus-text,
+    $kno-panelbar-item-focus-border: $kno-panelbar-item-focus-border,
+    $kno-panelbar-item-focus-gradient: $kno-panelbar-item-focus-gradient,
+    $kno-panelbar-item-focus-shadow: $kno-panelbar-item-focus-shadow,
+    $kno-panelbar-item-hover-focus-bg: $kno-panelbar-item-hover-focus-bg,
+    $kno-panelbar-item-hover-focus-text: $kno-panelbar-item-hover-focus-text,
+    $kno-panelbar-item-hover-focus-border: $kno-panelbar-item-hover-focus-border,
+    $kno-panelbar-item-hover-focus-gradient: $kno-panelbar-item-hover-focus-gradient,
+    $kno-panelbar-item-selected-bg: $kno-panelbar-item-selected-bg,
+    $kno-panelbar-item-selected-text: $kno-panelbar-item-selected-text,
+    $kno-panelbar-item-selected-border: $kno-panelbar-item-selected-border,
+    $kno-panelbar-item-selected-gradient: $kno-panelbar-item-selected-gradient,
+    $kno-panelbar-item-selected-hover-bg: $kno-panelbar-item-selected-hover-bg,
+    $kno-panelbar-item-selected-hover-text: $kno-panelbar-item-selected-hover-text,
+    $kno-panelbar-item-selected-hover-border: $kno-panelbar-item-selected-hover-border,
+    $kno-panelbar-item-selected-hover-gradient: $kno-panelbar-item-selected-hover-gradient,
+    $kno-panelbar-item-selected-focus-bg: $kno-panelbar-item-selected-focus-bg,
+    $kno-panelbar-item-selected-focus-text: $kno-panelbar-item-selected-focus-text,
+    $kno-panelbar-item-selected-focus-border: $kno-panelbar-item-selected-focus-border,
+    $kno-panelbar-item-selected-focus-gradient: $kno-panelbar-item-selected-focus-gradient,
+    $kno-panelbar-item-selected-hover-focus-bg: $kno-panelbar-item-selected-hover-focus-bg,
+    $kno-panelbar-item-selected-hover-focus-text: $kno-panelbar-item-selected-hover-focus-text,
+    $kno-panelbar-item-selected-hover-focus-border: $kno-panelbar-item-selected-hover-focus-border,
+    $kno-panelbar-item-selected-hover-focus-gradient: $kno-panelbar-item-selected-hover-focus-gradient,
+    $kno-panelbar-header-expanded-bg: $kno-panelbar-header-expanded-bg,
+    $kno-panelbar-header-expanded-text: $kno-panelbar-header-expanded-text,
+    $kno-panelbar-header-expanded-border: $kno-panelbar-header-expanded-border,
+    $kno-panelbar-header-expanded-gradient: $kno-panelbar-header-expanded-gradient
+);

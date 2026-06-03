@@ -1,0 +1,60 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseProps } from '../../common/BaseProps';
+import { ProgressBarAnimation } from './ProgressBarAnimation';
+import { LabelProps } from './LabelProps';
+/**
+ * Represents the props of the [knoReact ProgressBar component](components/progressbars/progressbar).
+ */
+export interface ProgressBarProps extends BaseProps {
+    /**
+     * Configures the animation settings of the ProgressBar. Defaults to `false`.
+     * If set to a boolean, it enables or disables the default animation.
+     * If set to a `ProgressBarAnimation` object, it allows customization of the slide animation duration in milliseconds.
+     *
+     * @default false
+     *
+     * @example
+     * ```jsx
+     * <ProgressBar animation={{ duration: 500 }} />
+     * ```
+     */
+    animation?: boolean | ProgressBarAnimation;
+    /**
+     * Provides a custom label component for the ProgressBar ([see example](components/progressbars/progressbar/label)).
+     *
+     * @example
+     * ```jsx
+     * const CustomLabel = (props) => <span>{props.value}%</span>;
+     * <ProgressBar label={CustomLabel} />
+     * ```
+     */
+    label?: React.ComponentType<LabelProps>;
+    /**
+     * Determines whether the progress status label is visible. Defaults to `true`.
+     *
+     * @default true
+     *
+     * @example
+     * ```jsx
+     * <ProgressBar labelVisible={false} />
+     * ```
+     */
+    labelVisible?: boolean;
+    /**
+     * Specifies the position of the progress status label. Defaults to `end` ([see example](components/progressbars/progressbar/label)).
+     *
+     * @default "end"
+     *
+     * @example
+     * ```jsx
+     * <ProgressBar labelPlacement="center" />
+     * ```
+     */
+    labelPlacement?: 'start' | 'center' | 'end';
+}

@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/color-preview/_layout.scss" as *;
+
+
+@mixin kno-color-preview--layout() {
+    @include kno-color-preview--layout-base();
+}

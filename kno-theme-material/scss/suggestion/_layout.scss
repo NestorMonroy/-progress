@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/suggestion/_layout.scss" as *;
+
+
+@mixin kno-suggestion--layout() {
+    @include kno-suggestion--layout-base();
+}

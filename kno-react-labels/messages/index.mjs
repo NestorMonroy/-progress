@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+const l = "labels.optional", o = {
+  [l]: "(Optional)"
+};
+export {
+  l as labelsOptional,
+  o as messages
+};

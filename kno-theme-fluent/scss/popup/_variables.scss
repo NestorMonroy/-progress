@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// Horizontal padding of the popup.
+/// @group popup
+$kno-popup-padding-x: var( --kno-popup-padding-x, #{k-spacing(0)} ) !default;
+/// Vertical padding of the popup.
+/// @group popup
+$kno-popup-padding-y: var( --kno-popup-padding-y, #{k-spacing(0)} ) !default;
+/// Width of the border around the popup.
+/// @group popup
+$kno-popup-border-width: var( --kno-popup-border-width, 0 ) !default;
+/// Border radius of the popup.
+/// @group popup
+$kno-popup-border-radius: var( --kno-popup-border-radius, #{k-border-radius(md)} ) !default;
+
+/// Font size of the popup.
+/// @group popup
+$kno-popup-font-size: var( --kno-popup-font-size, var(--kno-font-size) ) !default;
+/// Line height of the popup.
+/// @group popup
+$kno-popup-line-height: var( --kno-popup-line-height, var(--kno-line-height) ) !default;
+
+/// Horizontal padding of the content inside the popup.
+/// @group popup
+$kno-popup-content-padding-x: var( --kno-popup-content-padding-x, #{k-spacing(2)} ) !default;
+/// Vertical padding of the content inside the popup.
+/// @group popup
+$kno-popup-content-padding-y: var( --kno-popup-content-padding-y, #{k-spacing(2)} ) !default;
+
+/// Background color of the popup.
+/// @group popup
+$kno-popup-bg: var( --kno-popup-bg, #{k-color(surface-alt)} ) !default;
+/// Text color of the popup.
+/// @group popup
+$kno-popup-text: var( --kno-popup-text, #{k-color(on-app-surface)} ) !default;
+/// Border color of the popup.
+/// @group popup
+$kno-popup-border: var( --kno-popup-border, transparent ) !default;
+/// Box shadow around the popup.
+/// @group popup
+$kno-popup-shadow: var( --kno-popup-shadow, k-elevation(3) ) !default;
+
+/// Vertical spacing between the popup and the element it is anchored to.
+/// @group popup
+$kno-popup-spacing-y: var( --kno-popup-spacing-y, 0 ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/popup/_variables.scss" with (
+    $kno-popup-border-width: $kno-popup-border-width,
+    $kno-popup-border-radius: $kno-popup-border-radius,
+    $kno-popup-font-size: $kno-popup-font-size,
+    $kno-popup-line-height: $kno-popup-line-height,
+    $kno-popup-content-padding-x: $kno-popup-content-padding-x,
+    $kno-popup-content-padding-y: $kno-popup-content-padding-y,
+    $kno-popup-bg: $kno-popup-bg,
+    $kno-popup-text: $kno-popup-text,
+    $kno-popup-border: $kno-popup-border,
+    $kno-popup-shadow: $kno-popup-shadow,
+    $kno-popup-spacing-y: $kno-popup-spacing-y
+);

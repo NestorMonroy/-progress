@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/stacklayout/_layout.scss" as *;
+
+
+@mixin kno-stack-layout--layout() {
+    @include kno-stack-layout--layout-base();
+}

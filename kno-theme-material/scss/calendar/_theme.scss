@@ -1,0 +1,50 @@
+@use "./_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/calendar/_theme.scss" as *;
+
+
+@mixin kno-calendar--theme() {
+
+    @include kno-calendar--theme-base();
+
+    // Calendar
+    .k-calendar {
+        .k-content {
+            background-color: transparent;
+        }
+
+        .k-focus .k-link {
+            background-color: color-mix(in srgb, k-color(on-app-surface) 12%, transparent);
+        }
+
+        .k-range-start {
+            background: $kno-calendar-range-start-bg;
+        }
+
+        .k-range-end {
+            background: $kno-calendar-range-end-bg;
+        }
+
+        // Calendar navigation
+        .k-calendar-navigation {
+            li:hover,
+            li.k-hover {
+                background-color: color-mix(in srgb, k-color(on-app-surface) 8%, transparent);
+            }
+        }
+    }
+
+    .k-rtl .k-calendar,
+    [dir="rtl"] .k-calendar,
+    .k-calendar.k-rtl,
+    .k-calendar[dir="rtl"] {
+        .k-range-start {
+            background: $kno-calendar-range-end-bg;
+        }
+
+        .k-range-end {
+            background: $kno-calendar-range-start-bg;
+        }
+    }
+
+}

@@ -1,0 +1,33 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface UploadActionButtonsProps {
+    disabled: boolean;
+    navigationIndex?: number;
+    clearButtonIndex: number;
+    uploadButtonIndex: number;
+    actionsLayout: string;
+    onUpload: () => void;
+    onClear: () => void;
+    onClick: (navIndex: number | undefined) => void;
+}
+/**
+ * @hidden
+ */
+export declare class UploadActionButtons extends React.Component<UploadActionButtonsProps, {}> {
+    private _uploadElement;
+    private _clearElement;
+    componentDidUpdate(prevProps: UploadActionButtonsProps): void;
+    onClearClick: () => void;
+    checkEnterKey: (e: React.KeyboardEvent) => boolean;
+    onUploadClick: () => void;
+    render(): React.JSX.Element;
+}

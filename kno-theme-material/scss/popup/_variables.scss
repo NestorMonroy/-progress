@@ -1,0 +1,53 @@
+@use "../core/_index.scss" as *;
+
+/// Width of the border around the popup.
+/// @group popup
+$kno-popup-border-width: 0px !default;
+/// Border radius of the popup.
+/// @group popup
+$kno-popup-border-radius: k-border-radius(md) !default;
+
+/// Font size of the popup.
+/// @group popup
+$kno-popup-font-size: var(--kno-font-size) !default;
+/// Line height of the popup.
+/// @group popup
+$kno-popup-line-height: var(--kno-line-height) !default;
+
+/// Horizontal padding of the popup content.
+/// @group popup
+$kno-popup-content-padding-x: k-spacing(4) !default;
+/// Vertical padding of the popup content.
+/// @group popup
+$kno-popup-content-padding-y: k-spacing(4) !default;
+
+/// Background color of the popup.
+/// @group popup
+$kno-popup-bg: k-color(surface) !default;
+/// Text color of the popup.
+/// @group popup
+$kno-popup-text: k-color(on-app-surface) !default;
+/// Border color of the popup.
+/// @group popup
+$kno-popup-border: k-color(border) !default;
+/// Box shadow of the popup.
+/// @group popup
+$kno-popup-shadow: k-elevation(2) !default;
+
+/// Vertical spacing between the popup and the element it is anchored to.
+/// @group popup
+$kno-popup-spacing-y: 0 !default;
+
+@forward "@progress/kno-theme-core/scss/components/popup/_variables.scss" with (
+    $kno-popup-border-width: $kno-popup-border-width,
+    $kno-popup-border-radius: $kno-popup-border-radius,
+    $kno-popup-font-size: $kno-popup-font-size,
+    $kno-popup-line-height: $kno-popup-line-height,
+    $kno-popup-content-padding-x: $kno-popup-content-padding-x,
+    $kno-popup-content-padding-y: $kno-popup-content-padding-y,
+    $kno-popup-bg: $kno-popup-bg,
+    $kno-popup-text: $kno-popup-text,
+    $kno-popup-border: $kno-popup-border,
+    $kno-popup-shadow: $kno-popup-shadow,
+    $kno-popup-spacing-y: $kno-popup-spacing-y
+);

@@ -1,0 +1,24 @@
+@use "../core/functions/index.scss" as *;
+@use "../core/mixins/index.scss" as *;
+@use "../input/_variables.scss" as *;
+@use "../smart-box/_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/smart-box/_layout.scss" as *;
+
+
+@mixin kno-smart-box--layout() {
+    @include kno-smart-box--layout-base();
+
+    .k-smart-box {
+        // Set the border radius to 0 for the bottom corners only for solid fill mode.
+        #{k-when-default($kno-input-default-fill-mode, "solid")}
+        &.k-input-solid {
+
+            @each $roundness in $kno-smart-box-roundness {
+                #{k-when-default($kno-smart-box-default-roundness, $roundness)}
+                &.k-rounded-#{$roundness} {
+                    @include border-bottom-radius( 0 );
+                }
+            }
+        }
+    }
+}

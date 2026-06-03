@@ -1,0 +1,17 @@
+@use "@progress/kno-theme-core/scss/components/pivotgrid/_layout.scss" as *;
+
+
+@mixin kno-pivotgrid--layout() {
+
+    @include kno-pivotgrid--layout-base();
+
+    .k-pivot-rowheaders .k-grid tr .k-grid-footer {
+        border-block-end-width: 0;
+    }
+
+    .k-pivot .k-grid th,
+    .k-pivot .k-grid td {
+        border-inline-start-color: inherit;
+    }
+
+}

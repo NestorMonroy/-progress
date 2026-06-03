@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import r from "prop-types";
+import p from "./base/CollectionConfigurationComponent.mjs";
+const t = (o) => /* @__PURE__ */ e.createElement(p, { ...o, _mapKey: "layers" });
+t.propTypes = {
+  children: r.node
+};
+export {
+  t as MapLayers
+};

@@ -1,0 +1,46 @@
+@use "../core/_index.scss" as *;
+@use "../button/_variables.scss" as *;
+
+// Split-button
+
+/// The focus shadow of the SplitButton.
+/// @group split-button
+$kno-split-button-focus-shadow: $kno-button-focus-shadow !default;
+
+/// The horizontal padding of the arrow Button.
+/// @group split-button
+$kno-split-button-arrow-padding-x: null !default;
+/// The horizontal padding of the small arrow Button.
+/// @group split-button
+$kno-split-button-sm-arrow-padding-x: calc( k-spacing(4.5) / 2 ) !default;
+/// The horizontal padding of the medium arrow Button.
+/// @group split-button
+$kno-split-button-md-arrow-padding-x: calc( k-spacing(5.5) / 2 ) !default;
+/// The horizontal padding of the large arrow Button.
+/// @group split-button
+$kno-split-button-lg-arrow-padding-x: calc( k-spacing(6.5) / 2 ) !default;
+
+/// The vertical padding of the arrow Button.
+/// @group split-button
+$kno-split-button-arrow-padding-y: null !default;
+/// The vertical padding of the small arrow Button.
+/// @group split-button
+$kno-split-button-sm-arrow-padding-y: $kno-button-sm-padding-y !default;
+/// The vertical padding of the medium arrow Button.
+/// @group split-button
+$kno-split-button-md-arrow-padding-y: $kno-button-md-padding-y !default;
+/// The vertical padding of the large arrow Button.
+/// @group split-button
+$kno-split-button-lg-arrow-padding-y: $kno-button-lg-padding-y !default;
+
+@forward "@progress/kno-theme-core/scss/components/split-button/_variables.scss" with (
+    $kno-split-button-focus-shadow: $kno-split-button-focus-shadow,
+    $kno-split-button-arrow-padding-x: $kno-split-button-arrow-padding-x,
+    $kno-split-button-sm-arrow-padding-x: $kno-split-button-sm-arrow-padding-x,
+    $kno-split-button-md-arrow-padding-x: $kno-split-button-md-arrow-padding-x,
+    $kno-split-button-lg-arrow-padding-x: $kno-split-button-lg-arrow-padding-x,
+    $kno-split-button-arrow-padding-y: $kno-split-button-arrow-padding-y,
+    $kno-split-button-sm-arrow-padding-y: $kno-split-button-sm-arrow-padding-y,
+    $kno-split-button-md-arrow-padding-y: $kno-split-button-md-arrow-padding-y,
+    $kno-split-button-lg-arrow-padding-y: $kno-split-button-lg-arrow-padding-y
+);

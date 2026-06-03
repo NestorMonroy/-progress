@@ -1,0 +1,12 @@
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/treelist/_theme.scss" as *;
+
+@mixin kno-treelist--theme() {
+    @include kno-treelist--theme-base();
+
+    .k-treelist-scrollable {
+        tr.k-group-footer td {
+            background-color: $kno-treelist-footer-row-bg;
+        }
+    }
+}

@@ -1,0 +1,20 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/popup/_layout.scss" as *;
+
+@mixin kno-popup--layout() {
+    @include kno-popup--layout-base();
+
+    .k-animation-container {
+        @include border-bottom-radius-only( $kno-popup-border-radius );
+    }
+
+    .k-popup {
+        padding-inline: $kno-popup-padding-x;
+        padding-block: $kno-popup-padding-y;
+    }
+
+    .k-popup > .k-coloreditor {
+        box-shadow: none;
+    }
+}

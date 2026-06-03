@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/pdf-viewer/_layout.scss" as *;
+
+
+@mixin kno-pdf-viewer--layout() {
+    @include kno-pdf-viewer--layout-base();
+}

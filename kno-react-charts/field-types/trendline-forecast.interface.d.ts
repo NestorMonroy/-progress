@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * The series trendline forecast settings.
+ */
+export interface TrendlineForecast {
+    /**
+     * The number of intervals to extend the trendline before the first data point.
+     */
+    before?: number;
+    /**
+     * The number of intervals to extend the trendline after the last data point.
+     */
+    after?: number;
+}

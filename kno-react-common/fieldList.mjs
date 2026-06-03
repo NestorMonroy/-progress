@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { FIELD_REGEX as e } from "./constants/main.mjs";
+function p(i) {
+  const t = [];
+  return i.replace(e, function(f, o, r, c) {
+    t.push(o !== void 0 ? o : r || c);
+  }), t;
+}
+export {
+  p as fieldList
+};

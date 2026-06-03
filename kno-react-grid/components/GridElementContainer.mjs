@@ -1,0 +1,22 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as n from "react";
+import { GridContext as t } from "../utils/GridContext.mjs";
+import { cloneReactElement as r } from "../utils/index.mjs";
+const i = (o) => {
+  const e = n.useContext(t);
+  return r(o.children, {
+    ref: e.elementRef,
+    onKeyDown: e.onKeyDown,
+    onFocus: e.onFocus
+  });
+};
+export {
+  i as GridElementContainer
+};

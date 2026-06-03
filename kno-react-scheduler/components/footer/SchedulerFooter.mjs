@@ -1,0 +1,33 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { classNames as m } from "@progress/kno-react-common";
+import { Toolbar as u } from "@progress/kno-react-buttons";
+const f = e.forwardRef(
+  (t, s) => {
+    const { className: d, style: l, ...n } = t, r = e.useRef(null), o = e.useRef(null);
+    e.useImperativeHandle(r, () => ({ element: o.current, props: t })), e.useImperativeHandle(s, () => r.current);
+    const c = e.useMemo(() => m("k-scheduler-footer", t.className), [t.className]);
+    return /* @__PURE__ */ e.createElement(
+      u,
+      {
+        ref: (a) => {
+          a && (o.current = a.element);
+        },
+        className: c,
+        style: { boxShadow: "none", ...l },
+        ...n
+      },
+      t.children
+    );
+  }
+);
+f.displayName = "KendoReactSchedulerFooter";
+export {
+  f as SchedulerFooter
+};

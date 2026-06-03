@@ -1,0 +1,32 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { FilterDescriptor, SortDescriptor } from '@progress/kno-data-query';
+import { ExtendedColumnProps } from './ColumnProps.js';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export declare const FILTER_ROW_CLASS = "k-table-row k-filter-row";
+/**
+ * @hidden
+ */
+export interface FilterRowProps {
+    columns: ExtendedColumnProps[];
+    filter?: FilterDescriptor[];
+    filterChange: (event: {
+        filter: FilterDescriptor[];
+        field: string;
+        syntheticEvent: React.SyntheticEvent<any>;
+    }) => void;
+    sort?: SortDescriptor[];
+    ariaRowIndex?: number;
+}
+/**
+ * @hidden
+ */
+export declare const FilterRow: (props: FilterRowProps) => React.JSX.Element;

@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const o=require("@progress/kno-svg-icons"),i=require("../messages/index.js"),g=(t,s)=>s?s(t):{messageKey:t,defaultMessage:i.messages[t]},d=(t,s)=>t.toLanguageString(s.messageKey,s.defaultMessage),u=(t,s,e)=>{const n=t?"caret-alt-to-right":"caret-alt-to-left",r=t?o.caretAltToRightIcon:o.caretAltToLeftIcon,a="k-pager-nav k-pager-first"+(s===1&&!e?" k-disabled":"");return{rtlClass:n,rtlIcon:r,isDisabledClass:a,isDisabled:s===1?!0:void 0}},v=(t,s,e)=>{const n=t?"chevron-right":"chevron-left",r=t?o.chevronRightIcon:o.chevronLeftIcon,a="k-pager-nav"+(s===1&&!e?" k-disabled":"");return{rtlClass:n,rtlIcon:r,isDisabledClass:a,isDisabled:s===1?!0:void 0}},b=(t,s,e,n)=>{const r=t?"chevron-left":"chevron-right",a=t?o.chevronLeftIcon:o.chevronRightIcon,c="k-pager-nav"+(s>=e&&!n?" k-disabled":""),l=s>=e?!0:void 0;return{rtlClass:r,rtlIcon:a,isDisabledClass:c,isDisabled:l}},h=(t,s,e,n)=>{const r=t?"caret-alt-to-left":"caret-alt-to-right",a=t?o.caretAltToLeftIcon:o.caretAltToRightIcon,c="k-pager-nav k-pager-last"+(s>=e&&!n?" k-disabled":""),l=s>=e?!0:void 0;return{rtlClass:r,rtlIcon:a,isDisabledClass:c,isDisabled:l}};exports.getFirstButtonProps=u;exports.getL10NMessage=g;exports.getLastButtonProps=h;exports.getNextButtonProps=b;exports.getPrevButtonProps=v;exports.translateMessage=d;

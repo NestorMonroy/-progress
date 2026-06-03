@@ -1,0 +1,191 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../card/_variables.scss" as *;
+
+/// The spacing index of the OrgChart.
+/// @group orgchart
+$kno-orgchart-spacer: var( --kno-orgchart-spacer, #{k-spacing(6)} ) !default;
+/// The vertical padding of the OrgChart.
+/// @group orgchart
+$kno-orgchart-padding-y: var( --kno-orgchart-padding-y, #{$kno-orgchart-spacer} ) !default;
+/// The horizontal padding of the OrgChart.
+/// @group orgchart
+$kno-orgchart-padding-x: var( --kno-orgchart-padding-x, #{$kno-orgchart-padding-y} ) !default;
+/// The font family of the OrgChart.
+/// @group orgchart
+$kno-orgchart-font-family: var( --kno-orgchart-font-family, var(--kno-font-family) ) !default;
+/// The font size of the OrgChart.
+/// @group orgchart
+$kno-orgchart-font-size: var( --kno-orgchart-font-size, var(--kno-font-size) ) !default;
+/// The line height of the OrgChart.
+/// @group orgchart
+$kno-orgchart-line-height: var( --kno-orgchart-line-height, var(--kno-line-height) ) !default;
+/// The background color of the OrgChart.
+/// @group orgchart
+$kno-orgchart-bg: var( --kno-orgchart-bg, #{k-color(surface-alt)} ) !default;
+/// The text color of the OrgChart.
+/// @group orgchart
+$kno-orgchart-text: var( --kno-orgchart-text, #{k-color(on-app-surface)} ) !default;
+/// The border color of the OrgChart.
+/// @group orgchart
+$kno-orgchart-border: var( --kno-orgchart-border, color-mix(in srgb, k-color(border) 16%, transparent) ) !default;
+
+/// The spacing of the OrgChart node.
+/// @group orgchart
+$kno-orgchart-node-spacing: var( --kno-orgchart-node-spacing, #{$kno-orgchart-spacer} ) !default;
+/// The spacing of the OrgChart group.
+/// @group orgchart
+$kno-orgchart-group-spacing: var( --kno-orgchart-group-spacing, #{$kno-orgchart-spacer} ) !default;
+
+/// The vertical padding of the OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-padding-y: var( --kno-orgchart-node-group-padding-y, #{$kno-orgchart-spacer} ) !default;
+/// The horizontal padding of the OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-padding-x: var( --kno-orgchart-node-group-padding-x, #{$kno-orgchart-node-group-padding-y} ) !default;
+/// The border width of the OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-border-width: var( --kno-orgchart-node-group-border-width, 1px ) !default;
+/// The border radius of the OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-border-radius: var( --kno-orgchart-node-group-border-radius, #{k-border-radius(md)} ) !default;
+/// The background color of the OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-bg: var( --kno-orgchart-node-group-bg, #{k-color(surface)} ) !default;
+/// The text color of the OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-text: var( --kno-orgchart-node-group-text, #{k-color(on-app-surface)} ) !default;
+/// The border color of the OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-border: var( --kno-orgchart-node-group-border, color-mix(in srgb, k-color(border) 16%, transparent) ) !default;
+/// The border color of the focused OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-focus-border: var( --kno-orgchart-node-group-focus-border, #{$kno-card-focus-border} ) !default;
+/// The shadow of the focused OrgChart node group.
+/// @group orgchart
+$kno-orgchart-node-group-focus-shadow: var( --kno-orgchart-node-group-focus-shadow, #{$kno-card-focus-shadow} ) !default;
+
+/// The vertical margin of the OrgChart node group title.
+/// @group orgchart
+$kno-orgchart-node-group-title-margin-y: var( --kno-orgchart-node-group-title-margin-y, #{k-spacing(0)} ) !default;
+/// The font size of the OrgChart node group title.
+/// @group orgchart
+$kno-orgchart-node-group-title-font-size: var( --kno-orgchart-node-group-title-font-size, var(--kno-font-size-xl) ) !default;
+/// The line height of the OrgChart node group title.
+/// @group orgchart
+$kno-orgchart-node-group-title-line-height: var( --kno-orgchart-node-group-title-line-height, var(--kno-line-height) ) !default;
+
+/// The vertical margin of the OrgChart node group subtitle.
+/// @group orgchart
+$kno-orgchart-node-group-subtitle-margin-y: var( --kno-orgchart-node-group-subtitle-margin-y, calc( #{$kno-orgchart-spacer} - #{k-spacing(1)} ) ) !default;
+/// The font size of the OrgChart node group subtitle.
+/// @group orgchart
+$kno-orgchart-node-group-subtitle-font-size: var( --kno-orgchart-node-group-subtitle-font-size, var(--kno-font-size) ) !default;
+/// The line height of the OrgChart node group subtitle.
+/// @group orgchart
+$kno-orgchart-node-group-subtitle-text: var( --kno-orgchart-node-group-subtitle-text, #{k-color(subtle)} ) !default;
+
+/// The width of the OrgChart Card.
+/// @group orgchart
+$kno-orgchart-card-width: var( --kno-orgchart-card-width, 300px ) !default;
+/// The border width of the OrgChart Card.
+/// @group orgchart
+$kno-orgchart-card-border-width: var( --kno-orgchart-card-border-width, #{$kno-card-border-width} ) !default;
+/// The shadow of the OrgChart Card.
+/// @group orgchart
+$kno-orgchart-card-shadow: var( --kno-orgchart-card-shadow, #{$kno-card-shadow} ) !default;
+/// The shadow of the focused OrgChart Card.
+/// @group orgchart
+$kno-orgchart-card-focus-shadow: var( --kno-orgchart-card-focus-shadow, #{$kno-card-focus-shadow} ) !default;
+
+/// The vertical margin of the OrgChart Card title.
+/// @group orgchart
+$kno-orgchart-card-title-margin-y: var( --kno-orgchart-card-title-margin-y, #{k-spacing(0)} ) !default;
+/// The font size of the OrgChart Card title.
+/// @group orgchart
+$kno-orgchart-card-title-font-size: var( --kno-orgchart-card-title-font-size, #{$kno-card-title-font-size} ) !default;
+/// The line height of the OrgChart Card title.
+/// @group orgchart
+$kno-orgchart-card-title-line-height: var( --kno-orgchart-card-title-line-height, var(--kno-line-height) ) !default;
+
+/// The vertical margin of the OrgChart Card subtitle.
+/// @group orgchart
+$kno-orgchart-card-subtitle-margin-y: var( --kno-orgchart-card-subtitle-margin-y, #{k-spacing(0)} ) !default;
+/// The font size of the OrgChart Card subtitle.
+/// @group orgchart
+$kno-orgchart-card-subtitle-font-size: var( --kno-orgchart-card-subtitle-font-size, var(--kno-font-size-sm) ) !default;
+/// The line height of the OrgChart Card subtitle.
+/// @group orgchart
+$kno-orgchart-card-subtitle-line-height: var( --kno-orgchart-card-subtitle-line-height, var(--kno-line-height) ) !default;
+
+/// The vertical padding of the OrgChart Card body.
+/// @group orgchart
+$kno-orgchart-card-body-padding-y: var( --kno-orgchart-card-body-padding-y, calc( #{$kno-orgchart-spacer} - #{k-spacing(2)} ) ) !default;
+/// The horizontal padding of the OrgChart Card body.
+/// @group orgchart
+$kno-orgchart-card-body-padding-x: var( --kno-orgchart-card-body-padding-x, #{$kno-orgchart-card-body-padding-y} ) !default;
+/// The top border width of the OrgChart Card body.
+/// @group orgchart
+$kno-orgchart-card-body-border-width: var( --kno-orgchart-card-body-border-width, 2px 0 0 ) !default;
+/// The border color of the OrgChart Card body.
+/// @group orgchart
+$kno-orgchart-card-body-border-color: var( --kno-orgchart-card-body-border-color, transparent ) !default;
+
+/// The horizontal margin of the OrgChart Card body title wrap.
+/// @group orgchart
+$kno-orgchart-card-body-vbox-margin-x: var( --kno-orgchart-card-body-vbox-margin-x, calc( #{$kno-orgchart-spacer} - #{k-spacing(2)} ) ) !default;
+/// The min height of the OrgChart Card body title wrap.
+/// @group orgchart
+$kno-orgchart-card-body-vbox-min-height: var( --kno-orgchart-card-body-vbox-min-height, 3em ) !default;
+
+/// The size of the OrgChart connecting line.
+/// @group orgchart
+$kno-orgchart-line-size: var( --kno-orgchart-line-size, 1px ) !default;
+/// The fill color of the OrgChart connecting line.
+/// @group orgchart
+$kno-orgchart-line-text: var( --kno-orgchart-line-text, color-mix(in srgb, k-color(border) 16%, transparent) ) !default;
+/// The height of the OrgChart connecting line.
+/// @group orgchart
+$kno-orgchart-line-v-height: var( --kno-orgchart-line-v-height, #{k-spacing(6)} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/orgchart/_variables.scss" with (
+    $kno-orgchart-spacer: $kno-orgchart-spacer,
+    $kno-orgchart-padding-y: $kno-orgchart-padding-y,
+    $kno-orgchart-padding-x: $kno-orgchart-padding-x,
+    $kno-orgchart-font-family: $kno-orgchart-font-family,
+    $kno-orgchart-font-size: $kno-orgchart-font-size,
+    $kno-orgchart-line-height: $kno-orgchart-line-height,
+    $kno-orgchart-bg: $kno-orgchart-bg,
+    $kno-orgchart-text: $kno-orgchart-text,
+    $kno-orgchart-border: $kno-orgchart-border,
+    $kno-orgchart-node-group-padding-y: $kno-orgchart-node-group-padding-y,
+    $kno-orgchart-node-group-padding-x: $kno-orgchart-node-group-padding-x,
+    $kno-orgchart-node-group-border-width: $kno-orgchart-node-group-border-width,
+    $kno-orgchart-node-group-border-radius: $kno-orgchart-node-group-border-radius,
+    $kno-orgchart-node-group-bg: $kno-orgchart-node-group-bg,
+    $kno-orgchart-node-group-text: $kno-orgchart-node-group-text,
+    $kno-orgchart-node-group-border: $kno-orgchart-node-group-border,
+    $kno-orgchart-node-group-focus-border: $kno-orgchart-node-group-focus-border,
+    $kno-orgchart-node-group-focus-shadow: $kno-orgchart-node-group-focus-shadow,
+    $kno-orgchart-node-group-title-font-size: $kno-orgchart-node-group-title-font-size,
+    $kno-orgchart-node-group-title-line-height: $kno-orgchart-node-group-title-line-height,
+    $kno-orgchart-node-group-title-margin-bottom: $kno-orgchart-node-group-title-margin-y,
+    $kno-orgchart-node-group-subtitle-margin-bottom: $kno-orgchart-node-group-subtitle-margin-y,
+    $kno-orgchart-node-group-subtitle-font-size: $kno-orgchart-node-group-subtitle-font-size,
+    $kno-orgchart-node-group-subtitle-text: $kno-orgchart-node-group-subtitle-text,
+    $kno-orgchart-card-title-margin-bottom: $kno-orgchart-card-title-margin-y,
+    $kno-orgchart-card-width: $kno-orgchart-card-width,
+    $kno-orgchart-card-border-width: $kno-orgchart-card-border-width,
+    $kno-orgchart-card-shadow: $kno-orgchart-card-shadow,
+    $kno-orgchart-card-focus-shadow: $kno-orgchart-card-focus-shadow,
+    $kno-orgchart-card-title-font-size: $kno-orgchart-card-title-font-size,
+    $kno-orgchart-card-subtitle-margin-bottom: $kno-orgchart-card-subtitle-margin-y,
+    $kno-orgchart-card-subtitle-font-size: $kno-orgchart-card-subtitle-font-size,
+    $kno-orgchart-card-body-vbox-margin-right: $kno-orgchart-card-body-vbox-margin-x,
+    $kno-orgchart-card-body-vbox-min-height: $kno-orgchart-card-body-vbox-min-height,
+    $kno-orgchart-card-body-border-width: $kno-orgchart-card-body-border-width,
+    $kno-orgchart-card-body-border-color: $kno-orgchart-card-body-border-color,
+    $kno-orgchart-line-size: $kno-orgchart-line-size,
+    $kno-orgchart-line-v-height: $kno-orgchart-line-v-height,
+    $kno-orgchart-line-fill: $kno-orgchart-line-text
+);

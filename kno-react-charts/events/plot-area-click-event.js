@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("./base-event.js");class i extends s.BaseEvent{constructor(t,e){super(e),this.category=t.category,this.nativeEvent=t.originalEvent,this.value=t.value,this.x=t.x,this.y=t.y}}exports.PlotAreaClickEvent=i;

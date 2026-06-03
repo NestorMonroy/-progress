@@ -1,0 +1,8 @@
+@use "@progress/kno-theme-core/scss/components/toolbar/_layout.scss" as *;
+
+
+@mixin kno-toolbar--layout() {
+
+    @include kno-toolbar--layout-base();
+
+}

@@ -1,0 +1,335 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../calendar/_variables.scss" as *;
+@use "../toolbar/_variables.scss" as *;
+
+/// The width of the border around the Scheduler.
+/// @group scheduler
+$kno-scheduler-border-width: var( --kno-scheduler-border-width, 1px ) !default;
+/// The border radius of the Scheduler.
+/// @group scheduler
+$kno-scheduler-border-radius: var( --kno-scheduler-border-radius, null ) !default;
+/// The font family of the Scheduler.
+/// @group scheduler
+$kno-scheduler-font-family: var( --kno-scheduler-font-family, var(--kno-font-family) ) !default;
+/// The font size of the Scheduler.
+/// @group scheduler
+$kno-scheduler-font-size: var( --kno-scheduler-font-size, var(--kno-font-size) ) !default;
+/// The line height of the Scheduler.
+/// @group scheduler
+$kno-scheduler-line-height: var( --kno-scheduler-line-height, var(--kno-line-height) ) !default;
+
+/// The background color of the Scheduler.
+/// @group scheduler
+$kno-scheduler-bg: var( --kno-scheduler-bg, k-color(app-surface) ) !default;
+/// The text color of the Scheduler.
+/// @group scheduler
+$kno-scheduler-text: var( --kno-scheduler-text, k-color(on-app-surface) ) !default;
+/// The border color of the Scheduler.
+/// @group scheduler
+$kno-scheduler-border: var( --kno-scheduler-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+
+/// The background color of the selected row in Scheduler.
+/// @group scheduler
+$kno-scheduler-selected-bg: var( --kno-scheduler-selected-bg, k-color(primary-active) ) !default;
+/// The text color of the selected row in Scheduler.
+/// @group scheduler
+$kno-scheduler-selected-text: var( --kno-scheduler-selected-text, $kno-scheduler-text ) !default;
+/// The border color of the selected row in Scheduler.
+/// @group scheduler
+$kno-scheduler-selected-border: var( --kno-scheduler-selected-border, $kno-scheduler-border ) !default;
+
+/// The background color of the Scheduler ToolBar.
+/// @group scheduler
+$kno-scheduler-toolbar-bg: var( --kno-scheduler-toolbar-bg, k-color(app-surface) ) !default;
+/// The text color of the Scheduler ToolBar.
+/// @group scheduler
+$kno-scheduler-toolbar-text: var( --kno-scheduler-toolbar-text, k-color(on-app-surface) ) !default;
+/// The border color of the Scheduler ToolBar.
+/// @group scheduler
+$kno-scheduler-toolbar-border: var( --kno-scheduler-toolbar-border, k-color(border) ) !default;
+/// The gradient of the Scheduler ToolBar.
+/// @group scheduler
+$kno-scheduler-toolbar-gradient: var( --kno-scheduler-toolbar-gradient, null ) !default; // $kno-toolbar-gradient
+
+/// The background color of the Scheduler footer.
+/// @group schedulers
+$kno-scheduler-footer-bg: var( --kno-scheduler-footer-bg, k-color(app-surface) ) !default;
+/// The text color of the Scheduler footer.
+/// @group scheduler
+$kno-scheduler-footer-text: var( --kno-scheduler-footer-text, var( --kno-toolbar-text, $kno-toolbar-text ) ) !default;
+/// The border color of the Scheduler footer.
+/// @group scheduler
+$kno-scheduler-footer-border: var( --kno-scheduler-footer-border, var( --kno-toolbar-border, $kno-toolbar-border ) ) !default;
+/// The gradient of the Scheduler footer.
+/// @group scheduler
+$kno-scheduler-footer-gradient: var( --kno-scheduler-footer-gradient, null ) !default; // $kno-toolbar-gradient
+
+/// The border radius of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-border-radius: var( --kno-scheduler-event-border-radius, k-border-radius(md) ) !default;
+/// The line height of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-line-height: var( --kno-scheduler-event-line-height, $kno-scheduler-line-height ) !default;
+/// The horizontal padding of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-padding-x: var( --kno-scheduler-event-padding-x, k-spacing(2) ) !default;
+/// The vertical padding of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-padding-y: var( --kno-scheduler-event-padding-y, k-spacing(0.5) ) !default;
+/// The minimum height of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-min-height: var( --kno-scheduler-event-min-height, calc( #{$kno-scheduler-line-height} + 2 * #{$kno-scheduler-event-padding-y} ) ) !default;
+
+/// The background color of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-bg: var( --kno-scheduler-event-bg, k-color(primary) ) !default;
+/// The text color of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-text: var( --kno-scheduler-event-text, k-color(on-primary) ) !default;
+/// The border color of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-border: var( --kno-scheduler-event-border, $kno-scheduler-event-bg ) !default;
+/// The gradient of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-gradient: var( --kno-scheduler-event-gradient, null ) !default;
+/// The shadow of the Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-shadow: var( --kno-scheduler-event-shadow, null ) !default;
+
+/// The background color of the hovered Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-hover-bg: var( --kno-scheduler-event-hover-bg, k-color(primary-hover) ) !default;
+/// The text color of the hovered Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-hover-text: var( --kno-scheduler-event-hover-text, k-color(on-primary) ) !default;
+/// The border color of the hovered Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-hover-border: var( --kno-scheduler-event-hover-border, color-mix(in srgb, k-color(border) 10%, transparent) ) !default;
+/// The gradient of the hovered Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-hover-gradient: var( --kno-scheduler-event-hover-gradient, null ) !default;
+/// The shadow of the hovered Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-hover-shadow: var( --kno-scheduler-event-hover-shadow, null ) !default;
+
+/// The background color of the selected Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-selected-bg: var( --kno-scheduler-event-selected-bg, k-color(primary-active) ) !default;
+/// The text color of the selected Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-selected-text: var( --kno-scheduler-event-selected-text, $kno-scheduler-event-text ) !default;
+/// The border color of the selected Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-selected-border: var( --kno-scheduler-event-selected-border, $kno-scheduler-event-bg ) !default;
+/// The gradient of the selected Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-selected-gradient: var( --kno-scheduler-event-selected-gradient, null ) !default;
+/// The shadow of the selected Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-selected-shadow: var( --kno-scheduler-event-selected-shadow, none ) !default;
+
+/// The shadow of the ongoing Scheduler event.
+/// @group scheduler
+$kno-scheduler-event-ongoing-shadow: var( --kno-scheduler-event-ongoing-shadow, inset 0px 0px 0px 1px #ff0000 ) !default;
+
+/// The horizontal padding of the Scheduler cell.
+/// @group scheduler
+$kno-scheduler-cell-padding-x: var( --kno-scheduler-cell-padding-x, k-spacing(2) ) !default;
+/// The vertical padding of the Scheduler cell.
+/// @group scheduler
+$kno-scheduler-cell-padding-y: var( --kno-scheduler-cell-padding-y, k-spacing(2) ) !default;
+/// The height of the Scheduler cell.
+/// @group scheduler
+$kno-scheduler-cell-height: var( --kno-scheduler-cell-height, $kno-line-height-em ) !default;
+/// The width of the Scheduler date column.
+/// @group scheduler
+$kno-scheduler-datecolumn-width: var( --kno-scheduler-datecolumn-width, 12em ) !default;
+/// The width of the Scheduler time column.
+/// @group scheduler
+$kno-scheduler-timecolumn-width: var( --kno-scheduler-timecolumn-width, 11em ) !default;
+
+/// The background color of the non-working hours in the Scheduler.
+/// @group scheduler
+$kno-scheduler-nonwork-bg: var( --kno-scheduler-nonwork-bg, k-color(surface) ) !default;
+/// The text color of the non-working hours in the Scheduler.
+/// @group scheduler
+$kno-scheduler-nonwork-text: var( --kno-scheduler-nonwork-text, null ) !default;
+
+/// The background color of the preceding/subsequent month cells in the Calendar.
+/// @group scheduler
+$kno-scheduler-othermonth-bg: var( --kno-scheduler-othermonth-bg, k-color(surface) ) !default;
+/// The text color of the preceding/subsequent month cells in the Calendar.
+/// @group scheduler
+$kno-scheduler-othermonth-text: var( --kno-scheduler-othermonth-text, null ) !default;
+
+/// The horizontal padding of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-padding-x: var( --kno-scheduler-yearview-padding-x, k-spacing(3) ) !default;
+/// The vertical padding of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-padding-y: var( --kno-scheduler-yearview-padding-y, $kno-scheduler-yearview-padding-x ) !default;
+
+/// The spacing between the calendars of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-calendar-gap: var( --kno-scheduler-yearview-calendar-gap, k-spacing(3) ) !default;
+
+/// The days with events indicator size of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-indicator-size: var( --kno-scheduler-yearview-indicator-size, 3px ) !default;
+/// The top position of the days with events indicator of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-indicator-calc-offset-top: calc( #{$kno-calendar-cell-size} - (#{$kno-calendar-cell-padding-y} * 2) ) !default;
+/// The left position of the days with events indicator of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-indicator-calc-offset-left: calc( 50% - (#{$kno-scheduler-yearview-indicator-size} / 2) ) !default;
+/// The border radius of the days with events indicator of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-indicator-border-radius: var( --kno-scheduler-yearview-indicator-border-radius, 50% ) !default;
+/// The background color of the days with events indicator of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-indicator-bg: var( --kno-scheduler-yearview-indicator-bg, k-color(primary) ) !default;
+/// The background color of the selected days with events indicator of the year view in the Scheduler.
+/// @group scheduler
+$kno-scheduler-yearview-indicator-selected-bg: var( --kno-scheduler-yearview-indicator-selected-bg, k-color(app-surface) ) !default;
+
+/// The horizontal padding of the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-padding-x: var( --kno-scheduler-tooltip-padding-x, k-spacing(2) ) !default;
+/// The vertical padding of the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-padding-y: var( --kno-scheduler-tooltip-padding-y, $kno-scheduler-tooltip-padding-x ) !default;
+/// The width of the border of the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-border-width: var( --kno-scheduler-tooltip-border-width, 0 ) !default;
+/// The background color of the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-bg: var( --kno-scheduler-tooltip-bg, k-color(app-surface) ) !default;
+/// The text color of the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-text: var( --kno-scheduler-tooltip-text, k-color(subtle) ) !default;
+/// The border color of the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-border: var( --kno-scheduler-tooltip-border, null ) !default;
+/// The shadow of the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-shadow: var( --kno-scheduler-tooltip-shadow, k-elevation(2) ) !default;
+
+/// The vertical margin of the Scheduler Tooltip title.
+/// @group scheduler
+$kno-scheduler-tooltip-title-margin-y: var( --kno-scheduler-tooltip-title-margin-y, k-spacing(3) ) !default;
+/// The font size of the month inside the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-month-font-size: var( --kno-scheduler-tooltip-month-font-size, var(--kno-font-size-sm) ) !default;
+/// The font size of the day inside the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-day-font-size: var( --kno-scheduler-tooltip-day-font-size, calc( var(--kno-font-size-sm) * 2 ) ) !default;
+
+/// The max height of the events inside the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-events-max-height: var( --kno-scheduler-tooltip-events-max-height, 250px ) !default;
+/// The spacing between the events inside the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-events-gap: var( --kno-scheduler-tooltip-events-gap, k-spacing(2) ) !default;
+
+/// The horizontal padding of the events inside the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-event-padding-x: var( --kno-scheduler-tooltip-event-padding-x, $kno-scheduler-event-padding-x ) !default;
+/// The vertical padding of the events inside the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-event-padding-y: var( --kno-scheduler-tooltip-event-padding-y, $kno-scheduler-event-padding-y ) !default;
+/// The border radius of the events inside the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-event-border-radius: var( --kno-scheduler-tooltip-event-border-radius, $kno-scheduler-event-border-radius ) !default;
+/// The spacing between the events items inside the Scheduler Tooltip.
+/// @group scheduler
+$kno-scheduler-tooltip-event-gap: var( --kno-scheduler-tooltip-event-gap, k-spacing(0.5) ) !default;
+
+/// The color of the Scheduler Tooltip callout.
+/// @group scheduler
+$kno-scheduler-tooltip-callout-color: var( --kno-scheduler-tooltip-callout-color, $kno-scheduler-tooltip-bg ) !default;
+
+/// The width of the Scheduler resize handle.
+/// @group scheduler
+$kno-scheduler-resize-handle-width: var( --kno-scheduler-resize-handle-width, 2em ) !default;
+
+/// The height of the Scheduler more events button.
+/// @group scheduler
+$kno-scheduler-more-btn-height: var( --kno-scheduler-more-btn-height, 13px ) !default;
+
+/// The color of the Scheduler marquee.
+/// @group scheduler
+$kno-scheduler-marquee-color: var( --kno-scheduler-marquee-color, k-color(primary) ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/scheduler/_variables.scss" with (
+    $kno-scheduler-border-width: $kno-scheduler-border-width,
+    $kno-scheduler-border-radius: $kno-scheduler-border-radius,
+    $kno-scheduler-font-family: $kno-scheduler-font-family,
+    $kno-scheduler-font-size: $kno-scheduler-font-size,
+    $kno-scheduler-line-height: $kno-scheduler-line-height,
+    $kno-scheduler-bg: $kno-scheduler-bg,
+    $kno-scheduler-text: $kno-scheduler-text,
+    $kno-scheduler-border: $kno-scheduler-border,
+    $kno-scheduler-toolbar-bg: $kno-scheduler-toolbar-bg,
+    $kno-scheduler-toolbar-text: $kno-scheduler-toolbar-text,
+    $kno-scheduler-toolbar-border: $kno-scheduler-toolbar-border,
+    $kno-scheduler-toolbar-gradient: $kno-scheduler-toolbar-gradient,
+    $kno-scheduler-footer-bg: $kno-scheduler-footer-bg,
+    $kno-scheduler-footer-text: $kno-scheduler-footer-text,
+    $kno-scheduler-footer-border: $kno-scheduler-footer-border,
+    $kno-scheduler-footer-gradient: $kno-scheduler-footer-gradient,
+    $kno-scheduler-event-min-height: $kno-scheduler-event-min-height,
+    $kno-scheduler-event-border-radius: $kno-scheduler-event-border-radius,
+    $kno-scheduler-event-line-height: $kno-scheduler-event-line-height,
+    $kno-scheduler-event-bg: $kno-scheduler-event-bg,
+    $kno-scheduler-event-text: $kno-scheduler-event-text,
+    $kno-scheduler-event-border: $kno-scheduler-event-border,
+    $kno-scheduler-event-gradient: $kno-scheduler-event-gradient,
+    $kno-scheduler-event-shadow: $kno-scheduler-event-shadow,
+    $kno-scheduler-event-hover-bg: $kno-scheduler-event-hover-bg,
+    $kno-scheduler-event-hover-text: $kno-scheduler-event-hover-text,
+    $kno-scheduler-event-hover-border: $kno-scheduler-event-hover-border,
+    $kno-scheduler-event-hover-gradient: $kno-scheduler-event-hover-gradient,
+    $kno-scheduler-event-hover-shadow: $kno-scheduler-event-hover-shadow,
+    $kno-scheduler-event-selected-bg: $kno-scheduler-event-selected-bg,
+    $kno-scheduler-event-selected-text: $kno-scheduler-event-selected-text,
+    $kno-scheduler-event-selected-border: $kno-scheduler-event-selected-border,
+    $kno-scheduler-event-selected-gradient: $kno-scheduler-event-selected-gradient,
+    $kno-scheduler-event-selected-shadow: $kno-scheduler-event-selected-shadow,
+    $kno-scheduler-event-ongoing-shadow: $kno-scheduler-event-ongoing-shadow,
+    $kno-scheduler-cell-padding-x: $kno-scheduler-cell-padding-x,
+    $kno-scheduler-cell-padding-y: $kno-scheduler-cell-padding-y,
+    $kno-scheduler-cell-height: $kno-scheduler-cell-height,
+    $kno-scheduler-datecolumn-width: $kno-scheduler-datecolumn-width,
+    $kno-scheduler-timecolumn-width: $kno-scheduler-timecolumn-width,
+    $kno-scheduler-nonwork-bg: $kno-scheduler-nonwork-bg,
+    $kno-scheduler-nonwork-text: $kno-scheduler-nonwork-text,
+    $kno-scheduler-othermonth-bg: $kno-scheduler-othermonth-bg,
+    $kno-scheduler-othermonth-text: $kno-scheduler-othermonth-text,
+    $kno-scheduler-yearview-padding-x: $kno-scheduler-yearview-padding-x,
+    $kno-scheduler-yearview-padding-y: $kno-scheduler-yearview-padding-y,
+    $kno-scheduler-yearview-calendar-gap: $kno-scheduler-yearview-calendar-gap,
+    $kno-scheduler-yearview-indicator-size: $kno-scheduler-yearview-indicator-size,
+    $kno-scheduler-yearview-indicator-calc-offset-top: $kno-scheduler-yearview-indicator-calc-offset-top,
+    $kno-scheduler-yearview-indicator-calc-offset-left: $kno-scheduler-yearview-indicator-calc-offset-left,
+    $kno-scheduler-yearview-indicator-border-radius: $kno-scheduler-yearview-indicator-border-radius,
+    $kno-scheduler-yearview-indicator-bg: $kno-scheduler-yearview-indicator-bg,
+    $kno-scheduler-yearview-indicator-selected-bg: $kno-scheduler-yearview-indicator-selected-bg,
+    $kno-scheduler-tooltip-padding-x: $kno-scheduler-tooltip-padding-x,
+    $kno-scheduler-tooltip-padding-y: $kno-scheduler-tooltip-padding-y,
+    $kno-scheduler-tooltip-border-width: $kno-scheduler-tooltip-border-width,
+    $kno-scheduler-tooltip-bg: $kno-scheduler-tooltip-bg,
+    $kno-scheduler-tooltip-text: $kno-scheduler-tooltip-text,
+    $kno-scheduler-tooltip-border: $kno-scheduler-tooltip-border,
+    $kno-scheduler-tooltip-shadow: $kno-scheduler-tooltip-shadow,
+    $kno-scheduler-tooltip-title-margin-y: $kno-scheduler-tooltip-title-margin-y,
+    $kno-scheduler-tooltip-month-font-size: $kno-scheduler-tooltip-month-font-size,
+    $kno-scheduler-tooltip-day-font-size: $kno-scheduler-tooltip-day-font-size,
+    $kno-scheduler-tooltip-events-max-height: $kno-scheduler-tooltip-events-max-height,
+    $kno-scheduler-tooltip-events-gap: $kno-scheduler-tooltip-events-gap,
+    $kno-scheduler-tooltip-event-padding-x: $kno-scheduler-tooltip-event-padding-x,
+    $kno-scheduler-tooltip-event-padding-y: $kno-scheduler-tooltip-event-padding-y,
+    $kno-scheduler-tooltip-event-border-radius: $kno-scheduler-tooltip-event-border-radius,
+    $kno-scheduler-tooltip-event-gap: $kno-scheduler-tooltip-event-gap,
+    $kno-scheduler-tooltip-callout-text: $kno-scheduler-tooltip-callout-color
+);

@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+import e from "./base/ConfigurationComponent.mjs";
+const a = (o) => /* @__PURE__ */ t.createElement(e, { ...o, _mapKey: "tooltip" });
+export {
+  a as MapShapeLayerTooltip
+};

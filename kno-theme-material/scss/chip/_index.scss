@@ -1,0 +1,20 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../utils/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-chip--styles() {
+    @include import-once( "chip" ) {
+        @include core-styles();
+        @include kno-icon--styles();
+        @include kno-chip--layout();
+        @include kno-chip--theme();
+        @include kno-utils--typography--text-overflow();
+    }
+}

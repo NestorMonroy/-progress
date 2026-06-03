@@ -1,0 +1,93 @@
+@use "../core/_index.scss" as *;
+
+/// The width of the Signature.
+/// @group signature
+$kno-signature-width: 246px !default;
+/// The height of the Signature.
+/// @group signature
+$kno-signature-height: 108px !default;
+
+/// The minimum height of the large Signature.
+/// @group signature
+$kno-signature-lg-min-height: 110px !default;
+
+/// The width of the maximized Signature.
+/// @group signature
+$kno-signature-maximized-width: 750px !default;
+/// The height of the maximized Signature.
+/// @group signature
+$kno-signature-maximized-height: 252px !default;
+
+/// The horizontal padding of the small Signature.
+/// @group signature
+$kno-signature-sm-padding-x: k-spacing(0.5) !default;
+/// The horizontal padding of the medium Signature.
+/// @group signature
+$kno-signature-md-padding-x: k-spacing(1) !default;
+/// The horizontal padding of the large Signature.
+/// @group signature
+$kno-signature-lg-padding-x: k-spacing(1.5) !default;
+
+/// The vertical padding of the small Signature.
+/// @group signature
+$kno-signature-sm-padding-y: $kno-signature-sm-padding-x !default;
+/// The vertical padding of the medium Signature.
+/// @group signature
+$kno-signature-md-padding-y: $kno-signature-md-padding-x !default;
+/// The vertical padding of the large Signature.
+/// @group signature
+$kno-signature-lg-padding-y: $kno-signature-lg-padding-x !default;
+
+/// The width of the Signature line.
+/// @group signature
+$kno-signature-line-width: 1px !default;
+/// The style of the Signature line.
+/// @group signature
+$kno-signature-line-style: dashed !default;
+/// The color of the Signature line.
+/// @group signature
+$kno-signature-line-color: color-mix(in srgb, k-color(info) 24%, transparent) !default;
+
+/// The size of the small Signature line.
+/// @group signature
+$kno-signature-sm-line-size: calc( 100% - 2 * #{$kno-signature-sm-padding-x} ) !default;
+/// The size of the medium Signature line.
+/// @group signature
+$kno-signature-md-line-size: calc( 100% - 2 * #{$kno-signature-md-padding-x} ) !default;
+/// The size of the large Signature line.
+/// @group signature
+$kno-signature-lg-line-size: calc( 100% - 2 * #{$kno-signature-lg-padding-x} ) !default;
+
+/// The bottom offset of the Signature line.
+/// @group signature
+$kno-signature-line-bottom-offset: 33% !default;
+
+/// The gap between the Signature actions.
+/// @group signature
+$kno-signature-actions-gap: k-spacing(1) !default;
+/// The line width of the maximized Signature.
+/// @group signature
+$kno-signature-maximized-line-width: 3px !default;
+
+@forward "@progress/kno-theme-core/scss/components/signature/_variables.scss" with (
+    $kno-signature-width: $kno-signature-width,
+    $kno-signature-height: $kno-signature-height,
+    $kno-signature-lg-min-height: $kno-signature-lg-min-height,
+    $kno-signature-maximized-width: $kno-signature-maximized-width,
+    $kno-signature-maximized-height: $kno-signature-maximized-height,
+    $kno-signature-sm-padding-x: $kno-signature-sm-padding-x,
+    $kno-signature-md-padding-x: $kno-signature-md-padding-x,
+    $kno-signature-lg-padding-x: $kno-signature-lg-padding-x,
+    $kno-signature-sm-padding-y: $kno-signature-sm-padding-y,
+    $kno-signature-md-padding-y: $kno-signature-md-padding-y,
+    $kno-signature-lg-padding-y: $kno-signature-lg-padding-y,
+    $kno-signature-line-width: $kno-signature-line-width,
+    $kno-signature-line-style: $kno-signature-line-style,
+    $kno-signature-line-color: $kno-signature-line-color,
+    $kno-signature-sm-line-size: $kno-signature-sm-line-size,
+    $kno-signature-md-line-size: $kno-signature-md-line-size,
+    $kno-signature-lg-line-size: $kno-signature-lg-line-size,
+    $kno-signature-line-bottom-offset: $kno-signature-line-bottom-offset,
+    $kno-signature-actions-gap: $kno-signature-actions-gap,
+    $kno-signature-maximized-line-width: $kno-signature-maximized-line-width
+);

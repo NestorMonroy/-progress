@@ -1,0 +1,28 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/messagebox/_theme.scss" as *;
+
+@mixin kno-messagebox--theme() {
+    @include kno-messagebox--theme-base();
+
+    .k-messagebox {
+        color: k-color(on-app-surface);
+        background: k-color(app-surface);
+        border-color: color-mix(in srgb, k-color(border) 26%, transparent);
+
+        a {
+            @include fill(
+                $color: $kno-message-box-link-text,
+            );
+
+            &:hover {
+                @include fill(
+                    $color: $kno-message-box-link-hover-text,
+                );
+            }
+        }
+
+    }
+
+}

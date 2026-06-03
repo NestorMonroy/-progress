@@ -1,0 +1,35 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { useMouse as i } from "@progress/kno-react-common";
+const p = e.forwardRef((t, o) => {
+  const r = e.useRef(null), n = e.useRef(null), { id: a, style: s, tabIndex: l, children: u, className: c, path: m = f.path } = t;
+  e.useImperativeHandle(r, () => ({
+    element: n.current,
+    props: { path: m, ...t }
+  })), e.useImperativeHandle(o, () => r.current);
+  const d = i(t, r);
+  return /* @__PURE__ */ e.createElement(
+    "col",
+    {
+      ref: n,
+      ...d,
+      id: a,
+      style: s,
+      tabIndex: l,
+      children: u,
+      className: c
+    }
+  );
+}), f = {
+  path: []
+};
+p.displayName = "KendoReactPivotGridColumn";
+export {
+  p as PivotGridColumn
+};

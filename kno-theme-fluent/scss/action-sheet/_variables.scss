@@ -1,0 +1,296 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// Horizontal padding of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-padding-x: var( --kno-actionsheet-padding-x, #{k-spacing(1)} ) !default;
+/// Vertical padding of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-padding-y: var( --kno-actionsheet-padding-y, #{k-spacing(1)} ) !default;
+/// Width of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-width: var( --kno-actionsheet-width, 360px ) !default;
+/// Maximum width of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-max-width: var( --kno-actionsheet-max-width, 100% ) !default;
+/// Height of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-height: var( --kno-actionsheet-height, 60vh ) !default;
+/// Maximum height of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-max-height: var( --kno-actionsheet-max-height, 60vh ) !default;
+
+/// Border width around the action sheet.
+/// @group action-sheet
+$kno-actionsheet-border-width: var( --kno-actionsheet-border-width, 0px ) !default;
+/// Border radius of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-border-radius: var( --kno-actionsheet-border-radius, 0px ) !default;
+
+/// Font size of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-font-size: var( --kno-actionsheet-font-size, var(--kno-font-size) ) !default;
+/// Font family of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-font-family: var( --kno-actionsheet-font-family, var(--kno-font-family) ) !default;
+/// Line height of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-line-height: var( --kno-actionsheet-line-height, var(--kno-line-height) ) !default;
+
+/// Background color of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-bg: var( --kno-actionsheet-bg, #{k-color(surface-alt)} ) !default;
+/// Text color of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-text: var( --kno-actionsheet-text, #{k-color(on-app-surface)} ) !default;
+/// Border color of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-border: var( --kno-actionsheet-border, #{color-mix(in srgb, k-color(border) 16%, transparent)} ) !default;
+/// Box shadow of the action sheet.
+/// @group action-sheet
+$kno-actionsheet-shadow: var( --kno-actionsheet-shadow, k-elevation(5) ) !default;
+
+/// Horizontal padding of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-padding-x: var( --kno-actionsheet-header-padding-x, #{k-spacing(4)} ) !default;
+/// Vertical padding of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-padding-y: var( --kno-actionsheet-header-padding-y, #{k-spacing(2)} ) !default;
+/// Border width of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-border-width: var( --kno-actionsheet-header-border-width, 1px ) !default;
+/// Font size of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-font-size: var( --kno-actionsheet-header-font-size, inherit ) !default;
+/// Font family of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-font-family: var( --kno-actionsheet-header-font-family, inherit ) !default;
+/// Line height of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-line-height: var( --kno-actionsheet-header-line-height, inherit ) !default;
+/// Spacing between the action sheet header groups.
+/// @group action-sheet
+$kno-actionsheet-header-gap: var( --kno-actionsheet-header-gap, #{k-spacing(4)} ) !default;
+/// Font weight of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-font-weight: null !default;
+
+
+/// Background color of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-bg: var( --kno-actionsheet-header-bg, inherit ) !default;
+/// Text color of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-text: var( --kno-actionsheet-header-text, inherit ) !default;
+/// Border color of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-border: var( --kno-actionsheet-header-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+/// Box shadow of the action sheet header.
+/// @group action-sheet
+$kno-actionsheet-header-shadow: var( --kno-actionsheet-header-shadow, none ) !default;
+
+/// Font size of the action sheet subtitle.
+/// @group action-sheet
+$kno-actionsheet-subtitle-font-size: var( --kno-actionsheet-subtitle-font-size, var(--kno-font-size-sm) ) !default;
+/// Line height of the action sheet subtitle.
+/// @group action-sheet
+$kno-actionsheet-subtitle-line-height: var( --kno-actionsheet-subtitle-line-height, var(--kno-line-height-sm) ) !default;
+/// Text color of the action sheet subtitle.
+/// @group action-sheet
+$kno-actionsheet-subtitle-text: var( --kno-actionsheet-subtitle-text, #{k-color(subtle)} ) !default;
+
+/// Border width of the action sheet footer.
+/// @group action-sheet
+$kno-actionsheet-footer-border-width: var( --kno-actionsheet-footer-border-width, 1px ) !default;
+
+/// Background color of the action sheet footer.
+/// @group action-sheet
+$kno-actionsheet-footer-bg: var( --kno-actionsheet-footer-bg, null ) !default;
+/// Text color of the action sheet footer.
+/// @group action-sheet
+$kno-actionsheet-footer-text: var( --kno-actionsheet-footer-text, null ) !default;
+/// Border color of the action sheet footer.
+/// @group action-sheet
+$kno-actionsheet-footer-border: var( --kno-actionsheet-header-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+/// Box shadow of the action sheet footer.
+/// @group action-sheet
+$kno-actionsheet-footer-shadow: var( --kno-actionsheet-footer-shadow, null ) !default;
+
+/// Minimum height of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-min-height: var( --kno-actionsheet-item-min-height, 40px ) !default;
+/// Horiozontal padding of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-padding-x: var( --kno-actionsheet-item-padding-x, #{k-spacing(1.5)} ) !default;
+/// Vertical padding of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-padding-y: var( --kno-actionsheet-item-padding-y, #{k-spacing(1.5)} ) !default;
+/// Border around the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-border-width: var( --kno-actionsheet-item-border-width, 1px ) !default;
+/// Spacing between the icon and the text in the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-spacing: var( --kno-actionsheet-item-spacing, #{k-spacing(1)} ) !default;
+/// Border radius of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-border-radius: null !default;
+
+/// Font weight of the action sheet item text.
+/// @group action-sheet
+$kno-actionsheet-item-title-font-weight: var( --kno-actionsheet-item-title-font-weight, inherit ) !default;
+/// Transform of the action sheet item text.
+/// @group action-sheet
+$kno-actionsheet-item-title-text-transform: var( --kno-actionsheet-item-title-text-transform, none ) !default;
+
+/// Font size of the action sheet item description.
+/// @group action-sheet
+$kno-actionsheet-item-description-font-size: var( --kno-actionsheet-item-description-font-size, var(--kno-font-size-sm) ) !default;
+/// Color of the action sheet item description.
+/// @group action-sheet
+$kno-actionsheet-item-description-text: var( --kno-actionsheet-item-description-text, #{k-color(subtle)} ) !default;
+/// Line height of the action sheet item description.
+/// @group action-sheet
+$kno-actionsheet-item-description-line-height: var( --kno-actionsheet-item-description-line-height, var(--kno-line-height-lg) ) !default;
+
+/// Hover background color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-hover-bg: var( --kno-actionsheet-item-hover-bg, #{k-color(base-hover)} ) !default;
+/// Hover text color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-hover-text: var( --kno-actionsheet-item-hover-text, #{k-color(on-base)} ) !default;
+/// Hover border color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-hover-border: var( --kno-actionsheet-item-hover-border, inherit ) !default;
+
+/// Focus background color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-focus-bg: var( --kno-actionsheet-item-focus-bg, inherit ) !default;
+/// Focus text color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-focus-text: var( --kno-actionsheet-item-focus-text, inherit ) !default;
+/// Focus border color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-focus-border: var( --kno-actionsheet-item-focus-border, inherit ) !default;
+/// Focus outline color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-focus-outline: var( --kno-actionsheet-item-focus-outline, var( --kno-outline-color, inherit ) ) !default;
+/// Focus outline width of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-focus-outline-width: var( --kno-actionsheet-item-focus-outline-width, 2px ) !default;
+
+/// Focus and hover background color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-focus-hover-bg: var( --kno-actionsheet-item-focus-hover-bg, #{$kno-actionsheet-item-hover-bg} ) !default;
+/// Focus and hover text color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-focus-hover-text: var( --kno-actionsheet-item-focus-hover-text, #{$kno-actionsheet-item-hover-text} ) !default;
+/// Focus and hover border color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-focus-hover-border: var( --kno-actionsheet-item-focus-hover-border, #{$kno-actionsheet-item-hover-border} ) !default;
+
+/// Disabled background color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-disabled-bg: var( --kno-actionsheet-item-disabled-bg, #{$kno-actionsheet-bg} ) !default;
+/// Disabled text color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-disabled-text: var( --kno-actionsheet-item-disabled-text, #{color-mix(in srgb, k-color(on-app-surface) 46%, transparent)} ) !default;
+/// Disabled border color of the action sheet item.
+/// @group action-sheet
+$kno-actionsheet-item-disabled-border: var( --kno-actionsheet-item-disabled-border, transparent ) !default;
+
+
+// Adaptive Actionsheet
+
+/// Font size of the adaptive action sheet.
+/// @group action-sheet
+$kno-adaptive-actionsheet-font-size: var( --kno-adaptive-actionsheet-font-size, #{$kno-font-size-lg} ) !default;
+/// The line height of the adaptive action sheet.
+/// @group action-sheet
+$kno-adaptive-actionsheet-line-height: var( --kno-adaptive-actionsheet-line-height, var(--kno-line-height) ) !default;
+
+/// Vertical padding of the adaptive action sheet titlebar.
+/// @group action-sheet
+$kno-adaptive-actionsheet-header-padding-y: var( --kno-adaptive-actionsheet-header-padding-y, #{k-spacing(4)} ) !default;
+/// Horizontal padding of the adaptive action sheet titlebar.
+/// @group action-sheet
+$kno-adaptive-actionsheet-header-padding-x: var( --kno-adaptive-actionsheet-header-padding-x, #{k-spacing(4)} ) !default;
+
+/// Vertical padding of the adaptive action sheet content.
+/// @group action-sheet
+$kno-adaptive-actionsheet-content-padding-y: var( --kno-adaptive-actionsheet-content-padding-y, #{k-spacing(2)} ) !default;
+/// Horizontal padding of the adaptive action sheet content.
+/// @group action-sheet
+$kno-adaptive-actionsheet-content-padding-x: var( --kno-adaptive-actionsheet-content-padding-x, #{k-spacing(4)} ) !default;
+
+/// Vertical padding of the adaptive action sheet footer.
+/// @group action-sheet
+$kno-adaptive-actionsheet-footer-padding-y: var( --kno-adaptive-actionsheet-footer-padding-y, #{k-spacing(2)} ) !default;
+/// Horizontal padding of the adaptive action sheet footer.
+/// @group action-sheet
+$kno-adaptive-actionsheet-footer-padding-x: var( --kno-adaptive-actionsheet-footer-padding-x, #{k-spacing(4)} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/action-sheet/_variables.scss" with (
+    $kno-actionsheet-padding-x: $kno-actionsheet-padding-x,
+    $kno-actionsheet-padding-y: $kno-actionsheet-padding-y,
+    $kno-actionsheet-width: $kno-actionsheet-width,
+    $kno-actionsheet-max-width: $kno-actionsheet-max-width,
+    $kno-actionsheet-height: $kno-actionsheet-height,
+    $kno-actionsheet-max-height: $kno-actionsheet-max-height,
+    $kno-actionsheet-border-width: $kno-actionsheet-border-width,
+    $kno-actionsheet-border-radius: $kno-actionsheet-border-radius,
+    $kno-actionsheet-font-size: $kno-actionsheet-font-size,
+    $kno-actionsheet-font-family: $kno-actionsheet-font-family,
+    $kno-actionsheet-line-height: $kno-actionsheet-line-height,
+    $kno-actionsheet-bg: $kno-actionsheet-bg,
+    $kno-actionsheet-text: $kno-actionsheet-text,
+    $kno-actionsheet-border: $kno-actionsheet-border,
+    $kno-actionsheet-shadow: $kno-actionsheet-shadow,
+    $kno-actionsheet-titlebar-padding-x: $kno-actionsheet-header-padding-x,
+    $kno-actionsheet-titlebar-padding-y: $kno-actionsheet-header-padding-y,
+    $kno-actionsheet-titlebar-border-width: $kno-actionsheet-header-border-width,
+    $kno-actionsheet-titlebar-font-size: $kno-actionsheet-header-font-size,
+    $kno-actionsheet-titlebar-font-family: $kno-actionsheet-header-font-family,
+    $kno-actionsheet-titlebar-line-height: $kno-actionsheet-header-line-height,
+    $kno-actionsheet-titlebar-font-weight: $kno-actionsheet-header-font-weight,
+    $kno-actionsheet-titlebar-gap: $kno-actionsheet-header-gap,
+    $kno-actionsheet-titlebar-bg: $kno-actionsheet-header-bg,
+    $kno-actionsheet-titlebar-text: $kno-actionsheet-header-text,
+    $kno-actionsheet-titlebar-border: $kno-actionsheet-header-border,
+    $kno-actionsheet-titlebar-shadow: $kno-actionsheet-header-shadow,
+    $kno-actionsheet-subtitle-font-size: $kno-actionsheet-subtitle-font-size,
+    $kno-actionsheet-subtitle-line-height: $kno-actionsheet-subtitle-line-height,
+    $kno-actionsheet-footer-border-width: $kno-actionsheet-footer-border-width,
+    $kno-actionsheet-footer-bg: $kno-actionsheet-footer-bg,
+    $kno-actionsheet-footer-text: $kno-actionsheet-footer-text,
+    $kno-actionsheet-footer-border: $kno-actionsheet-footer-border,
+    $kno-actionsheet-footer-shadow: $kno-actionsheet-footer-shadow,
+    $kno-actionsheet-subtitle-text: $kno-actionsheet-subtitle-text,
+    $kno-actionsheet-item-min-height: $kno-actionsheet-item-min-height,
+    $kno-actionsheet-item-padding-x: $kno-actionsheet-item-padding-x,
+    $kno-actionsheet-item-padding-y: $kno-actionsheet-item-padding-y,
+    $kno-actionsheet-item-border-width: $kno-actionsheet-item-border-width,
+    $kno-actionsheet-item-spacing: $kno-actionsheet-item-spacing,
+    $kno-actionsheet-item-border-radius: $kno-actionsheet-item-border-radius,
+    $kno-actionsheet-item-title-font-weight: $kno-actionsheet-item-title-font-weight,
+    $kno-actionsheet-item-title-text-transform: $kno-actionsheet-item-title-text-transform,
+    $kno-actionsheet-item-description-font-size: $kno-actionsheet-item-description-font-size,
+    $kno-actionsheet-item-description-text: $kno-actionsheet-item-description-text,
+    $kno-actionsheet-item-description-line-height: $kno-actionsheet-item-description-line-height,
+    $kno-actionsheet-item-hover-bg: $kno-actionsheet-item-hover-bg,
+    $kno-actionsheet-item-hover-text: $kno-actionsheet-item-hover-text,
+    $kno-actionsheet-item-hover-border: $kno-actionsheet-item-hover-border,
+    $kno-actionsheet-item-focus-bg: $kno-actionsheet-item-focus-bg,
+    $kno-actionsheet-item-focus-text: $kno-actionsheet-item-focus-text,
+    $kno-actionsheet-item-focus-border: $kno-actionsheet-item-focus-border,
+    $kno-actionsheet-item-disabled-bg: $kno-actionsheet-item-disabled-bg,
+    $kno-actionsheet-item-disabled-text: $kno-actionsheet-item-disabled-text,
+    $kno-actionsheet-item-disabled-border: $kno-actionsheet-item-disabled-border,
+    $kno-adaptive-actionsheet-font-size: $kno-adaptive-actionsheet-font-size,
+    $kno-adaptive-actionsheet-line-height: $kno-adaptive-actionsheet-line-height,
+    $kno-adaptive-actionsheet-titlebar-padding-y: $kno-adaptive-actionsheet-header-padding-y,
+    $kno-adaptive-actionsheet-titlebar-padding-x: $kno-adaptive-actionsheet-header-padding-x,
+    $kno-adaptive-actionsheet-content-padding-y: $kno-adaptive-actionsheet-content-padding-y,
+    $kno-adaptive-actionsheet-content-padding-x: $kno-adaptive-actionsheet-content-padding-x,
+    $kno-adaptive-actionsheet-footer-padding-y: $kno-adaptive-actionsheet-footer-padding-y,
+    $kno-adaptive-actionsheet-footer-padding-x: $kno-adaptive-actionsheet-footer-padding-x
+);

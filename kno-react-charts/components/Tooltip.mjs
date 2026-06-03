@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as o from "react";
+import { ConfigurationComponent as e } from "./base/ConfigurationComponent.mjs";
+const r = (t) => /* @__PURE__ */ o.createElement(e, { visible: !0, ...t, _chartKey: "tooltip" });
+r.displayName = "ChartTooltip";
+export {
+  r as ChartTooltip
+};

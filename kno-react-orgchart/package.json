@@ -1,0 +1,74 @@
+{
+  "name": "@progress/kno-react-orgchart",
+  "version": "15.0.0",
+  "description": "React OrgChart renders a message to the user with information about the status of an app process. knoReact OrgChart package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "/kno-react-ui",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/kno-data-query": "^1.7.2",
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-react-buttons": "15.0.0",
+    "@progress/kno-react-common": "15.0.0",
+    "@progress/kno-react-layout": "15.0.0",
+    "@progress/kno-svg-icons": "^4.9.0 || ^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "Progress",
+    "orgchart",
+    "knoReact",
+    "reactjs",
+    "UI",
+    "components",
+    "React component",
+    "Telerik"
+  ],
+  "@progress": {
+    "friendlyName": "OrgChart",
+    "framework": "knoReact",
+    "package": {
+      "productName": "knoReact",
+      "productCode": "knoUIREACT",
+      "publishDate": 1779275893,
+      "licensingDocsUrl": "my-license/?utm_medium=product&utm_source=knoreact&utm_campaign=kno-ui-react-purchase-license-keys-warning"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "peerDependenciesMeta": {
+    "@progress/kno-svg-icons": {
+      "optional": true
+    }
+  }
+}

@@ -1,0 +1,39 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+import { stopIcon as f } from "@progress/kno-svg-icons";
+import { FloatingActionButton as g } from "@progress/kno-react-buttons";
+import { aIPromptCancel as i, messages as d } from "../messages/index.mjs";
+import { useLocalization as w } from "@progress/kno-react-intl";
+import { useAIPromptContext as k } from "./AIPromptContext.mjs";
+import { outputViewDefaults as C } from "./views/constants.mjs";
+const I = t.forwardRef((r, c) => {
+  const { children: s, streaming: e, onCancel: o } = r, n = w().toLanguageString(i, d[i]), [m] = k(), l = m.activeView === C.name, p = e && !l, u = t.useCallback(
+    (a) => {
+      a.key === "Escape" && e && o && (a.preventDefault(), o());
+    },
+    [e, o]
+  );
+  return /* @__PURE__ */ t.createElement("div", { className: "k-prompt-content", ref: c, onKeyDown: u }, p && /* @__PURE__ */ t.createElement(
+    g,
+    {
+      onClick: o,
+      svgIcon: f,
+      icon: "stop",
+      size: "medium",
+      positionMode: "absolute",
+      className: "k-prompt-stop-fab k-generating",
+      "aria-label": n,
+      title: n
+    }
+  ), /* @__PURE__ */ t.createElement("div", { className: "k-prompt-view" }, s));
+});
+I.displayName = "KendoReactAIPromptContent";
+export {
+  I as AIPromptContent
+};

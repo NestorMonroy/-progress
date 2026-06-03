@@ -1,0 +1,16 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+const t = {
+  linear: !1,
+  mode: "steps",
+  value: 0
+}, o = e.createContext(t);
+export {
+  o as StepperContext
+};

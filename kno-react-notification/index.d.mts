@@ -1,0 +1,10 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Notification, NotificationHandle, NotificationProps, NotificationEvent } from './Notification.js';
+import { NotificationGroup, NotificationGroupProps } from './NotificationGroup.js';
+export { Notification, NotificationHandle, NotificationProps, NotificationEvent, NotificationGroup, NotificationGroupProps };

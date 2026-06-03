@@ -1,0 +1,25 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../utils/_index.scss" as *;
+@use "../button/_index.scss" as *;
+@use "../list/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-tabstrip--styles() {
+    @include import-once( "tabstrip" ) {
+        @include core-styles();
+        @include kno-button--styles();
+        @include kno-icon--styles();
+        @include kno-list--styles();
+        @include kno-tabstrip--layout();
+        @include kno-tabstrip--theme();
+        @include kno-utils--layout--overflow();
+        @include kno-utils--layout--position();
+    }
+}

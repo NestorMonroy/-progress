@@ -1,0 +1,82 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/panelbar/_theme.scss" as *;
+
+@mixin kno-panelbar--theme() {
+    @include kno-panelbar--theme-base();
+
+
+    .k-panelbar {
+
+        > .k-panelbar-header {
+            > .k-link {
+
+                &:focus,
+                &.k-focus {
+                    box-shadow: $kno-panelbar-header-focus-shadow;
+                }
+
+                &:disabled,
+                &.k-disabled {
+                   color: var( --kno-disabled-text, inherit );
+
+                    .k-icon,
+                    .k-panelbar-item-icon {
+                        color: inherit;
+                    }
+                }
+            }
+
+            &:disabled,
+            &.k-disabled {
+                background-color: transparent;
+
+                > .k-link {
+                    color: var( --kno-disabled-text, inherit );
+                }
+
+                .k-icon,
+                .k-panelbar-item-icon {
+                    color: inherit;
+                }
+            }
+        }
+
+        .k-panelbar-group > .k-panelbar-item {
+            > .k-link {
+                color: $kno-panelbar-text;
+                background-color: $kno-panelbar-bg;
+                border-color: $kno-panelbar-border;
+
+
+                &:focus,
+                &.k-focus {
+                    box-shadow: $kno-panelbar-item-focus-shadow;
+                }
+
+                &.k-disabled {
+                    color: var( --kno-disabled-text, inherit );
+
+                    .k-icon,
+                    .k-panelbar-item-icon {
+                        color: inherit;
+                    }
+                }
+            }
+
+            &:disabled,
+            &.k-disabled {
+                background-color: transparent;
+
+                > .k-link {
+                    color: var( --kno-disabled-text, inherit );
+                }
+
+                .k-icon,
+                .k-panelbar-item-icon {
+                    color: inherit;
+                }
+            }
+        }
+    }
+}

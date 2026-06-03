@@ -1,0 +1,24 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as a from "react";
+const i = (...n) => {
+  const r = a.useRef(void 0);
+  return (o) => {
+    r.current !== void 0 && window.cancelAnimationFrame(r.current);
+    const e = o.currentTarget, c = e.scrollLeft;
+    n.forEach((l) => {
+      const t = l.current;
+      t && t !== e && (r.current = window.requestAnimationFrame(() => {
+        t.scrollLeft = Math.round(c);
+      }));
+    });
+  };
+};
+export {
+  i as useHorizontalScrollSync
+};

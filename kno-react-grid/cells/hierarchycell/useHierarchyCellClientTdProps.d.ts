@@ -1,0 +1,32 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { GridCellProps } from '../../interfaces/GridCellProps';
+/**
+ * @hidden
+ */
+export declare const useHierarchyCellClientTdProps: (props: GridCellProps) => {
+    onKeyDown: (event: any) => void;
+    tabIndex?: undefined;
+    "data-keyboardnavlevel"?: undefined;
+    "data-keyboardnavid"?: undefined;
+} | {
+    onKeyDown?: undefined;
+    tabIndex?: undefined;
+    "data-keyboardnavlevel"?: undefined;
+    "data-keyboardnavid"?: undefined;
+} | {
+    onKeyDown: (event: any) => void;
+    tabIndex: number;
+    "data-keyboardnavlevel": number;
+    "data-keyboardnavid": string;
+} | {
+    onKeyDown?: undefined;
+    tabIndex: number;
+    "data-keyboardnavlevel": number;
+    "data-keyboardnavid": string;
+};

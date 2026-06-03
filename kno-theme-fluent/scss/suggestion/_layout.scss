@@ -1,0 +1,16 @@
+@use "./_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/suggestion/_layout.scss" as *;
+
+@mixin kno-suggestion--layout() {
+    @include kno-suggestion--layout-base();
+
+    .k-suggestion {
+        &:focus,
+        &.k-focus {
+            outline-width: calc( #{$kno-suggestion-border-width} * 2);
+            outline-style: solid;
+            outline-offset: calc( #{$kno-suggestion-border-width} * 2 * -1);
+        }
+    }
+}

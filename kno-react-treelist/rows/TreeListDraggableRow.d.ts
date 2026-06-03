@@ -1,0 +1,39 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { TreeListRowProps } from '../interfaces/TreeListRowProps';
+import * as React from 'react';
+interface RowDragClueProps {
+    visible: boolean;
+    top: number;
+    left: number;
+    text: string;
+    allowDrop: boolean;
+}
+interface TreeListRowState {
+    clueProps: RowDragClueProps;
+}
+/**
+ * The TreeList draggable row component.
+ */
+export declare class TreeListDraggableRow extends React.Component<TreeListRowProps, TreeListRowState> {
+    /**
+     * @hidden
+     */
+    readonly state: TreeListRowState;
+    private draggable;
+    private dragged;
+    private draggedOver;
+    /**
+     * @hidden
+     */
+    render(): React.JSX.Element;
+    private onPress;
+    private onDrag;
+    private onRelease;
+}
+export {};

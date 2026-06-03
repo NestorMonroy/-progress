@@ -1,0 +1,23 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as t from "react";
+import { useUnstyled as c, uGrid as i, classNames as l } from "@progress/kno-react-common";
+import { useLocalization as n } from "@progress/kno-react-intl";
+import { headerGroupSpacerAccessibleLabel as a, messages as m } from "../messages/index.mjs";
+const f = (p) => {
+  var r;
+  const e = c(), o = (r = e == null ? void 0 : e.uGrid) != null ? r : i, s = n().toLanguageString(
+    a,
+    m[a]
+  );
+  return /* @__PURE__ */ t.createElement("span", { className: l(o.srOnly({})) }, s);
+};
+export {
+  f as GridHeaderGroupSpacerCell
+};

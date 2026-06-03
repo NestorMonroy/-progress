@@ -1,0 +1,69 @@
+@use "sass:math";
+@use "./_variables.scss" as *;
+@use "../core/z-index/index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/slider/_layout.scss" as *;
+
+
+@mixin kno-slider--layout() {
+
+    @include kno-slider--layout-base();
+
+    .k-slider {
+        .k-tick {
+            margin: 0;
+
+            &::after {
+                $tick-offset: calc( #{$kno-slider-tick-size} / -2 );
+
+                content: "";
+                position: absolute;
+                z-index: k-z-index("base", 1);
+                height: $kno-slider-tick-size;
+                width: $kno-slider-tick-size;
+                top: 50%;
+                left: 50%;
+                margin: $tick-offset 0 0 $tick-offset;
+                border-radius: 50%;
+            }
+        }
+
+        .k-draghandle {
+            z-index: k-z-index("base", 2);
+        }
+    }
+
+    .k-slider-horizontal {
+
+        .k-slider-track-wrap {
+            padding-inline: $kno-slider-tick-size;
+        }
+
+        .k-tick {
+            &.k-first::after {
+                left: 0;
+            }
+            &.k-last::after {
+                left: auto;
+                right: 0;
+            }
+        }
+    }
+
+    .k-slider-vertical {
+
+        .k-slider-track-wrap {
+            padding-block: $kno-slider-tick-size;
+        }
+
+        .k-tick {
+            &.k-last::after {
+                inset-block-start: 0;
+            }
+            &.k-first::after {
+                inset-block-start: auto;
+                inset-block-end: 0;
+            }
+        }
+    }
+
+}

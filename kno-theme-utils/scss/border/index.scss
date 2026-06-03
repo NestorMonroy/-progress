@@ -1,0 +1,20 @@
+@use "./_border-color.scss" as *;
+@use "./_border-radius.scss" as *;
+@use "./_border-style.scss" as *;
+@use "./_border-width.scss" as *;
+@use "./_outline-color.scss" as *;
+@use "./_outline-offset.scss" as *;
+@use "./_outline-style.scss" as *;
+@use "./_outline-width.scss" as *;
+
+
+@mixin kno-utils--border() {
+    @include kno-utils--border--border-color();
+    @include kno-utils--border--border-radius();
+    @include kno-utils--border--border-style();
+    @include kno-utils--border--border-width();
+    @include kno-utils--border--outline-color();
+    @include kno-utils--border--outline-offset();
+    @include kno-utils--border--outline-style();
+    @include kno-utils--border--outline-width();
+}

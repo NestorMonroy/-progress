@@ -1,0 +1,26 @@
+@use "./_container.scss" as *;
+@use "./_row.scss" as *;
+@use "./_col.scss" as *;
+@use "./_col-gap.scss" as *;
+@use "../_globals.scss" as *;
+
+
+@mixin kno-utils--responsive-layout() {
+    @include kno-utils--responsive-layout--container();
+    @include kno-utils--responsive-layout--row();
+    @include kno-utils--responsive-layout--col();
+    @include kno-utils--responsive-layout--col-gap();
+
+    @each $key, $val in $kno-breakpoints {
+        @include kno-breakpoint-up($key) {
+            @include kno-utils--responsive-layout--col--responsive($key);
+            @include kno-utils--responsive-layout--col-gap--responsive($key);
+        }
+    }
+
+    @each $key, $val in $kno-container-max-widths {
+        @include kno-breakpoint-up($key) {
+            @include kno-utils--responsive-layout--container--responsive($key, $val);
+        }
+    }
+}

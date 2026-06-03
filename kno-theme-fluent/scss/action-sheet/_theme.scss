@@ -1,0 +1,32 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/action-sheet/_theme.scss" as *;
+
+@mixin kno-action-sheet--theme() {
+    @include kno-action-sheet--theme-base();
+
+    .k-actionsheet-subtitle {
+        color: inherit;
+    }
+
+    .k-actionsheet-item {
+
+        &:focus,
+        &.k-focus {
+            &:hover,
+            &.k-hover {
+                color: $kno-actionsheet-item-focus-hover-text;
+                background-color: $kno-actionsheet-item-focus-hover-bg;
+                border-color: $kno-actionsheet-item-focus-hover-border;
+            }
+        }
+
+        &:disabled,
+        &.k-disabled {
+            .k-actionsheet-item-description,
+            .k-actionsheet-item-icon {
+                color: inherit;
+            }
+        }
+    }
+}

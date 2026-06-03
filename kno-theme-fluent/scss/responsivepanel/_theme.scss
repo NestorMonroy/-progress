@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/responsivepanel/_theme.scss" as *;
+
+@mixin kno-responsive-panel--theme() {
+    @include kno-responsive-panel--theme-base();
+}

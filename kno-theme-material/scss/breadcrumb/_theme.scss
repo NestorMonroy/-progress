@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/breadcrumb/_theme.scss" as *;
+
+
+@mixin kno-breadcrumb--theme() {
+    @include kno-breadcrumb--theme-base();
+}

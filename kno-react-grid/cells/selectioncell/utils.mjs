@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { classNames as a } from "@progress/kno-react-common";
+const c = (e) => {
+  const l = a("k-table-td", e.className);
+  return { tdProps: {
+    colSpan: e.colSpan,
+    style: e.style,
+    className: l,
+    "aria-colindex": e.ariaColumnIndex,
+    role: "gridcell"
+  } };
+}, o = (e) => {
+  var l, t;
+  return (t = (l = e.cells) == null ? void 0 : l.select) == null ? void 0 : t[e.rowType || "data"];
+};
+export {
+  o as getCustomCell,
+  c as getSelectionCellTdProps
+};

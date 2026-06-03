@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const u=require("react"),i=require("./BaseGauge.js"),o=require("@progress/kno-charts"),l=require("@progress/kno-drawing"),g=require("@progress/kno-react-common"),c=require("./utils/css-variables.js");function m(r){const e=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(r){for(const t in r)if(t!=="default"){const s=Object.getOwnPropertyDescriptor(r,t);Object.defineProperty(e,t,s.get?s:{enumerable:!0,get:()=>r[t]})}}return e.default=r,Object.freeze(e)}const n=m(u);class p extends n.Component{constructor(){super(...arguments),this._baseGauge=null,this.getTarget=()=>this,this.deriveOptionsFromParent=e=>{const{pointer:t,scale:s}=this.props,a={...e,pointer:t,scale:s};return this.element?c.resolveGaugeColorsVariables(a,this.element):a}}get gaugeInstance(){return this._baseGauge!==null?this._baseGauge.gaugeInstance:null}get surface(){return this._baseGauge!==null?this._baseGauge.surface:null}get element(){return this._baseGauge!==null?this._baseGauge.element:null}render(){const{children:e,className:t,...s}=this.props;return n.createElement(i.BaseGauge,{...s,deriveOptionsFromParent:this.deriveOptionsFromParent,ref:a=>{this._baseGauge=a},gaugeConstructor:o.RadialGauge,getTarget:this.getTarget,className:g.classNames("k-gauge",t)},e)}exportVisual(e){return this.gaugeInstance!==null?Promise.resolve(this.gaugeInstance.exportVisual(e)):Promise.resolve(new l.Group)}}exports.RadialGauge=p;

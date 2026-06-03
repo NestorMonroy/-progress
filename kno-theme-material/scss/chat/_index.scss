@@ -1,0 +1,42 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../textarea/_index.scss" as *;
+@use "../card/_index.scss" as *;
+@use "../appbar/_index.scss" as *;
+@use "../toolbar/_index.scss" as *;
+@use "../bubble/_index.scss" as *;
+@use "../upload/_index.scss" as *;
+@use "../dropzone/_index.scss" as *;
+@use "../avatar/_index.scss" as *;
+@use "../speech-to-text-button/_index.scss" as *;
+@use "../suggestion/_index.scss" as *;
+@use "../skeleton/_index.scss" as *;
+@use "../prompt-box/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-chat--styles() {
+    @include import-once( "chat" ) {
+        @include core-styles();
+        @include kno-textarea--styles();
+        @include kno-card--styles();
+        @include kno-icon--styles();
+        @include kno-appbar--styles();
+        @include kno-toolbar--styles();
+        @include kno-bubble--styles();
+        @include kno-suggestion--styles();
+        @include kno-skeleton--styles();
+        @include kno-upload--styles();
+        @include kno-dropzone--styles();
+        @include kno-avatar--styles();
+        @include kno-prompt-box--styles();
+        @include kno-speech-to-text-button--styles();
+        @include kno-chat--layout();
+        @include kno-chat--theme();
+    }
+}

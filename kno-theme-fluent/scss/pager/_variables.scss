@@ -1,0 +1,120 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../button/_variables.scss" as *;
+
+/// The default size of the Pager.
+/// @group pager
+/// @role default
+$kno-pager-default-size: "md" !default;
+
+/// The horizontal padding of the Pager.
+/// @group pager
+$kno-pager-padding-x: var( --kno-pager-padding-x, #{k-spacing(2)} ) !default;
+/// The horizontal padding of the small Pager.
+/// @group pager
+$kno-pager-sm-padding-x: var( --kno-pager-sm-padding-x, #{k-spacing(1.5)} ) !default;
+/// The horizontal padding of the medium Pager.
+/// @group pager
+$kno-pager-md-padding-x: var( --kno-pager-md-padding-x, #{k-spacing(2)} ) !default;
+/// The horizontal padding of the large Pager.
+/// @group pager
+$kno-pager-lg-padding-x: var( --kno-pager-lg-padding-x, #{k-spacing(2.5)} ) !default;
+
+/// The vertical padding of the small Pager.
+/// @group pager
+$kno-pager-sm-padding-y: var( --kno-pager-sm-padding-y, #{$kno-pager-sm-padding-x} ) !default;
+/// The vertical padding of the medium Pager.
+/// @group pager
+$kno-pager-md-padding-y: var( --kno-pager-md-padding-y, #{$kno-pager-md-padding-x} ) !default;
+/// The vertical padding of the large Pager.
+/// @group pager
+$kno-pager-lg-padding-y: var( --kno-pager-lg-padding-y, #{$kno-pager-lg-padding-x} ) !default;
+/// The border width of the Pager.
+/// @group pager
+$kno-pager-border-width: var( --kno-pager-border-width, 1px ) !default;
+
+/// The font family of the Pager.
+/// @group pager
+$kno-pager-font-family: var( --kno-pager-font-family, var(--kno-font-family) ) !default;
+/// The font size of the Pager.
+/// @group pager
+$kno-pager-font-size: var( --kno-pager-font-size, var(--kno-font-size) ) !default;
+/// The line height of the Pager.
+/// @group pager
+$kno-pager-line-height: var( --kno-pager-line-height, var(--kno-line-height) ) !default;
+
+/// The background color of the Pager.
+/// @group pager
+$kno-pager-bg: var( --kno-pager-bg, #{k-color(surface)} ) !default;
+/// The text color of the Pager.
+/// @group pager
+$kno-pager-text: var( --kno-pager-text, #{k-color(on-app-surface)} ) !default;
+/// The border color of the Pager.
+/// @group pager
+$kno-pager-border: var( --kno-pager-border, #{color-mix(in srgb, k-color(border) 16%, transparent)} ) !default;
+
+/// The background color of the focused Pager.
+/// @group pager
+$kno-pager-focus-bg: var( --kno-pager-focus-bg, #{$kno-pager-bg} ) !default;
+/// The text color of the focused Pager.
+/// @group pager
+$kno-pager-focus-text: var( --kno-pager-focus-text, #{$kno-pager-text} ) !default;
+/// The border color of the focused Pager.
+/// @group pager
+$kno-pager-focus-border: var( --kno-pager-focus-border, #{k-color(border)} ) !default;
+
+/// The border radius of the Pager items.
+/// @group pager
+$kno-pager-item-border-radius: var( --kno-pager-item-border-radius, k-border-radius(md) ) !default;
+/// The spacing around the Pager items.
+/// @group pager
+$kno-pager-item-spacing: var( --kno-pager-item-spacing, null ) !default;
+
+/// The spacing between the item groups of the small Pager.
+/// @group pager
+$kno-pager-sm-item-group-spacing: var( --kno-pager-sm-item-group-spacing, #{k-spacing(2)} ) !default;
+/// The spacing between the item groups of the medium Pager.
+/// @group pager
+$kno-pager-md-item-group-spacing: var( --kno-pager-md-item-group-spacing, #{k-spacing(2)} ) !default;
+/// The spacing between the item groups of the large Pager.
+/// @group pager
+$kno-pager-lg-item-group-spacing: var( --kno-pager-lg-item-group-spacing, #{k-spacing(2)} ) !default;
+
+/// The text color of the Pagers' sizes label.
+/// @group pager
+$kno-pager-sizes-label-text: var( --kno-pager-sizes-label-text, #{k-color(on-app-surface)} ) !default;
+
+/// The text color of the Pagers' info label.
+/// @group pager
+$kno-pager-info-label-text: var( --kno-pager-info-label-text, #{k-color(subtle)} ) !default;
+
+/// The width of the Inputs in the Pager.
+/// @group pager
+$kno-pager-input-width: var( --kno-pager-input-width, 5em ) !default;
+/// The width of the DropDowns in the Pager.
+/// @group pager
+$kno-pager-dropdown-width: var( --kno-pager-dropdown-width, 5em ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/pager/_variables.scss" with (
+    $kno-pager-default-size: $kno-pager-default-size,
+    $kno-pager-sm-padding-x: $kno-pager-sm-padding-x,
+    $kno-pager-md-padding-x: $kno-pager-md-padding-x,
+    $kno-pager-lg-padding-x: $kno-pager-lg-padding-x,
+    $kno-pager-sm-padding-y: $kno-pager-sm-padding-y,
+    $kno-pager-md-padding-y: $kno-pager-md-padding-y,
+    $kno-pager-lg-padding-y: $kno-pager-lg-padding-y,
+    $kno-pager-sm-item-group-spacing: $kno-pager-sm-item-group-spacing,
+    $kno-pager-md-item-group-spacing: $kno-pager-md-item-group-spacing,
+    $kno-pager-lg-item-group-spacing: $kno-pager-lg-item-group-spacing,
+    $kno-pager-border-width: $kno-pager-border-width,
+    $kno-pager-font-family: $kno-pager-font-family,
+    $kno-pager-font-size: $kno-pager-font-size,
+    $kno-pager-line-height: $kno-pager-line-height,
+    $kno-pager-bg: $kno-pager-bg,
+    $kno-pager-text: $kno-pager-text,
+    $kno-pager-border: $kno-pager-border,
+    $kno-pager-focus-bg: $kno-pager-focus-bg,
+    $kno-pager-item-spacing: $kno-pager-item-spacing,
+    $kno-pager-input-width: $kno-pager-input-width,
+    $kno-pager-dropdown-width: $kno-pager-dropdown-width
+);

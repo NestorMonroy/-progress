@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { fieldList as i } from "./fieldList.mjs";
+const e = {};
+e.undefined = () => {
+};
+function s(t) {
+  if (e[t])
+    return e[t];
+  const o = i(t);
+  return e[t] = function(u) {
+    let r = u;
+    for (let n = 0; n < o.length && r; n++)
+      r = r[o[n]];
+    return r;
+  }, e[t];
+}
+export {
+  s as getter
+};

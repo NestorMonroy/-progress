@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { InsertLinkDialog as t } from "./insertLink.mjs";
+import { InsertImageDialog as g } from "./insertImage.mjs";
+import { ViewHtmlDialog as m } from "./viewHtml.mjs";
+import { FindAndReplaceDialog as r } from "./FindReplace.mjs";
+var i;
+((e) => {
+  class l extends t {
+  }
+  e.InsertLinkDialog = l;
+  class n extends g {
+  }
+  e.InsertImageDialog = n;
+  class s extends m {
+  }
+  e.ViewHtmlDialog = s;
+  class o extends r {
+  }
+  e.FindAndReplaceDialog = o;
+})(i || (i = {}));
+export {
+  i as EditorDialogs
+};

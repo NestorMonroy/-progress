@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/textarea/_layout.scss" as *;
+
+
+@mixin kno-textarea--layout() {
+    @include kno-textarea--layout-base();
+}

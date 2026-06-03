@@ -1,0 +1,12 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/** @hidden */
+export declare const createPropsContext: <T extends unknown>() => React.Context<(p: T) => T>;
+/** @hidden */
+export declare const withPropsContext: <T extends unknown>(context: React.Context<(p: React.PropsWithoutRef<T>) => React.PropsWithoutRef<T>>, Component: React.ComponentType<T>) => React.ForwardRefExoticComponent<React.PropsWithoutRef<T> & React.RefAttributes<any>>;

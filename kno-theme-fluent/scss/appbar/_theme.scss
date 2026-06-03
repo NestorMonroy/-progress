@@ -1,0 +1,34 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/appbar/_theme.scss" as *;
+
+@mixin kendo-appbar--theme() {
+
+    @include kendo-appbar--theme-base();
+
+    .k-appbar-base {
+        color: $kendo-appbar-text;
+        background-color: $kendo-appbar-bg;
+    }
+
+    .k-appbar {
+        border-bottom: 1px solid $kendo-appbar-border;
+    }
+
+    .k-appbar.k-appbar-bottom {
+        border-bottom: none;
+        border-top: 1px solid $kendo-appbar-border;
+    }
+
+    .k-appbar-inherit {
+        color: inherit;
+        background-color: inherit;
+        border-color: inherit;
+    }
+
+    .k-appbar-subtitle {
+        color: inherit;
+    }
+
+}

@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/notification/_theme.scss" as *;
+
+@mixin kno-notification--theme() {
+    @include kno-notification--theme-base();
+
+}

@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/adaptive/_layout.scss" as *;
+
+
+@mixin kno-adaptive--layout() {
+    @include kno-adaptive--layout-base();
+}

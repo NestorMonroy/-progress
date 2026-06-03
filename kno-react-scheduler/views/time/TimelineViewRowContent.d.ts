@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/** @hidden */
+export interface TimelineViewRowContentProps {
+    children?: React.ReactNode;
+}
+/** @hidden */
+export declare const TimelineViewRowContent: React.FunctionComponent<TimelineViewRowContentProps>;

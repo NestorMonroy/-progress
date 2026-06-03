@@ -1,0 +1,5 @@
+@use "../core/_index.scss" as *;
+
+/// Color of the searchbox icon.
+/// @group searchbox
+$kno-searchbox-icon-color: var( --kno-searchbox-icon-color, k-color(primary-on-surface) ) !default;

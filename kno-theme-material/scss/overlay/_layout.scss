@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/overlay/_layout.scss" as *;
+
+
+@mixin kno-overlay--layout() {
+    @include kno-overlay--layout-base();
+}

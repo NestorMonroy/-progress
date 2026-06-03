@@ -1,0 +1,69 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../menu/_variables.scss"as *;
+@use "../toolbar/_variables.scss"as *;
+@use "../forms/_variables.scss" as *;
+@use "../input/_variables.scss" as *;
+@use "../list/_variables.scss" as *;
+@use "./_variables.scss" as *;
+@use "../core/spacing/_index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/spreadsheet/_layout.scss" as *;
+
+@mixin kno-spreadsheet--layout() {
+    @include kno-spreadsheet--layout-base();
+
+    .k-spreadsheet-sheets-items {
+        .k-item {
+            .k-spreadsheet-sheets-remove {
+                margin-inline-start: $kno-spreadsheet-sheets-remove-inline-start;
+                margin-inline-end: $kno-spreadsheet-sheets-remove-inline-end;
+            }
+        }
+    }
+
+    // Selection
+    .k-spreadsheet .k-spreadsheet-selection {
+        border-width: 2px;
+    }
+
+
+    // Filter menu
+    .k-spreadsheet-filter-menu {
+        .k-link {
+            padding-inline-start: $kno-filter-menu-padding-left;
+        }
+        .k-icon {
+            margin-inline-end: k-spacing(1);
+        }
+
+        .k-details-summary,
+        .k-columnmenu-item {
+            padding-block: $kno-menu-popup-md-item-padding-y;
+            padding-inline: $kno-menu-popup-md-item-padding-x;
+        }
+        .k-details-content,
+        .k-columnmenu-item-content {
+            padding-inline: $kno-spreadsheet-popup-menu-padding-x;
+            padding-block: $kno-spreadsheet-popup-menu-padding-y;
+
+            .k-actions {
+                margin-block-start: k-spacing(3);
+            }
+        }
+    }
+
+    // Insert image dialog
+    .k-spreadsheet-insert-image-dialog {
+        label {
+            background-image: $kno-spreadsheet-insert-image-dialog-img;
+        }
+    }
+
+    .k-spreadsheet .k-tabstrip-bottom > .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item.k-active::after,
+        .k-item.k-active::after {
+            top: unset;
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@forward "./_border-collapse.scss";
+@forward "./_table-layout.scss";
+
+@use "./_border-collapse.scss" as *;
+@use "./_table-layout.scss" as *;
+
+
+@mixin kno-utils--table() {
+    @include kno-utils--table--border-collapse();
+    @include kno-utils--table--table-layout();
+}

@@ -1,0 +1,52 @@
+@use "../core/_index.scss" as *;
+@use "../card/_variables.scss" as *;
+@use "../toolbar/_variables.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/taskboard/_theme.scss" as *;
+
+@mixin kno-task-board--theme() {
+    @include kno-task-board--theme-base();
+
+    // Cards
+    .k-taskboard-card {
+        &:focus,
+        &.k-focus {
+            @include fill(
+                $kno-card-focus-text,
+                $kno-card-focus-bg,
+                $kno-card-focus-border
+            );
+            @include focus-indicator( $kno-card-focus-shadow );
+        }
+
+        &.k-selected {
+            background: $kno-taskboard-card-selected-bg;
+
+            .k-card-header {
+                background: $kno-taskboard-card-selected-bg;
+            }
+        }
+
+        &.k-disabled {
+            @include fill(
+                color-mix(in srgb, k-color(on-app-surface) 46%, transparent),
+                k-color(base-subtle),
+                transparent
+
+            );
+
+            .k-card-header {
+                @include fill( $color: color-mix(in srgb, k-color(on-app-surface) 46%, transparent) );
+            }
+        }
+    }
+
+    // Toolbar
+    .k-taskboard-toolbar {
+       @include fill(
+            $bg: $kno-toolbar-bg
+        );
+        @include box-shadow( $kno-toolbar-shadow );
+    }
+
+}

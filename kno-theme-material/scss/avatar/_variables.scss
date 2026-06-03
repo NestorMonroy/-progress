@@ -1,0 +1,63 @@
+@use "../core/_index.scss" as *;
+
+// Avatar
+
+/// The default theme color of the Avatar.
+/// @group avatar
+/// @role default
+$kno-avatar-default-theme-color: "primary" !default;
+/// The default fill mode of the Avatar.
+/// @group avatar
+/// @role default
+$kno-avatar-default-fill-mode: "solid" !default;
+/// The default roundness of the Avatar.
+/// @group avatar
+/// @role default
+$kno-avatar-default-roundness: "full" !default;
+/// The default size of the Avatar.
+/// @group avatar
+/// @role default
+$kno-avatar-default-size: "md" !default;
+
+/// The border width of the Avatar.
+/// @group avatar
+$kno-avatar-border-width: 1px !default;
+
+/// The border radius of the Avatar.
+/// @group avatar
+$kno-avatar-border-radius: null !default;
+
+/// The font family of the Avatar.
+/// @group avatar
+$kno-avatar-font-family: var(--kno-font-family) !default;
+/// The font size of the Avatar.
+/// @group avatar
+$kno-avatar-font-size: var(--kno-font-size) !default;
+/// The line height of the Avatar.
+/// @group avatar
+$kno-avatar-line-height: var(--kno-line-height) !default;
+
+/// The small size of the Avatar.
+/// @group avatar
+$kno-avatar-sm-size: k-spacing(4) !default;
+/// The medium size of the Avatar.
+/// @group avatar
+$kno-avatar-md-size: k-spacing(8) !default;
+/// The large size of the Avatar.
+/// @group avatar
+$kno-avatar-lg-size: k-spacing(16) !default;
+
+@forward "@progress/kno-theme-core/scss/components/avatar/_variables.scss" with (
+    $kno-avatar-default-theme-color: $kno-avatar-default-theme-color,
+    $kno-avatar-default-fill-mode: $kno-avatar-default-fill-mode,
+    $kno-avatar-default-roundness: $kno-avatar-default-roundness,
+    $kno-avatar-default-size: $kno-avatar-default-size,
+    $kno-avatar-border-width: $kno-avatar-border-width,
+    $kno-avatar-border-radius: $kno-avatar-border-radius,
+    $kno-avatar-font-family: $kno-avatar-font-family,
+    $kno-avatar-font-size: $kno-avatar-font-size,
+    $kno-avatar-line-height: $kno-avatar-line-height,
+    $kno-avatar-sm-size: $kno-avatar-sm-size,
+    $kno-avatar-md-size: $kno-avatar-md-size,
+    $kno-avatar-lg-size: $kno-avatar-lg-size
+);

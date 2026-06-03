@@ -1,0 +1,16 @@
+@use "@progress/kno-theme-core/scss/components/spreadsheet/_layout.scss" as *;
+
+
+@mixin kno-spreadsheet--layout() {
+
+    @include kno-spreadsheet--layout-base();
+
+    // Spreadsheet tabstrip
+    .k-spreadsheet-tabstrip {
+        padding-block-start: 0;
+
+        .k-tabstrip-items-wrapper {
+            border-width: 0;
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@use "../core/_index.scss" as *;
+@use "../grid/_variables.scss" as *;
+
+/// The background color of the TreeList footer row.
+/// @group treelist
+$kno-treelist-footer-row-bg: var( --kno-treelist-footer-row-bg, $kno-grid-hover-bg ) !default;
+/// The border width of the TreeList footer row.
+/// @group treelist
+$kno-treelist-footer-row-border-width: var( --kno-treelist-footer-row-border-width, 1px ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/treelist/_variables.scss" with (
+    $kno-treelist-footer-row-bg: $kno-treelist-footer-row-bg,
+    $kno-treelist-footer-row-border-width: $kno-treelist-footer-row-border-width
+);

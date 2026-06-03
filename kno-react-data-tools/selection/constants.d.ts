@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/** @hidden */
+export declare const TABLE_ROW_INDEX_ATTRIBUTE = "data-grid-row-index";
+/** @hidden */
+export declare const TABLE_COL_INDEX_ATTRIBUTE = "data-grid-col-index";
+/** @hidden */
+export declare const TABLE_PREVENT_SELECTION_ELEMENT = "data-prevent-selection";

@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// The border radius of the Panel.
+/// @group panel
+$kno-panel-border-radius: var( --kno-panel-border-radius, #{k-border-radius(md)} ) !default;
+/// The width of the border around the Panel.
+/// @group panel
+$kno-panel-border-width: var( --kno-panel-border-width, 1px ) !default;
+/// The style of the border around the Panel.
+/// @group panel
+$kno-panel-border-style: var( --kno-panel-border-style, solid ) !default;
+
+/// The inline padding of the Panel header.
+/// @group panel
+$kno-panel-header-padding-inline: var( --kno-panel-header-padding-inline, #{k-spacing(2)} ) !default;
+/// The block padding of the Panel header.
+/// @group panel
+$kno-panel-header-padding-block: var( --kno-panel-header-padding-block, #{k-spacing(1)} ) !default;
+
+/// The inline padding of the Panel content.
+/// @group panel
+$kno-panel-content-padding-inline: var( --kno-panel-content-padding-inline, #{k-spacing(2)} ) !default;
+/// The block padding of the Panel content.
+/// @group panel
+$kno-panel-content-padding-block: var( --kno-panel-content-padding-block, #{k-spacing(1)} ) !default;
+
+/// The text color of the Panel.
+/// @group panel
+$kno-panel-text: var( --kno-panel-text, #{k-color(on-app-surface)} ) !default;
+/// The background color of the Panel.
+/// @group panel
+$kno-panel-bg: var( --kno-panel-bg, #{k-color(surface-alt)} ) !default;
+/// The color of the border around the Panel.
+/// @group panel
+$kno-panel-border: var( --kno-panel-border, #{color-mix(in srgb, k-color(border) 16%, transparent)} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/panel/_variables.scss" with (
+    $kno-panel-border-radius: $kno-panel-border-radius,
+    $kno-panel-border-width: $kno-panel-border-width,
+    $kno-panel-border-style: $kno-panel-border-style,
+    $kno-panel-header-padding-inline: $kno-panel-header-padding-inline,
+    $kno-panel-header-padding-block: $kno-panel-header-padding-block,
+    $kno-panel-content-padding-inline: $kno-panel-content-padding-inline,
+    $kno-panel-content-padding-block: $kno-panel-content-padding-block,
+    $kno-panel-text: $kno-panel-text,
+    $kno-panel-bg: $kno-panel-bg,
+    $kno-panel-border: $kno-panel-border
+);

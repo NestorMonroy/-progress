@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import e from "prop-types";
+const o = (l) => null;
+o.propTypes = {
+  children: e.oneOfType([e.arrayOf(e.element), e.element]),
+  headerCellOptions: e.any,
+  hidden: e.bool,
+  level: e.number,
+  locked: e.bool,
+  title: e.string,
+  width: e.number
+};
+export {
+  o as ExcelExportColumnGroup
+};

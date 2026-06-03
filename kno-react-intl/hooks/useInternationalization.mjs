@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as t from "react";
+import { GlobalizationContext as o } from "../globalization/GlobalizationContext.mjs";
+const i = () => t.useContext(o).intl;
+export {
+  i as useInternationalization
+};

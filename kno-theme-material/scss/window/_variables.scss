@@ -1,0 +1,135 @@
+@use "sass:math";
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use"../action-buttons/_variables.scss" as *;
+
+// Window
+
+/// The default size of the Window.
+/// @group window
+/// @role default
+$kno-window-default-size: "auto" !default;
+
+/// The width of the border around the Window.
+/// @group window
+$kno-window-border-width: 0px !default;
+/// The border radius of the Window.
+/// @group window
+$kno-window-border-radius: k-border-radius(xxxl) !default;
+/// The font family of the Window.
+/// @group window
+$kno-window-font-family: var(--kno-font-family) !default;
+/// The font size of the Window.
+/// @group window
+$kno-window-font-size: var(--kno-font-size) !default;
+/// The line height of the Window.
+/// @group window
+$kno-window-line-height: var(--kno-line-height) !default;
+
+/// The horizontal padding of the Window titlebar.
+/// @group window
+$kno-window-titlebar-padding-x: k-spacing(6) !default;
+/// The vertical padding of the Window titlebar.
+/// @group window
+$kno-window-titlebar-padding-y: k-spacing(5) !default;
+/// The width of the border of the Window titlebar.
+/// @group window
+$kno-window-titlebar-border-width: 0px !default;
+/// The style of the border of the Window titlebar.
+/// @group window
+$kno-window-titlebar-border-style: solid !default;
+
+/// The font size of the title of the Window.
+/// @group window
+$kno-window-title-font-size: var(--kno-font-size-xl) !default;
+/// The line height of the title of the Window.
+/// @group window
+$kno-window-title-line-height: var(--kno-line-height-lg) !default;
+
+/// The spacing between the buttons in the Window titlebar.
+/// @group window
+$kno-window-actions-gap: null !default;
+/// The opacity of the buttons in the Window titlebar.
+/// @group window
+$kno-window-action-opacity: null !default;
+/// The opacity of the hovered buttons in the Window titlebar.
+/// @group window
+$kno-window-action-hover-opacity: null !default;
+
+/// The horizontal padding of the content of the Window.
+/// @group window
+$kno-window-inner-padding-x: k-spacing(6) !default;
+/// The vertical padding of the content of the Window.
+/// @group window
+$kno-window-inner-padding-y: k-spacing(4) !default;
+
+/// The horizontal padding of the Window action buttons.
+/// @group window
+$kno-window-buttongroup-padding-x: $kno-actions-padding-x !default;
+/// The vertical padding of the Window action buttons.
+/// @group window
+$kno-window-buttongroup-padding-y: $kno-actions-padding-y !default;
+/// The width of the top border of the Window action buttons.
+/// @group window
+$kno-window-buttongroup-border-width: 0px !default;
+
+/// The background color of the Window.
+/// @group window
+$kno-window-bg: k-color(surface-alt) !default;
+/// The text color of the Window.
+/// @group window
+$kno-window-text: k-color(on-app-surface) !default;
+/// The border color of the Window.
+/// @group window
+$kno-window-border: k-color(border) !default;
+/// The box shadow of the Window.
+/// @group window
+$kno-window-shadow: k-elevation(3) !default;
+/// The box shadow of the focused Window.
+/// @group window
+$kno-window-focus-shadow: k-elevation(5) !default;
+
+/// The background color of the Window titlebar.
+/// @group window
+$kno-window-titlebar-bg: k-color(surface) !default;
+/// The text color of the Window titlebar.
+/// @group window
+$kno-window-titlebar-text: unset !default;
+/// The border color of the Window titlebar.
+/// @group window
+$kno-window-titlebar-border: unset !default;
+/// The background gradient of the Window titlebar.
+/// @group window
+$kno-window-titlebar-gradient: null !default;
+
+@forward "@progress/kno-theme-core/scss/components/window/_variables.scss" with (
+    $kno-window-border-width: $kno-window-border-width,
+    $kno-window-border-radius: $kno-window-border-radius,
+    $kno-window-font-family: $kno-window-font-family,
+    $kno-window-font-size: $kno-window-font-size,
+    $kno-window-line-height: $kno-window-line-height,
+    $kno-window-titlebar-padding-x: $kno-window-titlebar-padding-x,
+    $kno-window-titlebar-padding-y: $kno-window-titlebar-padding-y,
+    $kno-window-titlebar-border-width: $kno-window-titlebar-border-width,
+    $kno-window-titlebar-border-style: $kno-window-titlebar-border-style,
+    $kno-window-title-font-size: $kno-window-title-font-size,
+    $kno-window-title-line-height: $kno-window-title-line-height,
+    $kno-window-actions-gap: $kno-window-actions-gap,
+    $kno-window-action-opacity: $kno-window-action-opacity,
+    $kno-window-action-hover-opacity: $kno-window-action-hover-opacity,
+    $kno-window-inner-padding-x: $kno-window-inner-padding-x,
+    $kno-window-inner-padding-y: $kno-window-inner-padding-y,
+    $kno-window-buttongroup-padding-x: $kno-window-buttongroup-padding-x,
+    $kno-window-buttongroup-padding-y: $kno-window-buttongroup-padding-y,
+    $kno-window-buttongroup-border-width: $kno-window-buttongroup-border-width,
+    $kno-window-bg: $kno-window-bg,
+    $kno-window-text: $kno-window-text,
+    $kno-window-border: $kno-window-border,
+    $kno-window-shadow: $kno-window-shadow,
+    $kno-window-focus-shadow: $kno-window-focus-shadow,
+    $kno-window-titlebar-bg: $kno-window-titlebar-bg,
+    $kno-window-titlebar-text: $kno-window-titlebar-text,
+    $kno-window-titlebar-border: $kno-window-titlebar-border,
+    $kno-window-titlebar-gradient: $kno-window-titlebar-gradient,
+    $kno-window-default-size: $kno-window-default-size
+);

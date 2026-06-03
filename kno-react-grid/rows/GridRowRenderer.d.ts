@@ -1,0 +1,48 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { ExtendedColumnProps } from '../GridColumn.js';
+import { GridCellsSettings } from '../interfaces/GridCellsSettings';
+import { GridEditableSettings } from '../interfaces/GridEditableSettings';
+import { GridRowProps } from '../interfaces/GridRowProps';
+import { DataItemWrapper } from '../utils/index.js';
+import { GridStackedLayoutSettings } from '../interfaces/GridStackedLayoutSettings';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface GridRowRendererProps {
+    isStackedMode: boolean;
+    item: DataItemWrapper;
+    rowId: string;
+    dataIndex: number;
+    idPrefix?: string;
+    ariaRowIndex: number;
+    absoluteRowIndex: number;
+    isAltRow: boolean;
+    isHidden: boolean;
+    isRowReorderable: boolean;
+    rowHeight?: number;
+    rows?: GridRowProps['rows'];
+    leafColumns: ExtendedColumnProps[];
+    groupLevelCount: number;
+    stackedLayoutSettings?: GridStackedLayoutSettings;
+    cells?: GridCellsSettings;
+    editMode?: GridEditableSettings['mode'];
+    isSelected: boolean;
+    isHighlighted?: boolean;
+    isInEdit: boolean;
+    preparedCells: React.ReactElement[];
+    showDetailToggle: boolean;
+    isDetailExpanded: boolean;
+    detailExpandField?: string;
+    isPinned?: boolean;
+}
+/**
+ * @hidden
+ */
+export declare const GridRowRenderer: React.FC<GridRowRendererProps>;

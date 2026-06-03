@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+const t = (o) => {
+  var e;
+  return !!(typeof o == "function" && ((e = o.prototype) != null && e.isReactComponent));
+}, n = (o) => !!(o.$$typeof && typeof o.render == "function"), s = (o) => typeof Comment != "string" && (t(o) || n(o));
+export {
+  s as canUseRef
+};

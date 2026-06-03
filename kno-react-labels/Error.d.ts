@@ -1,0 +1,59 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { default as PropTypes } from 'prop-types';
+import { LabelsClassStructure } from '@progress/kno-react-common';
+import * as React from 'react';
+/**
+ * Represents the props of the knoReact Error component.
+ */
+export interface ErrorProps {
+    /**
+     * Represents the id of the Error element.
+     * The value should be also set to the editor's `ariaDescribedBy` property.
+     */
+    id?: string;
+    /**
+     * Specifies the alignment of the Error text.
+     *
+     * The possible values are:
+     * * (Default) `start`
+     * * `end`
+     */
+    direction?: 'start' | 'end';
+    /**
+     * Determines the children nodes.
+     */
+    children: any;
+    /**
+     * The styles that are applied to the Error.
+     */
+    style?: React.CSSProperties;
+    /**
+     * Sets a class of the Error DOM element.
+     */
+    className?: string;
+    /**
+     * @hidden
+     */
+    unstyled?: LabelsClassStructure;
+}
+/**
+ * Represents the knoReact Error component.
+ * Render the error text that will be shown underneath the form editor after a validation.
+ */
+export declare const Error: {
+    (props: ErrorProps): React.JSX.Element;
+    propTypes: {
+        id: PropTypes.Requireable<string>;
+        direction: PropTypes.Requireable<string>;
+        children: PropTypes.Requireable<NonNullable<PropTypes.ReactNodeLike>>;
+        style: PropTypes.Requireable<object>;
+        className: PropTypes.Requireable<string>;
+    };
+    displayName: string;
+};

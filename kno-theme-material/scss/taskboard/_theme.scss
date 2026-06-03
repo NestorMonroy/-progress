@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/taskboard/_theme.scss" as *;
+
+
+@mixin kno-task-board--theme() {
+    @include kno-task-board--theme-base();
+}

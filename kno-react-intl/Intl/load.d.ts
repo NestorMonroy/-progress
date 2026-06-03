@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden Currently used only externally through the ServerGlobalization of the Grid.
+ */
+export declare const locales: {
+    [key: string]: Array<any>;
+};
+/**
+ * Loads CLDR data.
+ *
+ * @param data - The CLDR data to be loaded. Accepts multiple parameters.
+ */
+export declare const load: (...data: any[]) => void;

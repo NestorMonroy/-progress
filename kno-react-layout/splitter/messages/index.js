@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e="splitBarLabel",s={[e]:"split bar"};exports.messages=s;exports.splitBarLabel=e;

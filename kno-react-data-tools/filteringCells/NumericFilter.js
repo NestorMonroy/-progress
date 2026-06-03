@@ -1,0 +1,9 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const c=require("react"),l=require("./FilterComponent.js"),i=require("@progress/kno-react-dropdowns"),a=require("@progress/kno-react-inputs");function u(e){const r=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const t in e)if(t!=="default"){const n=Object.getOwnPropertyDescriptor(e,t);Object.defineProperty(r,t,n.get?n:{enumerable:!0,get:()=>e[t]})}}return r.default=e,Object.freeze(r)}const o=u(c),s={inputComponent:e=>o.createElement(a.NumericTextBox,{...e}),operatorComponent:e=>o.createElement(i.DropDownList,{...e}),emptyFilter:{operator:"eq",value:null}};class p extends l.createFilterComponent(s){}exports.NumericFilterCell=p;

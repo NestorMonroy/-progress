@@ -1,0 +1,9 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=require("./loadMessages.js"),i=e=>{const{data:o,language:a,children:t}=e;return a&&r.loadMessages(o,a),t};exports.LocalizationDataProvider=i;

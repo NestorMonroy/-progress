@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/scrollview/_theme.scss" as *;
+
+
+@mixin kno-scrollview--theme() {
+    @include kno-scrollview--theme-base();
+}

@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface ToolbarOverflowSectionProps {
+    toolbarRef: React.MutableRefObject<HTMLDivElement | null>;
+    children?: React.ReactNode;
+    fillMode?: string | null;
+    size?: string | null;
+}
+/**
+ * @hidden
+ */
+export declare const ToolbarOverflowSection: (props: ToolbarOverflowSectionProps) => React.JSX.Element;

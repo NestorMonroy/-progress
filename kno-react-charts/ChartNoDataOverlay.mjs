@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { useLocalization as r } from "@progress/kno-react-intl";
+import { classNames as l } from "@progress/kno-react-common";
+import { nodata as t, messages as s } from "./messages.mjs";
+const i = (a) => {
+  const o = r();
+  return /* @__PURE__ */ e.createElement("div", { className: l("k-chart-overlay", a.className), style: { display: "none", ...a.style } }, /* @__PURE__ */ e.createElement("div", { className: "k-no-data" }, a.children === void 0 ? o.toLanguageString(t, s[t]) : a.children));
+};
+i.displayName = "ChartNoDataOverlay";
+export {
+  i as ChartNoDataOverlay
+};

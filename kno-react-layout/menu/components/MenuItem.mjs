@@ -1,0 +1,26 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import e from "prop-types";
+const n = (r) => null;
+n.propTypes = {
+  text: e.string,
+  url: e.string,
+  icon: e.string,
+  disabled: e.bool,
+  cssClass: e.string,
+  cssStyle: e.object,
+  render: e.any,
+  linkRender: e.any,
+  contentRender: e.any,
+  data: e.any,
+  separator: e.bool
+};
+n.displayName = "MenuItem";
+export {
+  n as MenuItem
+};

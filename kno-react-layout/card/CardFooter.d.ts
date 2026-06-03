@@ -1,0 +1,10 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { CardFooterProps } from './interfaces/CardFooterProps';
+import * as React from 'react';
+export declare const CardFooter: React.FunctionComponent<CardFooterProps>;

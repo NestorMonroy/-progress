@@ -1,0 +1,20 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../utils/_index.scss" as *;
+@use "../speech-to-text-button/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-prompt--styles() {
+    @include import-once( "prompt" ) {
+        @include core-styles();
+        @include kno-speech-to-text-button--styles();
+        @include kno-prompt--layout();
+        @include kno-prompt--theme();
+        @include kno-utils--flex-grid--flex-direction();
+    }
+}

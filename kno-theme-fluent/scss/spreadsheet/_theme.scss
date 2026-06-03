@@ -1,0 +1,22 @@
+@use "../core/_index.scss" as *;
+@use "../list/_variables.scss"as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/spreadsheet/_theme.scss" as *;
+
+@mixin kno-spreadsheet--theme() {
+    @include kno-spreadsheet--theme-base();
+
+    .k-spreadsheet-view,
+    .k-spreadsheet-filter-menu .k-spreadsheet-value-treeview-wrapper {
+        background-color: $kno-spreadsheet-view-bg;
+    }
+
+    .k-spreadsheet .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item.k-active,
+        .k-item.k-active {
+            background-color: unset;
+        }
+    }
+
+}

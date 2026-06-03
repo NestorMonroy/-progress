@@ -1,0 +1,20 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "../core/z-index/index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/switch/_layout.scss" as *;
+
+@mixin kno-switch--layout() {
+    @include kno-switch--layout-base();
+
+    .k-switch:focus,
+    .k-switch.k-focus {
+        &::after {
+            content: "";
+            position: absolute;
+            inset: -4px;
+            z-index: k-z-index("base", 1);
+            border-radius: k-border-radius(md);
+        }
+    }
+}

@@ -1,0 +1,81 @@
+@use "sass:map";
+@use "./_functions.scss" as *;
+@use "../core/_index.scss" as *;
+
+/// The default theme color of the Notification.
+/// @group notification
+/// @role default
+$kno-notification-default-theme-color: null !default;
+
+/// The row-gap between the elements in the Notification group.
+/// @group notification
+$kno-notification-group-gap: var( --kno-notification-group-gap, #{k-spacing(2)} ) !default;
+
+/// The horizontal padding of the Notification.
+/// @group notification
+$kno-notification-padding-x: var( --kno-notification-padding-x, #{k-spacing(3)} ) !default;
+/// The vertical padding of the Notification.
+/// @group notification
+$kno-notification-padding-y: var( --kno-notification-padding-y, calc(#{k-spacing(2)} + 1px) ) !default;
+/// The width of the border around the Notification.
+/// @group notification
+$kno-notification-border-width: var( --kno-notification-border-width, 1px ) !default;
+/// The border radius of the Notification.
+/// @group notification
+$kno-notification-border-radius: var( --kno-notification-border-radius, #{k-border-radius(md)} ) !default;
+/// The font family of the Notification.
+/// @group notification
+$kno-notification-font-family: var( --kno-notification-font-family, var(--kno-font-family) ) !default;
+/// The font size of the Notification.
+/// @group notification
+$kno-notification-font-size: var( --kno-notification-font-size, var(--kno-font-size-sm) ) !default;
+/// The height of the Notification.
+/// @group notification
+$kno-notification-line-height: var( --kno-notification-line-height, var(--kno-line-height-lg) ) !default;
+/// The horizontal padding of the Notification actions.
+/// @group notification
+$kno-notification-actions-padding-x: var( --kno-notification-actions-padding-x, null ) !default;
+/// The vertical padding of the Notification actions.
+/// @group notification
+$kno-notification-actions-padding-y: var( --kno-notification-actions-padding-y, #{$kno-notification-actions-padding-x} ) !default;
+
+/// The background color of the Notification.
+/// @group notification
+$kno-notification-bg: var( --kno-notification-bg, #{k-color(base-subtle)} ) !default;
+/// The text color of the Notification.
+/// @group notification
+$kno-notification-text: var( --kno-notification-text, #{k-color(on-app-surface)} ) !default;
+/// The border color of the Notification.
+/// @group notification
+$kno-notification-border: var( --kno-notification-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+
+/// The spacing of the Notification icon.
+/// @group notification
+$kno-notification-icon-spacing: var( --kno-notification-icon-spacing, #{k-spacing(2)} ) !default;
+
+/// The theme colors map for the Notification.
+/// @group notification
+$kno-notification-theme-colors: ("base", "primary", "secondary", "tertiary", "info", "success", "warning", "error", "inverse") !default;
+
+/// The generated theme colors map for the Notification.
+/// @group notification
+$kno-notification-theme: notification-theme( $kno-notification-theme-colors ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/notification/_variables.scss" with (
+    $kno-notification-default-theme-color: $kno-notification-default-theme-color,
+    $kno-notification-group-gap: $kno-notification-group-gap,
+    $kno-notification-padding-x: $kno-notification-padding-x,
+    $kno-notification-padding-y: $kno-notification-padding-y,
+    $kno-notification-border-width: $kno-notification-border-width,
+    $kno-notification-border-radius: $kno-notification-border-radius,
+    $kno-notification-font-family: $kno-notification-font-family,
+    $kno-notification-font-size: $kno-notification-font-size,
+    $kno-notification-line-height: $kno-notification-line-height,
+    $kno-notification-actions-padding-x: $kno-notification-actions-padding-x,
+    $kno-notification-actions-padding-y: $kno-notification-actions-padding-y,
+    $kno-notification-bg: $kno-notification-bg,
+    $kno-notification-text: $kno-notification-text,
+    $kno-notification-border: $kno-notification-border,
+    $kno-notification-icon-spacing: $kno-notification-icon-spacing,
+    $kno-notification-theme: $kno-notification-theme
+);

@@ -1,0 +1,87 @@
+{
+  "name": "@progress/kno-react-spreadsheet",
+  "version": "15.0.0",
+  "description": "knoReact Spreadsheet package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "/kno-react-ui",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/jszip-esm": "^1.0.3",
+    "@progress/kno-common": "^1.0.2",
+    "@progress/kno-date-math": "^1.5.10",
+    "@progress/kno-drawing": "^1.21.2",
+    "@progress/kno-file-saver": "^1.1.1",
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-ooxml": "^1.7.0",
+    "@progress/kno-react-buttons": "15.0.0",
+    "@progress/kno-react-common": "15.0.0",
+    "@progress/kno-react-dialogs": "15.0.0",
+    "@progress/kno-react-dropdowns": "15.0.0",
+    "@progress/kno-react-inputs": "15.0.0",
+    "@progress/kno-react-intl": "15.0.0",
+    "@progress/kno-react-layout": "15.0.0",
+    "@progress/kno-react-popup": "15.0.0",
+    "@progress/kno-react-sortable": "15.0.0",
+    "@progress/kno-react-upload": "15.0.0",
+    "@progress/kno-spreadsheet-common": "^1.2.12",
+    "@progress/kno-svg-icons": "^4.9.0 || ^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "Progress",
+    "spreadsheet",
+    "knoReact",
+    "reactjs",
+    "UI",
+    "components",
+    "React component",
+    "Telerik"
+  ],
+  "@progress": {
+    "friendlyName": "Spreadsheet",
+    "framework": "knoReact",
+    "package": {
+      "productName": "knoReact",
+      "productCode": "KNOUIREACT",
+      "publishDate": 1779275802,
+      "licensingDocsUrl": "my-license/?utm_medium=product&utm_source=kendoreact&utm_campaign=kno-ui-react-purchase-license-keys-warning"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependenciesMeta": {
+    "@progress/kno-svg-icons": {
+      "optional": true
+    }
+  }
+}

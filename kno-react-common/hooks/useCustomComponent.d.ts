@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export type CustomComponent<P = unknown> = React.ComponentType<P> | React.ReactElement<Partial<P>> | string;
+/**
+ * @hidden
+ */
+export declare const useCustomComponent: <P = unknown>(comp: CustomComponent<P> | React.ExoticComponent<{
+    children?: React.ReactNode;
+}> | null) => [string | React.ComponentType<P & React.RefAttributes<unknown>>, Partial<P>];

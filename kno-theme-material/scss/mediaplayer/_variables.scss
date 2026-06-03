@@ -1,0 +1,69 @@
+@use "../core/_index.scss" as *;
+
+// Media player
+
+/// The border width of the MediaPlayer.
+/// @group mediaplayer
+$kno-media-player-border-width: 1px !default;
+/// The border radius of the MediaPlayer.
+/// @group mediaplayer
+$kno-media-player-border-radius: null !default;
+/// The font family of the MediaPlayer.
+/// @group mediaplayer
+$kno-media-player-font-family: var(--kno-font-family) !default;
+/// The font size of the MediaPlayer.
+/// @group mediaplayer
+$kno-media-player-font-size: var(--kno-font-size) !default;
+/// The line height of the MediaPlayer.
+/// @group mediaplayer
+$kno-media-player-line-height: var(--kno-line-height) !default;
+
+/// The background color of the MediaPlayer.
+/// @group mediaplayer
+$kno-media-player-bg: k-color(surface) !default;
+/// The text color of the MediaPlayer.
+/// @group mediaplayer
+$kno-media-player-text: k-color(on-app-surface) !default;
+/// The border color of the MediaPlayer.
+/// @group mediaplayer
+$kno-media-player-border: k-color(border) !default;
+
+/// The horizontal padding of the MediaPlayer title.
+/// @group mediaplayer
+$kno-media-player-titlebar-padding-x: k-spacing(2) !default;
+/// The vertical padding of the MediaPlayer title.
+/// @group mediaplayer
+$kno-media-player-titlebar-padding-y: k-spacing(2) !default;
+/// The font size of the MediaPlayer title.
+/// @group mediaplayer
+$kno-media-player-titlebar-font-size: null !default;
+/// The font weight of the MediaPlayer title.
+/// @group mediaplayer
+$kno-media-player-titlebar-font-weight: null !default;
+/// The line height of the MediaPlayer title.
+/// @group mediaplayer
+$kno-media-player-titlebar-line-height: null !default;
+/// The text color of the MediaPlayer title.
+/// @group mediaplayer
+$kno-media-player-titlebar-text: $kno-media-player-bg !default;
+/// The gradient of the MediaPlayer title.
+/// @group mediaplayer
+$kno-media-player-titlebar-gradient: ( color-mix(in srgb, k-color(on-app-surface) 70%, transparent), color-mix(in srgb, k-color(on-app-surface) 0%, transparent) ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/mediaplayer/_variables.scss" with (
+    $kno-media-player-border-width: $kno-media-player-border-width,
+    $kno-media-player-border-radius: $kno-media-player-border-radius,
+    $kno-media-player-font-family: $kno-media-player-font-family,
+    $kno-media-player-font-size: $kno-media-player-font-size,
+    $kno-media-player-line-height: $kno-media-player-line-height,
+    $kno-media-player-bg: $kno-media-player-bg,
+    $kno-media-player-text: $kno-media-player-text,
+    $kno-media-player-border: $kno-media-player-border,
+    $kno-media-player-titlebar-padding-x: $kno-media-player-titlebar-padding-x,
+    $kno-media-player-titlebar-padding-y: $kno-media-player-titlebar-padding-y,
+    $kno-media-player-titlebar-font-size: $kno-media-player-titlebar-font-size,
+    $kno-media-player-titlebar-font-weight: $kno-media-player-titlebar-font-weight,
+    $kno-media-player-titlebar-line-height: $kno-media-player-titlebar-line-height,
+    $kno-media-player-titlebar-text: $kno-media-player-titlebar-text,
+    $kno-media-player-titlebar-gradient: $kno-media-player-titlebar-gradient
+);

@@ -1,0 +1,21 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/switch/_theme.scss" as *;
+
+@mixin kno-switch--theme() {
+    @include kno-switch--theme-base();
+
+    .k-switch {
+        &:focus,
+        &.k-focus {
+            &::after {
+                outline: $kno-switch-focus-ring;
+            }
+        }
+
+        &:disabled,
+        &.k-disabled {
+            background-color: transparent;
+        }
+    }
+}

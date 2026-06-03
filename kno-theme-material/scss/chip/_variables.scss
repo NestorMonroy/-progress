@@ -1,0 +1,208 @@
+@use "sass:map";
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use"../button/_variables.scss" as *;
+
+
+// Chip
+
+/// The default theme color of the Chip.
+/// @group chip
+/// @role default
+$kno-chip-default-theme-color: "base" !default;
+/// The default fill mode of the Chip.
+/// @group chip
+/// @role default
+$kno-chip-default-fill-mode: "solid" !default;
+/// The default roundness of the Chip.
+/// @group chip
+/// @role default
+$kno-chip-default-roundness: "md" !default;
+/// The default size of the Chip.
+/// @group chip
+/// @role default
+$kno-chip-default-size: "md" !default;
+
+/// The width of the border around the Chip.
+/// @group chip
+$kno-chip-border-width: 1px !default;
+/// The spacing between the text and the icons of the Chip.
+/// @group chip
+$kno-chip-spacing: k-spacing(2) !default;
+
+/// The horizontal padding of the small Chip.
+/// @group chip
+$kno-chip-sm-padding-x: k-spacing(4) !default;
+/// The horizontal padding of the medium Chip.
+/// @group chip
+$kno-chip-md-padding-x: k-spacing(4) !default;
+/// The horizontal padding of the large Chip.
+/// @group chip
+$kno-chip-lg-padding-x: k-spacing(4) !default;
+
+/// The vertical padding of the small Chip.
+/// @group chip
+$kno-chip-sm-padding-y: calc( k-spacing(1.5) / 2 ) !default;
+/// The vertical padding of the medium Chip.
+/// @group chip
+$kno-chip-md-padding-y: calc( k-spacing(2.5) / 2 ) !default;
+/// The vertical padding of the large Chip.
+/// @group chip
+$kno-chip-lg-padding-y: calc( k-spacing(3.5) / 2 ) !default;
+
+/// The font weight of the Chip.
+/// @group chip
+$kno-chip-font-weight: var(--kno-font-weight-medium) !default;
+
+/// The font size of the Chip.
+/// @group chip
+$kno-chip-font-size: null !default;
+/// The font size of the small Chip.
+/// @group chip
+$kno-chip-sm-font-size: var(--kno-font-size) !default;
+/// The font size of the medium Chip.
+/// @group chip
+$kno-chip-md-font-size: var(--kno-font-size) !default;
+/// The font size of the large Chip.
+/// @group chip
+$kno-chip-lg-font-size: var(--kno-font-size) !default;
+
+/// The Chip's line height that is related to the $kno-font-size.
+/// @group chip
+$kno-chip-line-height: null !default;
+/// The small Chip's line height that is related to the $kno-font-size.
+/// @group chip
+$kno-chip-sm-line-height: var(--kno-line-height) !default;
+/// The medium Chip's line height that is related to the $kno-font-size.
+/// @group chip
+$kno-chip-md-line-height: var(--kno-line-height) !default;
+/// The large Chip's line height that is related to the $kno-font-size.
+/// @group chip
+$kno-chip-lg-line-height: var(--kno-line-height) !default;
+
+$kno-chip-calc-size: calc( calc( #{$kno-chip-md-line-height} * 1em ) + calc( #{$kno-chip-md-padding-y} * 2 ) + calc( #{$kno-chip-border-width} * 2 ) ) !default;
+$kno-chip-sm-calc-size: calc( calc( #{$kno-chip-sm-line-height  } * 1em) + calc( #{$kno-chip-sm-padding-y} * 2 ) + calc( #{$kno-chip-border-width} * 2) ) !default;
+
+/// The base background of the Chip.
+/// @group chip
+$kno-chip-base-bg: k-color(base-subtle) !default;
+
+/// The base background color of the solid Chip.
+/// @group chip
+$kno-chip-solid-bg: k-color(base-subtle) !default;
+/// The base text color of the solid Chip.
+/// @group chip
+$kno-chip-solid-text: k-color(base-on-subtle) !default;
+/// The base border color of the solid Chip.
+/// @group chip
+$kno-chip-solid-border: $kno-chip-solid-bg !default;
+/// The base shadow of the solid Chip.
+/// @group chip
+$kno-chip-solid-shadow: null !default;
+/// The base gradient of the solid Chip.
+/// @group chip
+$kno-chip-solid-gradient: null !default;
+
+/// The base background color of the focused solid Chip.
+/// @group chip
+$kno-chip-solid-focus-bg: k-color(base-subtle-active) !default;
+
+/// The base background color of the hovered solid Chip.
+/// @group chip
+$kno-chip-solid-hover-bg: k-color(base-subtle-hover) !default;
+
+/// The base background color of the selected solid Chip.
+/// @group chip
+$kno-chip-solid-selected-bg: k-color(base-subtle-active) !default;
+
+/// The base text color of the outline Chip.
+/// @group chip
+$kno-chip-outline-text: k-color(base-on-surface) !default;
+/// The base border color of the outline Chip.
+/// @group chip
+$kno-chip-outline-border: $kno-chip-outline-text !default;
+/// The base shadow of the outline Chip.
+/// @group chip
+$kno-chip-outline-shadow: null !default;
+
+/// The base background color of the hovered outline Chip.
+/// @group chip
+$kno-chip-outline-hover-bg: color-mix(in srgb, currentColor 8%, transparent) !default;
+/// The base text color of the hovered outline Chip.
+/// @group chip
+$kno-chip-outline-hover-text: $kno-chip-outline-text !default;
+
+/// The base background color of the selected outline Chip.
+/// @group chip
+$kno-chip-outline-selected-bg: color-mix(in srgb, currentColor 12%, transparent) !default;
+/// The base text color of the selected outline Chip.
+/// @group chip
+$kno-chip-outline-selected-text: $kno-chip-outline-hover-text !default;
+
+/// The base background color of the disabled Chip.
+/// @group chip
+$kno-chip-disabled-bg: color-mix(in srgb, k-color(on-app-surface) 12%, transparent) !default;
+/// The base text color of the disabled Chip.
+/// @group chip
+$kno-chip-disabled-text: color-mix(in srgb, k-color(on-app-surface) 38%, transparent) !default;
+/// The base border color of the disabled Chip.
+/// @group chip
+$kno-chip-disabled-border: $kno-chip-disabled-bg !default;
+
+/// The sizes of the small Chip list.
+/// @group chip
+$kno-chip-list-size-sm: k-spacing(1) !default;
+/// The sizes of the medium Chip list.
+/// @group chip
+$kno-chip-list-size-md: k-spacing(1) !default;
+/// The sizes of the large Chip list.
+/// @group chip
+$kno-chip-list-size-lg: k-spacing(1) !default;
+
+@forward "@progress/kno-theme-core/scss/components/chip/_variables.scss" with (
+    $kno-chip-default-theme-color: $kno-chip-default-theme-color,
+    $kno-chip-default-fill-mode: $kno-chip-default-fill-mode,
+    $kno-chip-default-roundness: $kno-chip-default-roundness,
+    $kno-chip-default-size: $kno-chip-default-size,
+    $kno-chip-border-width: $kno-chip-border-width,
+    $kno-chip-spacing: $kno-chip-spacing,
+    $kno-chip-sm-padding-x: $kno-chip-sm-padding-x,
+    $kno-chip-md-padding-x: $kno-chip-md-padding-x,
+    $kno-chip-lg-padding-x: $kno-chip-lg-padding-x,
+    $kno-chip-sm-padding-y: $kno-chip-sm-padding-y,
+    $kno-chip-md-padding-y: $kno-chip-md-padding-y,
+    $kno-chip-lg-padding-y: $kno-chip-lg-padding-y,
+    $kno-chip-font-weight: $kno-chip-font-weight,
+    $kno-chip-font-size: $kno-chip-font-size,
+    $kno-chip-sm-font-size: $kno-chip-sm-font-size,
+    $kno-chip-md-font-size: $kno-chip-md-font-size,
+    $kno-chip-lg-font-size: $kno-chip-lg-font-size,
+    $kno-chip-line-height: $kno-chip-line-height,
+    $kno-chip-sm-line-height: $kno-chip-sm-line-height,
+    $kno-chip-md-line-height: $kno-chip-md-line-height,
+    $kno-chip-lg-line-height: $kno-chip-lg-line-height,
+    $kno-chip-calc-size: $kno-chip-calc-size,
+    $kno-chip-sm-calc-size: $kno-chip-sm-calc-size,
+    $kno-chip-base-bg: $kno-chip-base-bg,
+    $kno-chip-solid-bg: $kno-chip-solid-bg,
+    $kno-chip-solid-text: $kno-chip-solid-text,
+    $kno-chip-solid-border: $kno-chip-solid-border,
+    $kno-chip-solid-shadow: $kno-chip-solid-shadow,
+    $kno-chip-solid-gradient: $kno-chip-solid-gradient,
+    $kno-chip-solid-focus-bg: $kno-chip-solid-focus-bg,
+    $kno-chip-solid-hover-bg: $kno-chip-solid-hover-bg,
+    $kno-chip-solid-selected-bg: $kno-chip-solid-selected-bg,
+    $kno-chip-outline-text: $kno-chip-outline-text,
+    $kno-chip-outline-border: $kno-chip-outline-border,
+    $kno-chip-outline-shadow: $kno-chip-outline-shadow,
+    $kno-chip-outline-hover-bg: $kno-chip-outline-hover-bg,
+    $kno-chip-outline-hover-text: $kno-chip-outline-hover-text,
+    $kno-chip-outline-selected-bg: $kno-chip-outline-selected-bg,
+    $kno-chip-outline-selected-text: $kno-chip-outline-selected-text,
+    $kno-chip-disabled-bg: $kno-chip-disabled-bg,
+    $kno-chip-disabled-text: $kno-chip-disabled-text,
+    $kno-chip-disabled-border: $kno-chip-disabled-border,
+    $kno-chip-list-size-sm: $kno-chip-list-size-sm,
+    $kno-chip-list-size-md: $kno-chip-list-size-md,
+    $kno-chip-list-size-lg: $kno-chip-list-size-lg
+);

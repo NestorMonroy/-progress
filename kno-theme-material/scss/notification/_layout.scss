@@ -1,0 +1,11 @@
+@use "@progress/kno-theme-core/scss/components/notification/_layout.scss" as *;
+@use "./variables.scss" as *;
+
+
+@mixin kno-notification--layout() {
+    @include kno-notification--layout-base();
+
+    .k-notification-actions {
+        margin-block: calc( (#{$kno-notification-actions-padding-y} / 2) * -1) ;
+    }
+}

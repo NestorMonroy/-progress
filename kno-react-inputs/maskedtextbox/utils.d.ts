@@ -1,0 +1,23 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { MaskedTextBoxProps } from './MaskedTextBoxProps';
+/**
+ * @hidden
+ */
+declare const defaultRules: {
+    [key: string]: RegExp;
+};
+/**
+ * @hidden
+ */
+declare const returnFalse: () => boolean;
+/**
+ * @hidden
+ */
+declare const maskingChanged: (prev: MaskedTextBoxProps, next: MaskedTextBoxProps) => boolean;
+export { defaultRules, maskingChanged, returnFalse };

@@ -1,0 +1,25 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/scrollview/_theme.scss" as *;
+
+
+@mixin kendo-scrollview--theme() {
+
+    @include kendo-scrollview--theme-base();
+
+    // Bootstrap overrides
+    .k-scrollview-next,
+    .k-scrollview-prev {
+        &:focus,
+        &.k-focus {
+            .k-icon::before {
+                background-color: $kendo-scrollview-navigation-hover-span-bg;
+            }
+        }
+    }
+
+    .k-scrollview-nav > .k-link {
+        background-color: $kendo-scrollview-pagebutton-bg;
+        border-color: $kendo-scrollview-pagebutton-border;
+    }
+}

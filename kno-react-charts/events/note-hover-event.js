@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("./base-event.js");class a extends s.BaseEvent{constructor(e,t){super(t),this.category=e.category,this.dataItem=e.dataItem,this.series=e.series,this.value=e.value,this.visual=e.visual}}exports.NoteHoverEvent=a;

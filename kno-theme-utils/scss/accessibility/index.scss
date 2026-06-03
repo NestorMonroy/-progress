@@ -1,0 +1,5 @@
+@use "./_screen-readers.scss" as *;
+
+@mixin kno-utils--accessibility() {
+    @include kno-utils--accessibility--screen-readers();
+}

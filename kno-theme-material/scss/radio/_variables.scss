@@ -1,0 +1,242 @@
+@use "../core/_index.scss" as *;
+@use"../list/_variables.scss" as *;
+@use"../checkbox/_variables.scss" as *;
+@use "../core/functions/index.scss" as *;
+
+
+// Radio button
+
+/// The border radius of the RadioButton.
+/// @group radio
+$kno-radio-radius: 50% !default;
+/// The border width of the RadioButton.
+/// @group radio
+$kno-radio-border-width: 2px !default;
+
+/// The size of a small RadioButton.
+/// @group radio
+$kno-radio-sm-size: k-spacing(4) !default;
+/// The size of a medium RadioButton.
+/// @group radio
+$kno-radio-md-size: k-spacing(4) !default;
+/// The size of a large RadioButton.
+/// @group radio
+$kno-radio-lg-size: k-spacing(5) !default;
+
+/// The glyph size of a small RadioButton.
+/// @group radio
+$kno-radio-sm-glyph-size: k-spacing(2.5) !default;
+/// The glyph size of a medium RadioButton.
+/// @group radio
+$kno-radio-md-glyph-size: k-spacing(3.5) !default;
+/// The glyph size of a large RadioButton.
+/// @group radio
+$kno-radio-lg-glyph-size: k-spacing(4.5) !default;
+
+/// The ripple size of a small RadioButton.
+/// @group radio
+$kno-radio-sm-ripple-size: k-spacing(8) !default;
+/// The ripple size of a medium RadioButton.
+/// @group radio
+$kno-radio-md-ripple-size: k-spacing(10) !default;
+/// The ripple size of a large RadioButton.
+/// @group radio
+$kno-radio-lg-ripple-size: k-spacing(12) !default;
+
+
+/// The map with the different RadioButton sizes.
+/// @group radio
+$kno-radio-sizes: (
+    sm: (
+        size: $kno-radio-sm-size,
+        glyph-size: $kno-radio-sm-glyph-size,
+        ripple-size: $kno-radio-sm-ripple-size,
+        indicator-size: k-spacing(8)
+    ),
+    md: (
+        size: $kno-radio-md-size,
+        glyph-size: $kno-radio-md-glyph-size,
+        ripple-size: $kno-radio-md-ripple-size,
+        indicator-size: k-spacing(10)
+    ),
+    lg: (
+        size: $kno-radio-lg-size,
+        glyph-size: $kno-radio-lg-glyph-size,
+        ripple-size: $kno-radio-lg-ripple-size,
+        indicator-size: k-spacing(12)
+    )
+) !default;
+
+/// The background color of the RadioButton.
+/// @group radio
+$kno-radio-bg: $kno-checkbox-bg !default;
+/// The color of the RadioButton.
+/// @group radio
+$kno-radio-text: $kno-checkbox-text !default;
+/// The border color of the RadioButton.
+/// @group radio
+$kno-radio-border: $kno-checkbox-border !default;
+
+/// The background color of the hovered RadioButton.
+/// @group radio
+$kno-radio-hover-bg: unset !default;
+/// The color of the hovered RadioButton.
+/// @group radio
+$kno-radio-hover-text: unset !default;
+/// The border color of the hovered RadioButton.
+/// @group radio
+$kno-radio-hover-border: $kno-checkbox-border !default;
+
+/// The background color of the checked RadioButton.
+/// @group radio
+$kno-radio-checked-bg: unset !default;
+/// The color of the checked RadioButton.
+/// @group radio
+$kno-radio-checked-text: k-color(primary-on-surface) !default;
+/// The border color of the checked RadioButton.
+/// @group radio
+$kno-radio-checked-border: $kno-radio-checked-text !default;
+
+/// The border color of the focused RadioButton.
+/// @group radio
+$kno-radio-focus-border: $kno-checkbox-focus-border !default;
+/// The box shadow of the focused RadioButton.
+/// @group radio
+$kno-radio-focus-shadow: $kno-checkbox-focus-shadow !default;
+/// The border color of the focused and checked RadioButton.
+/// @group radio
+$kno-radio-focus-checked-border: $kno-checkbox-focus-checked-border !default;
+/// The box shadow of the focused and checked RadioButton.
+/// @group radio
+$kno-radio-focus-checked-shadow: $kno-checkbox-focus-checked-shadow !default;
+
+/// The background color of the disabled RadioButton.
+/// @group radio
+$kno-radio-disabled-bg: null !default;
+/// The color of the disabled RadioButton.
+/// @group radio
+$kno-radio-disabled-text: k-color(on-app-surface) !default;
+/// The border color of the disabled RadioButton.
+/// @group radio
+$kno-radio-disabled-border: k-color(on-app-surface) !default;
+
+/// The background color of the disabled and checked RadioButton.
+/// @group radio
+$kno-radio-disabled-checked-bg: $kno-radio-disabled-bg !default;
+/// The color of the disabled and checked RadioButton.
+/// @group radio
+$kno-radio-disabled-checked-text: $kno-radio-disabled-text !default;
+/// The border color of disabled and checked RadioButton.
+/// @group radio
+$kno-radio-disabled-checked-border: $kno-radio-disabled-border !default;
+
+/// The color of the invalid RadioButton.
+/// @group radio
+$kno-radio-invalid-text: $kno-checkbox-invalid-text !default;
+/// The border color of the invalid RadioButton.
+/// @group radio
+$kno-radio-invalid-border: $kno-checkbox-invalid-border !default;
+
+
+// Radio indicator
+
+/// The type of the RadioButton indicator.
+/// @group radio
+$kno-radio-indicator-type: image !default;
+
+/// The font family of the RadioButton indicator glyph.
+/// @group radio
+$kno-radio-glyph-font-family: "WebComponentsIcons", monospace !default;
+/// The glyph of the RadioButton indicator.
+/// @group radio
+$kno-radio-checked-glyph: "\e308" !default;
+
+/// The image of the checked RadioButton indicator.
+/// @group radio
+$kno-radio-checked-image: k-escape-svg( url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><circle cx='50%' cy='50%' r='4' fill='#ffffff'/></svg>") ) !default;
+/// The image of the disabled and checked RadioButton indicator.
+/// @group radio
+$kno-radio-disabled-checked-image: k-escape-svg( url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'><circle cx='50%' cy='50%' r='4' fill='#adadad'/></svg>") ) !default;
+
+
+// Radio label
+
+/// The horizontal margin of the RadioButton inside of a label.
+/// @group radio
+$kno-radio-label-margin-x: k-spacing(4) !default;
+
+
+// Radio list
+
+/// The horizontal list item margin of the RadioButton.
+/// @group radio
+$kno-radio-list-spacing: k-spacing(4) !default;
+/// The horizontal list item padding of the RadioButton.
+/// @group radio
+$kno-radio-list-item-padding-x: k-spacing(0) !default;
+/// The vertical list item padding of the RadioButton.
+/// @group radio
+$kno-radio-list-item-padding-y: $kno-list-md-item-padding-y !default;
+
+
+// Radio ripple
+
+/// The background color of the RadioButton ripple..
+/// @group radio
+$kno-radio-ripple-bg: k-color(primary) !default;
+/// The opacity of the RadioButton ripple.
+/// @group radio
+$kno-radio-ripple-opacity: .2 !default;
+
+/// The default size of the RadioButton.
+/// @group radio
+/// @role default
+$kno-radio-default-size: "md" !default;
+
+@forward "@progress/kno-theme-core/scss/components/radio/_variables.scss" with (
+    $kno-radio-radius: $kno-radio-radius,
+    $kno-radio-border-width: $kno-radio-border-width,
+    $kno-radio-sm-size: $kno-radio-sm-size,
+    $kno-radio-md-size: $kno-radio-md-size,
+    $kno-radio-lg-size: $kno-radio-lg-size,
+    $kno-radio-sm-glyph-size: $kno-radio-sm-glyph-size,
+    $kno-radio-md-glyph-size: $kno-radio-md-glyph-size,
+    $kno-radio-lg-glyph-size: $kno-radio-lg-glyph-size,
+    $kno-radio-sm-ripple-size: $kno-radio-sm-ripple-size,
+    $kno-radio-md-ripple-size: $kno-radio-md-ripple-size,
+    $kno-radio-lg-ripple-size: $kno-radio-lg-ripple-size,
+    $kno-radio-sizes: $kno-radio-sizes,
+    $kno-radio-bg: $kno-radio-bg,
+    $kno-radio-text: $kno-radio-text,
+    $kno-radio-border: $kno-radio-border,
+    $kno-radio-hover-bg: $kno-radio-hover-bg,
+    $kno-radio-hover-text: $kno-radio-hover-text,
+    $kno-radio-hover-border: $kno-radio-hover-border,
+    $kno-radio-checked-bg: $kno-radio-checked-bg,
+    $kno-radio-checked-text: $kno-radio-checked-text,
+    $kno-radio-checked-border: $kno-radio-checked-border,
+    $kno-radio-focus-border: $kno-radio-focus-border,
+    $kno-radio-focus-shadow: $kno-radio-focus-shadow,
+    $kno-radio-focus-checked-border: $kno-radio-focus-checked-border,
+    $kno-radio-focus-checked-shadow: $kno-radio-focus-checked-shadow,
+    $kno-radio-disabled-bg: $kno-radio-disabled-bg,
+    $kno-radio-disabled-text: $kno-radio-disabled-text,
+    $kno-radio-disabled-border: $kno-radio-disabled-border,
+    $kno-radio-disabled-checked-bg: $kno-radio-disabled-checked-bg,
+    $kno-radio-disabled-checked-text: $kno-radio-disabled-checked-text,
+    $kno-radio-disabled-checked-border: $kno-radio-disabled-checked-border,
+    $kno-radio-invalid-text: $kno-radio-invalid-text,
+    $kno-radio-invalid-border: $kno-radio-invalid-border,
+    $kno-radio-indicator-type: $kno-radio-indicator-type,
+    $kno-radio-glyph-font-family: $kno-radio-glyph-font-family,
+    $kno-radio-checked-glyph: $kno-radio-checked-glyph,
+    $kno-radio-checked-image: $kno-radio-checked-image,
+    $kno-radio-disabled-checked-image: $kno-radio-disabled-checked-image,
+    $kno-radio-label-margin-x: $kno-radio-label-margin-x,
+    $kno-radio-list-spacing: $kno-radio-list-spacing,
+    $kno-radio-list-item-padding-x: $kno-radio-list-item-padding-x,
+    $kno-radio-list-item-padding-y: $kno-radio-list-item-padding-y,
+    $kno-radio-ripple-bg: $kno-radio-ripple-bg,
+    $kno-radio-ripple-opacity: $kno-radio-ripple-opacity,
+    $kno-radio-default-size: $kno-radio-default-size
+);

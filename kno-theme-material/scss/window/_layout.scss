@@ -1,0 +1,20 @@
+@use "@progress/kno-theme-core/scss/components/window/_layout.scss" as *;
+
+
+@mixin kno-window--layout() {
+    @include kno-window--layout-base();
+
+    .k-window-minimized {
+        border-end-start-radius: 0;
+        border-end-end-radius: 0;
+    }
+
+    .k-window-title,
+    .k-window-titlebar-actions {
+        margin-block: 0;
+    }
+
+    .k-window-title {
+        padding-block: 0;
+    }
+}

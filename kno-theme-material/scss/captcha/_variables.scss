@@ -1,0 +1,66 @@
+@use "../core/_index.scss" as *;
+
+// Captcha
+
+/// The spacer of the Captcha.
+/// @group captcha
+$kno-captcha-spacer: k-spacing(2) !default;
+
+/// The width of the Captcha.
+/// @group captcha
+$kno-captcha-width: 335px !default;
+/// The font family of the Captcha.
+/// @group captcha
+$kno-captcha-font-family: var(--kno-font-family) !default;
+/// The font size of the Captcha.
+/// @group captcha
+$kno-captcha-font-size: var(--kno-font-size) !default;
+/// The line height of the Captcha.
+/// @group captcha
+$kno-captcha-line-height: var(--kno-line-height) !default;
+/// The gap of the Captcha.
+/// @group captcha
+$kno-captcha-gap: $kno-captcha-spacer !default;
+/// The background color of the Captcha.
+/// @group captcha
+$kno-captcha-bg: k-color(app-surface) !default;
+/// The text color of the Captcha.
+/// @group captcha
+$kno-captcha-text: k-color(on-app-surface) !default;
+/// The border color of the Captcha.
+/// @group captcha
+$kno-captcha-border: k-color(app-surface) !default;
+
+/// The gap of the Captcha image wrapper.
+/// @group captcha
+$kno-captcha-image-wrap-gap: $kno-captcha-spacer !default;
+/// The gap of the Captcha image controls.
+/// @group captcha
+$kno-captcha-image-controls-gap: $kno-captcha-spacer !default;
+
+/// The top margin of the Captcha validation message.
+/// @group captcha
+$kno-captcha-validation-message-margin-top: calc( #{$kno-captcha-spacer} / 2 ) !default;
+/// The font size of the Captcha validation message.
+/// @group captcha
+$kno-captcha-validation-message-font-size: var(--kno-font-size-sm) !default;
+/// The font style of the Captcha validation message.
+/// @group captcha
+$kno-captcha-validation-message-font-style: italic !default;
+
+@forward "@progress/kno-theme-core/scss/components/captcha/_variables.scss" with (
+    $kno-captcha-spacer: $kno-captcha-spacer,
+    $kno-captcha-width: $kno-captcha-width,
+    $kno-captcha-font-family: $kno-captcha-font-family,
+    $kno-captcha-font-size: $kno-captcha-font-size,
+    $kno-captcha-line-height: $kno-captcha-line-height,
+    $kno-captcha-gap: $kno-captcha-gap,
+    $kno-captcha-bg: $kno-captcha-bg,
+    $kno-captcha-text: $kno-captcha-text,
+    $kno-captcha-border: $kno-captcha-border,
+    $kno-captcha-image-wrap-gap: $kno-captcha-image-wrap-gap,
+    $kno-captcha-image-controls-gap: $kno-captcha-image-controls-gap,
+    $kno-captcha-validation-message-margin-top: $kno-captcha-validation-message-margin-top,
+    $kno-captcha-validation-message-font-size: $kno-captcha-validation-message-font-size,
+    $kno-captcha-validation-message-font-style: $kno-captcha-validation-message-font-style
+);

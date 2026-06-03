@@ -1,0 +1,49 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { SignatureProps } from './SignatureProps';
+/**
+ * The Signature ref.
+ */
+export interface SignatureHandle {
+    /**
+     * The Signature element.
+     */
+    element: HTMLInputElement | null;
+    /**
+     * Focus the Signature.
+     */
+    focus: () => void;
+    /**
+     * Gets the `name` property of the Signature.
+     */
+    name: string | undefined;
+    /**
+     * Gets the value of the Signature.
+     */
+    value: number | null;
+    /**
+     * @hidden
+     */
+    props: SignatureProps;
+    /**
+     * @hidden
+     */
+    validityStyles: boolean;
+    /**
+     * @hidden
+     */
+    required: boolean;
+    /**
+     * @hidden
+     */
+    color: string;
+    /**
+     * @hidden
+     */
+    backgroundColor: string;
+}

@@ -1,0 +1,30 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { FilterCellProps } from './FilterCellProps';
+import { FilterOperator } from './FilterOperator';
+/**
+ * @hidden
+ */
+export interface FilterComponentProps extends FilterCellProps {
+    /**
+     * The list of the operators.
+     */
+    operators?: FilterOperator[];
+    /**
+     * The accessible label of the component.
+     */
+    ariaLabel?: string;
+    /**
+     * @ hidden
+     */
+    min?: number;
+    /**
+     * @hidden
+     */
+    max?: number;
+}

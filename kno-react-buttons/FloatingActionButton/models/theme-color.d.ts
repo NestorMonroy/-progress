@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * Specifies the theme color of the Floating Action Button..
+ *
+ * The possible values are:
+ * * `primary` (Default)&mdash;Applies coloring based on the primary theme color.
+ * * `secondary`&mdash;Applies coloring based on the secondary theme color.
+ * * `tertiary`&mdash; Applies coloring based on the tertiary theme color.
+ * * `base`&mdash; Applies coloring based on the base theme color.
+ *
+ */
+export type FloatingActionButtonThemeColor = 'base' | 'primary' | 'secondary' | 'tertiary';

@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const g=require("react"),o=require("prop-types"),l=require("@progress/kno-react-dialogs"),s=require("@progress/kno-react-buttons");function f(e){const n=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const t in e)if(t!=="default"){const i=Object.getOwnPropertyDescriptor(e,t);Object.defineProperty(n,t,i.get?i:{enumerable:!0,get:()=>e[t]})}}return n.default=e,Object.freeze(n)}const r=f(g),a=e=>{const{onClose:n,onConfirm:t,dialogMessage:i,dialogTitle:c,dialogConfirmButton:u,dialogCancelButton:d}=e;return r.createElement(l.Dialog,{title:c,closeIcon:!1},i,r.createElement(l.DialogActionsBar,{layout:"end"},r.createElement(s.Button,{onClick:t},u),r.createElement(s.Button,{onClick:n},d)))};a.propTypes={onClose:o.func.isRequired,onConfirm:o.func.isRequired,dialogMessage:o.string.isRequired,dialogTitle:o.string.isRequired,dialogConfirmButton:o.string.isRequired,dialogCancelButton:o.string.isRequired};a.displayName="KendoReactTaskBoardConfirmDialog";exports.TaskBoardConfirmDialog=a;

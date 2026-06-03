@@ -1,0 +1,14 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/typography/_layout.scss" as *;
+
+@mixin kno-typography--layout() {
+    @include kno-typography--layout-base();
+
+    .k-body {
+        p {
+            margin: $kno-paragraph-margin;
+        }
+    }
+}

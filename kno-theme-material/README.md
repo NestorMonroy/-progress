@@ -1,0 +1,124 @@
+# Kno UI Material Theme
+
+The Kno UI Material Theme is a SCSS-based theme for the Kno UI components which is based on the [Material design guidelines](https://material.io/).
+
+* [Quick start](#quick-start)
+* [Customizing](#customizing)
+* [Integrating with third party frameworks](#integrating-with-third-party-frameworks)
+* [Bug reports and feature requests](#bug-reports-and-feature-requests)
+* [Versioning](#versioning)
+* [License](#license)
+
+## Quick start
+
+Kno UI Material Theme is available as an npm package.
+
+If you don't need to apply any [customization](#customizing) to the theme, you can can reference the precompiled CSS directly from unpkg CDN:
+
+```html
+<link rel="stylesheet" href="https://unpkg.com/@progress/kendo-theme-material/dist/all.css" />
+```
+
+While using the precompiled CSS file is faster than compiling the theme from the source code, the approach has the two drawbacks: it includes CSS for all components; it does not provide options for theme customization through SCSS variables (which is possible when you build the theme from the source code) because the theme is already compiled.
+
+If you prefer, or you need to customize the theme, you can install it:
+
+```sh
+npm install --save @progress/kendo-theme-material
+```
+
+and then import it in your project styles:
+
+```scss
+// Import the entire theme
+@use "@progress/kendo-theme-material/scss/all.scss" as *;
+```
+
+For more information on how to implement the Material theme in your project, refer to the following articles:
+
+* [Using the Material Theme in Angular Projects](components/styling/theme-material/)
+* [Using the Material Theme in React Projects](components/styling/theme-material/)
+* [Using the Material Theme in jQuery Projects](http://docs.tlk.com/kendo-ui/styles-and-layout/sass-themes)
+
+## Customizing
+
+You can customize Kno UI Material Theme both in terms of what gets compiled and how the theme will look.
+
+### Importing
+
+In your custom scss file, you can import the entirety of the theme, by importing `scss/all.scss` or pick just the styles for the components you need. The files for individual components:
+
+```scss
+// Import only Button and Grid styles
+@use "@progress/kendo-theme-material/scss/index.scss" as *;
+
+@include kendo-button--styles();
+@include kendo-grid--styles();
+```
+
+### SCSS Variables
+
+Kno UI Material Theme provides many variables for customization. There are variables that control globally used theme colors like `$primary`, `$secondary`, `$success`, `$error` etc.; variables for all components such as `$component-text`, `$component-bg`; as well as variables for individual components such as `$grid-bg`, `$tabstrip-font-size` and so on.
+
+Most component variables link to higher abstracted generic variables. For instance, the background of the grid component can be customized both from `$component-bg` and `$grid-bg`, with the latter referencing the former.
+
+We have more than 2000 variables, so it's hard to list them all. We've tried to make variable names as coherent as possible. For instance, all variables ending in `-bg` control background color; all variables ending in `-text` control text color.
+
+Here is a quick example on how to customize:
+
+```scss
+@use "@progress/kendo-theme-material/scss/all.scss" as * with (
+    $kendo-button-bg: #ff0000,
+    $kendo-font-size: 20px
+);
+```
+
+## Integrating with third party frameworks
+
+CSS can be complicated due to cascades (that's what C stands for). If there are multiple frameworks loaded on a single page, it is quite possible that their styles will interfere with one another.
+
+To avoid that, we've prefixed all our class names with `k-` e.g. `k-grid`, `k-hidden` etc., with the exception of handling for `hidden` attribute, which will hide the element that has it.
+
+Some frameworks, like Bootstrap and Tailwind, touch global styles to establish a sort of baseline -- we call that normalizing. One such styles is the following bit, which makes dimensions (width and height) behave in a specific way:
+
+```css
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+```
+
+We've ensured that our themes work correctly with both those styles being present and absent.
+
+However, even when being cautious, neglecting the scope and cascade of CSS, that may result in unexpected side effects. Oddly enough, most of the cases when that happens, everything is expected, at least from CSS point of view, but it can be still frustrating.
+
+For instance, it cannot be expected that adding `form-control` from Bootstrap to a Kno UI Combobox will make the component behave and look like a Bootstrap form component. The scope and cascade are different -- `form-control` is intended to be added to pure `input` elements, where as a Kno UI Combobox has a different structure and styles will not be applied correctly.
+
+Another example is adding `bg-red-400` from Tailwind to a Kno UI Button, depending on the exact stylesheet order that class may or may not be applied.
+
+As a general rule, it should not be expected that mixing at matching classes from different frameworks will yield the desired results.
+
+## Bug reports and feature requests
+
+Have a bug or a feature request? Please first search for existing and closed issues. If your problem or idea is not addressed yet, please open a new [bug report]-themes/issues/new?labels=bug,T:Material&template=bug_report.md) or [feature request]-themes/issues/new?labels=Enhancement,T:Material&template=feature_request.md).
+
+## Versioning
+
+To ensure version predictability, we use [Semantic Versioning](https://semver.org/): we try to add only features for minor versions and bugfixes (or smaller features) for patch version.
+
+## License
+
+This package is part of the following suites:
+
+* [Kno UI for Angular](/)
+* [knoReact](http://www.tlk.com/kendo-react-ui/)
+* [Kno UI for jQuery](http://www.tlk.com/kendo-ui)
+* [UI for ASP.NET MVC](http://www.tlk.com/aspnet-mvc)
+* [UI for ASP.NET Core](http://www.tlk.com/aspnet-core-ui)
+
+
+
+
+
+
+
+

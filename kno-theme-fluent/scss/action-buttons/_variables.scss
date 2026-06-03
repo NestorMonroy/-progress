@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// Horizontal padding of the action buttons container.
+/// @group action-buttons
+$kno-actions-padding-x: var( --kno-actions-padding-x, k-spacing(3) ) !default;
+/// Vertical padding of the action buttons container.
+/// @group action-buttons
+$kno-actions-padding-y: var( --kno-actions-padding-y, k-spacing(3) ) !default;
+/// Width of the border around the action buttons container.
+/// @group action-buttons
+$kno-actions-border-width: var( --kno-actions-border-width, 0px ) !default;
+/// The background color of the action buttons container.
+/// @group action-buttons
+$kno-actions-bg: var( --kno-actions-bg, inherit ) !default;
+/// The text color of the action buttons container.
+/// @group action-buttons
+$kno-actions-text: var( --kno-actions-text, inherit ) !default;
+/// The border color of the action buttons container.
+/// @group action-buttons
+$kno-actions-border: var( --kno-actions-border, inherit ) !default;
+
+/// Spacing between the action buttons.
+/// @group action-buttons
+$kno-actions-button-spacing: var( --kno-actions-button-spacing, k-spacing(3) ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/action-buttons/_variables.scss" with (
+    $kno-actions-padding-x: $kno-actions-padding-x,
+    $kno-actions-padding-y: $kno-actions-padding-y,
+    $kno-actions-border-width: $kno-actions-border-width,
+    $kno-actions-bg: $kno-actions-bg,
+    $kno-actions-text: $kno-actions-text,
+    $kno-actions-border: $kno-actions-border,
+    $kno-actions-button-spacing: $kno-actions-button-spacing
+);

@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/breadcrumb/_layout.scss" as *;
+
+
+@mixin kno-breadcrumb--layout() {
+    @include kno-breadcrumb--layout-base();
+}

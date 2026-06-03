@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseEvent as s } from "./base-event.mjs";
+class n extends s {
+  /**
+   * @hidden
+   */
+  constructor(t, e) {
+    super(e), this.value = t.value, this.point = t.point, this.series = t.series, this.currentState = t.currentState, this.nextState = t.nextState;
+  }
+}
+export {
+  n as DrilldownEvent
+};

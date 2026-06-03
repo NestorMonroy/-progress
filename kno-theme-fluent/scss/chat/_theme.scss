@@ -1,0 +1,12 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "../bubble/_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/chat/_theme.scss" as *;
+
+@mixin kendo-chat--theme() {
+    @include kendo-chat--theme-base();
+    
+    .k-message-time {
+        color: $kendo-chat-timestamp-text;
+    }
+}

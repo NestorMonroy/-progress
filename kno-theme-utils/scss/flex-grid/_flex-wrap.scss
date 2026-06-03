@@ -1,0 +1,33 @@
+/// This is equivalent to `flex-wrap: wrap;`.
+/// @example flex-wrap: wrap
+/// @name .k-flex-wrap
+/// @group flex-wrap
+/// @contextType css
+
+/// This is equivalent to `flex-wrap: nowrap;`.
+/// @example flex-wrap: nowrap
+/// @name .k-flex-nowrap
+/// @group flex-wrap
+/// @contextType css
+
+/// This is equivalent to `flex-wrap: wrap-reverse;`.
+/// @example flex-wrap: wrap-reverse
+/// @name .k-flex-wrap-reverse
+/// @group flex-wrap
+/// @contextType css
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--flex-grid--flex-wrap() {
+    @include import-once("utils-flex-grid-flex-wrap") {
+
+        // Flex wrap utility classes
+        $kno-utils-flex-wrap: map.get( $kno-utils, "flex-wrap" ) !default;
+        @include generate-utils( flex, flex-wrap, $kno-utils-flex-wrap );
+
+    }
+}

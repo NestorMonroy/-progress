@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/scroller/_layout.scss" as *;
+
+@mixin kno-scroller--layout() {
+    @include kno-scroller--layout-base();
+}

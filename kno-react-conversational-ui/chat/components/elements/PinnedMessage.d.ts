@@ -1,0 +1,23 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Message, User } from '../../../index.js';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+interface PinnedMessageProps {
+    message: Message;
+    onUnpin?: (message: Message) => void;
+    user?: User;
+    onReferencedMessageClick?: (messageId: string | number) => void;
+}
+/**
+ * @hidden
+ */
+declare const PinnedMessage: React.FC<PinnedMessageProps>;
+export default PinnedMessage;

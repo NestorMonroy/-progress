@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/textbox/_layout.scss" as *;
+
+@mixin kno-textbox--layout() {
+    @include kno-textbox--layout-base();
+}

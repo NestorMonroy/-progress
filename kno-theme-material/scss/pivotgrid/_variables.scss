@@ -1,0 +1,341 @@
+@use "sass:color";
+@use "../core/_index.scss" as *;
+@use"../table/_variables.scss" as *;
+@use "../list/_variables.scss" as *;
+@use "../grid/_variables.scss" as *;
+@use "../button/_variables.scss" as *;
+
+
+
+// Pivot grid
+
+/// The spacer of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-spacer: k-spacing(4) !default;
+/// The horizontal padding of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-padding-x: null !default;
+/// The vertical of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-padding-y: null !default;
+/// The font family of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-font-family: var(--kno-font-family) !default;
+/// The font size of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-font-size: var(--kno-font-size) !default;
+/// The line height of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-line-height: var(--kno-line-height) !default;
+/// The border width of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-border-width: 1px !default;
+/// The border radius of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-border-radius: null !default;
+/// The icon spacing of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-icon-spacing: k-spacing(1) !default;
+
+/// The default width of the PivotGrid row header.
+/// @group pivotgrid
+$kno-pivotgrid-row-header-width: 300px !default;
+/// The default height of the PivotGrid column header.
+/// @group pivotgrid
+$kno-pivotgrid-column-header-height: 75px !default;
+
+/// The horizontal padding of the PivotGrid cell.
+/// @group pivotgrid
+$kno-pivotgrid-cell-padding-x: $kno-table-md-cell-padding-x !default;
+/// The vertical padding of the PivotGrid cell.
+/// @group pivotgrid
+$kno-pivotgrid-cell-padding-y: $kno-table-md-cell-padding-y !default;
+/// The border width of the PivotGrid cell.
+/// @group pivotgrid
+$kno-pivotgrid-cell-border-width: 1px !default;
+
+/// The background color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-bg: k-color(surface-alt) !default;
+/// The text color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-text: k-color(on-app-surface) !default;
+/// The border color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-border: k-color(border) !default;
+
+/// The alt border color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-alt-border: k-color(border-alt) !default;
+
+/// The background color of the PivotGrid header.
+/// @group pivotgrid
+$kno-pivotgrid-headers-bg: k-color(surface) !default;
+/// The text color of the PivotGrid header.
+/// @group pivotgrid
+$kno-pivotgrid-headers-text: k-color(on-app-surface) !default;
+/// The border color of the PivotGrid header.
+/// @group pivotgrid
+$kno-pivotgrid-headers-border: k-color(border) !default;
+
+/// The background color of the PivotGrid total cells.
+/// @group pivotgrid
+$kno-pivotgrid-total-bg: k-color(app-surface) !default;
+/// The text color of the PivotGrid total cells.
+/// @group pivotgrid
+$kno-pivotgrid-total-text: k-color(on-app-surface) !default;
+/// The border color of the PivotGrid total cells.
+/// @group pivotgrid
+$kno-pivotgrid-total-border: k-color(border) !default;
+
+/// The hover background color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-hover-bg: color-mix(in srgb, k-color(on-app-surface) 12%, transparent) !default;
+/// The hover text color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-hover-text: null !default;
+/// The hover border color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-hover-border: null !default;
+
+/// The selected background color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-selected-bg: color-mix(in srgb, k-color(on-app-surface) 25%, transparent) !default;
+/// The selected text color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-selected-text: null !default;
+/// The selected border color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-selected-border: null !default;
+
+/// The focus shadow of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-focus-shadow: $kno-list-item-focus-shadow !default;
+
+// PivotGrid Configurator
+/// The horizontal padding of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-padding-x: null !default;
+/// The vertical padding of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-padding-y: null !default;
+/// The border width of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-border-width: 1px !default;
+
+/// The horizontal padding of the PivotGrid configurator header.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-header-padding-x: $kno-pivotgrid-spacer !default;
+/// The vertical padding of the PivotGrid configurator header.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-header-padding-y: calc( #{$kno-pivotgrid-spacer} * .75 ) !default;
+/// The font size of the PivotGrid configurator header.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-header-font-size: 18px !default;
+/// The font weight of the PivotGrid configurator header.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-header-font-weight: 500 !default;
+
+/// The horizontal padding of the PivotGrid configurator content.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-content-padding-x: $kno-pivotgrid-spacer !default;
+/// The vertical padding of the PivotGrid configurator content.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-content-padding-y: k-spacing(0) !default;
+
+/// The horizontal margin of the PivotGrid configurator fields.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-fields-margin-x: k-spacing(0) !default;
+/// The vertical margin of the PivotGrid configurator fields.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-fields-margin-y: calc( #{$kno-pivotgrid-spacer} / 2 ) !default;
+
+/// The default width of the PivotGrid vertical configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-vertical-width: 320px !default;
+/// The default height of the PivotGrid horizontal configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-horizontal-height: 420px !default;
+
+/// The background color of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-bg: k-color(surface-alt) !default;
+/// The text color of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-text: k-color(on-app-surface) !default;
+/// The border color of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-border: k-color(border) !default;
+
+/// The background color of the PivotGrid configurator header.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-header-bg: null !default;
+/// The text color of the PivotGrid configurator header.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-header-text: k-color(on-app-surface) !default;
+/// The border color of the PivotGrid configurator header.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-header-border: null !default;
+
+/// The shadow of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-end-shadow: k-elevation(3) !default;
+/// The end shadow of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-start-shadow: k-elevation(3) !default;
+/// The start shadow of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-top-shadow: k-elevation(3) !default;
+/// The top shadow of the PivotGrid configurator.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-bottom-shadow: k-elevation(3) !default;
+
+/// The horizontal padding of the PivotGrid configurator button.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-button-padding-x: k-spacing(1) !default;
+/// The vertical padding of the PivotGrid configurator button.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-button-padding-y: k-spacing(1) !default;
+/// The border width of the PivotGrid configurator button.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-button-border-width: 1px !default;
+/// The size of the PivotGrid configurator button.
+/// @group pivotgrid
+$kno-pivotgrid-configurator-button-size: calc( calc( #{$kno-pivotgrid-line-height} * 1em ) + calc( #{$kno-pivotgrid-configurator-button-padding-y} * 2 ) + calc( #{$kno-pivotgrid-configurator-button-border-width} * 2 ) ) !default;
+
+// Calculated fields
+/// The horizontal padding of the PivotGrid calculated field.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-padding-x: $kno-pivotgrid-spacer !default;
+/// The vertical padding of the PivotGrid calculated field.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-padding-y: $kno-pivotgrid-spacer !default;
+/// The border width of the PivotGrid calculated field.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-border-width: 1px !default;
+/// The border radius of the PivotGrid calculated field.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-border-radius: k-border-radius(md) !default;
+/// The spacing of the PivotGrid calculated field.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-gap: $kno-pivotgrid-spacer !default;
+
+/// The background color of the PivotGrid calculated field.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-bg: k-color(surface-alt) !default;
+/// The text color of the PivotGrid calculated field.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-text: k-color(on-app-surface) !default;
+/// The border color of the PivotGrid calculated field.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-border: k-color(border) !default;
+
+/// The background color of the PivotGrid calculated field header.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-header-bg: null !default;
+/// The text color of the PivotGrid calculated field header.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-header-text: k-color(on-app-surface) !default;
+/// The border color of the PivotGrid calculated field header.
+/// @group pivotgrid
+$kno-pivotgrid-calculated-field-header-border: null !default;
+
+/// The horizontal padding of the PivotGrid treeview.
+/// @group pivotgrid
+$kno-pivotgrid-treeview-padding-x: $kno-pivotgrid-spacer !default;
+/// The vertical padding of the PivotGrid treeview.
+/// @group pivotgrid
+$kno-pivotgrid-treeview-padding-y: k-spacing(0) !default;
+
+// Legacy variables
+/// The background color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-alt-bg: $kno-grid-header-bg !default;
+/// The text color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-alt-text: $kno-grid-header-text !default;
+/// The border color of the PivotGrid.
+/// @group pivotgrid
+$kno-pivotgrid-chrome-border: $kno-grid-border !default;
+
+/// The background color of the PivotGrid row.
+/// @group pivotgrid
+$kno-pivotgrid-row-headers-bg: unset !default;
+
+@forward "@progress/kno-theme-core/scss/components/pivotgrid/_variables.scss" with (
+    $kno-pivotgrid-spacer: $kno-pivotgrid-spacer,
+    $kno-pivotgrid-padding-x: $kno-pivotgrid-padding-x,
+    $kno-pivotgrid-padding-y: $kno-pivotgrid-padding-y,
+    $kno-pivotgrid-font-family: $kno-pivotgrid-font-family,
+    $kno-pivotgrid-font-size: $kno-pivotgrid-font-size,
+    $kno-pivotgrid-line-height: $kno-pivotgrid-line-height,
+    $kno-pivotgrid-border-width: $kno-pivotgrid-border-width,
+    $kno-pivotgrid-border-radius: $kno-pivotgrid-border-radius,
+    $kno-pivotgrid-icon-spacing: $kno-pivotgrid-icon-spacing,
+    $kno-pivotgrid-row-header-width: $kno-pivotgrid-row-header-width,
+    $kno-pivotgrid-column-header-height: $kno-pivotgrid-column-header-height,
+    $kno-pivotgrid-cell-padding-x: $kno-pivotgrid-cell-padding-x,
+    $kno-pivotgrid-cell-padding-y: $kno-pivotgrid-cell-padding-y,
+    $kno-pivotgrid-cell-border-width: $kno-pivotgrid-cell-border-width,
+    $kno-pivotgrid-bg: $kno-pivotgrid-bg,
+    $kno-pivotgrid-text: $kno-pivotgrid-text,
+    $kno-pivotgrid-border: $kno-pivotgrid-border,
+    $kno-pivotgrid-alt-border: $kno-pivotgrid-alt-border,
+    $kno-pivotgrid-headers-bg: $kno-pivotgrid-headers-bg,
+    $kno-pivotgrid-headers-text: $kno-pivotgrid-headers-text,
+    $kno-pivotgrid-headers-border: $kno-pivotgrid-headers-border,
+    $kno-pivotgrid-total-bg: $kno-pivotgrid-total-bg,
+    $kno-pivotgrid-total-text: $kno-pivotgrid-total-text,
+    $kno-pivotgrid-total-border: $kno-pivotgrid-total-border,
+    $kno-pivotgrid-hover-bg: $kno-pivotgrid-hover-bg,
+    $kno-pivotgrid-hover-text: $kno-pivotgrid-hover-text,
+    $kno-pivotgrid-hover-border: $kno-pivotgrid-hover-border,
+    $kno-pivotgrid-selected-bg: $kno-pivotgrid-selected-bg,
+    $kno-pivotgrid-selected-text: $kno-pivotgrid-selected-text,
+    $kno-pivotgrid-selected-border: $kno-pivotgrid-selected-border,
+    $kno-pivotgrid-focus-shadow: $kno-pivotgrid-focus-shadow,
+    $kno-pivotgrid-configurator-padding-x: $kno-pivotgrid-configurator-padding-x,
+    $kno-pivotgrid-configurator-padding-y: $kno-pivotgrid-configurator-padding-y,
+    $kno-pivotgrid-configurator-border-width: $kno-pivotgrid-configurator-border-width,
+    $kno-pivotgrid-configurator-header-padding-x: $kno-pivotgrid-configurator-header-padding-x,
+    $kno-pivotgrid-configurator-header-padding-y: $kno-pivotgrid-configurator-header-padding-y,
+    $kno-pivotgrid-configurator-header-font-size: $kno-pivotgrid-configurator-header-font-size,
+    $kno-pivotgrid-configurator-header-font-weight: $kno-pivotgrid-configurator-header-font-weight,
+    $kno-pivotgrid-configurator-content-padding-x: $kno-pivotgrid-configurator-content-padding-x,
+    $kno-pivotgrid-configurator-content-padding-y: $kno-pivotgrid-configurator-content-padding-y,
+    $kno-pivotgrid-configurator-fields-margin-x: $kno-pivotgrid-configurator-fields-margin-x,
+    $kno-pivotgrid-configurator-fields-margin-y: $kno-pivotgrid-configurator-fields-margin-y,
+    $kno-pivotgrid-configurator-vertical-width: $kno-pivotgrid-configurator-vertical-width,
+    $kno-pivotgrid-configurator-horizontal-height: $kno-pivotgrid-configurator-horizontal-height,
+    $kno-pivotgrid-configurator-bg: $kno-pivotgrid-configurator-bg,
+    $kno-pivotgrid-configurator-text: $kno-pivotgrid-configurator-text,
+    $kno-pivotgrid-configurator-border: $kno-pivotgrid-configurator-border,
+    $kno-pivotgrid-configurator-header-bg: $kno-pivotgrid-configurator-header-bg,
+    $kno-pivotgrid-configurator-header-text: $kno-pivotgrid-configurator-header-text,
+    $kno-pivotgrid-configurator-header-border: $kno-pivotgrid-configurator-header-border,
+    $kno-pivotgrid-configurator-end-shadow: $kno-pivotgrid-configurator-end-shadow,
+    $kno-pivotgrid-configurator-start-shadow: $kno-pivotgrid-configurator-start-shadow,
+    $kno-pivotgrid-configurator-top-shadow: $kno-pivotgrid-configurator-top-shadow,
+    $kno-pivotgrid-configurator-bottom-shadow: $kno-pivotgrid-configurator-bottom-shadow,
+    $kno-pivotgrid-configurator-button-padding-x: $kno-pivotgrid-configurator-button-padding-x,
+    $kno-pivotgrid-configurator-button-padding-y: $kno-pivotgrid-configurator-button-padding-y,
+    $kno-pivotgrid-configurator-button-border-width: $kno-pivotgrid-configurator-button-border-width,
+    $kno-pivotgrid-configurator-button-size: $kno-pivotgrid-configurator-button-size,
+    $kno-pivotgrid-calculated-field-padding-x: $kno-pivotgrid-calculated-field-padding-x,
+    $kno-pivotgrid-calculated-field-padding-y: $kno-pivotgrid-calculated-field-padding-y,
+    $kno-pivotgrid-calculated-field-border-width: $kno-pivotgrid-calculated-field-border-width,
+    $kno-pivotgrid-calculated-field-border-radius: $kno-pivotgrid-calculated-field-border-radius,
+    $kno-pivotgrid-calculated-field-gap: $kno-pivotgrid-calculated-field-gap,
+    $kno-pivotgrid-calculated-field-bg: $kno-pivotgrid-calculated-field-bg,
+    $kno-pivotgrid-calculated-field-text: $kno-pivotgrid-calculated-field-text,
+    $kno-pivotgrid-calculated-field-border: $kno-pivotgrid-calculated-field-border,
+    $kno-pivotgrid-calculated-field-header-bg: $kno-pivotgrid-calculated-field-header-bg,
+    $kno-pivotgrid-calculated-field-header-text: $kno-pivotgrid-calculated-field-header-text,
+    $kno-pivotgrid-calculated-field-header-border: $kno-pivotgrid-calculated-field-header-border,
+    $kno-pivotgrid-treeview-padding-x: $kno-pivotgrid-treeview-padding-x,
+    $kno-pivotgrid-treeview-padding-y: $kno-pivotgrid-treeview-padding-y,
+    $kno-pivotgrid-alt-bg: $kno-pivotgrid-alt-bg,
+    $kno-pivotgrid-alt-text: $kno-pivotgrid-alt-text,
+    $kno-pivotgrid-chrome-border: $kno-pivotgrid-chrome-border,
+    $kno-pivotgrid-row-headers-bg: $kno-pivotgrid-row-headers-bg,
+);

@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/multiselect/_layout.scss" as *;
+
+
+@mixin kno-multiselect--layout() {
+    @include kno-multiselect--layout-base();
+}

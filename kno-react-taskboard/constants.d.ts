@@ -1,0 +1,27 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export declare const TASKBOARD_ITEM_TYPE = "data-taskboard-type";
+/**
+ * @hidden
+ */
+export declare const TASKBOARD_ITEM_ID = "data-taskboard-id";
+/**
+ * @hidden
+ */
+export declare const TASKBOARD_PLACEHOLDER = "data-taskboard-placeholder";
+/**
+ * @hidden
+ */
+export declare const TASKBOARD_COLUMN = "column";
+/**
+ * @hidden
+ */
+export declare const TASKBOARD_TASK = "task";

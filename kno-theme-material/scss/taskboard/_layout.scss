@@ -1,0 +1,10 @@
+@use "@progress/kno-theme-core/scss/components/taskboard/_layout.scss" as *;
+
+
+@mixin kno-task-board--layout() {
+    @include kno-task-board--layout-base();
+
+    .k-taskboard-card .k-card-title {
+        font-size: var(--kno-font-size-lg);
+    }
+}

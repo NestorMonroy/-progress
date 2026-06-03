@@ -1,0 +1,129 @@
+@use "../core/_index.scss" as *;
+@use "../button/_variables.scss"as *;
+
+/// The width of the border around the ScrollView.
+/// @group scrollview
+$kno-scrollview-border-width: var( --kno-scrollview-border-width, 0px ) !default;
+/// The border radius of the ScrollView.
+/// @group scrollview
+$kno-scrollview-border-radius: var( --kno-scrollview-border-radius, null ) !default;
+/// The font family of the ScrollView.
+/// @group scrollview
+$kno-scrollview-font-family: var( --kno-scrollview-font-family, var(--kno-font-family) ) !default;
+/// The font size of the ScrollView.
+/// @group scrollview
+$kno-scrollview-font-size: var( --kno-scrollview-font-size, var(--kno-font-size) ) !default;
+/// The line height of the ScrollView.
+/// @group scrollview
+$kno-scrollview-line-height: var( --kno-scrollview-line-height, var(--kno-line-height) ) !default;
+
+/// The text color of the ScrollView.
+/// @group scrollview
+$kno-scrollview-text: var( --kno-scrollview-text, k-color(on-app-surface) ) !default;
+/// The background color of the ScrollView.
+/// @group scrollview
+$kno-scrollview-bg: var( --kno-scrollview-bg, k-color(surface-alt) ) !default;
+/// The border color of the ScrollView.
+/// @group scrollview
+$kno-scrollview-border: var( --kno-scrollview-border, color-mix(in srgb, k-color(border) 16%, transparent) ) !default;
+
+/// The size of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-size: var( --kno-scrollview-pagebutton-size, 10px ) !default;
+/// The background color of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-bg: var( --kno-scrollview-pagebutton-bg, k-color(app-surface) ) !default;
+/// The border color of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-border: var( --kno-scrollview-pagebutton-border, $kno-scrollview-pagebutton-bg ) !default;
+/// The primary background color of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-primary-bg: var( --kno-scrollview-pagebutton-primary-bg, k-color(primary) ) !default;
+/// The primary border color of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-primary-border: var( --kno-scrollview-pagebutton-primary-border, $kno-scrollview-pagebutton-primary-bg ) !default;
+/// The hover box shadow of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-hover-shadow: var( --kno-scrollview-pagebutton-hover-shadow, 0 0 0 1px k-color(base) ) !default;
+/// The focus box shadow of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-focus-shadow: var( --kno-scrollview-pagebutton-focus-shadow, 0 0 0 1px k-color(base-emphasis) ) !default;
+/// The primary hover box shadow of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-primary-hover-shadow: var( --kno-scrollview-pagebutton-primary-hover-shadow, 0 0 0 2px k-color(base) ) !default;
+/// The primary focus box shadow of the ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-primary-focus-shadow: var( --kno-scrollview-pagebutton-primary-focus-shadow, 0 0 0 2px k-color(base-emphasis) ) !default;
+/// The box shadow of the selected ScrollView page button.
+/// @group scrollview
+$kno-scrollview-pagebutton-primary-shadow: null !default;
+
+/// The offset of the ScrollView pager.
+/// @group scrollview
+$kno-scrollview-pager-offset: var( --kno-scrollview-pager-offset, 0px ) !default;
+/// The spacing between the ScrollView pager items.
+/// @group scrollview
+$kno-scrollview-pager-item-spacing: var( --kno-scrollview-pager-item-spacing, k-spacing(5) ) !default;
+/// The border width of the ScrollView pager items.
+/// @group scrollview
+$kno-scrollview-pager-item-border-width: var( --kno-scrollview-pager-item-border-width, 0px ) !default;
+/// The height of the ScrollView pager.
+/// @group scrollview
+$kno-scrollview-pager-height: var( --kno-scrollview-pager-height, calc( #{$kno-scrollview-pagebutton-size} + #{$kno-scrollview-pager-item-border-width} * 2 + #{$kno-scrollview-pager-item-spacing} * 2 ) ) !default;
+
+/// The color of the ScrollView navigation arrows.
+/// @group scrollview
+$kno-scrollview-navigation-color: var( --kno-scrollview-navigation-color, k-color(app-surface) ) !default;
+/// The box shadow of the ScrollView navigation arrows.
+/// @group scrollview
+$kno-scrollview-navigation-arrow-shadow: var( --kno-scrollview-navigation-arrow-shadow, k-elevation(3) ) !default;
+/// The background color of the ScrollView navigation.
+/// @group scrollview
+$kno-scrollview-navigation-bg: var( --kno-scrollview-navigation-bg, transparent ) !default;
+/// The focus box shadow of the ScrollView navigation arrows.
+/// @group scrollview
+$kno-scrollview-navigation-focus-shadow: var( --kno-scrollview-navigation-focus-shadow, 0 0 0 1px k-color(base-emphasis) ) !default;
+/// The hover box shadow of the ScrollView navigation arrows.
+/// @group scrollview
+$kno-scrollview-navigation-arrow-hover-shadow: var( --kno-scrollview-navigation-arrow-hover-shadow, k-elevation(4) ) !default;
+
+/// The background color of the ScrollView pager in light mode.
+/// @group scrollview
+$kno-scrollview-pager-light-bg: var( --kno-scrollview-pager-light-bg, rgba( $kno-color-white, .4 ) ) !default;
+/// The background color of the ScrollView pager in dark mode.
+/// @group scrollview
+$kno-scrollview-pager-dark-bg: var( --kno-scrollview-pager-dark-bg, rgba( $kno-color-black, .4 ) ) !default;
+
+/// The duration of the ScrollView transition.
+/// @group scrollview
+$kno-scrollview-transition-duration: var( --kno-scrollview-transition-duration, .3s ) !default;
+/// The timing function of the ScrollView transition.
+/// @group scrollview
+$kno-scrollview-transition-timing-function: var( --kno-scrollview-transition-timing-function, ease-in-out ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/scrollview/_variables.scss" with (
+    $kno-scrollview-border-width: $kno-scrollview-border-width,
+    $kno-scrollview-border-radius: $kno-scrollview-border-radius,
+    $kno-scrollview-font-family: $kno-scrollview-font-family,
+    $kno-scrollview-font-size: $kno-scrollview-font-size,
+    $kno-scrollview-line-height: $kno-scrollview-line-height,
+    $kno-scrollview-text: $kno-scrollview-text,
+    $kno-scrollview-bg: $kno-scrollview-bg,
+    $kno-scrollview-border: $kno-scrollview-border,
+    $kno-scrollview-pagebutton-size: $kno-scrollview-pagebutton-size,
+    $kno-scrollview-pagebutton-bg: $kno-scrollview-pagebutton-bg,
+    $kno-scrollview-pagebutton-border: $kno-scrollview-pagebutton-border,
+    $kno-scrollview-pagebutton-primary-bg: $kno-scrollview-pagebutton-primary-bg,
+    $kno-scrollview-pagebutton-primary-border: $kno-scrollview-pagebutton-primary-border,
+    $kno-scrollview-pagebutton-primary-shadow: $kno-scrollview-pagebutton-primary-shadow,
+    $kno-scrollview-pager-offset: $kno-scrollview-pager-offset,
+    $kno-scrollview-pager-item-spacing: $kno-scrollview-pager-item-spacing,
+    $kno-scrollview-pager-item-border-width: $kno-scrollview-pager-item-border-width,
+    $kno-scrollview-pager-height: $kno-scrollview-pager-height,
+    $kno-scrollview-navigation-color: $kno-scrollview-navigation-color,
+    $kno-scrollview-navigation-bg: $kno-scrollview-navigation-bg,
+    $kno-scrollview-light-bg: $kno-scrollview-pager-light-bg,
+    $kno-scrollview-dark-bg: $kno-scrollview-pager-dark-bg,
+    $kno-scrollview-transition-duration: $kno-scrollview-transition-duration,
+    $kno-scrollview-transition-timing-function: $kno-scrollview-transition-timing-function
+);

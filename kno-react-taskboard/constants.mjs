@@ -1,0 +1,15 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+const a = "data-taskboard-type", t = "data-taskboard-id", A = "data-taskboard-placeholder", o = "column", s = "task";
+export {
+  o as TASKBOARD_COLUMN,
+  t as TASKBOARD_ITEM_ID,
+  a as TASKBOARD_ITEM_TYPE,
+  A as TASKBOARD_PLACEHOLDER,
+  s as TASKBOARD_TASK
+};

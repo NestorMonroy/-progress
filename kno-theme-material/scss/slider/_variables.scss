@@ -1,0 +1,160 @@
+@use "../core/_index.scss" as *;
+
+
+// Slider
+/// The default size of the Slider.
+/// @group slider
+$kno-slider-size: 200px !default;
+/// The default size of the Slider tick.
+/// @group slider
+$kno-slider-tick-size: 2px !default;
+/// The default size of the Slider's track wrap.
+/// @group slider
+$kno-slider-alt-size: 36px !default;
+
+/// The font family of the Slider.
+/// @group slider
+$kno-slider-font-family: var(--kno-font-family) !default;
+/// The font size of the Slider.
+/// @group slider
+$kno-slider-font-size: var(--kno-font-size) !default;
+/// The line height of the Slider.
+/// @group slider
+$kno-slider-line-height: var(--kno-line-height) !default;
+
+/// The offset of the Slider Buttons.
+/// @group slider
+$kno-slider-button-offset: k-spacing(5.5) !default;
+/// The size of the Slider Buttons.
+/// @group slider
+$kno-slider-button-size: k-spacing(9) !default;
+
+/// The thickness of the Slider track.
+/// @group slider
+$kno-slider-track-thickness: k-spacing(1) !default;
+/// The size of the Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-size: k-spacing(5) !default;
+/// The border width of the Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-border-width: 0px !default;
+/// The transition scale of the active Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-active-scale: 1 !default;
+
+/// The background color of the Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-bg: k-color(primary) !default;
+/// The text color of the Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-text: k-color(on-primary) !default;
+/// The border color of the Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-border: k-color(primary) !default;
+/// The gradient of the Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-gradient: null !default;
+
+/// The background color of the hovered Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-hover-bg: k-color(primary) !default;
+/// The text color of the hovered Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-hover-text: null !default;
+/// The border color of the hovered Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-hover-border: k-color(primary) !default;
+/// The gradient of the hovered Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-hover-gradient: null !default;
+/// The shadow of the hovered Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-hover-shadow: 0 0 0 k-spacing(2.5) color-mix(in srgb, k-color(primary) 8%, transparent) !default;
+
+/// The background color of the active Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-pressed-bg: k-color(primary) !default;
+/// The text color of the active Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-pressed-text: null !default;
+/// The border color of the active Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-pressed-border: k-color(primary) !default;
+/// The gradient of the active Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-pressed-gradient: null !default;
+
+/// The shadow of the focused Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-focus-shadow: 0 0 0 k-spacing(2.5) color-mix(in srgb, k-color(primary) 20%, transparent) !default;
+
+/// The transition speed of the Slider.
+/// @group slider
+$kno-slider-transition-speed: k-duration(brisk) !default;
+/// The transition function of the Slider.
+/// @group slider
+$kno-slider-transition-function: k-easing(standard) !default;
+/// The transition speed of the Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-transition-speed: k-duration(quick) !default;
+/// The transition function of the Slider drag handle.
+/// @group slider
+$kno-slider-draghandle-transition-function: k-easing(decelerate) !default;
+
+/// The background color of the Slider track.
+/// @group slider
+$kno-slider-track-bg: k-color(primary-subtle) !default;
+/// The background color of the Slider's track selection.
+/// @group slider
+$kno-slider-selection-bg: k-color(primary) !default;
+/// @group slider
+/// The opacity of the disabled Slider.
+$kno-slider-disabled-opacity: .65 !default;
+
+/// The background image of the horizontal Slider tick.
+/// @group slider
+$kno-slider-tick-horizontal-image: "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" !default;
+/// The background image of the vertical Slider tick.
+/// @group slider
+$kno-slider-tick-vertical-image: "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" !default;
+
+/// The background color of the Slider tick marker.
+/// @group slider
+$kno-slider-tick-marker-bg: k-color(primary-emphasis) !default;
+
+@forward "@progress/kno-theme-core/scss/components/slider/_variables.scss" with (
+    $kno-slider-size: $kno-slider-size,
+    $kno-slider-alt-size: $kno-slider-alt-size,
+    $kno-slider-font-family: $kno-slider-font-family,
+    $kno-slider-font-size: $kno-slider-font-size,
+    $kno-slider-line-height: $kno-slider-line-height,
+    $kno-slider-button-offset: $kno-slider-button-offset,
+    $kno-slider-button-size: $kno-slider-button-size,
+    $kno-slider-track-thickness: $kno-slider-track-thickness,
+    $kno-slider-draghandle-size: $kno-slider-draghandle-size,
+    $kno-slider-draghandle-border-width: $kno-slider-draghandle-border-width,
+    $kno-slider-draghandle-active-scale: $kno-slider-draghandle-active-scale,
+    $kno-slider-draghandle-bg: $kno-slider-draghandle-bg,
+    $kno-slider-draghandle-text: $kno-slider-draghandle-text,
+    $kno-slider-draghandle-border: $kno-slider-draghandle-border,
+    $kno-slider-draghandle-gradient: $kno-slider-draghandle-gradient,
+    $kno-slider-draghandle-hover-bg: $kno-slider-draghandle-hover-bg,
+    $kno-slider-draghandle-hover-text: $kno-slider-draghandle-hover-text,
+    $kno-slider-draghandle-hover-border: $kno-slider-draghandle-hover-border,
+    $kno-slider-draghandle-hover-gradient: $kno-slider-draghandle-hover-gradient,
+    $kno-slider-draghandle-hover-shadow: $kno-slider-draghandle-hover-shadow,
+    $kno-slider-draghandle-pressed-bg: $kno-slider-draghandle-pressed-bg,
+    $kno-slider-draghandle-pressed-text: $kno-slider-draghandle-pressed-text,
+    $kno-slider-draghandle-pressed-border: $kno-slider-draghandle-pressed-border,
+    $kno-slider-draghandle-pressed-gradient: $kno-slider-draghandle-pressed-gradient,
+    $kno-slider-draghandle-focus-shadow: $kno-slider-draghandle-focus-shadow,
+    $kno-slider-transition-speed: $kno-slider-transition-speed,
+    $kno-slider-transition-function: $kno-slider-transition-function,
+    $kno-slider-draghandle-transition-speed: $kno-slider-draghandle-transition-speed,
+    $kno-slider-draghandle-transition-function: $kno-slider-draghandle-transition-function,
+    $kno-slider-track-bg: $kno-slider-track-bg,
+    $kno-slider-selection-bg: $kno-slider-selection-bg,
+    $kno-slider-disabled-opacity: $kno-slider-disabled-opacity,
+    $kno-slider-tick-horizontal-image: $kno-slider-tick-horizontal-image,
+    $kno-slider-tick-vertical-image: $kno-slider-tick-vertical-image
+);

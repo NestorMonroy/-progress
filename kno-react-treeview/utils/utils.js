@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const n=(t,e)=>t===e.length-1,s=(t,e)=>{const o=n(t,e);return t===0&&!o?"top":o?"bot":"mid"};exports.getNodePosition=s;

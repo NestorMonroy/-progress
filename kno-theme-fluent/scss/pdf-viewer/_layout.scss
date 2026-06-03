@@ -1,0 +1,11 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/pdf-viewer/_layout.scss" as *;
+
+@mixin kno-pdf-viewer--layout() {
+    @include kno-pdf-viewer--layout-base();
+
+    .k-pdf-viewer-canvas > .k-search-panel {
+        margin-block-start: $kno-pdf-viewer-search-panel-margin-y;
+    }
+}

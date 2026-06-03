@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+import s from "prop-types";
+import { classNames as r } from "@progress/kno-react-common";
+const a = (e) => /* @__PURE__ */ t.createElement("div", { style: e.style, className: r("k-card-subtitle", e.className) }, e.children);
+a.propTypes = {
+  className: s.string
+};
+export {
+  a as CardSubtitle
+};

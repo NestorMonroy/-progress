@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const x=require("react"),g=require("@progress/kno-react-buttons"),u=require("@progress/kno-react-common"),P=require("./EditorContext.js"),C=require("./AxisEditor.js");function R(e){const r=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const n in e)if(n!=="default"){const o=Object.getOwnPropertyDescriptor(e,n);Object.defineProperty(r,n,o.get?o:{enumerable:!0,get:()=>e[n]})}}return r.default=e,Object.freeze(r)}const t=R(x),m=t.forwardRef((e,r)=>{const{value:n=d.value,field:o}=e,s=t.useRef(null),a=t.useRef(null),c=t.useRef(null),[l,f]=u.useCustomComponent(e.chipList||d.chipList);t.useImperativeHandle(a,()=>s.current&&s.current.element),t.useImperativeHandle(c,()=>({props:e,element:a.current})),t.useImperativeHandle(r,()=>c.current);const p=n.filter(i=>i.name.length===1&&i.name.every(v=>v.indexOf("&")===-1)).map(i=>({...i,text:String(i.name)}));return t.createElement(P.PivotGridConfiguratorEditorAxesContext.Provider,{value:{axes:o}},t.createElement(l,{ref:u.canUseRef(l)?s:void 0,textField:"text",valueField:"name",data:p,chip:C.PivotGridAxisEditor,style:{position:"relative"},className:e.className,selection:"none",...f}))}),d={value:[],chipList:g.ChipList};m.displayName="KendoReactPivotGridAxesEditor";exports.PivotGridAxesEditor=m;

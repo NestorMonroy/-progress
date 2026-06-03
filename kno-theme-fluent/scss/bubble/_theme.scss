@@ -1,0 +1,16 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/bubble/_theme.scss" as *;
+
+@mixin kendo-bubble--theme() {
+    @include kendo-bubble--theme-base();
+
+    .k-bubble {
+
+        &:focus,
+        &.k-focus {
+            border-color: $kendo-bubble-focus-border;
+            box-shadow: $kendo-bubble-focus-shadow;
+        }
+    }
+}

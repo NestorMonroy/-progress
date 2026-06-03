@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/timepicker/_theme.scss" as *;
+
+@mixin kno-time-picker--theme() {
+    @include kno-time-picker--theme-base();
+}

@@ -1,0 +1,261 @@
+@use "../list/_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "../core/functions/index.scss" as *;
+
+
+// CheckBox
+
+/// The border width of the CheckBox.
+/// @group checkbox
+$kno-checkbox-border-width: 2px !default;
+
+/// The size of a small CheckBox.
+/// @group checkbox
+$kno-checkbox-sm-size: k-spacing(4) !default;
+/// The size of a medium CheckBox.
+/// @group checkbox
+$kno-checkbox-md-size: k-spacing(4) !default;
+/// The size of a large CheckBox.
+/// @group checkbox
+$kno-checkbox-lg-size: k-spacing(5) !default;
+
+/// The glyph size of a small CheckBox.
+/// @group checkbox
+$kno-checkbox-sm-glyph-size: k-spacing(3) !default;
+/// The glyph size of a medium CheckBox.
+/// @group checkbox
+$kno-checkbox-md-glyph-size: k-spacing(4) !default;
+/// The glyph size of a large CheckBox.
+/// @group checkbox
+$kno-checkbox-lg-glyph-size: k-spacing(5) !default;
+
+/// The ripple size of a small CheckBox.
+/// @group checkbox
+$kno-checkbox-sm-ripple-size: k-spacing(8) !default;
+/// The ripple size of a medium CheckBox.
+/// @group checkbox
+$kno-checkbox-md-ripple-size: k-spacing(10) !default;
+/// The ripple size of a large CheckBox.
+/// @group checkbox
+$kno-checkbox-lg-ripple-size: k-spacing(12) !default;
+
+// A map with the different CheckBox sizes.
+/// The sizes of the CheckBox.
+/// @group checkbox
+$kno-checkbox-sizes: (
+    sm: (
+        size: $kno-checkbox-sm-size,
+        glyph-size: $kno-checkbox-sm-glyph-size,
+        ripple-size: $kno-checkbox-sm-ripple-size,
+        indicator-size: k-spacing(8)
+    ),
+    md: (
+        size: $kno-checkbox-md-size,
+        glyph-size: $kno-checkbox-md-glyph-size,
+        ripple-size: $kno-checkbox-md-ripple-size,
+        indicator-size: k-spacing(10)
+    ),
+    lg: (
+        size: $kno-checkbox-lg-size,
+        glyph-size: $kno-checkbox-lg-glyph-size,
+        ripple-size: $kno-checkbox-lg-ripple-size,
+        indicator-size: k-spacing(12)
+    )
+) !default;
+
+/// The background color of the CheckBox.
+/// @group checkbox
+$kno-checkbox-bg: unset !default;
+/// The text color of the CheckBox.
+/// @group checkbox
+$kno-checkbox-text: null !default;
+/// The border color of the CheckBox.
+/// @group checkbox
+$kno-checkbox-border: k-color(on-app-surface) !default;
+
+/// The background color of the hovered CheckBox.
+/// @group checkbox
+$kno-checkbox-hover-bg: null !default;
+/// The text color of the hovered CheckBox.
+/// @group checkbox
+$kno-checkbox-hover-text: null !default;
+/// The border color of the hovered CheckBox.
+/// @group checkbox
+$kno-checkbox-hover-border: null !default;
+
+/// The background color of the checked CheckBox.
+/// @group checkbox
+$kno-checkbox-checked-bg: k-color(primary) !default;
+/// The text color of the checked CheckBox.
+/// @group checkbox
+$kno-checkbox-checked-text: k-color(on-primary) !default;
+/// The border color of the checked CheckBox.
+/// @group checkbox
+$kno-checkbox-checked-border: $kno-checkbox-checked-bg !default;
+
+/// The background color of the indeterminate CheckBox.
+/// @group checkbox
+$kno-checkbox-indeterminate-bg: $kno-checkbox-checked-bg !default;
+/// The text color of the indeterminate CheckBox.
+/// @group checkbox
+$kno-checkbox-indeterminate-text: $kno-checkbox-checked-text !default;
+/// The border color of the indeterminate CheckBox.
+/// @group checkbox
+$kno-checkbox-indeterminate-border: $kno-checkbox-checked-border !default;
+
+/// The border color of the focused CheckBox.
+/// @group checkbox
+$kno-checkbox-focus-border: null !default;
+/// The box shadow of the focused CheckBox.
+/// @group checkbox
+$kno-checkbox-focus-shadow: unset !default;
+/// The border color of the focused and checked CheckBox.
+/// @group checkbox
+$kno-checkbox-focus-checked-border: null !default;
+/// The box shadow of the focused and checked CheckBox.
+/// @group checkbox
+$kno-checkbox-focus-checked-shadow: unset !default;
+
+/// The background color of the disabled CheckBox.
+/// @group checkbox
+$kno-checkbox-disabled-bg: null !default;
+/// The text color of the disabled CheckBox.
+/// @group checkbox
+$kno-checkbox-disabled-text: null !default;
+/// The border color of the disabled CheckBox.
+/// @group checkbox
+$kno-checkbox-disabled-border: k-color(on-app-surface) !default;
+
+
+/// The background color of the disabled and checked CheckBox.
+/// @group checkbox
+$kno-checkbox-disabled-checked-bg: k-color(on-app-surface) !default;
+/// The text color of the disabled and checked CheckBox.
+/// @group checkbox
+$kno-checkbox-disabled-checked-text: $kno-checkbox-disabled-text !default;
+/// The border color of the disabled and checked CheckBox.
+/// @group checkbox
+$kno-checkbox-disabled-checked-border: $kno-checkbox-disabled-checked-bg !default;
+
+/// The text color of an invalid CheckBox.
+/// @group checkbox
+$kno-checkbox-invalid-text: k-color(error-on-surface) !default;
+/// The border color of an invalid CheckBox.
+/// @group checkbox
+$kno-checkbox-invalid-border: k-color(error) !default;
+
+
+// CheckBox indicator
+
+/// The type of the CheckBox indicator.
+/// @group checkbox
+$kno-checkbox-indicator-type: image !default;
+
+/// The font family of the CheckBox indicator glyph.
+/// @group checkbox
+$kno-checkbox-glyph-font-family: "WebComponentsIcons", monospace !default;
+/// The glyph of the CheckBox indicator.
+/// @group checkbox
+$kno-checkbox-checked-glyph: "\e118" !default;
+/// The glyph of the indeterminate CheckBox indicator.
+/// @group checkbox
+$kno-checkbox-indeterminate-glyph: "\e121" !default;
+
+/// The image for a checked CheckBox indicator.
+/// @group checkbox
+$kno-checkbox-checked-image: k-escape-svg( url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='none' stroke='#ffffff' stroke-width='3' d='M4.1,12.7 9,17.6 20.3,6.3'/></svg>") ) !default;
+/// The image for a indeterminate CheckBox indicator.
+/// @group checkbox
+$kno-checkbox-indeterminate-image: k-escape-svg( url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'><path fill='none' stroke='#ffffff' stroke-width='3' d='M4 10h12'/></svg>") ) !default;
+
+
+// CheckBox label
+
+/// The horizontal margin of the CheckBox inside a label.
+/// @group checkbox
+$kno-checkbox-label-margin-x: k-spacing(4) !default;
+
+
+// CheckBox list
+
+/// The spacing between the items in a horizontal CheckBox list.
+/// @group checkbox
+$kno-checkbox-list-spacing: k-spacing(4) !default;
+/// The horizontal padding of the CheckBox list items.
+/// @group checkbox
+$kno-checkbox-list-item-padding-x: k-spacing(0) !default;
+/// The vertical padding of the CheckBox list items.
+/// @group checkbox
+$kno-checkbox-list-item-padding-y: $kno-list-md-item-padding-y !default;
+
+
+// CheckBox ripple
+
+/// The background color of the CheckBox' ripple.
+/// @group checkbox
+$kno-checkbox-ripple-bg: k-color(primary) !default;
+/// The opacity of the CheckBox' ripple.
+/// @group checkbox
+$kno-checkbox-ripple-opacity: .2 !default;
+
+/// The default size of the Checkbox.
+/// @group checkbox
+/// @role default
+$kno-checkbox-default-size: "md" !default;
+
+/// The default border radius of the Checkbox.
+/// @group checkbox
+/// @role default
+$kno-checkbox-default-roundness: "md" !default;
+
+@forward "@progress/kno-theme-core/scss/components/checkbox/_variables.scss" with (
+    $kno-checkbox-border-width: $kno-checkbox-border-width,
+    $kno-checkbox-sm-size: $kno-checkbox-sm-size,
+    $kno-checkbox-md-size: $kno-checkbox-md-size,
+    $kno-checkbox-lg-size: $kno-checkbox-lg-size,
+    $kno-checkbox-sm-glyph-size: $kno-checkbox-sm-glyph-size,
+    $kno-checkbox-md-glyph-size: $kno-checkbox-md-glyph-size,
+    $kno-checkbox-lg-glyph-size: $kno-checkbox-lg-glyph-size,
+    $kno-checkbox-sm-ripple-size: $kno-checkbox-sm-ripple-size,
+    $kno-checkbox-md-ripple-size: $kno-checkbox-md-ripple-size,
+    $kno-checkbox-lg-ripple-size: $kno-checkbox-lg-ripple-size,
+    $kno-checkbox-sizes: $kno-checkbox-sizes,
+    $kno-checkbox-bg: $kno-checkbox-bg,
+    $kno-checkbox-text: $kno-checkbox-text,
+    $kno-checkbox-border: $kno-checkbox-border,
+    $kno-checkbox-hover-bg: $kno-checkbox-hover-bg,
+    $kno-checkbox-hover-text: $kno-checkbox-hover-text,
+    $kno-checkbox-hover-border: $kno-checkbox-hover-border,
+    $kno-checkbox-checked-bg: $kno-checkbox-checked-bg,
+    $kno-checkbox-checked-text: $kno-checkbox-checked-text,
+    $kno-checkbox-checked-border: $kno-checkbox-checked-border,
+    $kno-checkbox-indeterminate-bg: $kno-checkbox-indeterminate-bg,
+    $kno-checkbox-indeterminate-text: $kno-checkbox-indeterminate-text,
+    $kno-checkbox-indeterminate-border: $kno-checkbox-indeterminate-border,
+    $kno-checkbox-focus-border: $kno-checkbox-focus-border,
+    $kno-checkbox-focus-shadow: $kno-checkbox-focus-shadow,
+    $kno-checkbox-focus-checked-border: $kno-checkbox-focus-checked-border,
+    $kno-checkbox-focus-checked-shadow: $kno-checkbox-focus-checked-shadow,
+    $kno-checkbox-disabled-bg: $kno-checkbox-disabled-bg,
+    $kno-checkbox-disabled-text: $kno-checkbox-disabled-text,
+    $kno-checkbox-disabled-border: $kno-checkbox-disabled-border,
+    $kno-checkbox-disabled-checked-bg: $kno-checkbox-disabled-checked-bg,
+    $kno-checkbox-disabled-checked-text: $kno-checkbox-disabled-checked-text,
+    $kno-checkbox-disabled-checked-border: $kno-checkbox-disabled-checked-border,
+    $kno-checkbox-invalid-text: $kno-checkbox-invalid-text,
+    $kno-checkbox-invalid-border: $kno-checkbox-invalid-border,
+    $kno-checkbox-indicator-type: $kno-checkbox-indicator-type,
+    $kno-checkbox-glyph-font-family: $kno-checkbox-glyph-font-family,
+    $kno-checkbox-checked-glyph: $kno-checkbox-checked-glyph,
+    $kno-checkbox-indeterminate-glyph: $kno-checkbox-indeterminate-glyph,
+    $kno-checkbox-checked-image: $kno-checkbox-checked-image,
+    $kno-checkbox-indeterminate-image: $kno-checkbox-indeterminate-image,
+    $kno-checkbox-label-margin-x: $kno-checkbox-label-margin-x,
+    $kno-checkbox-list-spacing: $kno-checkbox-list-spacing,
+    $kno-checkbox-list-item-padding-x: $kno-checkbox-list-item-padding-x,
+    $kno-checkbox-list-item-padding-y: $kno-checkbox-list-item-padding-y,
+    $kno-checkbox-ripple-bg: $kno-checkbox-ripple-bg,
+    $kno-checkbox-ripple-opacity: $kno-checkbox-ripple-opacity,
+    $kno-checkbox-default-size: $kno-checkbox-default-size,
+    $kno-checkbox-default-roundness: $kno-checkbox-default-roundness
+);

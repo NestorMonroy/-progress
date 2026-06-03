@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as c from "react";
+function i({ onOpen: t, onClose: r }) {
+  const [u, s] = c.useState(!1), f = c.useCallback(
+    (a) => {
+      u !== a && (s(a), a ? t == null || t() : r == null || r());
+    },
+    [u, t, r]
+  );
+  return {
+    isOpen: u,
+    setIsOpen: s,
+    togglePopup: f
+  };
+}
+export {
+  i as useSmartBoxPopup
+};

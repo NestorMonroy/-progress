@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as a from "react";
+import { classNames as o } from "@progress/kno-react-common";
+const n = (e) => {
+  const { children: m, id: r, className: t, style: s } = e;
+  return /* @__PURE__ */ a.createElement("div", { id: r, className: o("k-columnmenu-item-wrapper", t), style: s }, m);
+};
+export {
+  n as GridColumnMenuItemGroup
+};

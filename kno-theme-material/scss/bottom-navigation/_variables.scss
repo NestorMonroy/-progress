@@ -1,0 +1,98 @@
+@use "../core/_index.scss" as *;
+@use "../icons/_variables.scss" as *;
+
+// BottomNavigation
+
+/// The default theme color of the BottomNavigation.
+/// @group bottom-navigation
+/// @role default
+$kno-bottom-nav-default-theme-color: "primary" !default;
+/// The default fill mode of the BottomNavigation.
+/// @group bottom-navigation
+/// @role default
+$kno-bottom-nav-default-fill-mode: "flat" !default;
+
+/// The horizontal padding of the BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-padding-x: k-spacing(2) !default;
+/// The vertical padding of the BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-padding-y: k-spacing(3) !default;
+/// The spacing between the BottomNavigation items.
+/// @group bottom-navigation
+$kno-bottom-nav-gap: k-spacing(2) !default;
+/// The width of the border around the BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-border-width: 0 !default;
+/// The font family of the BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-font-family: var(--kno-font-family) !default;
+/// The font size of the BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-font-size: var(--kno-font-size-sm) !default;
+/// The line height of the BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-line-height: var(--kno-line-height-sm) !default;
+/// The letter spacing of the BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-letter-spacing: var(--kno-letter-spacing) !default;
+
+/// The horizontal padding of the BottomNavigation item.
+/// @group bottom-navigation
+$kno-bottom-nav-item-padding-x: k-spacing(2.5) !default;
+/// The vertical padding of the BottomNavigation item.
+/// @group bottom-navigation
+$kno-bottom-nav-item-padding-y: k-spacing(1) !default;
+/// The minimum width of the BottomNavigation item.
+/// @group bottom-navigation
+$kno-bottom-nav-item-min-width: 72px !default;
+/// The maximum width of the BottomNavigation item.
+/// @group bottom-navigation
+$kno-bottom-nav-item-max-width: null !default;
+/// The minimum height of the BottomNavigation item.
+/// @group bottom-navigation
+$kno-bottom-nav-item-min-height: calc( #{$kno-icon-size * 2.5} + calc( #{$kno-bottom-nav-item-padding-y} * 4 ) ) !default;
+/// The border radius of the BottomNavigation item.
+/// @group bottom-navigation
+$kno-bottom-nav-item-border-radius: k-border-radius(xxl) !default;
+/// The spacing of the BottomNavigation item.
+/// @group bottom-navigation
+$kno-bottom-nav-item-gap: k-spacing(2) !default;
+
+/// The box shadow of the BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-shadow: null !default;
+
+/// The text color of the flat BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-flat-text: k-color(subtle) !default;
+/// The background color of the flat BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-flat-bg: k-color(surface) !default;
+/// The border color of the flat BottomNavigation.
+/// @group bottom-navigation
+$kno-bottom-nav-flat-border: null !default;
+
+@forward "@progress/kno-theme-core/scss/components/bottom-navigation/_variables.scss" with (
+    $kno-bottom-nav-default-theme-color: $kno-bottom-nav-default-theme-color,
+    $kno-bottom-nav-default-fill-mode: $kno-bottom-nav-default-fill-mode,
+    $kno-bottom-nav-padding-x: $kno-bottom-nav-padding-x,
+    $kno-bottom-nav-padding-y: $kno-bottom-nav-padding-y,
+    $kno-bottom-nav-gap: $kno-bottom-nav-gap,
+    $kno-bottom-nav-border-width: $kno-bottom-nav-border-width,
+    $kno-bottom-nav-font-family: $kno-bottom-nav-font-family,
+    $kno-bottom-nav-font-size: $kno-bottom-nav-font-size,
+    $kno-bottom-nav-line-height: $kno-bottom-nav-line-height,
+    $kno-bottom-nav-letter-spacing: $kno-bottom-nav-letter-spacing,
+    $kno-bottom-nav-item-padding-x: $kno-bottom-nav-item-padding-x,
+    $kno-bottom-nav-item-padding-y: $kno-bottom-nav-item-padding-y,
+    $kno-bottom-nav-item-min-width: $kno-bottom-nav-item-min-width,
+    $kno-bottom-nav-item-max-width: $kno-bottom-nav-item-max-width,
+    $kno-bottom-nav-item-min-height: $kno-bottom-nav-item-min-height,
+    $kno-bottom-nav-item-border-radius: $kno-bottom-nav-item-border-radius,
+    $kno-bottom-nav-item-gap: $kno-bottom-nav-item-gap,
+    $kno-bottom-nav-shadow: $kno-bottom-nav-shadow,
+    $kno-bottom-nav-flat-text: $kno-bottom-nav-flat-text,
+    $kno-bottom-nav-flat-bg: $kno-bottom-nav-flat-bg,
+    $kno-bottom-nav-flat-border: $kno-bottom-nav-flat-border
+);

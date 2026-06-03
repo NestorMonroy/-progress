@@ -1,0 +1,38 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface PopupGridProps {
+    rows: number;
+    columns: number;
+    createTableMessage: string;
+    createTableHintMessage: string;
+    onCellClick: (row: number, col: number) => void;
+    onDown: () => void;
+}
+/**
+ * @hidden
+ */
+interface PopupGridState {
+    row: number;
+    col: number;
+}
+/**
+ * @hidden
+ */
+export default class PopupGrid extends React.Component<PopupGridProps, PopupGridState> {
+    readonly state: {
+        row: number;
+        col: number;
+    };
+    renderCell(index: number, selRow: number, selCol: number): React.JSX.Element;
+    render(): React.JSX.Element[];
+}
+export {};

@@ -1,0 +1,36 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/chip/_layout.scss" as *;
+
+@mixin kendo-chip--layout() {
+
+    @include kendo-chip--layout-base();
+
+    // Chip
+    .k-chip {
+        // TODO: Decide wether to define the same variable for the rest of the themes, or remove it
+        font-family: $kendo-chip-font-family;
+
+        &:hover {
+            outline: 0;
+            text-decoration: none;
+        }
+
+        &:focus,
+        &.k-focus {
+            text-decoration: none;
+            outline-width: $kendo-chip-focus-outline-width;
+            outline-style: $kendo-chip-focus-outline-style;
+            outline-offset: $kendo-chip-focus-offset;
+        }
+
+        // Chip avatar
+        &.k-chip-avatar {
+            width: $kendo-chip-avatar-width;
+            height: $kendo-chip-avatar-height;
+            flex-basis: $kendo-chip-avatar-flex-basis;
+        }
+    }
+
+}

@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * An interface for the Scheduler groups.
+ */
+export interface SchedulerGroup {
+    /**
+     * An array of the resource names that will be grouped.
+     */
+    resources: string[];
+    /**
+     * Specifies the orientation of the groups.
+     */
+    orientation: 'horizontal' | 'vertical';
+}

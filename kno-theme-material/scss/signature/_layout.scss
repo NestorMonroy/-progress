@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/signature/_layout.scss" as *;
+
+
+@mixin kno-signature--layout() {
+    @include kno-signature--layout-base();
+}

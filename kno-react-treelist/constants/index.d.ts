@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/** The attribute required by the TreeList selection on TreeList `tr` elements. */
+export declare const TREELIST_ROW_INDEX_ATTRIBUTE = "data-grid-row-index";
+/** The attribute required by the TreeList selection on TreeList `td` elements. */
+export declare const TREELIST_COL_INDEX_ATTRIBUTE = "data-grid-col-index";
+/** Attribute which disable selection start from this element. */
+export declare const TREELIST_PREVENT_SELECTION_ELEMENT = "data-prevent-selection";

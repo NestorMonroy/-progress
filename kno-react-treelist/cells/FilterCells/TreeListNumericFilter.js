@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=require("react"),n=require("@progress/kno-react-data-tools"),c=require("./utils.js"),a=require("@progress/kno-react-intl");function l(e){const r=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const t in e)if(t!=="default"){const o=Object.getOwnPropertyDescriptor(e,t);Object.defineProperty(r,t,o.get?o:{enumerable:!0,get:()=>e[t]})}}return r.default=e,Object.freeze(r)}const u=l(i),s=function(e){const{operators:r,...t}=e;return u.createElement(n.NumericFilterCell,{ariaLabel:"numeric filter",...c.localizeFilter(a.useLocalization(),r||c.numericFilterOperators),...t})};exports.TreeListNumericFilter=s;

@@ -1,0 +1,30 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * Represent the `ref` of the `InputSeparator` component.
+ */
+export interface InputSeparatorHandle {
+    /**
+     * The HTML element of the InputSeparator component.
+     */
+    element: HTMLSpanElement | null;
+}
+/**
+ * Represents the `props` of the `InputSeparator` component.
+ */
+export interface InputSeparatorProps extends React.HTMLAttributes<HTMLSpanElement> {
+    /**
+     * Sets the `orientation` property of the `InputSeparator` component.
+     */
+    orientation?: 'horizontal' | 'vertical';
+}
+/**
+ * Represents the knoReact InputSeparator component.
+ */
+export declare const InputSeparator: React.ForwardRefExoticComponent<InputSeparatorProps & React.RefAttributes<InputSeparatorHandle>>;

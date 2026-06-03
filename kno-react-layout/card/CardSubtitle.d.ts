@@ -1,0 +1,10 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { CardSubtitleProps } from './interfaces/CardSubtitleProps';
+import * as React from 'react';
+export declare const CardSubtitle: React.FunctionComponent<CardSubtitleProps>;

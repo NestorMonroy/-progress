@@ -1,0 +1,23 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/treeview/_theme.scss" as *;
+
+@mixin kno-treeview--theme() {
+    @include kno-treeview--theme-base();
+
+    .k-treeview-leaf.k-selected {
+        &:hover,
+        &.k-hover {
+            background-color: color-mix(in srgb, k-color(on-app-surface) 17%, transparent)
+        }
+    }
+
+    .k-treeview-leaf:is(:disabled, .k-disabled),
+    :is(.k-treeview-item:disabled, .k-treeview-item.k-disabled) .k-treeview-leaf {
+        @include fill(
+            $kno-treeview-item-disabled-text,
+            $kno-treeview-item-disabled-bg,
+            $kno-treeview-item-disabled-border,
+        );
+    }
+}

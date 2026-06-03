@@ -1,0 +1,24 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/timeline/_layout.scss" as *;
+
+@mixin kno-timeline--layout() {
+    @include kno-timeline--layout-base();
+
+    .k-timeline {
+        .k-timeline-flag {
+            border-radius: $kno-timeline-flag-border-radius;
+        }
+    }
+
+    .k-timeline-vertical {
+
+        &::after {
+            border-radius: $kno-timeline-vertical-border-radius;
+        }
+    }
+
+    .k-timeline-horizontal .k-timeline-card {
+        padding-inline: .5em;
+    }
+}

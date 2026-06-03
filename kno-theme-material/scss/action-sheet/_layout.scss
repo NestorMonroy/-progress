@@ -1,0 +1,12 @@
+@use "@progress/kno-theme-core/scss/components/action-sheet/_layout.scss" as *;
+
+
+@mixin kno-action-sheet--layout() {
+    @include kno-action-sheet--layout-base();
+
+    .k-actionsheet-action {
+        .k-icon-wrap {
+            align-self: center;
+        }
+    }
+}

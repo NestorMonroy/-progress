@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export declare class DomEvent<T> {
+    /**
+     * The `Map` component that triggered the event.
+     */
+    sender: React.Component;
+    /**
+     * The syntheticEvent
+     */
+    syntheticEvent: T;
+    /**
+     * @hidden
+     */
+    constructor(sender: React.Component, e: T);
+}
+/**
+ * @hidden
+ */
+declare function toDomEvent<T>(sender: React.Component, e: T): DomEvent<T>;
+export { toDomEvent };

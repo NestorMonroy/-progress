@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+const n = (...c) => {
+  const t = {}, l = (e) => typeof e == "object" ? Object.keys(e).forEach((s) => {
+    t[s] = e[s];
+  }) : t[e] = !0, r = (e) => e.filter((s) => s !== !0 && !!s).map((s) => Array.isArray(s) ? r(s) : l(s));
+  return r(c), Object.keys(t).map((e) => t[e] && e || null).filter((e) => e !== null).join(" ");
+}, o = (...c) => n(c).replace(/[^[\]a-zA-Z0-9-_!: ]/g, "");
+export {
+  n as classNames,
+  o as strippedClassNames
+};

@@ -1,0 +1,45 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { FormClassStructure } from '@progress/kendo-react-common';
+import { ResponsiveFormBreakPoint } from './interfaces/ResponsiveFormBreakPoint';
+import * as React from 'react';
+/**
+ * Represents the props of the knoReact FieldWrapper component.
+ */
+export interface FieldWrapperProps {
+    /**
+     * @hidden
+     */
+    children: any;
+    /**
+     * The styles that are applied to the FieldWrapper.
+     */
+    style?: React.CSSProperties;
+    /**
+     * Sets a class for the FieldWrapper DOM element.
+     */
+    className?: string;
+    /**
+     * Specifies the direction of the content.
+     */
+    dir?: string;
+    /**
+     * Defines the colspan for the form field element related to the parent Form component columns. Can be a number or an array of responsive breakpoints.
+     */
+    colSpan?: number | ResponsiveFormBreakPoint[];
+    /**
+     * @hidden
+     */
+    unstyled?: FormClassStructure;
+}
+/**
+ * Represents the knoReact FieldWrapper component.
+ * It's designed to wrap the field editor, Label, Hint and Error components.
+ * The FieldWrapper supports only single editor inside it.
+ */
+export declare const FieldWrapper: React.FunctionComponent<FieldWrapperProps>;

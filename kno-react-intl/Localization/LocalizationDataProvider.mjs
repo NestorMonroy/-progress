@@ -1,0 +1,16 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import { loadMessages as e } from "./loadMessages.mjs";
+const n = (o) => {
+  const { data: r, language: a, children: t } = o;
+  return a && e(r, a), t;
+};
+export {
+  n as LocalizationDataProvider
+};

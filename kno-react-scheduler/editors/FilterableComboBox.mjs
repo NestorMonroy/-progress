@@ -1,0 +1,30 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { filterBy as m } from "@progress/kno-data-query";
+import { ComboBox as f } from "@progress/kno-react-dropdowns";
+const x = (r) => {
+  const { onChange: a, data: o, validationMessage: C, visited: h, touched: u, modified: b, ...n } = r, [i, l] = e.useState(o), s = e.useCallback((t) => a(t), [a]), c = e.useCallback((t) => {
+    const d = m(o || [], t.filter);
+    l(d);
+  }, []);
+  return /* @__PURE__ */ e.createElement(
+    f,
+    {
+      style: { width: "100%" },
+      data: i,
+      filterable: !0,
+      onFilterChange: c,
+      onChange: s,
+      ...n
+    }
+  );
+};
+export {
+  x as FilterableComboBox
+};

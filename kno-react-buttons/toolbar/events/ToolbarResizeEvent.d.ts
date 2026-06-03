@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { ToolbarHandle } from '../interfaces/ToolbarHandle';
+/**
+ * Represents the `resize` event of the Toolbar.
+ */
+export interface ToolbarResizeEvent {
+    /**
+     * An event target.
+     */
+    target: ToolbarHandle;
+    /**
+     * The `offsetWidth` event of the Toolbar.
+     */
+    offsetWidth: number;
+    /**
+     * The `offsetHeight` event of the Toolbar.
+     */
+    offsetHeight: number;
+    /**
+     * A native DOM event.
+     */
+    nativeEvent: any;
+}

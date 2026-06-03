@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as o from "react";
+import { CollectionConfigurationComponent as i } from "../base/CollectionConfigurationComponent.mjs";
+import { ChartNavigatorSeriesItem as a } from "./SeriesItem.mjs";
+import { validateChildren as n } from "../../utils/index.mjs";
+const m = (r) => /* @__PURE__ */ o.createElement(i, { ...r, _chartKey: "series" });
+m.propTypes = {
+  children: function(r, e, t) {
+    return n(r, e, t, a);
+  }
+};
+export {
+  m as ChartNavigatorSeries
+};

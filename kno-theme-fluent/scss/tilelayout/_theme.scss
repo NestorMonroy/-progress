@@ -1,0 +1,21 @@
+@use "../core/_index.scss" as *;
+@use "../card/_variables.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/tilelayout/_theme.scss" as *;
+
+@mixin kno-tile-layout--theme() {
+    @include kno-tile-layout--theme-base();
+
+    .k-tilelayout .k-card {
+        @include box-shadow( $kno-card-shadow );
+
+        &:focus,
+        &.k-focus {
+            @include focus-indicator( $kno-card-focus-shadow );
+        }
+
+        &.k-selected {
+            @include box-shadow( $kno-card-focus-shadow );
+        }
+    }
+}

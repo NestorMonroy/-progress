@@ -1,0 +1,56 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { InsertLinkDialog as LinkDialog, InsertLinkDialogProps as LinkDialogProps } from './insertLink.js';
+import { InsertImageDialog as ImageDialog, InsertImageDialogProps as ImageDialogProps } from './insertImage.js';
+import { ViewHtmlDialog as ViewHtmlDialogX, ViewHtmlDialogProps as ViewHtmlDialogPropsX } from './viewHtml.js';
+import { FindAndReplaceDialog as FindAndReplaceDialogX, FindAndReplaceDialogProps as FindAndReplaceDialogPropsX } from './FindReplace.js';
+/**
+ * Represents a wrapping namespace for the dialog components and props of the Editor.
+ */
+export declare namespace EditorDialogs {
+    /**
+     * The InsertLinkDialog component.
+     */
+    class InsertLinkDialog extends LinkDialog {
+    }
+    /**
+     * The props for the InsertLinkDialog component.
+     */
+    interface InsertLinkDialogProps extends LinkDialogProps {
+    }
+    /**
+     * The InsertImageDialog component.
+     */
+    class InsertImageDialog extends ImageDialog {
+    }
+    /**
+     * The props for the InsertImageDialog component.
+     */
+    interface InsertImageDialogProps extends ImageDialogProps {
+    }
+    /**
+     * The ViewHtmlDialog component.
+     */
+    class ViewHtmlDialog extends ViewHtmlDialogX {
+    }
+    /**
+     * The props for the ViewHtmlDialog component.
+     */
+    interface ViewHtmlDialogProps extends ViewHtmlDialogPropsX {
+    }
+    /**
+     * The FindAndReplaceDialog component.
+     */
+    class FindAndReplaceDialog extends FindAndReplaceDialogX {
+    }
+    /**
+     * The props for the FindAndReplaceDialog component.
+     */
+    interface FindAndReplaceDialogProps extends FindAndReplaceDialogPropsX {
+    }
+}

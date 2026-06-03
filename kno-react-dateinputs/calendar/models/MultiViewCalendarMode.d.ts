@@ -1,0 +1,16 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * Represents the selection modes of the MultiViewCalendar.
+ *
+ * The supported modes are:
+ * * (Default) `single`&mdash;Renders a single-date selection.
+ * * `multiple`&mdash;Renders a multiple-date selection.
+ * * `range`&mdash;Renders a date-range selection.
+ */
+export type MultiViewCalendarMode = 'single' | 'multiple' | 'range';

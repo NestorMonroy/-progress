@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { PreventableEvent as s } from "./preventable-event.mjs";
+class r extends s {
+  /**
+   * @hidden
+   */
+  constructor(t, e) {
+    super(e), this.category = t.category, this.categoryPoints = t.categoryPoints, this.dataItem = t.dataItem, this.nativeEvent = t.originalEvent, this.percentage = t.percentage, this.point = t.point, this.series = t.series, this.stackValue = t.stackValue, this.value = t.value;
+  }
+}
+export {
+  r as SeriesHoverEvent
+};

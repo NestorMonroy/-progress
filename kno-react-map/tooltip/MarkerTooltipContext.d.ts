@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Location } from '../index.js';
+/**
+ * Context object for marker tooltips.
+ */
+export interface MarkerTooltipContext {
+    /**
+     * The original data item used to create the marker.
+     */
+    dataItem: any;
+    /**
+     * The index of the marker layer in the map.
+     */
+    layerIndex: number;
+    /**
+     * The location of the marker.
+     */
+    location: Location;
+    /**
+     * The title of the marker.
+     */
+    title: string;
+}

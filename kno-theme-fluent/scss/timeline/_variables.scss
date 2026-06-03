@@ -1,0 +1,246 @@
+@use "sass:map";
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use "../card/_variables.scss" as *;
+
+// Timeline
+
+/// The horizontal spacing of the Timeline.
+/// @group timeline
+$kno-timeline-spacing-x: var( --kno-timeline-spacing-x, k-spacing(10) ) !default;
+/// The vertical spacing of the Timeline.
+/// @group timeline
+$kno-timeline-spacing-y: var( --kno-timeline-spacing-y, k-spacing(10) ) !default;
+/// The padding between the Timeline's track items.
+/// @group timeline
+$kno-timeline-items-padding: var( --kno-timeline-items-padding, k-spacing(4) ) !default;
+
+/// The font family of the Timeline.
+/// @group timeline
+$kno-timeline-font-family: var( --kno-timeline-font-family, var(--kno-font-family) ) !default;
+/// The font size of the Timeline.
+/// @group timeline
+$kno-timeline-font-size: var( --kno-timeline-font-size, var(--kno-font-size) ) !default;
+/// The line height of the Timeline.
+/// @group timeline
+$kno-timeline-line-height: var( --kno-timeline-line-height, var(--kno-line-height) ) !default;
+
+/// The horizontal spacing of the mobile Timeline.
+/// @group timeline
+$kno-timeline-mobile-spacing-x: k-spacing(4) !default;
+/// The vertical spacing of the mobile Timeline.
+/// @group timeline
+$kno-timeline-mobile-spacing-y: k-spacing(4) !default;
+
+/// The width of the Timeline track arrow.
+/// @group timeline
+$kno-timeline-track-arrow-width: var( --kno-timeline-track-arrow-width, k-spacing(7.5) ) !default;
+/// The height of the Timeline track arrow.
+/// @group timeline
+$kno-timeline-track-arrow-height: var( --kno-timeline-track-arrow-height, k-spacing(7.5) ) !default;
+
+/// The size of the Timeline track.
+/// @group timeline
+$kno-timeline-track-size: k-spacing(1.5) !default;
+/// The bottom padding of the Timeline's track wrapper.
+/// @group timeline
+$kno-timeline-track-wrap-padding-bottom: calc( #{$kno-timeline-track-size} / 2 ) !default;
+/// The border width of the Timeline track.
+/// @group timeline
+$kno-timeline-track-border-width: var( --kno-timeline-track-border-width, 1px ) !default;
+/// The bottom margin of the Timeline track.
+/// @group timeline
+$kno-timeline-track-margin-bottom: var( --kno-timeline-track-margin-bottom, k-spacing(4) ) !default;
+/// The bottom offset of the Timeline track.
+/// @group timeline
+$kno-timeline-track-bottom-calc: var( --kno-timeline-track-bottom-calc, calc( ( #{ $kno-timeline-track-arrow-height } / 2 ) + #{ $kno-timeline-track-wrap-padding-bottom } ) ) !default;
+/// The left offset of the Timeline track.
+/// @group timeline
+$kno-timeline-track-start-calc: var( --kno-timeline-track-start-calc, calc( #{ $kno-timeline-track-arrow-width } - 2 * #{ $kno-timeline-track-border-width } ) ) !default;
+/// The right offset of the Timeline track.
+/// @group timeline
+$kno-timeline-track-end-calc: var( --kno-timeline-track-end-calc, calc( #{ $kno-timeline-track-arrow-width } - 2 * #{ $kno-timeline-track-border-width } ) ) !default;
+/// The background color of the Timeline track.
+/// @group timeline
+$kno-timeline-track-bg: var( --kno-timeline-track-bg, k-color(surface) ) !default;
+/// The border color of the Timeline track.
+/// @group timeline
+$kno-timeline-track-border-color: var( --kno-timeline-track-border-color, color-mix(in srgb, k-color(border) 16%, transparent) ) !default;
+
+/// The background color of the disabled Timeline arrow.
+/// @group timeline
+$kno-timeline-track-arrow-disabled-bg: var( --kno-timeline-track-arrow-disabled-bg, k-color(base-subtle) ) !default;
+/// The text color of the disabled Timeline arrow.
+/// @group timeline
+$kno-timeline-track-arrow-disabled-text: var( --kno-timeline-track-arrow-disabled-text, color-mix(in srgb, k-color(on-app-surface) 46%, transparent) ) !default;
+/// The border color of the disabled Timeline arrow.
+/// @group timeline
+$kno-timeline-track-arrow-disabled-border: var( --kno-timeline-track-arrow-disabled-border, transparent ) !default;
+
+/// The offset of the Timeline track event.
+/// @group timeline
+$kno-timeline-track-event-offset: var( --kno-timeline-track-event-offset, k-spacing(8) ) !default;
+
+/// The horizontal padding of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-padding-x: var( --kno-timeline-flag-padding-x, k-spacing(2) ) !default;
+/// The vertical padding of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-padding-y: var( --kno-timeline-flag-padding-y, k-spacing(2) ) !default;
+/// The border radius of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-border-radius: var( --kno-timeline-flag-border-radius, k-border-radius(md) ) !default;
+/// The line height of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-line-height: var( --kno-timeline-flag-line-height, var(--kno-line-height) ) !default;
+/// The box shadow of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-box-shadow: var( --kno-timeline-flag-box-shadow, k-elevation(2) ) !default;
+/// The minimum width of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-min-width: var( --kno-timeline-flag-min-width, k-spacing(20) ) !default;
+/// The maximum width of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-max-width: var( --kno-timeline-flag-max-width, calc( #{ $kno-timeline-flag-min-width } + 2 * #{ $kno-timeline-spacing-x } ) ) !default;
+/// The maximum width of the mobile Timeline flag.
+/// @group timeline
+$kno-timeline-mobile-flag-max-width: var( --kno-timeline-mobile-flag-max-width, calc( #{ $kno-timeline-flag-min-width } + 2 * #{ $kno-timeline-mobile-spacing-x } ) ) !default;
+/// The minimum width of the horizontal Timeline flag.
+/// @group timeline
+$kno-timeline-horizontal-flag-min-width: var( --kno-timeline-horizontal-flag-min-width, k-spacing(15) ) !default;
+/// The background color of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-bg: var( --kno-timeline-flag-bg, k-color(primary) ) !default;
+/// The text color of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-text: var( --kno-timeline-flag-text, k-color(on-primary) ) !default;
+/// The width of the Timeline's flag callout.
+/// @group timeline
+$kno-timeline-flag-callout-width: var( --kno-timeline-flag-callout-width, k-spacing(2.5) ) !default;
+/// The height of the Timeline's flag callout.
+/// @group timeline
+$kno-timeline-flag-callout-height: var( --kno-timeline-flag-callout-height, k-spacing(2.5) ) !default;
+/// The bottom offset of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-offset-bottom: var( --kno-timeline-flag-offset-bottom, k-spacing(1) ) !default;
+/// The bottom margin of the Timeline flag.
+/// @group timeline
+$kno-timeline-flag-margin-bottom-calc: var( --kno-timeline-flag-margin-bottom-calc, calc( #{ $kno-timeline-track-size } + 2 * #{ $kno-timeline-track-border-width } + #{ $kno-timeline-flag-offset-bottom } + #{ $kno-timeline-flag-callout-height } ) ) !default;
+
+/// The background color of the Timeline's Card header.
+/// @group timeline
+$kno-timeline-card-header-bg: var( --kno-timeline-card-header-bg, k-color(surface-alt) ) !default;
+/// The text color of the Timeline's Card header.
+/// @group timeline
+$kno-timeline-card-header-text: var( --kno-timeline-card-header-text, k-color(on-app-surface) ) !default;
+/// The border of the Timeline's Card body scroll.
+/// @group timeline
+$kno-timeline-card-body-scroll-border: var( --kno-timeline-card-body-scroll-border, color-mix(in srgb, k-color(border) 16%, transparent) ) !default;
+/// The background color of the Timeline's Card body scroll.
+/// @group timeline
+$kno-timeline-card-body-scroll-bg: var( --kno-timeline-card-body-scroll-bg, k-color(surface-alt) ) !default;
+/// The color of the Timeline's hovered card scroll thumb.
+/// @group timeline
+$kno-timeline-card-scroll-thumb-hover: var( --kno-timeline-card-scroll-thumb-hover, color-mix(in srgb, k-color(border) 10%, transparent) ) !default;
+
+/// The text color of the Timeline date body.
+/// @group timeline
+$kno-timeline-date-body-text: var( --kno-timeline-date-body-text, k-color(on-app-surface) ) !default;
+/// The width of the Timeline date.
+/// @group timeline
+$kno-timeline-date-width: calc( #{k-spacing(12)} + #{k-spacing(0.5)} ) !default;
+/// The bottom margin of the Timeline date.
+/// @group timeline
+$kno-timeline-date-margin-bottom: var( --kno-timeline-date-margin-bottom, k-spacing(2) ) !default;
+
+/// The padding of the vertical Timeline.
+/// @group timeline
+$kno-timeline-vertical-padding-calc: calc( #{ $kno-timeline-spacing-x } + ( #{ $kno-timeline-flag-min-width } - #{ $kno-timeline-track-size } ) / 2 ) !default;
+/// The padding of the vertical Timeline date.
+/// @group timeline
+$kno-timeline-vertical-padding-with-dates-calc: calc( #{ $kno-timeline-vertical-padding-calc } + #{ $kno-timeline-date-width } ) !default;
+/// The border radius of the vertical Timeline.
+/// @group timeline
+$kno-timeline-vertical-border-radius: var( --kno-timeline-vertical-border-radius, k-border-radius(lg) ) !default;
+/// The padding of the vertical mobile Timeline.
+/// @group timeline
+$kno-timeline-mobile-vertical-padding-calc: calc( #{ $kno-timeline-mobile-spacing-x } + ( #{ $kno-timeline-flag-min-width } - #{ $kno-timeline-track-size } ) / 2 ) !default;
+/// The padding of the vertical mobile Timeline date.
+/// @group timeline
+$kno-timeline-mobile-vertical-padding-with-dates-calc: calc( #{ $kno-timeline-mobile-vertical-padding-calc } + #{ $kno-timeline-date-width } ) !default;
+
+/// The width of the Timeline circle.
+/// @group timeline
+$kno-timeline-circle-width: var( --kno-timeline-circle-width, k-spacing(4) ) !default;
+/// The height of the Timeline circle.
+/// @group timeline
+$kno-timeline-circle-height: var( --kno-timeline-circle-height, k-spacing(4) ) !default;
+/// The background color of the Timeline circle.
+/// @group timeline
+$kno-timeline-circle-bg: var( --kno-timeline-circle-bg, k-color(primary) ) !default;
+
+/// The width of the Timeline event.
+/// @group timeline
+$kno-timeline-event-width: var( --kno-timeline-event-width, 400px ) !default;
+/// The height of the Timeline event.
+/// @group timeline
+$kno-timeline-event-height: var( --kno-timeline-event-height, 600px ) !default;
+/// The minimum height of the Timeline event.
+/// @group timeline
+$kno-timeline-event-min-height-calc: var( --kno-timeline-event-min-height-calc, calc( 2 * ( #{ $kno-timeline-track-event-offset } - #{ $kno-card-border-width } ) ) ) !default;
+
+/// The shadow of the Timeline card.
+/// @group timeline
+$kno-timeline-card-shadow: var( --kno-timeline-card-shadow, $kno-card-shadow ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/timeline/_variables.scss" with (
+    $kno-timeline-spacing-x: $kno-timeline-spacing-x,
+    $kno-timeline-spacing-y: $kno-timeline-spacing-y,
+    $kno-timeline-items-padding: $kno-timeline-items-padding,
+    $kno-timeline-font-family: $kno-timeline-font-family,
+    $kno-timeline-font-size: $kno-timeline-font-size,
+    $kno-timeline-line-height: $kno-timeline-line-height,
+    $kno-timeline-mobile-spacing-x: $kno-timeline-mobile-spacing-x,
+    $kno-timeline-mobile-spacing-y: $kno-timeline-mobile-spacing-y,
+    $kno-timeline-track-arrow-width: $kno-timeline-track-arrow-width,
+    $kno-timeline-track-arrow-height: $kno-timeline-track-arrow-height,
+    $kno-timeline-track-arrow-disabled-bg: $kno-timeline-track-arrow-disabled-bg,
+    $kno-timeline-track-arrow-disabled-text: $kno-timeline-track-arrow-disabled-text,
+    $kno-timeline-track-arrow-disabled-border: $kno-timeline-track-arrow-disabled-border,
+    $kno-timeline-track-size: $kno-timeline-track-size,
+    $kno-timeline-track-wrap-padding-bottom: $kno-timeline-track-wrap-padding-bottom,
+    $kno-timeline-track-border-width: $kno-timeline-track-border-width,
+    $kno-timeline-track-margin-bottom: $kno-timeline-track-margin-bottom,
+    $kno-timeline-track-bottom-calc: $kno-timeline-track-bottom-calc,
+    $kno-timeline-track-start-calc: $kno-timeline-track-start-calc,
+    $kno-timeline-track-end-calc: $kno-timeline-track-end-calc,
+    $kno-timeline-track-bg: $kno-timeline-track-bg,
+    $kno-timeline-track-border-color: $kno-timeline-track-border-color,
+    $kno-timeline-track-event-offset: $kno-timeline-track-event-offset,
+    $kno-timeline-flag-padding-x: $kno-timeline-flag-padding-x,
+    $kno-timeline-flag-padding-y: $kno-timeline-flag-padding-y,
+    $kno-timeline-flag-line-height: $kno-timeline-flag-line-height,
+    $kno-timeline-flag-min-width: $kno-timeline-flag-min-width,
+    $kno-timeline-flag-max-width: $kno-timeline-flag-max-width,
+    $kno-timeline-mobile-flag-max-width: $kno-timeline-mobile-flag-max-width,
+    $kno-timeline-horizontal-flag-min-width: $kno-timeline-horizontal-flag-min-width,
+    $kno-timeline-flag-bg: $kno-timeline-flag-bg,
+    $kno-timeline-flag-text: $kno-timeline-flag-text,
+    $kno-timeline-flag-callout-width: $kno-timeline-flag-callout-width,
+    $kno-timeline-flag-callout-height: $kno-timeline-flag-callout-height,
+    $kno-timeline-flag-offset-bottom: $kno-timeline-flag-offset-bottom,
+    $kno-timeline-flag-margin-bottom-calc: $kno-timeline-flag-margin-bottom-calc,
+    $kno-timeline-date-width: $kno-timeline-date-width,
+    $kno-timeline-date-margin-bottom: $kno-timeline-date-margin-bottom,
+    $kno-timeline-vertical-padding-calc: $kno-timeline-vertical-padding-calc,
+    $kno-timeline-vertical-padding-with-dates-calc: $kno-timeline-vertical-padding-with-dates-calc,
+    $kno-timeline-mobile-vertical-padding-calc: $kno-timeline-mobile-vertical-padding-calc,
+    $kno-timeline-mobile-vertical-padding-with-dates-calc: $kno-timeline-mobile-vertical-padding-with-dates-calc,
+    $kno-timeline-circle-width: $kno-timeline-circle-width,
+    $kno-timeline-circle-height: $kno-timeline-circle-height,
+    $kno-timeline-circle-bg: $kno-timeline-circle-bg,
+    $kno-timeline-event-width: $kno-timeline-event-width,
+    $kno-timeline-event-height: $kno-timeline-event-height,
+    $kno-timeline-card-shadow: $kno-timeline-card-shadow,
+    $kno-timeline-event-min-height-calc: $kno-timeline-event-min-height-calc
+);

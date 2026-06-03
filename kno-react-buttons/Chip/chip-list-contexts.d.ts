@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export declare const ChipListSelectionContext: React.Context<[string | string[] | null, Function]>;
+/**
+ * @hidden
+ */
+export declare const ChipListFocusContext: React.Context<[string | string[] | null, Function]>;
+/**
+ * @hidden
+ */
+export declare const ChipListDataContext: React.Context<[string | null, Function]>;

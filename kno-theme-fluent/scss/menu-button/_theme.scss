@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/menu-button/_theme.scss" as *;
+
+@mixin kno-menu-button--theme() {
+    @include kno-menu-button--theme-base();
+}

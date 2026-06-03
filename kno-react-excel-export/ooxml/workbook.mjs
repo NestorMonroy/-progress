@@ -1,0 +1,27 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { ExcelExporter as o, Workbook as a } from "@progress/kno-ooxml";
+import { toExporterColumns as c } from "./ExporterColumns.mjs";
+const d = (e) => Math.max(...e.map((r) => r.level)) + 1, p = (e) => {
+  const r = c(e.columns), t = new o({
+    columns: r,
+    data: e.data,
+    filterable: e.filterable,
+    groups: e.group,
+    paddingCellOptions: e.paddingCellOptions,
+    headerPaddingCellOptions: e.headerPaddingCellOptions,
+    hierarchy: e.hierarchy ? { depth: d(e.data), itemLevel: (l) => l.level } : null,
+    collapsible: e.collapsible
+  }).workbook();
+  return t.creator = e.creator, t.date = e.date, t.rtl = e.dir === "rtl", t;
+}, b = (e) => new a(e).toDataURL(), h = (e) => e && e.sheets;
+export {
+  h as isWorkbookOptions,
+  b as toDataURL,
+  p as workbookOptions
+};

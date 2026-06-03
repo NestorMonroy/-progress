@@ -1,0 +1,38 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseEvent } from '@progress/kno-react-common';
+import { StepperHandle } from './../interfaces/StepperHandle';
+/**
+ * The `StepperOnNavigateEvent` event.
+ */
+export declare class StepperOnNavigateEvent implements BaseEvent<StepperHandle> {
+    /**
+     * The Stepper component.
+     */
+    target: StepperHandle;
+    /**
+     * The synthetic keyboard event.
+     */
+    syntheticEvent: React.KeyboardEvent;
+    /**
+     * The native DOM event.
+     */
+    nativeEvent: any;
+    /**
+     * The previous index of the Step.
+     */
+    prevIndex: number;
+    /**
+     * The new index of the Step.
+     */
+    nextIndex: number;
+    /**
+     * @hidden
+     */
+    constructor(target: StepperHandle, prevIndex: number, nextIndex: number);
+}

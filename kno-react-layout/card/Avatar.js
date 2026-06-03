@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const d=require("react"),a=require("prop-types"),r=require("@progress/kno-react-common"),i=require("./interfaces/Enums.js");function c(o){const e=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(o){for(const t in o)if(t!=="default"){const n=Object.getOwnPropertyDescriptor(o,t);Object.defineProperty(e,t,n.get?n:{enumerable:!0,get:()=>o[t]})}}return e.default=o,Object.freeze(e)}const s=c(d),l=o=>{const e={type:i.avatarType.TEXT,size:void 0,rounded:void 0,fillMode:void 0,themeColor:void 0,...o};return s.createElement("div",{style:e.style,className:r.classNames("k-avatar",{"k-avatar-bordered":e.border,[`k-rounded-${r.knoThemeMaps.roundedMap[e.rounded]||e.rounded}`]:e.rounded,[`k-avatar-${r.knoThemeMaps.sizeMap[e.size]||e.size}`]:e.size,[`k-avatar-${e.fillMode}`]:e.fillMode,[`k-avatar-${e.themeColor}`]:!!e.themeColor},e.className)},s.createElement("span",{className:`k-avatar-${e.type}`},e.children))};l.propTypes={className:a.string,type:a.oneOf(["text","image","icon"]),size:a.oneOf(["small","medium","large"]),rounded:a.oneOf(["small","medium","large","full","none"]),fillMode:a.oneOf(["solid","outline"]),themeColor:a.oneOf(["base","primary","secondary","tertiary"])};exports.Avatar=l;

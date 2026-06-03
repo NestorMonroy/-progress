@@ -1,0 +1,26 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/mediaplayer/_layout.scss" as *;
+
+@mixin kendo-media-player--layout() {
+    @include kendo-media-player--layout-base();
+
+    // Overlay
+    .k-mediaplayer-overlay {
+        height: 100%;
+    }
+
+    // Title bar
+    .k-mediaplayer-titlebar {
+        font-size: $kendo-media-player-title-font-size;
+    }
+
+    .k-mediaplayer-volume-wrap {
+        padding: 0;
+    }
+
+    .k-mediaplayer-toolbar {
+        padding: k-spacing(2);
+    }
+
+}

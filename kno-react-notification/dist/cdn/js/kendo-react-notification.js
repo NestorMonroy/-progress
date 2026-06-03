@@ -1,0 +1,15 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+!function(e,t){"object"==typeof exports&&"undefined"!=typeof module?t(exports,require("react"),require("prop-types"),require("@progress/kno-react-common"),require("@progress/kno-svg-icons")):"function"==typeof define&&define.amd?define(["exports","react","prop-types","@progress/kno-react-common","@progress/kno-svg-icons"],t):t((e="undefined"!=typeof globalThis?globalThis:e||self).knoReactNotification={},e.React,e.PropTypes,e.knoReactCommon,e.knoSvgIcons)}(this,function(e,t,o,n,i){"use strict";function c(e){var t=Object.create(null);return e&&Object.keys(e).forEach(function(o){if("default"!==o){var n=Object.getOwnPropertyDescriptor(e,o);Object.defineProperty(t,o,n.get?n:{enumerable:!0,get:function(){return e[o]}})}}),t.default=e,Object.freeze(t)}var s=c(t);const a={success:"check",error:"x",info:"info-circle",warning:"exclamation-circle"},r={success:i.checkIcon,error:i.xIcon,info:i.infoCircleIcon,warning:i.exclamationCircleIcon},l={closable:!1,type:{style:"none",icon:!0}};let p=0;const f=e=>{const t=s.useRef(null);n.useWebMcpRegister("notification",t,e,e.webMcp);const{children:o,className:c,dir:f,style:y,closable:u=l.closable,type:d=l.type,onClose:m}=e,[b]=s.useState(()=>"k-notification-content-"+ ++p),g=!!o;return s.createElement("div",{dir:f,className:"k-notification"+(c?` ${c}`:"")+("none"===d.style?"":` k-notification-${d.style}`)+(u?" k-notification-closable":""),style:y,role:"status","aria-live":"polite","aria-describedby":g?b:void 0},d.icon&&s.createElement(n.IconWrap,{className:"k-notification-status",name:a[d.style],icon:r[d.style]}),s.createElement("div",{id:b,className:"k-notification-content"},o),u&&s.createElement("span",{className:"k-notification-actions"},s.createElement("span",{className:"k-notification-action k-notification-close-action",title:"Close",onClick:t=>{m&&m({target:{props:e},syntheticEvent:t,nativeEvent:t.nativeEvent})},..."boolean"!=typeof u?u:{}},s.createElement(n.IconWrap,{name:"x",icon:i.xIcon}))))};f.displayName="Notification",f.propTypes={className:o.string,closable:o.oneOfType([o.bool,o.object]),dir:o.string,style:o.object,type:o.shape({style:o.oneOf(["base","secondary","success","error","inverse","primary","tertiary","warning","info","none"]),icon:o.bool}),onClose:o.func};const y={style:{}},u=e=>{const{style:t=y.style,className:o,children:n}=e;return s.createElement("div",{className:"k-notification-group"+(o?` ${o}`:""),style:{alignItems:"center",flexWrap:"wrap",...t}},n)};u.displayName="NotificationGroup",u.propTypes={className:o.string,style:o.object},e.Notification=f,e.NotificationGroup=u});

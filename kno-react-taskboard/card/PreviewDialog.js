@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const l=require("react"),r=require("@progress/kno-react-buttons"),i=require("@progress/kno-svg-icons");function s(e){const n=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const a in e)if(a!=="default"){const c=Object.getOwnPropertyDescriptor(e,a);Object.defineProperty(n,a,c.get?c:{enumerable:!0,get:()=>e[a]})}}return n.default=e,Object.freeze(n)}const t=s(l),o=e=>t.createElement("div",{className:"k-taskboard-pane k-taskboard-preview-pane"},t.createElement("div",{className:"k-taskboard-pane-header"},t.createElement("div",{className:"k-taskboard-pane-header-text"},e.title),t.createElement("span",{className:"k-spacer"}),t.createElement("div",{className:"k-taskboard-pane-header-actions"},t.createElement(r.Button,{icon:"x",svgIcon:i.xIcon,onClick:e.onClosePreviewPane}))),t.createElement("div",{className:"k-taskboard-pane-content"},t.createElement("p",null,e.description),t.createElement("p",null,e.priorityLabel," ",t.createElement("span",{style:{backgroundColor:e.priority.color}}," ")," ",e.priority.priority)),t.createElement("div",{className:"k-taskboard-pane-actions k-actions k-hstack k-justify-content-end"},t.createElement(r.Button,{onClick:e.onTaskDelete},e.delete),t.createElement(r.Button,{onClick:e.onTaskEdit},e.edit)));o.displayName="KendoReactTaskBoardPreviewDialog";exports.TaskBoardPreviewDialog=o;

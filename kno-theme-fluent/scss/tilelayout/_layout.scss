@@ -1,0 +1,8 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/tilelayout/_layout.scss" as *;
+
+@mixin kno-tile-layout--layout() {
+    @include kno-tile-layout--layout-base();
+
+}

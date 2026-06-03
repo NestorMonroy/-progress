@@ -1,0 +1,20 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../utils/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-bottom-navigation--styles() {
+    @include import-once( "bottom-navigation" ) {
+        @include core-styles();
+        @include kno-icon--styles();
+        @include kno-bottom-navigation--layout();
+        @include kno-bottom-navigation--theme();
+        @include kno-utils--layout--position();
+    }
+}

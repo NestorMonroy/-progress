@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { GridRowProps } from '../interfaces/GridRowProps';
+import * as React from 'react';
+/**
+ * The component for each of the items in the `data` property which the Grid renders.
+ */
+export declare const GridRow: (props: GridRowProps) => React.JSX.Element;

@@ -1,0 +1,187 @@
+@use "../core/_index.scss" as *;
+@use "../button/_variables.scss" as *;
+@use "../dropzone/_variables.scss" as *;
+@use "../toolbar/_variables.scss" as *;
+@use "../window/_variables.scss" as *;
+
+
+// PDFViewer
+
+/// The border width of the PDFViewer.
+/// @group pdf-viewer
+$kno-pdf-viewer-border-width: 1px !default;
+/// The border radius of the PDFViewer.
+/// @group pdf-viewer
+$kno-pdf-viewer-border-radius: null !default;
+/// The font family of the PDFViewer.
+/// @group pdf-viewer
+$kno-pdf-viewer-font-family: var(--kno-font-family) !default;
+/// The font size of the PDFViewer.
+/// @group pdf-viewer
+$kno-pdf-viewer-font-size: var(--kno-font-size) !default;
+/// The line height of the PDFViewer.
+/// @group pdf-viewer
+$kno-pdf-viewer-line-height: var(--kno-line-height) !default;
+
+/// The background color of the PDFViewer.
+/// @group pdf-viewer
+$kno-pdf-viewer-bg: k-color(surface) !default;
+/// The text color of the PDFViewer.
+/// @group pdf-viewer
+$kno-pdf-viewer-text: k-color(on-app-surface) !default;
+/// The border color of the PDFViewer.
+/// @group pdf-viewer
+$kno-pdf-viewer-border: k-color(border) !default;
+
+/// The background color of the PDFViewer Toolbar.
+/// @group pdf-viewer
+$kno-pdf-viewer-toolbar-bg: k-color(surface) !default;
+/// The text color of the PDFViewer Toolbar.
+/// @group pdf-viewer
+$kno-pdf-viewer-toolbar-text: null !default;
+/// The border color of the PDFViewer Toolbar.
+/// @group pdf-viewer
+$kno-pdf-viewer-toolbar-border: null !default;
+/// The gradient of the PDFViewer Toolbar.
+/// @group pdf-viewer
+$kno-pdf-viewer-toolbar-gradient: null !default;
+
+/// The background color of the PDFViewer canvas.
+/// @group pdf-viewer
+$kno-pdf-viewer-canvas-bg: k-color(app-surface) !default;
+/// The text color of the PDFViewer canvas.
+/// @group pdf-viewer
+$kno-pdf-viewer-canvas-text: null !default;
+/// The border color of the PDFViewer canvas.
+/// @group pdf-viewer
+$kno-pdf-viewer-canvas-border: null !default;
+
+/// The spacing of the PDFViewer page.
+/// @group pdf-viewer
+$kno-pdf-viewer-page-spacing: k-spacing(7.5) !default;
+
+/// The background color of the PDFViewer page.
+/// @group pdf-viewer
+$kno-pdf-viewer-page-bg: k-color(surface-alt) !default;
+/// The text color of the PDFViewer page.
+/// @group pdf-viewer
+$kno-pdf-viewer-page-text: k-color(on-app-surface) !default;
+/// The border color of the PDFViewer page.
+/// @group pdf-viewer
+$kno-pdf-viewer-page-border: k-color(border) !default;
+/// The shadow of the PDFViewer page.
+/// @group pdf-viewer
+$kno-pdf-viewer-page-shadow: k-elevation(2) !default;
+
+/// The horizontal padding of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-padding-x: $kno-toolbar-md-padding-x !default;
+/// The vertical padding of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-padding-y: calc( #{$kno-toolbar-md-padding-x} * 2 ) !default;
+/// The spacing of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-spacing: $kno-toolbar-md-spacing !default;
+/// The border width of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-border-width: 1px !default;
+/// The border radius of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-border-radius: k-spacing(1) !default;
+/// The background color of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-bg: k-color(surface) !default;
+/// The text color of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-text: k-color(on-app-surface) !default;
+/// The border color of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-border: k-color(border) !default;
+/// The shadow of the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-shadow: $kno-window-shadow !default;
+/// The spacing of the matches container in the PDFViewer search panel.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-panel-matches-spacing: k-spacing(2) !default;
+
+/// The line height of the PDFViewer selection.
+/// @group pdf-viewer
+$kno-pdf-viewer-selection-line-height: var(--kno-line-height-sm) !default;
+
+/// The background color of the PDFViewer highlight.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-highlight-bg: k-color(on-app-surface) !default;
+/// The background color of the PDFViewer highlight mark.
+/// @group pdf-viewer
+$kno-pdf-viewer-search-highlight-mark-bg: yellow !default;
+
+/// The text color of the PDFViewer icon.
+/// @group pdf-viewer
+$kno-pdf-viewer-icon-text: $kno-dropzone-icon-text !default;
+
+/// The vertical padding of the PDFViewer popup.
+/// @group pdf-viewer
+$kno-pdf-viewer-popup-padding-x: k-spacing(2) !default;
+/// The horizontal padding of the PDFViewer popup.
+/// @group pdf-viewer
+$kno-pdf-viewer-popup-padding-y: $kno-pdf-viewer-popup-padding-x !default;
+
+/// The border color of the PDFViewer selected highlight annotation.
+/// @group pdf-viewer
+$kno-pdf-viewer-highlight-annotation-border: k-color(primary) !default;
+/// The background color of the PDFViewer hover highlight annotation.
+/// @group pdf-viewer
+$kno-pdf-viewer-highlight-annotation-hover-border: k-color(primary-hover) !default;
+/// The border color of the PDFViewer selected free text annotation.
+/// @group pdf-viewer
+$kno-pdf-viewer-free-text-annotation-border: k-color(primary) !default;
+/// The placeholder text color of the PDFViewer free text annotation.
+/// @group pdf-viewer
+$kno-pdf-viewer-free-text-annotation-placeholder-text: k-color(primary-on-subtle) !default;
+/// The text color of the PDFViewer free text annotation.
+/// @group pdf-viewer
+$kno-pdf-viewer-free-text-annotation-text: k-color(primary-on-subtle) !default;
+
+@forward "@progress/kno-theme-core/scss/components/pdf-viewer/_variables.scss" with (
+    $kno-pdf-viewer-border-width: $kno-pdf-viewer-border-width,
+    $kno-pdf-viewer-border-radius: $kno-pdf-viewer-border-radius,
+    $kno-pdf-viewer-font-family: $kno-pdf-viewer-font-family,
+    $kno-pdf-viewer-font-size: $kno-pdf-viewer-font-size,
+    $kno-pdf-viewer-line-height: $kno-pdf-viewer-line-height,
+    $kno-pdf-viewer-bg: $kno-pdf-viewer-bg,
+    $kno-pdf-viewer-text: $kno-pdf-viewer-text,
+    $kno-pdf-viewer-border: $kno-pdf-viewer-border,
+    $kno-pdf-viewer-toolbar-bg: $kno-pdf-viewer-toolbar-bg,
+    $kno-pdf-viewer-toolbar-text: $kno-pdf-viewer-toolbar-text,
+    $kno-pdf-viewer-toolbar-border: $kno-pdf-viewer-toolbar-border,
+    $kno-pdf-viewer-toolbar-gradient: $kno-pdf-viewer-toolbar-gradient,
+    $kno-pdf-viewer-canvas-bg: $kno-pdf-viewer-canvas-bg,
+    $kno-pdf-viewer-canvas-text: $kno-pdf-viewer-canvas-text,
+    $kno-pdf-viewer-canvas-border: $kno-pdf-viewer-canvas-border,
+    $kno-pdf-viewer-page-spacing: $kno-pdf-viewer-page-spacing,
+    $kno-pdf-viewer-page-bg: $kno-pdf-viewer-page-bg,
+    $kno-pdf-viewer-page-text: $kno-pdf-viewer-page-text,
+    $kno-pdf-viewer-page-border: $kno-pdf-viewer-page-border,
+    $kno-pdf-viewer-page-shadow: $kno-pdf-viewer-page-shadow,
+    $kno-pdf-viewer-search-panel-padding-x: $kno-pdf-viewer-search-panel-padding-x,
+    $kno-pdf-viewer-search-panel-padding-y: $kno-pdf-viewer-search-panel-padding-y,
+    $kno-pdf-viewer-search-panel-spacing: $kno-pdf-viewer-search-panel-spacing,
+    $kno-pdf-viewer-search-panel-border-width: $kno-pdf-viewer-search-panel-border-width,
+    $kno-pdf-viewer-search-panel-border-radius: $kno-pdf-viewer-search-panel-border-radius,
+    $kno-pdf-viewer-search-panel-bg: $kno-pdf-viewer-search-panel-bg,
+    $kno-pdf-viewer-search-panel-text: $kno-pdf-viewer-search-panel-text,
+    $kno-pdf-viewer-search-panel-border: $kno-pdf-viewer-search-panel-border,
+    $kno-pdf-viewer-search-panel-shadow: $kno-pdf-viewer-search-panel-shadow,
+    $kno-pdf-viewer-search-panel-matches-spacing: $kno-pdf-viewer-search-panel-matches-spacing,
+    $kno-pdf-viewer-selection-line-height: $kno-pdf-viewer-selection-line-height,
+    $kno-pdf-viewer-search-highlight-bg: $kno-pdf-viewer-search-highlight-bg,
+    $kno-pdf-viewer-search-highlight-mark-bg: $kno-pdf-viewer-search-highlight-mark-bg,
+    $kno-pdf-viewer-icon-text: $kno-pdf-viewer-icon-text,
+    $kno-pdf-viewer-popup-padding-x: $kno-pdf-viewer-popup-padding-x,
+    $kno-pdf-viewer-popup-padding-y: $kno-pdf-viewer-popup-padding-y,
+    $kno-pdf-viewer-highlight-annotation-border: $kno-pdf-viewer-highlight-annotation-border,
+    $kno-pdf-viewer-highlight-annotation-hover-border: $kno-pdf-viewer-highlight-annotation-hover-border,
+    $kno-pdf-viewer-free-text-annotation-border: $kno-pdf-viewer-free-text-annotation-border,
+    $kno-pdf-viewer-free-text-annotation-placeholder-text: $kno-pdf-viewer-free-text-annotation-placeholder-text,
+    $kno-pdf-viewer-free-text-annotation-text: $kno-pdf-viewer-free-text-annotation-text
+);

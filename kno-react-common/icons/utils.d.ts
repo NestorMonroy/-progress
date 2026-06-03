@@ -1,0 +1,24 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { default as PropTypes } from 'prop-types';
+/**
+ * @hidden
+ */
+export declare const toIconName: (iconClass: string) => string;
+/**
+ * @hidden
+ */
+export declare const toIconClass: (name: string) => string;
+/**
+ * @hidden
+ */
+export declare const svgIconPropType: PropTypes.Requireable<PropTypes.InferProps<{
+    name: PropTypes.Validator<string>;
+    content: PropTypes.Validator<string>;
+    viewBox: PropTypes.Validator<string>;
+}>>;

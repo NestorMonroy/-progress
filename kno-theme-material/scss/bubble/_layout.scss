@@ -1,0 +1,17 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/bubble/_layout.scss" as *;
+
+
+@mixin kno-bubble--layout() {
+    @include kno-bubble--layout-base();
+
+    .k-bubble {
+        &:focus,
+        &.k-focus {
+            outline-style: solid;
+            outline-width: calc( (#{$kno-bubble-border-width} * 2 ));
+            outline-offset: calc( (#{$kno-bubble-border-width} * 2 ) * -1);
+        }
+    }
+}

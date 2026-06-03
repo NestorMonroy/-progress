@@ -1,0 +1,90 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/slider/_theme.scss" as *;
+
+@mixin kno-slider--theme() {
+
+     @include kno-slider--theme-base();
+
+    // Slider
+    .k-slider {
+        color: $kno-slider-text;
+
+        .k-slider-thumb {
+
+            &::after {
+                background: k-color(primary);
+            }
+
+            &:hover::after,
+            &.k-hover::after {
+                background: k-color(primary-hover);
+            }
+
+            &:active::after,
+            &.k-active::after,
+            &.k-selected::after {
+                background: k-color(primary-active);
+            }
+        }
+
+        .k-label {
+            color: k-color(subtle);
+        }
+
+        &.k-disabled {
+            color: $kno-slider-disabled-text;
+
+            .k-slider-track {
+                background-color: $kno-slider-track-disabled-bg;
+            }
+
+            .k-slider-selection {
+                background-color: $kno-slider-selection-disabled-bg;
+            }
+
+            .k-slider-thumb {
+                border-color: $kno-slider-thumb-disabled-border;
+
+                &::after {
+                    background: color-mix(in srgb, k-color(on-app-surface) 30%, transparent);
+                }
+            }
+        }
+
+    }
+
+
+    // Slider thumb
+    .k-slider-thumb {
+        color: $kno-slider-thumb-text;
+        background-color: $kno-slider-thumb-bg;
+        border-color: $kno-slider-thumb-border;
+        background-image: linear-gradient( $kno-slider-thumb-gradient, transparent, transparent );
+
+        &:hover,
+        &.k-hover {
+            background-color: $kno-slider-thumb-hover-bg;
+            color: $kno-slider-thumb-hover-text;
+            border-color: $kno-slider-thumb-hover-border;
+            background-image: linear-gradient( $kno-slider-thumb-hover-gradient, transparent, transparent );
+        }
+
+        &:active,
+        &.k-active {
+            background-color: $kno-slider-thumb-active-bg;
+            color: $kno-slider-thumb-active-text;
+            border-color: $kno-slider-thumb-active-border;
+            background-image: linear-gradient( $kno-slider-thumb-active-gradient, transparent, transparent );
+        }
+
+        &:focus,
+        &.k-focus {
+            background-color: $kno-slider-thumb-focus-bg;
+            color: $kno-slider-thumb-focus-text;
+            border-color: $kno-slider-thumb-focus-border;
+            background-image: linear-gradient( $kno-slider-thumb-focus-gradient, transparent, transparent );
+        }
+    }
+
+}

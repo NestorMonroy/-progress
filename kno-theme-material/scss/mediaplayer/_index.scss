@@ -1,0 +1,22 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../slider/_index.scss" as *;
+@use "../toolbar/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-media-player--styles() {
+    @include import-once( "media-player" ) {
+        @include core-styles();
+        @include kno-slider--styles();
+        @include kno-toolbar--styles();
+        @include kno-icon--styles();
+        @include kno-media-player--layout();
+        @include kno-media-player--theme();
+    }
+}

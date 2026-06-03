@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { ExtendedColumnProps } from '../GridColumn.js';
+import { GridCellsSettings } from '../interfaces/GridCellsSettings';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export declare const FooterCell: (props: {
+    column: ExtendedColumnProps;
+    index: number;
+    id: string;
+    cells?: GridCellsSettings;
+}) => React.JSX.Element;

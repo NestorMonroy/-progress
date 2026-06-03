@@ -1,0 +1,13 @@
+@use "../core/_index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/table/_layout.scss" as *;
+
+
+@mixin kno-table--layout() {
+    @include kno-table--layout-base();
+
+    .k-table {
+        .k-table-th {
+            font-weight: var(--kno-font-weight-semibold);
+        }
+    }
+}

@@ -1,0 +1,61 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { LoaderSize } from './models/size';
+import { LoaderThemeColor } from './models/theme-color';
+import { LoaderType } from './models/type';
+/**
+ * Represents the props of the [knoReact Loader component](components/indicators/loader).
+ */
+export interface LoaderProps {
+    /**
+     * Specifies a list of CSS classes that will be added to the Loader.
+     */
+    className?: string;
+    /**
+     * Sets additional CSS styles to the Loader.
+     */
+    style?: React.CSSProperties;
+    /**
+     * Specifies the size of the Loader.
+     *
+     * The possible values are:
+     * * `small`
+     * * `medium` (Default)
+     * * `large`
+     *
+     */
+    size?: LoaderSize;
+    /**
+     * Specifies the theme color of the Loader.
+     *
+     * The possible values are:
+     * * `base`&mdash;Applies coloring based on base theme color.
+     * * `primary` (Default)&mdash;Applies coloring based on primary theme color.
+     * * `secondary`&mdash;Applies coloring based on secondary theme color.
+     * * `tertiary`&mdash; Applies coloring based on tertiary theme color.
+     */
+    themeColor?: LoaderThemeColor;
+    /**
+     * Specifies the Loader animation type.
+     *
+     * The possible values are:
+     * - `pulsing` (default)
+     * - `infinite-spinner`
+     * - `converging-spinner`
+     */
+    type?: LoaderType;
+    /**
+     * Sets the `aria-label` attribute of the Loader.
+     *
+     * @default 'Loading'
+     *
+     * @remarks
+     * This property is related to accessibility.
+     */
+    ariaLabel?: string;
+}

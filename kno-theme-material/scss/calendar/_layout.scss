@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/calendar/_layout.scss" as *;
+
+
+@mixin kno-calendar--layout() {
+
+    @include kno-calendar--layout-base();
+
+    .k-calendar {
+        .k-range-start,
+        .k-range-end {
+            border-radius: 0;
+
+            .k-link {
+                border-radius: $kno-calendar-range-cell-border-radius;
+            }
+        }
+    }
+
+     // Calendar in popup
+    .k-calendar-container,
+    .k-datetime-container {
+        border-radius: $kno-calendar-border-radius;
+    }
+}

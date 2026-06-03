@@ -1,0 +1,14 @@
+@use "../core/_index.scss" as *;
+
+/// The minimum height of the 'No Data' text container.
+/// @group no-data
+$kno-no-data-min-height: 140px !default;
+
+/// The color of the 'No Data' text.
+/// @group no-data
+$kno-no-data-text: k-color(subtle) !default;
+
+@forward "@progress/kno-theme-core/scss/components/no-data/_variables.scss" with (
+    $kno-no-data-min-height: $kno-no-data-min-height,
+    $kno-no-data-text: $kno-no-data-text
+);

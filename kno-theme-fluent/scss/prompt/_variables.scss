@@ -1,0 +1,103 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// The text color of the AIPrompt.
+/// @group prompt
+$kno-prompt-text: var( --kno-prompt-text, k-color(on-app-surface) ) !default;
+/// The background color of the AIPrompt.
+/// @group prompt
+$kno-prompt-bg: var( --kno-prompt-bg, k-color(surface-alt) ) !default;
+/// The border color of the AIPrompt.
+/// @group prompt
+$kno-prompt-border: var( --kno-prompt-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+
+/// The text color of the AIPrompt header.
+/// @group prompt
+$kno-prompt-header-text: var( --kno-prompt-header-text, k-color(on-app-surface) ) !default;
+/// The background color of the AIPrompt header.
+/// @group prompt
+$kno-prompt-header-bg: var( --kno-prompt-header-bg, k-color(surface-alt) ) !default;
+/// The border color of the AIPrompt header.
+/// @group prompt
+$kno-prompt-header-border: var( --kno-prompt-header-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+
+/// The vertical padding of the AIPrompt content.
+/// @group prompt
+$kno-prompt-content-padding-y: var( --kno-prompt-content-padding-y, k-spacing(3) ) !default;
+/// The horizontal padding of the AIPrompt content.
+/// @group prompt
+$kno-prompt-content-padding-x: var( --kno-prompt-content-padding-x, k-spacing(3) ) !default;
+/// The spacing between the items of the AIPrompt content.
+/// @group prompt
+$kno-prompt-content-spacing: var( --kno-prompt-content-spacing, k-spacing(2) ) !default;
+/// The text color of the AIPrompt content.
+/// @group prompt
+$kno-prompt-content-text: var( --kno-prompt-content-text, k-color(on-app-surface) ) !default;
+/// The background color of the AIPrompt content.
+/// @group prompt
+$kno-prompt-content-bg: var( --kno-prompt-content-bg, k-color(surface) ) !default;
+/// The text border of the AIPrompt content.
+/// @group prompt
+$kno-prompt-content-border: var( --kno-prompt-content-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+
+/// The spacing between the items of the AIPrompt content expander.
+/// @group prompt
+$kno-prompt-expander-spacing: var( --kno-prompt-expander-spacing, k-spacing(2) ) !default;
+
+/// The vertical padding of the AIPrompt suggestion container.
+/// @group prompt
+$kno-prompt-suggestion-padding-y: var( --kno-prompt-suggestion-padding-y, k-spacing(2) ) !default;
+/// The horizontal padding of the AIPrompt suggestion container.
+/// @group prompt
+$kno-prompt-suggestion-padding-x: var( --kno-prompt-suggestion-padding-x, k-spacing(3) ) !default;
+/// The border radius of the AIPrompt suggestion container.
+/// @group prompt
+$kno-prompt-suggestion-border-radius: var( --kno-prompt-suggestion-border-radius, k-border-radius(md) ) !default;
+/// The text color of the AIPrompt suggestion container.
+/// @group prompt
+$kno-prompt-suggestion-text: var( --kno-prompt-suggestion-text, k-color(base-on-subtle) ) !default;
+/// The background color of the AIPrompt suggestion container.
+/// @group prompt
+$kno-prompt-suggestion-bg: var( --kno-prompt-suggestion-bg, k-color(base-subtle) ) !default;
+/// The border color of the AIPrompt suggestion container.
+/// @group prompt
+$kno-prompt-suggestion-border: var( --kno-prompt-suggestion-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+/// The elevation of the AIPrompt suggestion container.
+/// @group prompt
+$kno-prompt-suggestion-shadow: var( --kno-prompt-suggestion-shadow, null ) !default;
+
+/// The text color of the AIPrompt footer.
+/// @group prompt
+$kno-prompt-footer-text: var( --kno-prompt-footer-text, null ) !default;
+/// The background color of the AIPrompt footer.
+/// @group prompt
+$kno-prompt-footer-bg: var( --kno-prompt-footer-bg, null ) !default;
+/// The border color of the AIPrompt footer.
+/// @group prompt
+$kno-prompt-footer-border: var( --kno-prompt-footer-border, null ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/prompt/_variables.scss" with (
+    $kno-prompt-text: $kno-prompt-text,
+    $kno-prompt-bg: $kno-prompt-bg,
+    $kno-prompt-border: $kno-prompt-border,
+    $kno-prompt-header-text: $kno-prompt-header-text,
+    $kno-prompt-header-bg: $kno-prompt-header-bg,
+    $kno-prompt-header-border: $kno-prompt-header-border,
+    $kno-prompt-content-padding-y: $kno-prompt-content-padding-y,
+    $kno-prompt-content-padding-x: $kno-prompt-content-padding-x,
+    $kno-prompt-content-spacing: $kno-prompt-content-spacing,
+    $kno-prompt-content-text: $kno-prompt-content-text,
+    $kno-prompt-content-bg: $kno-prompt-content-bg,
+    $kno-prompt-content-border: $kno-prompt-content-border,
+    $kno-prompt-expander-spacing: $kno-prompt-expander-spacing,
+    $kno-prompt-suggestion-padding-y: $kno-prompt-suggestion-padding-y,
+    $kno-prompt-suggestion-padding-x: $kno-prompt-suggestion-padding-x,
+    $kno-prompt-suggestion-border-radius: $kno-prompt-suggestion-border-radius,
+    $kno-prompt-suggestion-text: $kno-prompt-suggestion-text,
+    $kno-prompt-suggestion-bg: $kno-prompt-suggestion-bg,
+    $kno-prompt-suggestion-border: $kno-prompt-suggestion-border,
+    $kno-prompt-suggestion-shadow: $kno-prompt-suggestion-shadow,
+    $kno-prompt-footer-text: $kno-prompt-footer-text,
+    $kno-prompt-footer-bg: $kno-prompt-footer-bg,
+    $kno-prompt-footer-border: $kno-prompt-footer-border
+);

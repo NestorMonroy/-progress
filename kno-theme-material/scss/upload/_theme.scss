@@ -1,0 +1,18 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/upload/_theme.scss" as *;
+
+
+@mixin kno-upload--theme() {
+
+    @include kno-upload--theme-base();
+
+    // Upload
+    .k-upload {
+        .k-upload-button {
+            @include box-shadow( none );
+            background-color: k-color(base-subtle);
+        }
+    }
+
+}

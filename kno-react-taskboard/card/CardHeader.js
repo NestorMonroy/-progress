@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const u=require("react"),l=require("@progress/kno-react-buttons"),c=require("@progress/kno-react-layout"),s=require("@progress/kno-react-popup"),d=require("@progress/kno-svg-icons");function i(e){const n=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const a in e)if(a!=="default"){const r=Object.getOwnPropertyDescriptor(e,a);Object.defineProperty(n,a,r.get?r:{enumerable:!0,get:()=>e[a]})}}return n.default=e,Object.freeze(n)}const t=i(u),o=e=>{const n=t.useRef(void 0);return t.createElement(c.CardHeader,{className:"k-hbox"},t.createElement("span",{className:"k-card-title k-link",onClick:e.onShowPreviewPane},e.title),t.createElement("span",{className:"k-spacer"}),t.createElement("div",{className:"k-card-header-actions"},t.createElement(l.Button,{fillMode:"flat",className:"k-taskboard-card-menu-button",icon:"more-vertical",svgIcon:d.moreVerticalIcon,ref:n,"aria-label":"Card menu",title:"Card menu",onClick:e.showMenu?e.onHideMenu:e.onShowMenu,onBlur:e.onMenuButtonBlur}),t.createElement(s.Popup,{anchor:n.current&&n.current.element,show:e.showMenu,ref:e.popupRef},t.createElement(c.Menu,{vertical:!0,onSelect:e.onMenuItemSelect,items:e.menuItems,className:"k-context-menu"}))))};o.displayName="KendoReactTaskBoardCardHeader";exports.TaskBoardCardHeader=o;

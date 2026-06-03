@@ -1,0 +1,18 @@
+@use "./_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "../bubble/_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/chat/_layout.scss" as *;
+
+
+@mixin kno-chat--layout() {
+    @include kno-chat--layout-base();
+
+    .k-message-group-sender .k-chat-bubble {
+        &:focus,
+        &.k-focus {
+            outline-style: solid;
+            outline-width: calc( (#{$kno-bubble-border-width} * 2 ));
+            outline-offset: calc( (#{$kno-bubble-border-width} * 2 ) * -1);
+        }
+    }
+}

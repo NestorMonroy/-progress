@@ -1,0 +1,332 @@
+@use "../core/_index.scss" as *;
+@use "../card/_variables.scss" as *;
+
+
+// TaskBoard
+
+/// The spacing index of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-spacer: k-spacing(4) !default;
+/// The vertical padding of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-padding-y: null !default;
+/// The horizontal of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-padding-x: null !default;
+/// The font family of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-font-family: var(--kno-font-family) !default;
+/// The font size of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-font-size: var(--kno-font-size) !default;
+/// The line height of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-line-height: var(--kno-line-height) !default;
+/// The background color of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-bg: k-color(surface) !default;
+/// The text color of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-text: k-color(on-app-surface) !default;
+/// The border color of the TaskBoard.
+/// @group taskboard
+$kno-taskboard-border: k-color(border) !default;
+
+/// The vertical padding of the TaskBoard Toolbar.
+/// @group taskboard
+$kno-taskboard-toolbar-padding-y: $kno-taskboard-spacer !default;
+/// The horizontal padding of the TaskBoard Toolbar.
+/// @group taskboard
+$kno-taskboard-toolbar-padding-x: $kno-taskboard-toolbar-padding-y !default;
+/// The background color of the TaskBoard Toolbar.
+/// @group taskboard
+$kno-taskboard-toolbar-bg: null !default;
+/// The text color of the TaskBoard Toolbar.
+/// @group taskboard
+$kno-taskboard-toolbar-text: null !default;
+/// The border color of the TaskBoard Toolbar.
+/// @group taskboard
+$kno-taskboard-toolbar-border: null !default;
+/// The gradient of the TaskBoard Toolbar.
+/// @group taskboard
+$kno-taskboard-toolbar-gradient: null !default;
+
+/// The vertical padding of the TaskBoard content.
+/// @group taskboard
+$kno-taskboard-content-padding-y: 0 $kno-taskboard-spacer !default;
+/// The horizontal padding of the TaskBoard content.
+/// @group taskboard
+$kno-taskboard-content-padding-x: $kno-taskboard-spacer !default;
+
+/// The vertical spacing of the TaskBoard column container.
+/// @group taskboard
+$kno-taskboard-column-container-spacing-y: calc( #{$kno-taskboard-spacer} / 2 ) !default;
+/// The vertical padding of the TaskBoard column container.
+/// @group taskboard
+$kno-taskboard-column-container-padding-y: k-spacing(0) !default;
+/// The horizontal padding of the TaskBoard column container.
+/// @group taskboard
+$kno-taskboard-column-container-padding-x: calc( #{$kno-taskboard-spacer} / 2 ) !default;
+/// The spacing of the TaskBoard columns container.
+/// @group taskboard
+$kno-taskboard-columns-container-gap: $kno-taskboard-spacer !default;
+
+/// The default width of the TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-width: 320px !default;
+/// The border width of the TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-border-width: 1px !default;
+/// The border radius of the TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-border-radius: k-border-radius(md) !default;
+/// The background color of the TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-bg: k-color(app-surface) !default;
+/// The text color of the TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-text: null !default;
+/// The border color of the TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-border: transparent !default;
+
+/// The background color of the focused TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-focus-bg: null !default;
+/// The text color of the focused TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-focus-text: null !default;
+/// The border color of the focused TaskBoard column.
+/// @group taskboard
+$kno-taskboard-column-focus-border: k-color(border-alt) !default;
+
+/// The vertical padding of the TaskBoard column header.
+/// @group taskboard
+$kno-taskboard-column-header-padding-y: calc( #{$kno-taskboard-spacer} / 2 ) !default;
+/// The horizontal padding of the TaskBoard column header.
+/// @group taskboard
+$kno-taskboard-column-header-padding-x: $kno-taskboard-column-header-padding-y !default;
+/// The spacing of the TaskBoard column header.
+/// @group taskboard
+$kno-taskboard-column-header-gap: calc( #{$kno-taskboard-spacer} / 4 ) !default;
+/// The spacing of the TaskBoard column header actions.
+/// @group taskboard
+$kno-taskboard-column-header-actions-gap: calc( #{$kno-taskboard-spacer} / 2 ) !default;
+/// The font weight of the TaskBoard column header.
+/// @group taskboard
+$kno-taskboard-column-header-font-weight: 500 !default;
+/// The text color of the TaskBoard column header.
+/// @group taskboard
+$kno-taskboard-column-header-text: k-color(on-app-surface) !default;
+
+/// The vertical padding of the TaskBoard column Card wrapper.
+/// @group taskboard
+$kno-taskboard-column-cards-padding-y: null !default;
+/// The horizontal padding of the TaskBoard column Card wrapper.
+/// @group taskboard
+$kno-taskboard-column-cards-padding-x: null !default;
+/// The spacing of the TaskBoard column Card wrapper.
+/// @group taskboard
+$kno-taskboard-column-cards-gap: calc( #{$kno-taskboard-spacer} / 2 ) !default;
+
+/// The default width of the TaskBoard pane.
+/// @group taskboard
+$kno-taskboard-pane-width: $kno-taskboard-column-width !default;
+/// The vertical padding of the TaskBoard pane.
+/// @group taskboard
+$kno-taskboard-pane-padding-y: null !default;
+/// The horizontal padding of the TaskBoard pane.
+/// @group taskboard
+$kno-taskboard-pane-padding-x: null !default;
+/// The border width of the TaskBoard pane.
+/// @group taskboard
+$kno-taskboard-pane-border-width: 1px !default;
+/// The border radius of the TaskBoard pane.
+/// @group taskboard
+$kno-taskboard-pane-border-radius: null !default;
+/// The background color of the TaskBoard pane.
+/// @group taskboard
+$kno-taskboard-pane-bg: k-color(surface) !default;
+/// The text color of the TaskBoard pane.
+/// @group taskboard
+$kno-taskboard-pane-text: k-color(on-app-surface) !default;
+/// The border color of the TaskBoard pane.
+/// @group taskboard
+$kno-taskboard-pane-border: k-color(border) !default;
+
+/// The vertical padding of the TaskBoard pane header.
+/// @group taskboard
+$kno-taskboard-pane-header-padding-y: calc( #{$kno-taskboard-spacer} * .75 ) !default;
+/// The horizontal padding of the TaskBoard pane header.
+/// @group taskboard
+$kno-taskboard-pane-header-padding-x: $kno-taskboard-spacer !default;
+/// The font weight of the TaskBoard pane header.
+/// @group taskboard
+$kno-taskboard-pane-header-font-weight: 500 !default;
+/// The text color of the TaskBoard pane header.
+/// @group taskboard
+$kno-taskboard-pane-header-text: k-color(on-app-surface) !default;
+
+/// The vertical padding of the TaskBoard pane content.
+/// @group taskboard
+$kno-taskboard-pane-content-padding-y: k-spacing(0) !default;
+/// The horizontal padding of the TaskBoard pane content.
+/// @group taskboard
+$kno-taskboard-pane-content-padding-x: $kno-taskboard-spacer !default;
+
+/// The vertical padding of the TaskBoard pane actions.
+/// @group taskboard
+$kno-taskboard-pane-actions-padding-y: calc( #{$kno-taskboard-spacer} * .75 ) !default;
+/// The horizontal padding of the TaskBoard pane actions.
+/// @group taskboard
+$kno-taskboard-pane-actions-padding-x: $kno-taskboard-spacer !default;
+
+/// The vertical padding of the TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-padding-y: calc( #{$kno-taskboard-spacer} / 2 ) !default;
+/// The horizontal padding of the TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-padding-x: $kno-taskboard-card-padding-y !default;
+/// The border width of the TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-border-width: 1px !default;
+/// The border radius of the TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-border-radius: $kno-card-border-radius !default;
+/// The background color of the TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-bg: $kno-card-bg !default;
+/// The text color of the TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-text: $kno-card-text !default;
+/// The border color of the TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-border: k-color(border) !default;
+/// The shadow of the TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-shadow: none !default;
+
+/// The border width of the TaskBoard Card category.
+/// @group taskboard
+$kno-taskboard-card-category-border-width: 4px !default;
+
+/// The border color of the hovered TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-hover-border: k-color(border-alt) !default;
+
+/// The border color of the focused TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-focus-border: k-color(border-alt) !default;
+/// The shadow of the focused TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-focus-shadow: none !default;
+
+
+/// The border of the selected TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-selected-border: color-mix(in srgb, k-color(primary) 60%, transparent) !default;
+/// The shadow of the selected TaskBoard Card.
+/// @group taskboard
+$kno-taskboard-card-selected-shadow: none !default;
+
+/// The text color of the TaskBoard Card header text.
+/// @group taskboard
+$kno-taskboard-card-header-text: null !default;
+/// The text color of the hovered TaskBoard Card header text.
+/// @group taskboard
+$kno-taskboard-card-header-focus-text: null !default;
+/// The text color of the focused TaskBoard Card header text.
+/// @group taskboard
+$kno-taskboard-card-header-hover-text: null !default;
+
+/// The border width of the TaskBoard Card placeholder.
+/// @group taskboard
+$kno-taskboard-drag-placeholder-border-width: 1px !default;
+/// The border radius of the TaskBoard Card placeholder.
+/// @group taskboard
+$kno-taskboard-drag-placeholder-border-radius: $kno-taskboard-card-border-radius !default;
+/// The background color of the TaskBoard Card placeholder.
+/// @group taskboard
+$kno-taskboard-drag-placeholder-bg: color-mix(in srgb, k-color(on-inverse) 20%, transparent) !default;
+/// The border color of the TaskBoard Card placeholder.
+/// @group taskboard
+$kno-taskboard-drag-placeholder-border: k-color(border) !default;
+
+@forward "@progress/kno-theme-core/scss/components/taskboard/_variables.scss" with (
+    $kno-taskboard-spacer: $kno-taskboard-spacer,
+    $kno-taskboard-padding-y: $kno-taskboard-padding-y,
+    $kno-taskboard-padding-x: $kno-taskboard-padding-x,
+    $kno-taskboard-font-family: $kno-taskboard-font-family,
+    $kno-taskboard-font-size: $kno-taskboard-font-size,
+    $kno-taskboard-line-height: $kno-taskboard-line-height,
+    $kno-taskboard-bg: $kno-taskboard-bg,
+    $kno-taskboard-text: $kno-taskboard-text,
+    $kno-taskboard-border: $kno-taskboard-border,
+    $kno-taskboard-toolbar-padding-y: $kno-taskboard-toolbar-padding-y,
+    $kno-taskboard-toolbar-padding-x: $kno-taskboard-toolbar-padding-x,
+    $kno-taskboard-toolbar-bg: $kno-taskboard-toolbar-bg,
+    $kno-taskboard-toolbar-text: $kno-taskboard-toolbar-text,
+    $kno-taskboard-toolbar-border: $kno-taskboard-toolbar-border,
+    $kno-taskboard-toolbar-gradient: $kno-taskboard-toolbar-gradient,
+    $kno-taskboard-content-padding-y: $kno-taskboard-content-padding-y,
+    $kno-taskboard-content-padding-x: $kno-taskboard-content-padding-x,
+    $kno-taskboard-column-container-spacing-y: $kno-taskboard-column-container-spacing-y,
+    $kno-taskboard-column-container-padding-y: $kno-taskboard-column-container-padding-y,
+    $kno-taskboard-column-container-padding-x: $kno-taskboard-column-container-padding-x,
+    $kno-taskboard-columns-container-gap: $kno-taskboard-columns-container-gap,
+    $kno-taskboard-column-width: $kno-taskboard-column-width,
+    $kno-taskboard-column-border-width: $kno-taskboard-column-border-width,
+    $kno-taskboard-column-border-radius: $kno-taskboard-column-border-radius,
+    $kno-taskboard-column-bg: $kno-taskboard-column-bg,
+    $kno-taskboard-column-text: $kno-taskboard-column-text,
+    $kno-taskboard-column-border: $kno-taskboard-column-border,
+    $kno-taskboard-column-focus-bg: $kno-taskboard-column-focus-bg,
+    $kno-taskboard-column-focus-text: $kno-taskboard-column-focus-text,
+    $kno-taskboard-column-focus-border: $kno-taskboard-column-focus-border,
+    $kno-taskboard-column-header-padding-y: $kno-taskboard-column-header-padding-y,
+    $kno-taskboard-column-header-padding-x: $kno-taskboard-column-header-padding-x,
+    $kno-taskboard-column-header-gap: $kno-taskboard-column-header-gap,
+    $kno-taskboard-column-header-actions-gap: $kno-taskboard-column-header-actions-gap,
+    $kno-taskboard-column-header-font-weight: $kno-taskboard-column-header-font-weight,
+    $kno-taskboard-column-header-text: $kno-taskboard-column-header-text,
+    $kno-taskboard-column-cards-padding-y: $kno-taskboard-column-cards-padding-y,
+    $kno-taskboard-column-cards-padding-x: $kno-taskboard-column-cards-padding-x,
+    $kno-taskboard-column-cards-gap: $kno-taskboard-column-cards-gap,
+    $kno-taskboard-pane-width: $kno-taskboard-pane-width,
+    $kno-taskboard-pane-padding-y: $kno-taskboard-pane-padding-y,
+    $kno-taskboard-pane-padding-x: $kno-taskboard-pane-padding-x,
+    $kno-taskboard-pane-border-width: $kno-taskboard-pane-border-width,
+    $kno-taskboard-pane-border-radius: $kno-taskboard-pane-border-radius,
+    $kno-taskboard-pane-bg: $kno-taskboard-pane-bg,
+    $kno-taskboard-pane-text: $kno-taskboard-pane-text,
+    $kno-taskboard-pane-border: $kno-taskboard-pane-border,
+    $kno-taskboard-pane-header-padding-y: $kno-taskboard-pane-header-padding-y,
+    $kno-taskboard-pane-header-padding-x: $kno-taskboard-pane-header-padding-x,
+    $kno-taskboard-pane-header-font-weight: $kno-taskboard-pane-header-font-weight,
+    $kno-taskboard-pane-header-text: $kno-taskboard-pane-header-text,
+    $kno-taskboard-pane-content-padding-y: $kno-taskboard-pane-content-padding-y,
+    $kno-taskboard-pane-content-padding-x: $kno-taskboard-pane-content-padding-x,
+    $kno-taskboard-pane-actions-padding-y: $kno-taskboard-pane-actions-padding-y,
+    $kno-taskboard-pane-actions-padding-x: $kno-taskboard-pane-actions-padding-x,
+    $kno-taskboard-card-padding-y: $kno-taskboard-card-padding-y,
+    $kno-taskboard-card-padding-x: $kno-taskboard-card-padding-x,
+    $kno-taskboard-card-border-width: $kno-taskboard-card-border-width,
+    $kno-taskboard-card-border-radius: $kno-taskboard-card-border-radius,
+    $kno-taskboard-card-bg: $kno-taskboard-card-bg,
+    $kno-taskboard-card-text: $kno-taskboard-card-text,
+    $kno-taskboard-card-border: $kno-taskboard-card-border,
+    $kno-taskboard-card-shadow: $kno-taskboard-card-shadow,
+    $kno-taskboard-card-category-border-width: $kno-taskboard-card-category-border-width,
+    $kno-taskboard-card-hover-border: $kno-taskboard-card-hover-border,
+    $kno-taskboard-card-focus-border: $kno-taskboard-card-focus-border,
+    $kno-taskboard-card-focus-shadow: $kno-taskboard-card-focus-shadow,
+    $kno-taskboard-card-selected-border: $kno-taskboard-card-selected-border,
+    $kno-taskboard-card-selected-shadow: $kno-taskboard-card-selected-shadow,
+    $kno-taskboard-card-header-text: $kno-taskboard-card-header-text,
+    $kno-taskboard-card-header-focus-text: $kno-taskboard-card-header-focus-text,
+    $kno-taskboard-card-header-hover-text: $kno-taskboard-card-header-hover-text,
+    $kno-taskboard-drag-placeholder-border-width: $kno-taskboard-drag-placeholder-border-width,
+    $kno-taskboard-drag-placeholder-border-radius: $kno-taskboard-drag-placeholder-border-radius,
+    $kno-taskboard-drag-placeholder-bg: $kno-taskboard-drag-placeholder-bg,
+    $kno-taskboard-drag-placeholder-border: $kno-taskboard-drag-placeholder-border
+);

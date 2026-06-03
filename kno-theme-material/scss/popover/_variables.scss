@@ -1,0 +1,113 @@
+@use "../core/_index.scss" as *;
+@use "../card/_variables.scss" as *;
+
+// Popover
+
+/// The width of the border around the Popover.
+/// @group popover
+$kno-popover-border-width: 0 !default;
+/// The style of the border around the Popover.
+/// @group popover
+$kno-popover-border-style: solid !default;
+/// The radius of the border around the Popover.
+/// @group popover
+$kno-popover-border-radius: $kno-card-border-radius !default;
+/// The font family of the Popover.
+/// @group popover
+$kno-popover-font-family: $kno-card-font-family !default;
+/// The font size of the Popover.
+/// @group popover
+$kno-popover-font-size: $kno-card-font-size !default;
+/// The line height of the Popover.
+/// @group popover
+$kno-popover-line-height: $kno-card-line-height !default;
+
+/// The text color of the Popover.
+/// @group popover
+$kno-popover-text: k-color(on-app-surface) !default;
+/// The background color of the Popover.
+/// @group popover
+$kno-popover-bg: k-color(surface) !default;
+/// The border color of the Popover.
+/// @group popover
+$kno-popover-border: k-color(border) !default;
+/// The box shadow of the Popover.
+/// @group popover
+$kno-popover-shadow: k-elevation(2) !default;
+
+/// The horizontal padding of the Popover header.
+/// @group popover
+$kno-popover-header-padding-x: $kno-card-header-padding-x !default;
+/// The vertical padding of the Popover header.
+/// @group popover
+$kno-popover-header-padding-y: $kno-card-header-padding-y !default;
+/// The border width of the Popover header.
+/// @group popover
+$kno-popover-header-border-width: $kno-card-header-border-width !default;
+/// The border style of the Popover header.
+/// @group popover
+$kno-popover-header-border-style: $kno-popover-border-style !default;
+/// The text color of the Popover header.
+/// @group popover
+$kno-popover-header-text: $kno-card-header-text !default;
+/// The background color of the Popover header.
+/// @group popover
+$kno-popover-header-bg: $kno-card-header-bg !default;
+/// The border color of the Popover header.
+/// @group popover
+$kno-popover-header-border: $kno-card-header-border !default;
+
+/// The horizontal padding of the Popover body.
+/// @group popover
+$kno-popover-body-padding-x: $kno-card-body-padding-x !default;
+/// The vertical padding of the Popover body.
+/// @group popover
+$kno-popover-body-padding-y: $kno-card-body-padding-y !default;
+
+/// The border width of the Popover actions.
+/// @group popover
+$kno-popover-actions-border-width: $kno-popover-border-width !default;
+
+/// The width of the Popover callout.
+/// @group popover
+$kno-popover-callout-width: $kno-card-callout-width !default;
+/// The height of the Popover callout.
+/// @group popover
+$kno-popover-callout-height: $kno-card-callout-height !default;
+/// The border width of the Popover callout.
+/// @group popover
+$kno-popover-callout-border-width: $kno-popover-border-width !default;
+/// The border style of the Popover callout.
+/// @group popover
+$kno-popover-callout-border-style: $kno-popover-border-style !default;
+/// The border color of the Popover callout.
+/// @group popover
+$kno-popover-callout-border: $kno-popover-border !default;
+
+@forward "@progress/kno-theme-core/scss/components/popover/_variables.scss" with (
+    $kno-popover-border-width: $kno-popover-border-width,
+    $kno-popover-border-style: $kno-popover-border-style,
+    $kno-popover-border-radius: $kno-popover-border-radius,
+    $kno-popover-font-family: $kno-popover-font-family,
+    $kno-popover-font-size: $kno-popover-font-size,
+    $kno-popover-line-height: $kno-popover-line-height,
+    $kno-popover-text: $kno-popover-text,
+    $kno-popover-bg: $kno-popover-bg,
+    $kno-popover-border: $kno-popover-border,
+    $kno-popover-shadow: $kno-popover-shadow,
+    $kno-popover-header-padding-x: $kno-popover-header-padding-x,
+    $kno-popover-header-padding-y: $kno-popover-header-padding-y,
+    $kno-popover-header-border-width: $kno-popover-header-border-width,
+    $kno-popover-header-border-style: $kno-popover-header-border-style,
+    $kno-popover-header-text: $kno-popover-header-text,
+    $kno-popover-header-bg: $kno-popover-header-bg,
+    $kno-popover-header-border: $kno-popover-header-border,
+    $kno-popover-body-padding-x: $kno-popover-body-padding-x,
+    $kno-popover-body-padding-y: $kno-popover-body-padding-y,
+    $kno-popover-actions-border-width: $kno-popover-actions-border-width,
+    $kno-popover-callout-width: $kno-popover-callout-width,
+    $kno-popover-callout-height: $kno-popover-callout-height,
+    $kno-popover-callout-border-width: $kno-popover-callout-border-width,
+    $kno-popover-callout-border-style: $kno-popover-callout-border-style,
+    $kno-popover-callout-border: $kno-popover-callout-border
+);

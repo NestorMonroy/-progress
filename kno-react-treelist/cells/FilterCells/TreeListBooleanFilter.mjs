@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+import { BooleanFilterCell as l } from "@progress/kno-react-data-tools";
+import { localizeFilter as a, booleanFilterValues as i } from "./utils.mjs";
+import { useLocalization as n } from "@progress/kno-react-intl";
+const p = function(o) {
+  const { operators: e, ...r } = o;
+  return /* @__PURE__ */ t.createElement(
+    l,
+    {
+      ariaLabel: "boolean filter",
+      ...a(n(), e || i),
+      ...r
+    }
+  );
+};
+export {
+  p as TreeListBooleanFilter
+};

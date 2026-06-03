@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Location } from '../index.js';
+/**
+ * Context object for shape layer tooltips.
+ */
+export interface ShapeTooltipContext {
+    /**
+     * The original GeoJSON data item used to create the shape.
+     */
+    dataItem: any;
+    /**
+     * The index of the shape layer in the map.
+     */
+    layerIndex: number;
+    /**
+     * The location (center point) of the shape.
+     */
+    location: Location;
+}

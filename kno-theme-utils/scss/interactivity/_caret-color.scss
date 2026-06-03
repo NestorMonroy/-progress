@@ -1,0 +1,17 @@
+// TODO: Check if this file is still needed
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--interactivity--caret-color() {
+    @include import-once("utils-interactivity-caret-color") {
+
+        // Caret color utility classes
+        $kno-utils-caret-color: map.get( $kno-utils, "caret-color" ) !default;
+        @include generate-utils( caret, caret-color, $kno-utils-caret-color );
+
+    }
+}

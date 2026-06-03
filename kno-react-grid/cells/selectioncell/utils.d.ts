@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { GridCellProps } from '../../interfaces/GridCellProps';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export declare const getSelectionCellTdProps: (props: GridCellProps) => {
+    tdProps: {
+        colSpan: number | undefined;
+        style: React.CSSProperties | undefined;
+        className: string;
+        'aria-colindex': number;
+        role: string;
+    };
+};
+/**
+ * @hidden
+ */
+export declare const getCustomCell: (props: GridCellProps) => any;

@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/panel/_layout.scss" as *;
+
+@mixin kno-panel--layout() {
+    @include kno-panel--layout--base();
+}

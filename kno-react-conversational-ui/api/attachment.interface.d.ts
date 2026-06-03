@@ -1,0 +1,37 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * Represents a message attachment ([see examples](components/conversational-ui/chat/file-uploads-and-media/attachments)).
+ */
+export interface Attachment {
+    /**
+     * Content type identifier for the attachment.
+     * Typically a MIME type. Can be any string.
+     */
+    contentType: string;
+    /**
+     * Content of the attachment.
+     */
+    content: any;
+    /**
+     * Optional title of the attachment.
+     */
+    title?: string;
+    /**
+     * Optional subtitle of the attachment.
+     */
+    subtitle?: string;
+}
+/**
+ * Specifies the layout for message attachments.
+ *
+ * The supported values are:
+ * * `"list"`&mdash;A vertical list.
+ * * `"carousel"`&mdash;A horizontal, scrollable list. Also called a card deck.
+ */
+export type AttachmentLayout = 'list' | 'carousel';

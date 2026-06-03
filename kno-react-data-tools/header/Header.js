@@ -1,0 +1,9 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const s=require("react"),a=require("./utils/index.js"),i=require("../navigation/constants.js"),c=require("@progress/kno-react-common");function l(t){const e=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(t){for(const r in t)if(r!=="default"){const n=Object.getOwnPropertyDescriptor(t,r);Object.defineProperty(e,r,n.get?n:{enumerable:!0,get:()=>t[r]})}}return e.default=t,Object.freeze(e)}const o=l(s);class d extends o.Component{constructor(){super(...arguments),this.element=null}componentDidMount(){const{columnResize:e}=this.props;e&&e.resizable&&e.setIsRtl(a.isRtl(this.element))}render(){return o.createElement("thead",{className:c.classNames("k-table-thead k-grid-header",{"k-grid-draggable-header":this.props.reorderable}),role:"presentation",ref:e=>{this.element=e},...i.tableKeyboardNavigationHeaderAttributes},this.props.headerRow,this.props.filterRow)}}exports.Header=d;

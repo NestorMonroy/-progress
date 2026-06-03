@@ -1,0 +1,22 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as e from "react";
+import { KEYBOARD_NAV_DATA_ID as r, KEYBOARD_NAV_DATA_LEVEL as i } from "./constants.mjs";
+import { TableKeyboardNavigationContext as n } from "./TableKeyboardNavigationContext.mjs";
+const v = (o, a) => {
+  const t = e.useContext(n);
+  return !t || !o || a === !1 ? {} : {
+    tabIndex: t && t.activeId && t.activeId === o ? 0 : -1,
+    [i]: t.level,
+    [r]: o
+  };
+};
+export {
+  v as useTableKeyboardNavigation
+};

@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseEvent as e } from "./base-event.mjs";
+class x extends e {
+  /**
+   * @hidden
+   */
+  constructor(t, s) {
+    super(s), this.axis = t.axis, this.dataItem = t.dataItem, this.index = t.index, this.text = t.text, this.value = t.value;
+  }
+}
+export {
+  x as AxisLabelClickEvent
+};

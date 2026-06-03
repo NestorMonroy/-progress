@@ -1,0 +1,88 @@
+@use "../core/_index.scss" as *;
+
+
+// Adaptive Common
+/// The background color of the Adaptive component.
+/// @group adaptive
+$kno-adaptive-bg: k-color(surface-alt) !default;
+/// The text color of the Adaptive component.
+/// @group adaptive
+$kno-adaptive-text: k-color(on-app-surface) !default;
+/// The border color of the Adaptive component.
+/// @group adaptive
+$kno-adaptive-border: k-color(border) !default;
+
+/// The background color of the Adaptive content.
+/// @group adaptive
+$kno-adaptive-content-bg: k-color(app-surface) !default;
+/// The text color of the Adaptive content.
+/// @group adaptive
+$kno-adaptive-content-text: k-color(on-app-surface) !default;
+
+/// The background color of the Adaptive menu.
+/// @group adaptive
+$kno-adaptive-menu-bg: k-color(primary) !default;
+/// The text color of the Adaptive menu.
+/// @group adaptive
+$kno-adaptive-menu-text: k-color(on-primary) !default;
+
+/// The text color of the Adaptive menu clear button.
+/// @group adaptive
+$kno-adaptive-menu-clear-text: k-color(primary-on-surface) !default;
+
+/// The border color of the Adaptive menu item.
+/// @group adaptive
+$kno-adaptive-menu-item-border: k-color(border) !default;
+/// The text color of the Adaptive menu title.
+/// @group adaptive
+$kno-adaptive-menu-title-text: k-color(on-app-surface) !default;
+
+/// The width of the border around the Adaptive component.
+/// @group adaptive
+$kno-adaptive-border-width: 1px !default;
+/// The font family of the Adaptive component.
+/// @group adaptive
+$kno-adaptive-font-family: var(--kno-font-family) !default;
+/// The font size of the Adaptive component.
+/// @group adaptive
+$kno-adaptive-font-size: var(--kno-font-size) !default;
+/// The line height of the Adaptive component.
+/// @group adaptive
+$kno-adaptive-line-height: var(--kno-line-height) !default;
+
+// Adaptive Grid
+/// The text color of the Adaptive Grid sort indicator.
+/// @group adaptive
+$kno-adaptive-grid-sort-text: k-color(primary-on-surface) !default;
+
+// Adaptive Scheduler
+/// The text color of the current date in the Adaptive Scheduler.
+/// @group adaptive
+$kno-adaptive-scheduler-current-text: k-color(primary-on-surface) !default;
+/// The base text color of the Adaptive Scheduler.
+/// @group adaptive
+$kno-adaptive-scheduler-base-text: inherit !default;
+/// The subtle text color of the Adaptive Scheduler.
+/// @group adaptive
+$kno-adaptive-scheduler-subtle-text: k-color(on-app-surface) !default;
+
+@forward "@progress/kno-theme-core/scss/components/adaptive/_variables.scss" with (
+    $kno-adaptive-bg: $kno-adaptive-bg,
+    $kno-adaptive-text: $kno-adaptive-text,
+    $kno-adaptive-border: $kno-adaptive-border,
+    $kno-adaptive-content-bg: $kno-adaptive-content-bg,
+    $kno-adaptive-content-text: $kno-adaptive-content-text,
+    $kno-adaptive-menu-bg: $kno-adaptive-menu-bg,
+    $kno-adaptive-menu-text: $kno-adaptive-menu-text,
+    $kno-adaptive-menu-clear-text: $kno-adaptive-menu-clear-text,
+    $kno-adaptive-menu-item-border: $kno-adaptive-menu-item-border,
+    $kno-adaptive-menu-title-text: $kno-adaptive-menu-title-text,
+    $kno-adaptive-border-width: $kno-adaptive-border-width,
+    $kno-adaptive-font-family: $kno-adaptive-font-family,
+    $kno-adaptive-font-size: $kno-adaptive-font-size,
+    $kno-adaptive-line-height: $kno-adaptive-line-height,
+    $kno-adaptive-grid-sort-text: $kno-adaptive-grid-sort-text,
+    $kno-adaptive-scheduler-current-text: $kno-adaptive-scheduler-current-text,
+    $kno-adaptive-scheduler-base-text: $kno-adaptive-scheduler-base-text,
+    $kno-adaptive-scheduler-subtle-text: $kno-adaptive-scheduler-subtle-text
+);

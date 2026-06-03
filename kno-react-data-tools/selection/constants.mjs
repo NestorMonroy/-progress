@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+const E = "data-grid-row-index", T = "data-grid-col-index", t = "data-prevent-selection";
+export {
+  T as TABLE_COL_INDEX_ATTRIBUTE,
+  t as TABLE_PREVENT_SELECTION_ELEMENT,
+  E as TABLE_ROW_INDEX_ATTRIBUTE
+};

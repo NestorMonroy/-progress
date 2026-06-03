@@ -1,0 +1,22 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/popover/_layout.scss" as *;
+
+@mixin kno-popover--layout() {
+    @include kno-popover--layout-base();
+
+    // Header
+    .k-popover-header {
+        @extend .k-card-title !optional;
+        padding-block-end: 0;
+        margin-block-end: 0;
+        font-size: var(--kno-font-size-lg);
+        line-height: var(--kno-line-height-sm);
+    }
+
+    // Actions
+    .k-popover-actions {
+        padding-inline: $kno-popover-actions-padding-x;
+        padding-block: $kno-popover-actions-padding-y;
+    }
+}

@@ -1,0 +1,14 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/stepper/_layout.scss" as *;
+
+@mixin kno-stepper--layout() {
+    @include kno-stepper--layout-base();
+
+    .k-stepper .k-step-disabled,
+    .k-stepper .k-step.k-disabled {
+        .k-step-label {
+            font-weight: normal;
+        }
+    }
+}

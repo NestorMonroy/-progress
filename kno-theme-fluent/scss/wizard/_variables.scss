@@ -1,0 +1,63 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// The border width of the Wizard.
+/// @group wizard
+$kno-wizard-border-width: var( --kno-wizard-border-width, 0px ) !default;
+/// The horizontal padding of the Wizard.
+/// @group wizard
+$kno-wizard-padding-x: var( --kno-wizard-padding-x, k-spacing(6) ) !default;
+/// The vertical padding of the Wizard.
+/// @group wizard
+$kno-wizard-padding-y: var( --kno-wizard-padding-y, k-spacing(6) ) !default;
+/// The font size of the Wizard.
+/// @group wizard
+$kno-wizard-font-size: var(--kno-font-size) !default;
+/// The line height of the Wizard.
+/// @group wizard
+$kno-wizard-line-height: var(--kno-line-height) !default;
+/// The font family of the Wizard.
+/// @group wizard
+$kno-wizard-font-family: var(--kno-font-family) !default;
+
+
+/// The horizontal padding of the Wizard steps.
+/// @group wizard
+$kno-wizard-steps-padding-x: var( --kno-wizard-steps-padding-x, k-spacing(3) ) !default;
+
+/// The horizontal padding of the Wizard content.
+/// @group wizard
+$kno-wizard-content-padding-x: var( --kno-wizard-content-padding-x, k-spacing(3) ) !default;
+/// The vertical padding of the Wizard content.
+/// @group wizard
+$kno-wizard-content-padding-y: var( --kno-wizard-content-padding-y, k-spacing(3) ) !default;
+/// The text color of the Wizard content.
+/// @group wizard
+$kno-wizard-content-text: var( --kno-wizard-content-text, k-color(on-app-surface) ) !default;
+/// The background color of the Wizard content.
+/// @group wizard
+$kno-wizard-content-bg: var( --kno-wizard-content-bg, k-color(surface-alt) ) !default;
+
+/// The horizontal margin of the Wizard's Button container.
+/// @group wizard
+$kno-wizard-buttons-margin-x: var( --kno-wizard-buttons-margin-x, k-spacing(7) ) !default;
+/// The vertical margin of the Wizard Button container.
+/// @group wizard
+$kno-wizard-buttons-margin-y: var( --kno-wizard-buttons-margin-y, k-spacing(6) ) !default;
+
+/// The outline of the focused Wizard step.
+/// @group wizard
+$kno-wizard-step-focus-border: var( --kno-wizard-step-focus-border, k-color(border-alt) ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/wizard/_variables.scss" with (
+    $kno-wizard-padding-x: $kno-wizard-padding-x,
+    $kno-wizard-padding-y: $kno-wizard-padding-y,
+    $kno-wizard-content-padding-x: $kno-wizard-content-padding-x,
+    $kno-wizard-content-padding-y: $kno-wizard-content-padding-y,
+    $kno-wizard-buttons-margin-x: $kno-wizard-buttons-margin-x,
+    $kno-wizard-border-width: $kno-wizard-border-width,
+    $kno-wizard-font-size: $kno-wizard-font-size,
+    $kno-wizard-line-height: $kno-wizard-line-height,
+    $kno-wizard-font-family: $kno-wizard-font-family,
+    $kno-wizard-step-focus-border: $kno-wizard-step-focus-border
+);

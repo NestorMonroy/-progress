@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/timepicker/_layout.scss" as *;
+
+
+@mixin kno-time-picker--layout() {
+    @include kno-time-picker--layout-base();
+}

@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { LicenseMessage } from '../validate-package.js';
+import * as React from 'react';
+/**
+ *
+ * @hidden
+ */
+export interface WatermarkOverlayProps {
+    message?: LicenseMessage;
+}
+/**
+ *
+ * @hidden
+ */
+export declare const WatermarkOverlay: (props: WatermarkOverlayProps) => React.JSX.Element;

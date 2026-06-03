@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/map/_theme.scss" as *;
+
+
+@mixin kno-map--theme() {
+    @include kno-map--theme-base();
+}

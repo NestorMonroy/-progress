@@ -1,0 +1,73 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/panelbar/_layout.scss" as *;
+
+@mixin kno-panelbar--layout() {
+    @include kno-panelbar--layout-base();
+
+    .k-panelbar {
+
+        > .k-panelbar-header {
+
+            > .k-link {
+                padding-inline-start: $kno-panelbar-header-padding-x-start;
+                padding-inline-end: $kno-panelbar-header-padding-x-end;
+                padding-block: $kno-panelbar-header-padding-y;
+                font-weight: normal;
+
+                &.k-selected {
+                    font-weight: var(--kno-font-weight-semibold);
+                }
+
+                &:focus,
+                &.k-focus {
+                    border-radius: k-border-radius(md);
+                }
+
+                &.k-hover,
+                &:hover {
+                    border-radius: k-border-radius(md);
+                }
+            }
+        }
+
+        .k-panelbar-item-icon:first-child {
+            position: absolute;
+            inset-inline-start: $kno-panelbar-icon-spacing;
+        }
+
+        .k-panelbar-group > .k-panelbar-item {
+            > .k-link {
+                padding-inline-start: $kno-panelbar-item-padding-x-start;
+                padding-inline-end: $kno-panelbar-item-padding-x-end;
+                padding-block: $kno-panelbar-item-padding-y;
+
+                &.k-selected {
+                    font-weight: var(--kno-font-weight-semibold);
+                }
+
+                &:focus,
+                &.k-focus,
+                &:hover,
+                &.k-hover {
+                    border-radius: k-border-radius(md);
+                }
+            }
+
+            @for $i from 1 through $kno-panelbar-item-level-count {
+                &.k-level-#{$i} {
+                    $_link-spacing: calc( #{k-spacing(3)} * #{$i} );
+                    $_item-padding: $kno-panelbar-item-padding-x-start;
+
+                    .k-link {
+                        padding-inline-start: calc( $kno-panelbar-item-padding-x-start + $_link-spacing );
+                    }
+
+                    .k-panelbar-item-icon:first-child {
+                        inset-inline-start: calc( $kno-panelbar-icon-spacing + $_link-spacing );
+                    }
+                }
+            }
+        }
+    }
+}

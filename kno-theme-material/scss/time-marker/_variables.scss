@@ -1,0 +1,13 @@
+@use "../core/_index.scss" as *;
+
+/// The border width of the current time indicator.
+/// @group time-marker
+$kno-current-time-width: 1px !default;
+/// The color of the current time indicator.
+/// @group time-marker
+$kno-current-time-color: k-color(error-on-surface) !default;
+
+@forward "@progress/kno-theme-core/scss/components/time-marker/_variables.scss" with (
+    $kno-current-time-width: $kno-current-time-width,
+    $kno-current-time-color: $kno-current-time-color
+);

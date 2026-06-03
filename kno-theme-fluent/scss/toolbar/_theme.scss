@@ -1,0 +1,23 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "../core/functions/index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/toolbar/_theme.scss" as *;
+
+@mixin kno-toolbar--theme() {
+    @include kno-toolbar--theme-base();
+
+    .k-toolbar {
+        .k-toolbar-item:focus,
+        .k-toolbar-item.k-focus {
+            outline-color: $kno-toolbar-item-focus-outline-color;
+        }
+
+        #{k-when-default($kno-toolbar-default-fill-mode, "flat")}
+        &.k-toolbar-flat {
+            > .k-separator,
+            .k-toolbar-separator {
+                border-inline-color: $kno-toolbar-separator-border;
+            }
+        }
+    }
+}

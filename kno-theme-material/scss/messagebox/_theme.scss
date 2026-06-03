@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/messagebox/_theme.scss" as *;
+
+
+@mixin kno-messagebox--theme() {
+    @include kno-messagebox--theme-base();
+}

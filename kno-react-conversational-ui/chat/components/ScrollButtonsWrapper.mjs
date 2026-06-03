@@ -1,0 +1,52 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { Button as c } from "@progress/kno-react-buttons";
+import { chevronRightIcon as i, chevronLeftIcon as m } from "@progress/kno-svg-icons";
+import { useLocalization as z } from "@progress/kno-react-intl";
+import { scrollLeft as g, messages as f, scrollRight as p } from "../../messages/index.mjs";
+const k = ({
+  visible: L,
+  dir: t,
+  canScrollLeft: b,
+  canScrollRight: u,
+  onScrollLeft: v,
+  onScrollRight: h,
+  children: l
+}) => {
+  const o = z();
+  if (!L)
+    return l;
+  const r = o.toLanguageString(g, f[g]), a = o.toLanguageString(p, f[p]), s = t !== "rtl" ? r : a, n = t !== "rtl" ? a : r;
+  return /* @__PURE__ */ e.createElement("div", { className: "k-suggestion-scrollwrap" }, /* @__PURE__ */ e.createElement(
+    c,
+    {
+      fillMode: "flat",
+      size: "small",
+      svgIcon: t === "rtl" ? i : m,
+      onClick: v,
+      disabled: !b,
+      "aria-label": s,
+      title: s
+    }
+  ), l, /* @__PURE__ */ e.createElement(
+    c,
+    {
+      fillMode: "flat",
+      size: "small",
+      svgIcon: t === "rtl" ? m : i,
+      onClick: h,
+      disabled: !u,
+      "aria-label": n,
+      title: n
+    }
+  ));
+};
+export {
+  k as ScrollButtonsWrapper
+};

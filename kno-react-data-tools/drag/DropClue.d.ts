@@ -1,0 +1,26 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface DropClueState {
+    visible: boolean;
+    top: number;
+    left: number;
+    height: number;
+}
+/**
+ * @hidden
+ */
+export declare class DropClue extends React.PureComponent<any, DropClueState> {
+    readonly state: DropClueState;
+    hiddenElementRef: React.RefObject<HTMLDivElement | null>;
+    constructor(props: any);
+    render(): React.JSX.Element;
+}

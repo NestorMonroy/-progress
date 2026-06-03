@@ -1,0 +1,276 @@
+@use "sass:math";
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../list/_variables.scss" as *;
+
+// TabStrip
+
+/// The default size of the TabStrip.
+/// @group tabstrip
+/// @role default
+$kno-tabstrip-default-size: "md" !default;
+
+/// The horizontal padding of the TabStrip wrapper.
+/// @group tabstrip
+$kno-tabstrip-wrapper-padding-x: k-spacing(0) !default;
+/// The vertical padding of the TabStrip wrapper.
+/// @group tabstrip
+$kno-tabstrip-wrapper-padding-y: k-spacing(0) !default;
+/// The border width around the TabStrip wrapper.
+/// @group tabstrip
+$kno-tabstrip-wrapper-border-width: 0px !default;
+
+/// The font family of the TabStrip.
+/// @group tabstrip
+$kno-tabstrip-font-family: var(--kno-font-family) !default;
+/// The font size of the TabStrip.
+/// @group tabstrip
+$kno-tabstrip-font-size: var(--kno-font-size) !default;
+/// The line height of the TabStrip.
+/// @group tabstrip
+$kno-tabstrip-line-height: var(--kno-line-height) !default;
+/// The border width around the TabStrip.
+/// @group tabstrip
+$kno-tabstrip-border-width: 1px !default;
+
+/// The font size of the small TabStrip.
+/// @group tabstrip
+$kno-tabstrip-sm-font-size: $kno-tabstrip-font-size !default;
+/// The line height of the small TabStrip.
+/// @group tabstrip
+$kno-tabstrip-sm-line-height: $kno-tabstrip-line-height !default;
+/// The font size of the medium TabStrip.
+/// @group tabstrip
+$kno-tabstrip-md-font-size: $kno-tabstrip-font-size !default;
+/// The line height of the medium TabStrip.
+/// @group tabstrip
+$kno-tabstrip-md-line-height: $kno-tabstrip-line-height !default;
+/// The font size of the large TabStrip.
+/// @group tabstrip
+$kno-tabstrip-lg-font-size: $kno-tabstrip-font-size !default;
+/// The line height of the large TabStrip.
+/// @group tabstrip
+$kno-tabstrip-lg-line-height: $kno-tabstrip-line-height !default;
+
+/// The background color of the TabStrip wrapper.
+/// @group tabstrip
+$kno-tabstrip-wrapper-bg: null !default;
+/// The text color of the TabStrip wrapper.
+/// @group tabstrip
+$kno-tabstrip-wrapper-text: null !default;
+/// The border color of the TabStrip wrapper.
+/// @group tabstrip
+$kno-tabstrip-wrapper-border: null !default;
+
+/// The background color of the TabStrip.
+/// @group tabstrip
+$kno-tabstrip-bg: null !default;
+/// The text color of the TabStrip.
+/// @group tabstrip
+$kno-tabstrip-text: k-color(subtle) !default;
+/// The border color of the TabStrip.
+/// @group tabstrip
+$kno-tabstrip-border: k-color(border) !default;
+
+/// The border width around the TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-border-width: 0px !default;
+/// The border radius of the TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-border-radius: 0px !default;
+/// The gap between the TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-gap: k-spacing(0) !default;
+/// The horizontal spacing of the TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-spacing-x: k-spacing(1) !default;
+/// The horizontal padding of the small TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-sm-item-padding-x: k-spacing(3) !default;
+/// The vertical padding of the small TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-sm-item-padding-y: k-spacing(2.5) !default;
+/// The horizontal padding of the medium TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-md-item-padding-x: k-spacing(3) !default;
+/// The vertical padding of the medium TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-md-item-padding-y: k-spacing(3.5) !default;
+/// The horizontal padding of the large TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-lg-item-padding-x: k-spacing(3) !default;
+/// The vertical padding of the large TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-lg-item-padding-y: k-spacing(4.5) !default;
+
+///  The background color of the TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-bg: null !default;
+/// The text color of the TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-text: k-color(subtle) !default;
+/// The border color of the TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-border: null !default;
+/// The gradient of the TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-gradient: null !default;
+
+/// The background color of the hovered TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-hover-bg: color-mix(in srgb, currentColor 8%, transparent) !default;
+/// The text color of the hovered TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-hover-text: null !default;
+/// The border color of the hovered TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-hover-border: null !default;
+/// The gradient of the hovered TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-hover-gradient: null !default;
+
+/// The background color of the selected TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-selected-bg: null !default;
+/// The text color of the selected TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-selected-text: k-color(primary-on-surface) !default;
+/// The border color of the selected TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-selected-border: unset !default;
+/// The gradient of the selected TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-selected-gradient: null !default;
+/// The font weight of the selected TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-selected-font-weight: null !default;
+
+/// The shadow of the focused TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-focus-shadow: inset 0 0 0 2px color-mix(in srgb, currentColor 20%, transparent) !default;
+
+/// The shadow of the dragged TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-dragging-shadow: k-elevation(3) !default;
+
+/// The background color of the disabled TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-disabled-bg: null !default;
+/// The text color of the disabled TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-disabled-text: null !default;
+/// The border color of the disabled TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-disabled-border: null !default;
+/// The gradient of the disabled TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-disabled-gradient: null !default;
+/// The opacity of the disabled TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-disabled-opacity: var(--kno-disabled-opacity, unset) !default;
+/// The filter of the disabled TabStrip items.
+/// @group tabstrip
+$kno-tabstrip-item-disabled-filter: null !default;
+
+/// The border width of the TabStrip indicator.
+/// @group tabstrip
+$kno-tabstrip-indicator-size: 3px !default;
+/// The border color of the TabStrip ripple.
+/// @group tabstrip
+$kno-tabstrip-indicator-color: $kno-tabstrip-item-selected-text !default;
+
+/// The horizontal padding of the TabStrip content.
+/// @group tabstrip
+$kno-tabstrip-content-padding-x: k-spacing(4) !default;
+/// The vertical padding of the TabStrip content.
+/// @group tabstrip
+$kno-tabstrip-content-padding-y: k-spacing(4) !default;
+/// The border width around the TabStrip content.
+/// @group tabstrip
+$kno-tabstrip-content-border-width: 0px !default;
+
+/// The background color of the TabStrip content.
+/// @group tabstrip
+$kno-tabstrip-content-bg: transparent !default;
+/// The text color of the TabStrip content.
+/// @group tabstrip
+$kno-tabstrip-content-text: unset !default;
+/// The border color of the TabStrip content.
+/// @group tabstrip
+$kno-tabstrip-content-border: unset !default;
+/// The border color of the focused TabStrip content.
+/// @group tabstrip
+$kno-tabstrip-content-focus-border: k-color(border) !default;
+
+/// The left and right scroll overlay of the TabStrip.
+/// @group tabstrip
+$kno-tabstrip-scroll-overlay: k-color(app-surface), color-mix(in srgb, k-color(app-surface) 0%, transparent) !default;
+
+/// The spacing around the TabStrip scroll buttons (prev/next).
+/// @group tabstrip
+$kno-tabstrip-scroll-button-spacing: null !default;
+
+@forward "@progress/kno-theme-core/scss/components/tabstrip/_variables.scss" with (
+    $kno-tabstrip-default-size: $kno-tabstrip-default-size,
+    $kno-tabstrip-wrapper-padding-x: $kno-tabstrip-wrapper-padding-x,
+    $kno-tabstrip-wrapper-padding-y: $kno-tabstrip-wrapper-padding-y,
+    $kno-tabstrip-wrapper-border-width: $kno-tabstrip-wrapper-border-width,
+    $kno-tabstrip-font-family: $kno-tabstrip-font-family,
+    $kno-tabstrip-font-size: $kno-tabstrip-font-size,
+    $kno-tabstrip-line-height: $kno-tabstrip-line-height,
+    $kno-tabstrip-border-width: $kno-tabstrip-border-width,
+    $kno-tabstrip-sm-font-size: $kno-tabstrip-sm-font-size,
+    $kno-tabstrip-sm-line-height: $kno-tabstrip-sm-line-height,
+    $kno-tabstrip-md-font-size: $kno-tabstrip-md-font-size,
+    $kno-tabstrip-md-line-height: $kno-tabstrip-md-line-height,
+    $kno-tabstrip-lg-font-size: $kno-tabstrip-lg-font-size,
+    $kno-tabstrip-lg-line-height: $kno-tabstrip-lg-line-height,
+    $kno-tabstrip-wrapper-bg: $kno-tabstrip-wrapper-bg,
+    $kno-tabstrip-wrapper-text: $kno-tabstrip-wrapper-text,
+    $kno-tabstrip-wrapper-border: $kno-tabstrip-wrapper-border,
+    $kno-tabstrip-bg: $kno-tabstrip-bg,
+    $kno-tabstrip-text: $kno-tabstrip-text,
+    $kno-tabstrip-border: $kno-tabstrip-border,
+    $kno-tabstrip-item-border-width: $kno-tabstrip-item-border-width,
+    $kno-tabstrip-item-border-radius: $kno-tabstrip-item-border-radius,
+    $kno-tabstrip-item-gap: $kno-tabstrip-item-gap,
+    $kno-tabstrip-item-spacing-x: $kno-tabstrip-item-spacing-x,
+    $kno-tabstrip-item-bg: $kno-tabstrip-item-bg,
+    $kno-tabstrip-sm-item-padding-x: $kno-tabstrip-sm-item-padding-x,
+    $kno-tabstrip-sm-item-padding-y: $kno-tabstrip-sm-item-padding-y,
+    $kno-tabstrip-md-item-padding-x: $kno-tabstrip-md-item-padding-x,
+    $kno-tabstrip-md-item-padding-y: $kno-tabstrip-md-item-padding-y,
+    $kno-tabstrip-lg-item-padding-x: $kno-tabstrip-lg-item-padding-x,
+    $kno-tabstrip-lg-item-padding-y: $kno-tabstrip-lg-item-padding-y,
+    $kno-tabstrip-item-text: $kno-tabstrip-item-text,
+    $kno-tabstrip-item-border: $kno-tabstrip-item-border,
+    $kno-tabstrip-item-gradient: $kno-tabstrip-item-gradient,
+    $kno-tabstrip-item-hover-bg: $kno-tabstrip-item-hover-bg,
+    $kno-tabstrip-item-hover-text: $kno-tabstrip-item-hover-text,
+    $kno-tabstrip-item-hover-border: $kno-tabstrip-item-hover-border,
+    $kno-tabstrip-item-hover-gradient: $kno-tabstrip-item-hover-gradient,
+    $kno-tabstrip-item-selected-bg: $kno-tabstrip-item-selected-bg,
+    $kno-tabstrip-item-selected-text: $kno-tabstrip-item-selected-text,
+    $kno-tabstrip-item-selected-border: $kno-tabstrip-item-selected-border,
+    $kno-tabstrip-item-selected-gradient: $kno-tabstrip-item-selected-gradient,
+    $kno-tabstrip-item-selected-font-weight: $kno-tabstrip-item-selected-font-weight,
+    $kno-tabstrip-item-focus-shadow: $kno-tabstrip-item-focus-shadow,
+    $kno-tabstrip-item-dragging-shadow: $kno-tabstrip-item-dragging-shadow,
+    $kno-tabstrip-item-disabled-bg: $kno-tabstrip-item-disabled-bg,
+    $kno-tabstrip-item-disabled-text: $kno-tabstrip-item-disabled-text,
+    $kno-tabstrip-item-disabled-border: $kno-tabstrip-item-disabled-border,
+    $kno-tabstrip-item-disabled-gradient: $kno-tabstrip-item-disabled-gradient,
+    $kno-tabstrip-item-disabled-opacity: $kno-tabstrip-item-disabled-opacity,
+    $kno-tabstrip-item-disabled-filter: $kno-tabstrip-item-disabled-filter,
+    $kno-tabstrip-indicator-size: $kno-tabstrip-indicator-size,
+    $kno-tabstrip-indicator-color: $kno-tabstrip-indicator-color,
+    $kno-tabstrip-content-padding-x: $kno-tabstrip-content-padding-x,
+    $kno-tabstrip-content-padding-y: $kno-tabstrip-content-padding-y,
+    $kno-tabstrip-content-border-width: $kno-tabstrip-content-border-width,
+    $kno-tabstrip-content-bg: $kno-tabstrip-content-bg,
+    $kno-tabstrip-content-text: $kno-tabstrip-content-text,
+    $kno-tabstrip-content-border: $kno-tabstrip-content-border,
+    $kno-tabstrip-content-focus-border: $kno-tabstrip-content-focus-border,
+    $kno-tabstrip-scroll-overlay: $kno-tabstrip-scroll-overlay,
+    $kno-tabstrip-scroll-button-spacing: $kno-tabstrip-scroll-button-spacing
+);

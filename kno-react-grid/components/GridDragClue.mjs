@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as r from "react";
+import { DragClue as t } from "@progress/kno-react-data-tools";
+import { GridContext as o } from "../utils/GridContext.mjs";
+const i = (n) => {
+  const e = r.useContext(o);
+  return /* @__PURE__ */ r.createElement(t, { ref: e.dragLogicRef.current.refDragElementClue });
+};
+export {
+  i as GridDragClue
+};

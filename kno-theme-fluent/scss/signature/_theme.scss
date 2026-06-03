@@ -1,0 +1,16 @@
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/signature/_theme.scss" as *;
+
+@mixin kno-signature--theme() {
+    @include kno-signature--theme-base();
+
+    .k-signature {
+        &:disabled,
+        &[disabled],
+        &.k-disabled {
+            .k-signature-line {
+                border-block-end-color: $kno-signature-line-disabled-color;
+            }
+        }
+    }
+}

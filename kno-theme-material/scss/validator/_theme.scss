@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/validator/_theme.scss" as *;
+
+
+@mixin kno-validator--theme() {
+    @include kno-validator--theme-base();
+}

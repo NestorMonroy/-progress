@@ -1,0 +1,41 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/radio/_theme.scss" as *;
+
+@mixin kno-radio--theme() {
+
+    @include kno-radio--theme-base();
+
+    // Focus state
+    .k-radio:focus,
+    .k-radio.k-focus {
+        box-shadow: $kno-radio-focus-shadow;
+        outline: $kno-radio-focus-outline;
+    }
+
+
+    // Hover checked state
+    .k-radio:checked:hover,
+    .k-radio.k-checked.k-hover {
+        @include fill(
+            $kno-radio-hover-checked-text,
+            $kno-radio-hover-checked-bg,
+            $kno-radio-hover-checked-border
+        );
+    }
+
+    // Ripple
+    .k-radio-wrap .k-ripple-blob {
+        color: $kno-radio-ripple-bg;
+        opacity: $kno-radio-ripple-opacity;
+    }
+
+    // Label
+    .k-radio-label:has(.k-invalid) {
+        @include fill( $color: $kno-radio-invalid-text );
+    }
+    .k-radio-label:has(.k-disabled) {
+        @include fill( $color: $kno-radio-disabled-text );
+    }
+
+}

@@ -1,0 +1,10 @@
+@use "../core/_index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/messagebox/_layout.scss" as *;
+
+@mixin kno-messagebox--layout() {
+    @include kno-messagebox--layout-base();
+
+    .k-messagebox {
+        @include border-radius( k-border-radius(md) );
+    }
+}

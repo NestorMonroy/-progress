@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface BaseEvent<T> {
+    /**
+     * A React Synthetic Event.
+     */
+    syntheticEvent: React.SyntheticEvent<any>;
+    /**
+     * A native DOM event.
+     */
+    nativeEvent: any;
+    /**
+     * An event target.
+     */
+    target: T;
+}

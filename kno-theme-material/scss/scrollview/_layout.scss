@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/scrollview/_layout.scss" as *;
+
+
+@mixin kno-scrollview--layout() {
+    @include kno-scrollview--layout-base();
+}

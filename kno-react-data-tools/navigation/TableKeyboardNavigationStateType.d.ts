@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export interface TableKeyboardNavigationStateType {
+    activeElementIsFocused: boolean;
+    prevNavigationIndexes?: [number, number];
+    idPrefix: string;
+    navigationMatrix: string[][];
+    lastHeaderIndex: number;
+}

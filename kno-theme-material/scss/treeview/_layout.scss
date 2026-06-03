@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/treeview/_layout.scss" as *;
+
+
+@mixin kno-treeview--layout() {
+    @include kno-treeview--layout-base();
+}

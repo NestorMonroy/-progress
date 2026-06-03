@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/numerictextbox/_theme.scss" as *;
+
+
+@mixin kno-numeric-textbox--theme() {
+    @include kno-numeric-textbox--theme-base();
+}

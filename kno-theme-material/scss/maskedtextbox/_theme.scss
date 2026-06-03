@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/maskedtextbox/_theme.scss" as *;
+
+
+@mixin kno-masked-textbox--theme() {
+    @include kno-masked-textbox--theme-base();
+}

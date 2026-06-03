@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/textbox/_theme.scss" as *;
+
+
+@mixin kno-textbox--theme() {
+    @include kno-textbox--theme-base();
+}

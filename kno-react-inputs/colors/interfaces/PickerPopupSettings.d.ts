@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { PopupAnimation } from '@progress/kno-react-popup';
+/**
+ * @hidden
+ */
+export interface PickerPopupSettings {
+    /**
+     * @hidden
+     */
+    id: string | undefined;
+    /**
+     * Controls the popup animation. By default, the open and close animations are enabled.
+     */
+    animate?: boolean | PopupAnimation;
+    /**
+     * Specifies a list of CSS classes that will be added to the Popup element.
+     */
+    className?: string | Array<string>;
+    /**
+     * The styles that are passed to the popup element.
+     */
+    style?: React.CSSProperties;
+}

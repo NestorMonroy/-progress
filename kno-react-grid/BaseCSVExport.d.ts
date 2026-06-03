@@ -1,0 +1,31 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { GridProps } from './interfaces/index.js';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+interface BaseCSVExportProps {
+    gridProps: GridProps;
+    csv?: GridProps['csv'];
+    fileName?: string;
+    onCsvExport?: (data: any[]) => any[];
+    columnsState?: any[];
+}
+/**
+ * @hidden
+ */
+interface BaseCSVExportHandle {
+    save: () => Promise<void>;
+    getBlob: () => Blob;
+}
+/**
+ * @hidden
+ */
+declare const BaseCSVExport: React.ForwardRefExoticComponent<BaseCSVExportProps & React.RefAttributes<BaseCSVExportHandle>>;
+export { BaseCSVExport, BaseCSVExportProps, BaseCSVExportHandle };

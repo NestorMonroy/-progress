@@ -1,0 +1,36 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+import { Button as n } from "@progress/kno-react-buttons";
+import { saveAs as c } from "@progress/kno-file-saver";
+import { Workbook as l } from "@progress/kno-ooxml";
+import { downloadIcon as a } from "@progress/kno-svg-icons";
+const s = (e) => {
+  const { spreadsheetRef: o } = e, r = t.useCallback(() => {
+    o.current && o.current.saveAsExcel({
+      ...o.current.options.excel,
+      saveAs: c,
+      Workbook: l
+    });
+  }, []);
+  return /* @__PURE__ */ t.createElement(
+    n,
+    {
+      className: "k-toolbar-button",
+      title: "Export...",
+      icon: "download",
+      fillMode: "flat",
+      svgIcon: a,
+      onClick: r
+    }
+  );
+};
+s.displayName = "ExcelExport";
+export {
+  s as ExcelExport
+};

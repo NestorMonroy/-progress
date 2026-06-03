@@ -1,0 +1,15 @@
+@use "../grid/_variables.scss" as *;
+
+// Treelist
+
+/// The background color of the TreeList footer row.
+/// @group treelist
+$kno-treelist-footer-row-bg: $kno-grid-header-bg !default;
+/// The border width of the TreeList footer row.
+/// @group treelist
+$kno-treelist-footer-row-border-width: 1px !default;
+
+@forward "@progress/kno-theme-core/scss/components/treelist/_variables.scss" with (
+    $kno-treelist-footer-row-bg: $kno-treelist-footer-row-bg,
+    $kno-treelist-footer-row-border-width: $kno-treelist-footer-row-border-width
+);

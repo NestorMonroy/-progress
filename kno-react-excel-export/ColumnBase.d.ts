@@ -1,0 +1,45 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { CellOptions } from './ooxml/CellOptionsInterface';
+/**
+ * @hidden
+ */
+export interface ColumnBase {
+    /**
+     * @hidden
+     */
+    children?: any;
+    /**
+     * The options of the column header cell.
+     */
+    headerCellOptions?: CellOptions;
+    /**
+     * Sets the visibility of the column.
+     *
+     * @default false
+     */
+    hidden?: boolean;
+    /**
+     * @hidden
+     */
+    level?: number;
+    /**
+     * Toggles the locked (frozen) state of the column.
+     *
+     * @default false
+     */
+    locked?: boolean;
+    /**
+     * The title of the column.
+     */
+    title?: string;
+    /**
+     * The width of the column in pixels.
+     */
+    width?: number;
+}

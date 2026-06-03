@@ -1,0 +1,33 @@
+@use "@progress/kno-theme-core/scss/components/stepper/_layout.scss" as *;
+@use "./variables.scss" as *;
+
+
+@mixin kno-stepper--layout() {
+
+    @include kno-stepper--layout-base();
+
+    // Stepper
+    .k-stepper {}
+
+    .k-step-list-horizontal {
+        & ~ .k-progressbar {
+            inset-block-start: calc( (#{$kno-stepper-indicator-height} / 2  ) - (#{$kno-stepper-progressbar-size} / 2 ) + $kno-stepper-indicator-focus-offset ) ;
+        }
+    }
+
+
+    .k-step-list-vertical {
+        & ~ .k-progressbar {
+            inset-inline-start: calc( (#{$kno-stepper-indicator-height} / 2  ) - (#{$kno-stepper-progressbar-size} / 2 ) + $kno-stepper-indicator-focus-offset ) ;
+        }
+    }
+
+
+    // Selected step
+    .k-step-current {
+        .k-step-label {
+            font-weight: var(--kno-font-weight-semibold);
+        }
+    }
+
+}

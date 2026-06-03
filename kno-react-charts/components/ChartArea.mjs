@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as a from "react";
+import { ConfigurationComponent as t } from "./base/ConfigurationComponent.mjs";
+const e = (r) => /* @__PURE__ */ a.createElement(t, { ...r, _chartKey: "chartArea" });
+e.displayName = "ChartArea";
+export {
+  e as ChartArea
+};

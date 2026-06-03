@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as r from "react";
+import a from "prop-types";
+import { classNames as s } from "@progress/kno-react-common";
+const t = (e) => /* @__PURE__ */ r.createElement("div", { style: e.style, className: s("k-card-header", e.className) }, e.children);
+t.propTypes = {
+  className: a.string
+};
+export {
+  t as CardHeader
+};

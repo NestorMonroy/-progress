@@ -1,0 +1,10 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { PagerHandle, PagerProps } from './models/index.js';
+import * as React from 'react';
+export declare const Pager: React.ForwardRefExoticComponent<PagerProps & React.RefAttributes<PagerHandle>>;

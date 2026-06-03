@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../button/_variables.scss" as *;
+@use "../core/functions/index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/pager/_layout.scss" as *;
+
+@mixin kno-pager--layout() {
+    @include kno-pager--layout-base();
+
+    .k-pager-nav {
+        @include border-radius( $kno-pager-item-border-radius );
+    }
+
+    .k-pager-numbers {
+        .k-button {
+            border-radius: $kno-pager-item-border-radius;
+
+            .k-button-text {
+                min-width: calc( var( --kno-line-height ) * 1em );
+            }
+        }
+    }
+
+    // Sizes
+    @each $size, $size-props in $kno-button-sizes {
+        $_padding-y: map.get( $size-props, padding-y );
+
+        .k-pager-numbers .k-button {
+
+            #{k-when-default($kno-button-default-size, $size)}
+            &.k-button-#{$size} {
+                padding-inline: $_padding-y;
+            }
+        }
+    }
+}

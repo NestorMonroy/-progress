@@ -1,0 +1,14 @@
+@use "@progress/kno-theme-core/scss/components/segmented-control/_theme.scss" as *;
+@use "./_variables.scss" as *;
+
+
+@mixin kno-segmented-control--theme() {
+    @include kno-segmented-control--theme-base();
+
+    .k-segmented-control-button {
+        &:disabled,
+        &.k-disabled {
+            color: $kno-segmented-control-button-disabled-text;
+        }
+    }
+}

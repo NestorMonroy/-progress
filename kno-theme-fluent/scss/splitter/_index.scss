@@ -1,0 +1,22 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+
+// Dependencies
+
+
+// Expose
+@mixin kno-splitter--styles() {
+    @include import-once( "splitter" ) {
+        @include core-styles();
+        @include kno-icon--styles();
+        @include kno-splitter--layout();
+        @include kno-splitter--theme();
+    }
+}

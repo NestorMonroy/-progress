@@ -1,0 +1,240 @@
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use"../button/_variables.scss" as *;
+@use"../typography/_variables.scss" as *;
+
+// Card
+
+/// The horizontal padding of the Card.
+/// @group card
+$kno-card-padding-x: k-spacing(4) !default;
+/// The vertical padding of the Card.
+/// @group card
+$kno-card-padding-y: k-spacing(3) !default;
+/// The width of the border around the Card.
+/// @group card
+$kno-card-border-width: 0px !default;
+/// The border radius of the Card.
+/// @group card
+$kno-card-border-radius: k-border-radius(xl) !default;
+/// The inner border radius of the Card.
+/// @group card
+$kno-card-inner-border-radius: calc( #{$kno-card-border-radius} - #{$kno-card-border-width} ) !default;
+/// The font family of the Card.
+/// @group card
+$kno-card-font-family: var(--kno-font-family) !default;
+/// The font size of the Card.
+/// @group card
+$kno-card-font-size: var(--kno-font-size) !default;
+/// The line height of the Card.
+/// @group card
+$kno-card-line-height: math.div( 20, 14 ) !default;
+
+/// The spacing between the Cards in the Card deck.
+/// @group card
+$kno-card-deck-gap: k-spacing(4) !default;
+
+/// The background color of the Card.
+/// @group card
+$kno-card-bg: k-color(surface) !default;
+/// The text color of the Card.
+/// @group card
+$kno-card-text: k-color(on-app-surface) !default;
+/// The border color of the Card.
+/// @group card
+$kno-card-border: transparent !default;
+/// The shadow of the Card.
+/// @group card
+$kno-card-shadow: k-elevation(1) !default;
+/// The background color of the focused Card.
+/// @group card
+$kno-card-focus-bg: null !default;
+/// The text color of the focused Card.
+/// @group card
+$kno-card-focus-text: null !default;
+/// The border color of the focused Card.
+/// @group card
+$kno-card-focus-border: transparent !default;
+
+// TODO: double-check: the default theme is not supposed to elevate the Card on focus
+
+/// The shadow of the focused Card.
+/// @group card
+$kno-card-focus-shadow: k-elevation(3) !default;
+
+/// The horizontal padding of the Card header.
+/// @group card
+$kno-card-header-padding-x: $kno-card-padding-x !default;
+/// The vertical padding of the Card header.
+/// @group card
+$kno-card-header-padding-y: $kno-card-padding-y !default;
+/// The bottom border width of the Card header.
+/// @group card
+$kno-card-header-border-width: 0 !default;
+/// The background color of the Card header.
+/// @group card
+$kno-card-header-bg: null !default;
+/// The text color of the Card header.
+/// @group card
+$kno-card-header-text: unset !default;
+/// The border color of the Card header.
+/// @group card
+$kno-card-header-border: $kno-card-border !default;
+
+/// The horizontal padding of the Card body.
+/// @group card
+$kno-card-body-padding-x: k-spacing(4) !default;
+/// The vertical padding of the Card body.
+/// @group card
+$kno-card-body-padding-y: k-spacing(4) !default;
+
+/// The horizontal padding of the Card footer.
+/// @group card
+$kno-card-footer-padding-x: $kno-card-padding-x !default;
+/// The vertical padding of the Card footer.
+/// @group card
+$kno-card-footer-padding-y: $kno-card-padding-y !default;
+/// The top border width of the Card footer.
+/// @group card
+$kno-card-footer-border-width: 0 !default;
+/// The background color of the Card footer.
+/// @group card
+$kno-card-footer-bg: null !default;
+/// The text color of the Card footer.
+/// @group card
+$kno-card-footer-text: unset !default;
+/// The border color of the Card footer.
+/// @group card
+$kno-card-footer-border: $kno-card-border !default;
+
+/// The bottom margin of the Card title.
+/// @group card
+$kno-card-title-margin-bottom: k-spacing(1) !default;
+/// The font size of the Card title.
+/// @group card
+$kno-card-title-font-size: $kno-font-size-lg !default;
+/// The font family of the Card title.
+/// @group card
+$kno-card-title-font-family: var(--kno-font-family) !default;
+/// The line height of the Card title.
+/// @group card
+$kno-card-title-line-height: $kno-line-height-lg !default;
+/// The font weight of the Card title.
+/// @group card
+$kno-card-title-font-weight: 500 !default;
+/// The letter spacing of the Card title.
+/// @group card
+$kno-card-title-letter-spacing: $kno-letter-spacing-widest !default;
+
+/// The bottom margin of the Card subtitle.
+/// @group card
+$kno-card-subtitle-margin-bottom: k-spacing(2) !default;
+/// The font size of the Card subtitle.
+/// @group card
+$kno-card-subtitle-font-size: var(--kno-font-size) !default;
+/// The font family of the Card subtitle.
+/// @group card
+$kno-card-subtitle-font-family: var(--kno-font-family) !default;
+/// The line height of the Card subtitle.
+/// @group card
+$kno-card-subtitle-line-height: $kno-line-height !default;
+/// The font weight of the Card subtitle.
+/// @group card
+$kno-card-subtitle-font-weight: $kno-font-weight-normal !default;
+/// The letter spacing of the Card subtitle.
+/// @group card
+$kno-card-subtitle-letter-spacing: $kno-letter-spacing-wider !default;
+/// The text color of the Card subtitle.
+/// @group card
+$kno-card-subtitle-text: k-color(subtle) !default;
+
+/// The maximum width of the Card image.
+/// @group card
+$kno-card-img-max-width: 100px !default;
+/// The spacing between the Avatar and the text in the Card.
+/// @group card
+$kno-card-avatar-spacing: k-spacing(2) !default;
+
+/// The horizontal padding of the Card actions.
+/// @group card
+$kno-card-actions-padding-x: k-spacing(4) !default;
+/// The vertical padding of the Card actions.
+/// @group card
+$kno-card-actions-padding-y: k-spacing(4) !default;
+/// The top border width of the Card actions.
+/// @group card
+$kno-card-actions-border-width: 0 !default;
+/// The spacing between the Card actions.
+/// @group card
+$kno-card-actions-gap: k-spacing(2) !default;
+
+/// The border radius of the scroll button in the Card deck.
+/// @group card
+$kno-card-deck-scroll-button-radius: 50% !default;
+/// The border radius of the scroll button in the Card deck.
+/// @group card
+$kno-card-deck-scroll-button-offset: calc( #{$kno-card-deck-gap} / 2 ) !default;
+
+/// The width of the Card callout.
+/// @group card
+$kno-card-callout-width: 20px !default;
+/// The height of the Card callout.
+/// @group card
+$kno-card-callout-height: 20px !default;
+
+@forward "@progress/kno-theme-core/scss/components/card/_variables.scss" with (
+    $kno-card-padding-x: $kno-card-padding-x,
+    $kno-card-padding-y: $kno-card-padding-y,
+    $kno-card-border-width: $kno-card-border-width,
+    $kno-card-border-radius: $kno-card-border-radius,
+    $kno-card-inner-border-radius: $kno-card-inner-border-radius,
+    $kno-card-font-family: $kno-card-font-family,
+    $kno-card-font-size: $kno-card-font-size,
+    $kno-card-line-height: $kno-card-line-height,
+    $kno-card-deck-gap: $kno-card-deck-gap,
+    $kno-card-bg: $kno-card-bg,
+    $kno-card-text: $kno-card-text,
+    $kno-card-border: $kno-card-border,
+    $kno-card-shadow: $kno-card-shadow,
+    $kno-card-focus-bg: $kno-card-focus-bg,
+    $kno-card-focus-text: $kno-card-focus-text,
+    $kno-card-focus-border: $kno-card-focus-border,
+    $kno-card-focus-shadow: $kno-card-focus-shadow,
+    $kno-card-header-padding-x: $kno-card-header-padding-x,
+    $kno-card-header-padding-y: $kno-card-header-padding-y,
+    $kno-card-header-border-width: $kno-card-header-border-width,
+    $kno-card-header-bg: $kno-card-header-bg,
+    $kno-card-header-text: $kno-card-header-text,
+    $kno-card-header-border: $kno-card-header-border,
+    $kno-card-body-padding-x: $kno-card-body-padding-x,
+    $kno-card-body-padding-y: $kno-card-body-padding-y,
+    $kno-card-footer-padding-x: $kno-card-footer-padding-x,
+    $kno-card-footer-padding-y: $kno-card-footer-padding-y,
+    $kno-card-footer-border-width: $kno-card-footer-border-width,
+    $kno-card-footer-bg: $kno-card-footer-bg,
+    $kno-card-footer-text: $kno-card-footer-text,
+    $kno-card-footer-border: $kno-card-footer-border,
+    $kno-card-title-margin-bottom: $kno-card-title-margin-bottom,
+    $kno-card-title-font-size: $kno-card-title-font-size,
+    $kno-card-title-font-family: $kno-card-title-font-family,
+    $kno-card-title-line-height: $kno-card-title-line-height,
+    $kno-card-title-font-weight: $kno-card-title-font-weight,
+    $kno-card-title-letter-spacing: $kno-card-title-letter-spacing,
+    $kno-card-subtitle-margin-bottom: $kno-card-subtitle-margin-bottom,
+    $kno-card-subtitle-font-size: $kno-card-subtitle-font-size,
+    $kno-card-subtitle-font-family: $kno-card-subtitle-font-family,
+    $kno-card-subtitle-line-height: $kno-card-subtitle-line-height,
+    $kno-card-subtitle-font-weight: $kno-card-subtitle-font-weight,
+    $kno-card-subtitle-letter-spacing: $kno-card-subtitle-letter-spacing,
+    $kno-card-subtitle-text: $kno-card-subtitle-text,
+    $kno-card-img-max-width: $kno-card-img-max-width,
+    $kno-card-avatar-spacing: $kno-card-avatar-spacing,
+    $kno-card-actions-padding-x: $kno-card-actions-padding-x,
+    $kno-card-actions-padding-y: $kno-card-actions-padding-y,
+    $kno-card-actions-border-width: $kno-card-actions-border-width,
+    $kno-card-actions-gap: $kno-card-actions-gap,
+    $kno-card-deck-scroll-button-radius: $kno-card-deck-scroll-button-radius,
+    $kno-card-deck-scroll-button-offset: $kno-card-deck-scroll-button-offset,
+    $kno-card-callout-width: $kno-card-callout-width,
+    $kno-card-callout-height: $kno-card-callout-height
+);

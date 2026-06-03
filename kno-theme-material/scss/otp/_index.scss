@@ -1,0 +1,18 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../input/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-otp--styles() {
+    @include import-once( "otp" ) {
+        @include core-styles();
+        @include kno-input--styles();
+        @include kno-otp--layout();
+        @include kno-otp--theme();
+    }
+}

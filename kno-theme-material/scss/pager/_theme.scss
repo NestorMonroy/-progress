@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/pager/_theme.scss" as *;
+
+
+@mixin kno-pager--theme() {
+    @include kno-pager--theme-base();
+}

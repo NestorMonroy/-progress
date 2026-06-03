@@ -1,0 +1,17 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/breadcrumb/_layout.scss" as *;
+
+@mixin kendo-breadcrumb--layout() {
+
+    @include kendo-breadcrumb--layout-base();
+
+    // Breadcrumb links
+    .k-breadcrumb-link,
+    .k-breadcrumb-root-link {
+       &.k-selected {
+            font-weight: $kendo-breadcrumb-link-selected-font-weight;
+       }
+    }
+}

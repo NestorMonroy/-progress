@@ -1,0 +1,24 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { DataItemWrapper } from '../interfaces/DataItemWrapper';
+/**
+ * @hidden
+ */
+export declare function getNestedValue(fieldName: string | undefined, dataItem: any): any;
+/**
+ * @hidden
+ */
+export declare function setHeaderRowsTop(table: HTMLTableElement, toolbarHeight: number, rowHeight?: (row: HTMLTableRowElement) => string | undefined): void;
+/**
+ * @hidden
+ */
+export declare function tableRowsVirtualization(args: {
+    rows: DataItemWrapper[];
+    tableViewPortHeight: number;
+    scrollTop: number;
+}): DataItemWrapper[];

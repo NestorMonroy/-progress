@@ -1,0 +1,49 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// The font family of the Rating.
+/// @group rating
+$kno-rating-font-family: var( --kno-rating-font-family, var(--kno-font-family) ) !default;
+/// The font size of the Rating.
+/// @group rating
+$kno-rating-font-size: var( --kno-rating-font-size, var(--kno-font-size-sm) ) !default;
+/// The line height of the Rating.
+/// @group rating
+$kno-rating-line-height: var( --kno-rating-line-height, var(--kno-line-height) ) !default;
+
+/// The content spacing of the Rating.
+/// @group rating
+$kno-rating-spacing: var( --kno-rating-spacing, #{k-spacing(1)} ) !default;
+
+/// The horizontal padding of the Rating item.
+/// @group rating
+$kno-rating-item-padding-x: var( --kno-rating-item-padding-x, #{k-spacing(0.5)} ) !default;
+/// The vertical padding of the Rating item.
+/// @group rating
+$kno-rating-item-padding-y: var( --kno-rating-item-padding-y, #{k-spacing(2)} ) !default;
+/// The text color of the Rating item.
+/// @group rating
+$kno-rating-item-text: var( --kno-rating-item-text, #{k-color(on-app-surface)} ) !default;
+/// The text color of the hovered Rating item.
+/// @group rating
+$kno-rating-item-hover-text: var( --kno-rating-item-hover-text, #{k-color(on-app-surface)} ) !default;
+/// The outline width of the focused Rating item.
+/// @group rating
+$kno-rating-item-focus-outline-width: var( --kno-rating-item-focus-outline-width, 2px ) !default;
+/// The outline style of the focused Rating item.
+/// @group rating
+$kno-rating-item-focus-outline-style: var( --kno-rating-item-focus-outline-style, solid ) !default;
+/// The outline color of the focused Rating item.
+/// @group rating
+$kno-rating-item-focus-outline: var( --kno-rating-item-focus-outline, currentColor ) !default;
+/// The text color of the selected Rating item.
+/// @group rating
+$kno-rating-item-selected-text: var( --kno-rating-item-selected-text, #{k-color(on-app-surface)} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/rating/_variables.scss" with (
+    $kno-rating-font-family: $kno-rating-font-family,
+    $kno-rating-font-size: $kno-rating-font-size,
+    $kno-rating-line-height: $kno-rating-line-height,
+    $kno-rating-item-padding-x: $kno-rating-item-padding-x,
+    $kno-rating-item-padding-y: $kno-rating-item-padding-y
+);

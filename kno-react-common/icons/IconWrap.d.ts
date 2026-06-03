@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { IconProps, IconHandle } from './Icon.js';
+import { SvgIconProps, SvgIconHandle } from './SvgIcon.js';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export declare const IconWrap: React.ForwardRefExoticComponent<IconProps & SvgIconProps & React.RefAttributes<(IconHandle & SvgIconHandle) | null>>;

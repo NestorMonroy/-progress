@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+const n = () => null, r = ({ children: e }) => e, s = (e) => {
+  if (e) {
+    if (e === t.Fragment)
+      return [r, {}];
+    if (t.isValidElement(e))
+      return [e.type, e.props];
+  } else return [n, {}];
+  return [e, {}];
+};
+export {
+  s as useCustomComponent
+};

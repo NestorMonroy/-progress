@@ -1,0 +1,32 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as a from "react";
+import { Button as p } from "@progress/kno-react-buttons";
+import { useLocalization as c } from "@progress/kno-react-intl";
+import { savePDF as d } from "@progress/kno-react-pdf";
+import { onDownPreventDefault as u } from "./utils.mjs";
+import { messages as v } from "../messages/index.mjs";
+import { EditorToolsSettings as P } from "../config/toolsSettings.mjs";
+const { pdf: g, savePdfOptions: b } = P, E = (m) => {
+  const { view: t, render: o, settings: e = g, savePdfOptions: s, savePdfCallback: r, ...f } = m, n = e.messages.title, l = a.useCallback(() => {
+    t && d(t.dom, { ...b, ...s || {} }, r);
+  }, [t, s, r]), i = /* @__PURE__ */ a.createElement(
+    p,
+    {
+      onClick: l,
+      title: c().toLanguageString(n, v[n]),
+      ...u,
+      ...e.props,
+      ...f
+    }
+  );
+  return o ? o.call(void 0, i, { view: t }) : i;
+};
+export {
+  E as Pdf
+};

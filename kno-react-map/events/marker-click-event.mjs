@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseEvent as t } from "./base-event.mjs";
+class o extends t {
+  /**
+   * @hidden
+   */
+  constructor(r, e) {
+    super(e), this.marker = r.marker, this.layer = r.layer;
+  }
+}
+export {
+  o as MarkerClickEvent
+};

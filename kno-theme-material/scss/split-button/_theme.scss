@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/split-button/_theme.scss" as *;
+
+
+@mixin kno-split-button--theme() {
+    @include kno-split-button--theme-base();
+}

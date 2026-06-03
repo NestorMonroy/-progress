@@ -1,0 +1,31 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export interface DataItemWrapper {
+    dataItem: any;
+    rowType: any;
+    level: number;
+    expanded: boolean;
+    dataIndex: number;
+}
+/**
+ * @hidden
+ */
+export declare class RowHeightService {
+    private total;
+    private offsets;
+    private heights;
+    constructor(total: number, rowHeight: number);
+    height(rowIndex: number): number;
+    index(position: number): number;
+    offset(rowIndex: number): number;
+    totalHeight(): number;
+    update(startIndex: number, rowHeights: Array<number>): void;
+}

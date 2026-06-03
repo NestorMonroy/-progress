@@ -1,0 +1,7 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/prompt/_theme.scss" as *;
+
+@mixin kno-prompt--theme {
+    @include kno-prompt--theme-base();
+}

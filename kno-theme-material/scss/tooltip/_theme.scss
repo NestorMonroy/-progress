@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/tooltip/_theme.scss" as *;
+
+
+@mixin kno-tooltip--theme() {
+    @include kno-tooltip--theme-base();
+}

@@ -1,0 +1,68 @@
+{
+  "name": "@progress/kno-spreadsheet-common",
+  "description": "Kno UI platform-independent Spreadsheet library",
+  "version": "1.2.12",
+  "keywords": [
+    "Kno UI"
+  ],
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "dist/index.js",
+  "module": "dist/index-esm.js",
+  "types": "src/index.d.ts",
+  "sideEffects": false,
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup --config --watch",
+    "lint": "eslint src",
+    "lintfix": "eslint src --fix",
+    "test": "jest",
+    "serve": "http-server . -p 8765 -c-1 --cors -a 127.0.0.1",
+    "e2e": "node tools/run-e2e-tests.js",
+    "e2e:functional": "TEST_FILE=e2e/functional.test.js node tools/run-e2e-tests.js",
+    "e2e:kb-interaction": "TEST_FILE=e2e/kb-interaction.test.js node tools/run-e2e-tests.js",
+    "e2e:objectat": "TEST_FILE=e2e/objectat.test.js node tools/run-e2e-tests.js",
+    "e2e:smoke": "TEST_FILE=e2e/smoke.test.js node tools/run-e2e-tests.js",
+    "e2e:visual": "node tools/run-e2e-tests.js jest.e2e.visual.config.json",
+    "prepare": "husky install"
+  },
+  "peerDependencies": {
+    "@progress/jszip-esm": "^1.0.4",
+    "@progress/kno-common": "^1.0.1",
+    "@progress/kno-date-math": "^1.5.10",
+    "@progress/kno-drawing": "^1.17.5"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.27.0",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@progress/kno-e2e": "^4.14.0",
+    "@progress/kno-intl": "^3.1.1",
+    "@tlk/dx-metrics": "^2.1.8",
+    "@types/jest": "^29.0.0",
+    "acorn": "^8.12.0",
+    "es-jest": "^2.1.0",
+    "escodegen": "^2.1.0",
+    "eslint": "^9.3.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "http-server": "^14.1.1",
+    "husky": "^8.0.2",
+    "jest-cli": "^29.0.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "rollup": "^3.5.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlk/kno-spreadsheet-common.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tlk/kno-angular"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "src/**/*.d.ts"
+  ]
+}

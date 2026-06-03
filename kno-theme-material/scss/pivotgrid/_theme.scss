@@ -1,0 +1,8 @@
+@use "@progress/kno-theme-core/scss/components/pivotgrid/_theme.scss" as *;
+
+
+@mixin kno-pivotgrid--theme() {
+
+    @include kno-pivotgrid--theme-base();
+
+}

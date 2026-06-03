@@ -1,0 +1,72 @@
+@use "../core/_index.scss" as *;
+
+// Rating
+
+/// The font family of the Rating.
+/// @group rating
+$kno-rating-font-family: var(--kno-font-family) !default;
+/// The font size of the Rating.
+/// @group rating
+$kno-rating-font-size: var(--kno-font-size) !default;
+/// The line height of the Rating.
+/// @group rating
+$kno-rating-line-height: var(--kno-line-height) !default;
+
+/// The horizontal margin of the Rating container.
+/// @group rating
+$kno-rating-container-margin-x: k-spacing(1) !default;
+
+/// The horizontal padding of the Rating item.
+/// @group rating
+$kno-rating-item-padding-x: k-spacing(1) !default;
+/// The vertical padding of the Rating item.
+/// @group rating
+$kno-rating-item-padding-y: k-spacing(1) !default;
+
+/// The horizontal margin of the Rating label.
+/// @group rating
+$kno-rating-label-margin-x: k-spacing(2) !default;
+/// The vertical margin of the Rating label.
+/// @group rating
+$kno-rating-label-margin-y: k-spacing(1) !default;
+/// The line height of the Rating label.
+/// @group rating
+$kno-rating-label-line-height: var(--kno-line-height-lg) !default;
+
+/// The text color of the Rating icon.
+/// @group rating
+$kno-rating-icon-text: k-color(on-app-surface) !default;
+/// The text color of the selected Rating icon.
+/// @group rating
+$kno-rating-icon-selected-text: k-color(primary-active) !default;
+/// The text color of the hovered Rating icon.
+/// @group rating
+$kno-rating-icon-hover-text: k-color(primary-active) !default;
+/// The text color of the focused Rating icon.
+/// @group rating
+$kno-rating-icon-focus-text: k-color(primary-active) !default;
+
+/// The shadow of the focused Rating icon.
+/// @group rating
+$kno-rating-icon-focus-shadow: 0 2px 4px color-mix(in srgb, k-color(inverse) 10%, transparent) !default;
+/// The shadow of the focused and selected Rating icon.
+/// @group rating
+$kno-rating-icon-focus-selected-shadow: 0 2px 4px color-mix(in srgb, k-color(inverse) 10%, transparent) !default;
+
+@forward "@progress/kno-theme-core/scss/components/rating/_variables.scss" with (
+    $kno-rating-font-family: $kno-rating-font-family,
+    $kno-rating-font-size: $kno-rating-font-size,
+    $kno-rating-line-height: $kno-rating-line-height,
+    $kno-rating-container-margin-x: $kno-rating-container-margin-x,
+    $kno-rating-item-padding-x: $kno-rating-item-padding-x,
+    $kno-rating-item-padding-y: $kno-rating-item-padding-y,
+    $kno-rating-label-margin-x: $kno-rating-label-margin-x,
+    $kno-rating-label-margin-y: $kno-rating-label-margin-y,
+    $kno-rating-label-line-height: $kno-rating-label-line-height,
+    $kno-rating-icon-text: $kno-rating-icon-text,
+    $kno-rating-icon-selected-text: $kno-rating-icon-selected-text,
+    $kno-rating-icon-hover-text: $kno-rating-icon-hover-text,
+    $kno-rating-icon-focus-text: $kno-rating-icon-focus-text,
+    $kno-rating-icon-focus-shadow: $kno-rating-icon-focus-shadow,
+    $kno-rating-icon-focus-selected-shadow: $kno-rating-icon-focus-selected-shadow
+);

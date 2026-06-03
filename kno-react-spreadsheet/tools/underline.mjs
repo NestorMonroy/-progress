@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { underlineIcon as e } from "@progress/kno-svg-icons";
+import { PropertyChangeTool as n } from "./utils.mjs";
+import { keys as r } from "../messages.mjs";
+const o = {
+  property: "underline",
+  icon: "underline",
+  svgIcon: e,
+  titleKey: r.underline
+}, i = n(o);
+i.displayName = "Underline";
+export {
+  i as Underline
+};

@@ -1,0 +1,28 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import e from "prop-types";
+const o = (n) => null;
+o.propTypes = {
+  cellOptions: e.any,
+  field: e.string,
+  footerCellOptions: e.any,
+  footer: e.oneOfType([e.func, e.element]),
+  groupFooterCellOptions: e.any,
+  groupFooter: e.oneOfType([e.func, e.element]),
+  groupHeaderCellOptions: e.any,
+  groupHeader: e.oneOfType([e.func, e.element]),
+  headerCellOptions: e.any,
+  hidden: e.bool,
+  level: e.number,
+  locked: e.bool,
+  title: e.string,
+  width: e.number
+};
+export {
+  o as ExcelExportColumn
+};

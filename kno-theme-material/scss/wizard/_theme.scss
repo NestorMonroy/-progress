@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/wizard/_theme.scss" as *;
+
+
+@mixin kno-wizard--theme() {
+    @include kno-wizard--theme-base();
+}

@@ -1,0 +1,27 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BottomNavigationHandle } from '../BottomNavigation.js';
+import { BaseEvent } from '@progress/kno-react-common';
+/**
+ * The arguments for the `onSelect` BottomNavigation event.
+ */
+export interface BottomNavigationSelectEvent extends BaseEvent<BottomNavigationHandle> {
+    /**
+     * A BottomNavigation item event target.
+     */
+    itemTarget: any;
+    /**
+     * The index of the selected BottomNavigation item.
+     */
+    itemIndex: number;
+}
+/**
+ * Represents the return type of the BottomNavigation events.
+ */
+export interface BottomNavigationEvent extends BaseEvent<BottomNavigationHandle> {
+}

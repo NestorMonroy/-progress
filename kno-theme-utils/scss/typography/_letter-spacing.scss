@@ -1,0 +1,54 @@
+@use "@progress/kno-theme-core/scss/index.scss" as *;
+@use "../_globals.scss" as *;
+
+/// Sets letter spacing to the tightest value.
+/// @example letter-spacing: var(--kno-letter-spacing-tightest, -0.15px);
+/// @name .k-letter-spacing-tightest
+/// @group letter-spacing
+/// @contextType css
+
+/// Sets letter spacing to the tighter value.
+/// @example letter-spacing: var(--kno-letter-spacing-tighter, -0.1px);
+/// @name .k-letter-spacing-tighter
+/// @group letter-spacing
+/// @contextType css
+
+/// Sets letter spacing to the tight value.
+/// @example letter-spacing: var(--kno-letter-spacing-tight, -0.5px);
+/// @name .k-letter-spacing-tight
+/// @group letter-spacing
+/// @contextType css
+
+/// Sets letter spacing to the normal value.
+/// @example letter-spacing: var(--kno-letter-spacing-normal, 0px);
+/// @name .k-letter-spacing-normal
+/// @group letter-spacing
+/// @contextType css
+
+/// Sets letter spacing to the wide value.
+/// @example letter-spacing: var(--kno-letter-spacing-wide, 0.5px);
+/// @name .k-letter-spacing-wide
+/// @group letter-spacing
+/// @contextType css
+
+/// Sets letter spacing to the wider value.
+/// @example letter-spacing: var(--kno-letter-spacing-wider, 0.1px);
+/// @name .k-letter-spacing-wider
+/// @group letter-spacing
+/// @contextType css
+
+/// Sets letter spacing to the widest value.
+/// @example letter-spacing: var(--kno-letter-spacing-widest, 0.15px);
+/// @name .k-letter-spacing-widest
+/// @group letter-spacing
+/// @contextType css
+
+@mixin kno-utils--typography--letter-spacing() {
+    @include import-once("utils-typography-letter-spacing") {
+
+        // Letter spacing utility classes
+        @include generate-utils( letter-spacing, letter-spacing, $kno-letter-spacings, $css-var: "letter-spacing" );
+
+    }
+}
+

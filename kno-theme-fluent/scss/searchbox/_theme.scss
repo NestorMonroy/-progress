@@ -1,0 +1,12 @@
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/searchbox/_theme.scss" as *;
+
+@mixin kno-searchbox--theme() {
+    @include kno-searchbox--theme-base();
+
+    .k-searchbox {
+        .k-input-icon {
+            color: $kno-searchbox-icon-color;
+        }
+     }
+}

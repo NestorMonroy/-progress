@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/smart-box/_layout.scss" as *;
+
+
+@mixin kno-smart-box--layout() {
+    @include kno-smart-box--layout-base();
+}

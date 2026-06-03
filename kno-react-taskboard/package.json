@@ -1,0 +1,82 @@
+{
+  "name": "@progress/kno-react-taskboard",
+  "version": "15.0.0",
+  "description": "knoReact TaskBoard package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "/kno-react-ui",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/kno-data-query": "^1.7.2",
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-react-buttons": "15.0.0",
+    "@progress/kno-react-common": "15.0.0",
+    "@progress/kno-react-dialogs": "15.0.0",
+    "@progress/kno-react-dropdowns": "15.0.0",
+    "@progress/kno-react-form": "15.0.0",
+    "@progress/kno-react-indicators": "15.0.0",
+    "@progress/kno-react-inputs": "15.0.0",
+    "@progress/kno-react-intl": "15.0.0",
+    "@progress/kno-react-labels": "15.0.0",
+    "@progress/kno-react-layout": "15.0.0",
+    "@progress/kno-react-popup": "15.0.0",
+    "@progress/kno-svg-icons": "^4.9.0 || ^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "Progress",
+    "TaskBoard",
+    "knoReact",
+    "reactjs",
+    "UI",
+    "components",
+    "React component",
+    "Telerik"
+  ],
+  "@progress": {
+    "friendlyName": "TaskBoard",
+    "framework": "knoReact",
+    "package": {
+      "productName": "knoReact",
+      "productCode": "KNOUIREACT",
+      "publishDate": 1779275851,
+      "licensingDocsUrl": ""
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependenciesMeta": {
+    "@progress/kno-svg-icons": {
+      "optional": true
+    }
+  }
+}

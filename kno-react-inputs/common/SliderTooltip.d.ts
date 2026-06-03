@@ -1,0 +1,28 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface SliderTooltipProps {
+    id?: string;
+    className?: string;
+    /**
+     * @hidden
+     */
+    tabIndex?: number;
+    style?: React.CSSProperties;
+    children?: React.ReactNode;
+    position: 'right' | 'top';
+    show?: boolean;
+    anchor?: React.RefObject<HTMLElement | null>;
+}
+/**
+ * @hidden
+ */
+export declare const SliderTooltip: (props: SliderTooltipProps) => React.JSX.Element;

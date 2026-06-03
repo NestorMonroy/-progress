@@ -1,0 +1,38 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { DateRange } from './DateRange';
+import { GanttSlotType } from './GanttSlotType';
+/**
+ * The props of the Gantt view timeline header cell component.
+ */
+export interface GanttViewTimelineHeaderCellProps {
+    /**
+     * The date range of the cell.
+     */
+    range: DateRange;
+    /**
+     * Indicates if the cell is in work time.
+     */
+    isWork: boolean;
+    /**
+     * The default cell text value.
+     */
+    text: string;
+    /**
+     * The type of the cell slot.
+     */
+    type: GanttSlotType;
+    /**
+     * The header cell row index.
+     */
+    rowIndex: number;
+    /**
+     * The header cell index.
+     */
+    index: number;
+}

@@ -1,0 +1,15 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+declare const TextFilterCell_base: React.ComponentClass<import('./FilterComponentProps').FilterComponentProps, any>;
+/**
+ * @hidden
+ */
+export declare class TextFilterCell extends TextFilterCell_base {
+}
+export {};

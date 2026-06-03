@@ -1,0 +1,33 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../utils/_index.scss" as *;
+@use "../combobox/_index.scss" as *;
+@use "../toolbar/_index.scss" as *;
+@use "../dialog/_index.scss" as *;
+@use "../pager/_index.scss" as *;
+@use "../dropzone/_index.scss" as *;
+@use "../window/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-pdf-viewer--styles() {
+    @include import-once( "pdf-viewer" ) {
+        @include core-styles();
+        @include kno-combobox--styles();
+        @include kno-toolbar--styles();
+        @include kno-dialog--styles();
+        @include kno-pager--styles();
+        @include kno-icon--styles();
+        @include kno-dropzone--styles();
+        @include kno-window--styles();
+        @include kno-pdf-viewer--layout();
+        @include kno-pdf-viewer--theme();
+        @include kno-utils--layout--overflow();
+        @include kno-utils--layout--position();
+    }
+}

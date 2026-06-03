@@ -1,0 +1,31 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Charts } from '../common/charts';
+import { PreventableEvent } from './preventable-event.js';
+import { EventAxisOptions } from '../api-types/event-axis-options.interface';
+/**
+ * Arguments for the `selectStart` event.
+ */
+export declare class SelectStartEvent extends PreventableEvent {
+    /**
+     * The target axis options.
+     */
+    axis: EventAxisOptions;
+    /**
+     * The lower boundary of the selected range.
+     */
+    from: any;
+    /**
+     * The upper boundary of the selected range.
+     */
+    to: any;
+    /**
+     * @hidden
+     */
+    constructor(e: any, target: Charts);
+}

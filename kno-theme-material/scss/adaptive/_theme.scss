@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/adaptive/_theme.scss" as *;
+
+
+@mixin kno-adaptive--theme() {
+    @include kno-adaptive--theme-base();
+}

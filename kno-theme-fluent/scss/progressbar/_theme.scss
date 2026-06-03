@@ -1,0 +1,66 @@
+@use "../core/_index.scss" as *;
+@use "@progress/kno-theme-core/scss/functions/index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/progressbar/_theme.scss" as *;
+
+@mixin kno-progressbar--theme {
+    @include kno-progressbar--theme-base();
+
+    @keyframes progressbar-indeterminate-animation-horizontal {
+        from {
+            inset-inline-start: -25%;
+        }
+        to {
+            inset-inline-start: 100%;
+        }
+    }
+
+    @keyframes progressbar-indeterminate-animation-vertical {
+        from {
+            inset-block-end: -25%;
+        }
+        to {
+            inset-block-end: 100%;
+        }
+    }
+
+    .k-progressbar {
+        &:not(.k-progressbar-indeterminate) {
+            &[disabled],
+            &:disabled,
+            &.k-disabled {
+                @include fill(
+                    $kno-progressbar-disabled-text,
+                    $kno-progressbar-disabled-bg,
+                    $kno-progressbar-disabled-border
+                );
+
+                .k-selected {
+                    background-color: $kno-progressbar-value-disabled-bg;
+                }
+            }
+        }
+    }
+
+    .k-progressbar.k-chunk-progressbar:not(.k-progressbar-indeterminate) {
+        background-color: k-if-var( $kno-progressbar-chunk-border, transparent );
+    }
+
+    .k-progressbar-indeterminate {
+        background-image: none;
+
+        &.k-progressbar-horizontal {
+            &::after {
+                background: $kno-progressbar-indeterminate-gradient-horizontal;
+                animation: $kno-progressbar-indeterminate-animation-horizontal;
+            }
+        }
+
+        &.k-progressbar-vertical {
+            &::after {
+                background: $kno-progressbar-indeterminate-gradient-vertical;
+                animation: $kno-progressbar-indeterminate-animation-vertical;
+            }
+        }
+    }
+}

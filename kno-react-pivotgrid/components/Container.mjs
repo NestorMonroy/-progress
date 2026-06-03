@@ -1,0 +1,45 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { classNames as m } from "@progress/kno-react-common";
+const u = e.forwardRef(
+  (r, a) => {
+    const o = e.useRef(null), n = e.useRef(null);
+    e.useImperativeHandle(n, () => ({ props: r, element: o.current })), e.useImperativeHandle(
+      a,
+      () => n.current
+    );
+    const { id: l, style: s, tabIndex: i, configuratorPosition: t, className: c, children: f } = { ...d, ...r };
+    return /* @__PURE__ */ e.createElement(
+      "div",
+      {
+        ref: o,
+        id: l,
+        style: s,
+        tabIndex: i,
+        className: m(
+          "k-d-flex k-pos-relative",
+          {
+            "k-flex-row": t === "right",
+            "k-flex-row-reverse": t === "left",
+            "k-flex-column": t === "bottom",
+            "k-flex-column-reverse": t === "top"
+          },
+          c
+        )
+      },
+      f
+    );
+  }
+), d = {
+  configuratorPosition: "right"
+};
+u.displayName = "KendoReactPivotGridContainer";
+export {
+  u as PivotGridContainer
+};

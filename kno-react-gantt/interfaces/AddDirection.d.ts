@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * The direction of the add new task action.
+ * If set to 'none' the task should be added at the end of the data collection.
+ * If set to 'above', 'below' or 'child', `selectedTask` option should be provided.
+ */
+export type AddDirection = 'none' | 'above' | 'below' | 'child';

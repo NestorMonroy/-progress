@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as r from "react";
+import { Menu as o } from "./menu/components/Menu.mjs";
+import { useMergedRef as f, useWebMcpRegister as a, withIdHOC as c } from "@progress/kno-react-common";
+const i = c(o), u = r.forwardRef((e, t) => {
+  const [n, m] = f(t);
+  return a("menu", n, e, e.webMcp), /* @__PURE__ */ r.createElement(i, { ...e, ref: m });
+});
+u.displayName = "knoReactMenu";
+export {
+  u as MenuWrapper
+};

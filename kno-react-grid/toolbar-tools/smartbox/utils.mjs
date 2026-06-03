@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { defaultHistoryProps as t } from "./defaultConfigs.mjs";
+function u(r) {
+  return r === !0 || r === void 0 ? t : r === !1 ? null : { ...t, ...r };
+}
+export {
+  u as normalizeHistorySettings
+};

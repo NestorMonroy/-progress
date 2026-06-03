@@ -1,0 +1,36 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { useInternationalization as d } from "@progress/kno-react-intl";
+import { classNames as f } from "@progress/kno-react-common";
+const u = e.forwardRef((a, m) => {
+  const { as: n = l.as, ...s } = a, t = e.useRef(null), r = e.useRef(null), c = d(), o = e.useMemo(
+    () => f("k-scheduler-cell k-heading-cell", a.className),
+    [a.className]
+  );
+  return e.useImperativeHandle(r, () => ({
+    element: t.current && t.current.element ? t.current.element : t.current,
+    props: a
+  })), e.useImperativeHandle(m, () => r.current), /* @__PURE__ */ e.createElement(
+    n,
+    {
+      ref: n !== l.as ? void 0 : t,
+      ...s,
+      className: o
+    },
+    /* @__PURE__ */ e.createElement("span", { className: "k-link k-nav-day" }, c.formatDate(a.date, a.format ? a.format : l.format))
+  );
+}), l = {
+  as: e.forwardRef(({ as: a, format: m, start: n, end: s, ...t }, r) => /* @__PURE__ */ e.createElement("div", { ...t, ref: r })),
+  format: "d"
+};
+u.displayName = "KendoReactSchedulerDateHeaderCell";
+export {
+  u as DateHeaderCell,
+  l as dateHeaderCellDefaultProps
+};

@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/virtual-scroller/_theme.scss" as *;
+
+
+@mixin kno-virtual-scroller--theme() {
+    @include kno-virtual-scroller--theme-base();
+}

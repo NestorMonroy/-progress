@@ -1,0 +1,36 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../button/_variables.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/timeselector/_layout.scss" as *;
+
+@mixin kno-time-selector--layout() {
+    @include kno-time-selector--layout-base();
+
+    .k-time-list-wrapper {
+        .k-title {
+            font-weight: 600;
+            padding-block-end: $kno-time-list-title-spacing;
+        }
+    }
+
+    // Time selector header
+    .k-time-header,
+    .k-time-selector-header {
+        .k-time-now {
+            text-transform: uppercase;
+        }
+    }
+
+    // Time selector header
+    .k-time-header,
+    .k-time-selector-header {
+        .k-time-now {
+            text-transform: uppercase;
+        }
+    }
+
+    .k-time-separator {
+        display: $kno-time-list-separator-display;
+    }
+}

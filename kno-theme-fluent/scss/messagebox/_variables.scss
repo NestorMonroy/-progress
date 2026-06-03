@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// The default theme color of the MessageBox.
+/// @group messagebox
+/// @role default
+$kno-message-box-default-theme-color: null !default;
+
+/// Margin around the message box.
+/// @group messagebox
+$kno-message-box-margin: var( --kno-message-box-margin, 0 0 k-spacing(3) 0 ) !default;
+/// Horizontal padding of the message box.
+/// @group messagebox
+$kno-message-box-padding-x: var( --kno-message-box-padding-x, k-spacing(3) ) !default;
+/// Vertical padding of the message box.
+/// @group messagebox
+$kno-message-box-padding-y: var( --kno-message-box-padding-y, k-spacing(2.5) ) !default;
+/// Border width of the message box.
+/// @group messagebox
+$kno-message-box-border-width: var( --kno-message-box-border-width, 1px ) !default;
+/// Border style of the message box.
+/// @group messagebox
+$kno-message-box-border-style: var( --kno-message-box-border-style, solid ) !default;
+/// The radius of the border around the message box.
+/// @group messagebox
+$kno-message-box-border-radius: k-border-radius(md) !default;
+/// Font family of the message box.
+/// @group messagebox
+$kno-message-box-font-family: var( --kno-message-box-font-family, var(--kno-font-family) ) !default;
+/// Font size of the message box.
+/// @group messagebox
+$kno-message-box-font-size: var( --kno-message-box-font-size, var(--kno-font-size-sm) ) !default;
+/// Line height of the message box.
+/// @group messagebox
+$kno-message-box-line-height: var( --kno-message-box-line-height, var(--kno-line-height-lg) ) !default;
+
+/// Font style of the message box links.
+/// @group messagebox
+$kno-message-box-link-font-style: var( --kno-message-box-link-font-style, normal ) !default;
+/// Text decoration of the message box links.
+/// @group messagebox
+$kno-message-box-link-decoration: var( --kno-message-box-link-decoration, underline ) !default;
+/// Text color of the message box links.
+/// @group messagebox
+$kno-message-box-link-text: var( --kno-message-box-link-text, k-color(primary-on-surface) ) !default;
+/// Hover text color of the message box links.
+/// @group messagebox
+$kno-message-box-link-hover-text: var( --kno-message-box-link-hover-text, k-color(primary-on-surface) ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/messagebox/_variables.scss" with (
+    $kno-message-box-default-theme-color: $kno-message-box-default-theme-color,
+    $kno-message-box-margin: $kno-message-box-margin,
+    $kno-message-box-padding-x: $kno-message-box-padding-x,
+    $kno-message-box-padding-y: $kno-message-box-padding-y,
+    $kno-message-box-border-width: $kno-message-box-border-width,
+    $kno-message-box-border-radius: $kno-message-box-border-radius,
+    $kno-message-box-font-size: $kno-message-box-font-size,
+    $kno-message-box-line-height: $kno-message-box-line-height,
+    $kno-message-box-link-font-style: $kno-message-box-link-font-style
+);

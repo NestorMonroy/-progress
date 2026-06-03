@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { useContext as o } from "react";
+const r = e.createContext(void 0), a = () => {
+  const t = o(r);
+  if (t === void 0)
+    throw new Error("useChatContext must be used within a ChatContext.Provider");
+  return t;
+};
+export {
+  r as default,
+  a as useChatContext
+};

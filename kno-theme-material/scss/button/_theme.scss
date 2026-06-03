@@ -1,0 +1,290 @@
+@use "./_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "../core/functions/index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/button/_theme.scss" as *;
+
+@mixin kno-button--theme() {
+
+    @include kno-button--theme-base();
+
+    .k-button {
+        &:focus,
+        &.k-focus {
+            outline-style: solid;
+            outline-width: calc( (#{$kno-button-border-width} * 2 ));
+            outline-offset: calc( (#{$kno-button-border-width} * 2 ) * -1);
+        }
+
+
+        // Solid button
+        #{k-when-default($kno-button-default-fill-mode, "solid")}
+        &.k-button-solid {
+            @each $name in $kno-button-theme-colors {
+                #{k-when-default($kno-button-default-theme-color, $name)}
+                &.k-button-#{$name} {
+                    // Focus state
+                    &:focus,
+                    &.k-focus {
+                        outline-color: if( $name == "base" or $name == "secondary", $kno-button-focus-border, k-color(#{$name}));
+                        box-shadow: inset 0 0 0 calc( #{$kno-button-border-width} * 3 ) k-color(app-surface),
+                                    inset 0 0 0 calc( #{$kno-button-border-width} * 5 ) k-color(#{$name});
+                    }
+
+                    &:hover,
+                    &.k-hover {
+                        background-color: k-color(#{$name}-hover);
+                        border-color: k-color(#{$name}-hover);
+                        @include box-shadow( $kno-button-hover-shadow );
+                    }
+
+                    &:focus,
+                    &.k-focus {
+                        &:hover,
+                        &.k-hover {
+                            outline-color: if( $name == "base" or $name == "secondary", $kno-button-focus-border, k-color(#{$name}-hover));
+                            box-shadow: inset 0 0 0 calc( #{$kno-button-border-width} * 3 ) k-color(app-surface),
+                                        inset 0 0 0 calc( #{$kno-button-border-width} * 5 ) k-color(#{$name}-hover),
+                                        $kno-button-hover-shadow;
+
+                            &:active,
+                            &.k-active,
+                            &.k-selected {
+                                background-color: k-color(#{$name}-active);
+                                box-shadow: inset 0 0 0 calc( #{$kno-button-border-width} * 3 ) k-color(app-surface),
+                                            inset 0 0 0 calc( #{$kno-button-border-width} * 5 ) k-color(#{$name}-active),
+                                            $kno-button-hover-shadow;
+                            }
+                        }
+
+                        &:active,
+                        &.k-active,
+                        &.k-selected {
+                            outline-color: if( $name == "base" or $name == "secondary", $kno-button-focus-border, k-color(#{$name}-active));
+                            box-shadow: inset 0 0 0 calc( #{$kno-button-border-width} * 3 ) k-color(app-surface),
+                                        inset 0 0 0 calc( #{$kno-button-border-width} * 5 ) k-color(#{$name}-active);
+                        }
+
+                        &:disabled,
+                        &.k-disabled {
+                            background-color: $kno-button-disabled-bg;
+                            box-shadow: inset 0 0 0 calc( #{$kno-button-border-width} * 3 ) k-color(app-surface),
+                                        inset 0 0 0 calc( #{$kno-button-border-width} * 5 ) transparent;
+                        }
+                    }
+
+                    // Disabled state
+                    &:disabled,
+                    &.k-disabled {
+                        @include fill(
+                            $kno-button-disabled-text,
+                            $kno-button-disabled-bg,
+                            $kno-button-disabled-border
+                        );
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        // Outline and Flat button
+        #{k-when-default($kno-button-default-fill-mode, ("outline", "flat"))}
+        &.k-button-outline,
+        &.k-button-flat {
+            @each $name in $kno-button-theme-colors {
+                #{k-when-default($kno-button-default-theme-color, $name)}
+                &.k-button-#{$name} {
+                    &:hover,
+                    &.k-hover,
+                    &:active,
+                    &.k-active,
+                    &.k-selected {
+                        color: k-color(#{$name}-on-surface);
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        // Outline and Link button
+        #{k-when-default($kno-button-default-fill-mode, ("outline", "link"))}
+        &.k-button-outline,
+        &.k-button-link {
+            @each $name in $kno-button-theme-colors {
+                #{k-when-default($kno-button-default-theme-color, $name)}
+                &.k-button-#{$name} {
+                    color: k-color(#{$name}-on-surface);
+
+                    &:active,
+                    &.k-active,
+                    &.k-selected {
+                        background-color: if( $name == "base" or $name == "secondary", color-mix(in srgb, currentColor 12%, transparent), color-mix(in srgb, k-color($name) 12%, transparent));
+                    }
+
+                    &:hover,
+                    &.k-hover {
+                        background-color: if( $name == "base" or $name == "secondary", color-mix(in srgb, currentColor 8%, transparent), color-mix(in srgb, k-color($name) 8%, transparent));
+                    }
+                }
+            }
+
+            // Disabled state
+            &:disabled,
+            &.k-disabled {
+                background-color: transparent;
+            }
+        }
+
+
+        // Outline button
+        #{k-when-default($kno-button-default-fill-mode, "outline")}
+        &.k-button-outline {
+            @each $name in $kno-button-theme-colors {
+                #{k-when-default($kno-button-default-theme-color, $name)}
+                &.k-button-#{$name} {
+                    color: k-color(#{$name}-on-surface);
+
+                    @if $name == "base" or $name == "primary"  {
+                        border-color: k-color(base-emphasis);
+                    } @else if $name == "secondary" {
+                        border-color: k-color(secondary-emphasis);
+                    } @else {
+                        border-color: k-color(#{$name}-on-surface);
+                    }
+
+                    &:hover,
+                    &.k-hover,
+                    &:active,
+                    &.k-active,
+                    &.k-selected {
+                        @if $name == "base" or $name == "primary"  {
+                            border-color: k-color(base-emphasis);
+                        } @else if $name == "secondary" {
+                            border-color: k-color(secondary-emphasis);
+                        } @else {
+                            border-color: k-color(#{$name}-on-surface);
+                        }
+                    }
+
+                    &:focus,
+                    &.k-focus {
+                        outline-color: initial;
+                        box-shadow: inset 0 0 0 calc( #{$kno-button-border-width} * 3 ) k-color(app-surface),
+                                    inset 0 0 0 calc( #{$kno-button-border-width} * 5 ) k-color(#{$name}-on-surface);
+
+                        &:disabled,
+                        &.k-disabled {
+                            outline-color: k-color(#{$name}-on-surface);
+                            box-shadow: inset 0 0 0 calc( #{$kno-button-border-width} * 3 ) k-color(app-surface),
+                                        inset 0 0 0 calc( #{$kno-button-border-width} * 5 ) k-color(#{$name}-on-surface);
+                        }
+                    }
+
+                    // Disabled state
+                    &:disabled,
+                    &.k-disabled {
+                        color: $kno-button-disabled-text;
+                        border-color: $kno-button-disabled-text;
+                    }
+                }
+            }
+        }
+
+        // Flat button
+        #{k-when-default($kno-button-default-fill-mode, "flat")}
+        &.k-button-flat {
+            box-shadow: none;
+
+            @each $name in $kno-button-theme-colors {
+                #{k-when-default($kno-button-default-theme-color, $name)}
+                &.k-button-#{$name} {
+                    &:focus,
+                    &.k-focus {
+                        outline: 0;
+
+                        &::before {
+                            background: transparent;
+                        }
+                    }
+
+                    &::after {
+                        box-shadow: inset 0 0 0 2px if( $name == "base" or $name == "secondary", color-mix(in srgb, currentColor 20%, transparent), color-mix(in srgb, k-color($name) 20%, transparent));
+                    }
+                }
+            }
+        }
+
+        // Clear button
+        #{k-when-default($kno-button-default-fill-mode, "clear")}
+        &.k-button-clear {
+            @each $name in $kno-button-theme-colors {
+                #{k-when-default($kno-button-default-theme-color, $name)}
+                &.k-button-#{$name} {
+
+                    &:hover,
+                    &.k-hover {
+                        box-shadow: none;
+                    }
+
+                    &:focus,
+                    &.k-focus {
+                        outline: 0;
+                    }
+                }
+            }
+        }
+
+
+        // Link button
+        #{k-when-default($kno-button-default-fill-mode, "link")}
+        &.k-button-link {
+            @each $name in $kno-button-theme-colors {
+                #{k-when-default($kno-button-default-theme-color, $name)}
+                &.k-button-#{$name} {
+                    text-decoration: underline;
+
+                    &:hover,
+                    &.k-hover,
+                    &:active,
+                    &.k-active,
+                    &.k-selected {
+                        color: k-color(#{$name}-on-surface);
+                        box-shadow: none;
+                    }
+
+                    &:focus,
+                    &.k-focus {
+                        outline-color: if( $name == "base" or $name == "secondary", color-mix(in srgb, currentColor 20%, transparent), color-mix(in srgb, k-color($name) 20%, transparent));
+                        box-shadow: none;
+                    }
+                    // Disabled state
+                    &:disabled,
+                    &.k-disabled {
+                        color: $kno-button-disabled-text;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+    // Menu button
+    .k-menu-button {}
+
+
+    // Button group
+    .k-button-group {
+        @include box-shadow( $kno-button-shadow );
+
+
+         // Variant button group
+        #{k-when-default($kno-button-default-fill-mode, ("flat", "link", "outline"))}
+        &.k-button-group-flat,
+        &.k-button-group-link,
+        &.k-button-group-outline {
+            @include box-shadow( none );
+        }
+    }
+
+
+}

@@ -1,0 +1,17 @@
+// TODO: Check if this file is still needed
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--interactivity--accent-color() {
+    @include import-once("utils-interactivity-accent-color") {
+
+        // Accent color utility classes
+        $kno-utils-accent-color: map.get( $kno-utils, "accent-color" ) !default;
+        @include generate-utils( accent-color, accent-color, $kno-utils-accent-color );
+
+    }
+}

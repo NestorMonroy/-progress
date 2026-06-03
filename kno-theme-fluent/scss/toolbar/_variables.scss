@@ -1,0 +1,161 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../button/_variables.scss" as *;
+
+/// The default fill mode of the Toolbar.
+/// @group toolbar
+/// @role default
+$kno-toolbar-default-fill-mode: "solid" !default;
+/// The default size of the Toolbar.
+/// @group toolbar
+/// @role default
+$kno-toolbar-default-size: "md" !default;
+
+/// The horizontal padding of the small Toolbar.
+/// @group toolbar
+$kno-toolbar-sm-padding-x: calc( var( --kno-toolbar-sm-padding-x, #{k-spacing(2)} ) + 1px ) !default;
+/// The horizontal padding of the medium Toolbar.
+/// @group toolbar
+$kno-toolbar-md-padding-x: calc( var( --kno-toolbar-md-padding-x, #{k-spacing(3)} ) + 1px ) !default;
+/// The horizontal padding of the large Toolbar.
+/// @group toolbar
+$kno-toolbar-lg-padding-x: calc( var( --kno-toolbar-lg-padding-x, #{k-spacing(4.5)} ) + 1px ) !default;
+
+/// The vertical padding of the small Toolbar.
+/// @group toolbar
+$kno-toolbar-sm-padding-y: calc( var( --kno-toolbar-sm-padding-y, #{k-spacing(1.5)} ) + 1px ) !default;
+/// The vertical padding of the medium Toolbar.
+/// @group toolbar
+$kno-toolbar-md-padding-y: calc( var( --kno-toolbar-md-padding-y, #{k-spacing(1.5)} ) + 1px ) !default;
+/// The vertical padding of the large Toolbar.
+/// @group toolbar
+$kno-toolbar-lg-padding-y: calc( var( --kno-toolbar-lg-padding-y, #{k-spacing(1.5)} ) + 1px ) !default;
+
+/// The spacing between the tools of the small Toolbar.
+/// @group toolbar
+$kno-toolbar-sm-spacing: var( --kno-toolbar-sm-spacing, #{k-spacing(3)} ) !default;
+/// The spacing between the tools of the medium Toolbar.
+/// @group toolbar
+$kno-toolbar-md-spacing: var( --kno-toolbar-md-spacing, #{k-spacing(3)} ) !default;
+/// The spacing between the tools of the large Toolbar.
+/// @group toolbar
+$kno-toolbar-lg-spacing: var( --kno-toolbar-lg-spacing, #{k-spacing(3)} ) !default;
+
+/// The height of the small Toolbar button separator.
+/// @group toolbar
+$kno-toolbar-sm-separator-height: var( --kno-toolbar-sm-separator-height, #{$kno-button-sm-calc-size} ) !default;
+/// The height of the medium Toolbar button separator.
+/// @group toolbar
+$kno-toolbar-md-separator-height: var( --kno-toolbar-md-separator-height, #{$kno-button-md-calc-size} ) !default;
+/// The height of the large Toolbar button separator.
+/// @group toolbar
+$kno-toolbar-lg-separator-height: var( --kno-toolbar-lg-separator-height, #{$kno-button-lg-calc-size} ) !default;
+
+/// The width of the border around the Toolbar.
+/// @group toolbar
+$kno-toolbar-border-width: var( --kno-toolbar-border-width, 1px ) !default;
+
+/// The font family of the Toolbar.
+/// @group toolbar
+$kno-toolbar-font-family: var( --kno-toolbar-font-family, var(--kno-font-family) ) !default;
+/// The font size of the Toolbar.
+/// @group toolbar
+$kno-toolbar-font-size: var( --kno-toolbar-font-size, var(--kno-font-size) ) !default;
+/// The line height of the Toolbar.
+/// @group toolbar
+$kno-toolbar-line-height: var( --kno-toolbar-line-height, var(--kno-line-height) ) !default;
+
+/// The background color of the Toolbar.
+/// @group toolbar
+$kno-toolbar-bg: var( --kno-toolbar-bg, #{k-color(surface)} ) !default;
+/// The text color of the Toolbar.
+/// @group toolbar
+$kno-toolbar-text: var( --kno-toolbar-text, #{k-color(on-app-surface)} ) !default;
+/// The color of the border around the Toolbar.
+/// @group toolbar
+$kno-toolbar-border: var( --kno-toolbar-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+/// The left and right scroll overlay of the Toolbar.
+/// @group toolbar
+$kno-toolbar-scroll-overlay: var( --kno-toolbar-scroll-overlay, #{$kno-toolbar-bg, color-mix(in srgb, k-color(app-surface) 0%, transparent)} ) !default;
+
+
+/// The text color of the outline Toolbar.
+/// @group toolbar
+$kno-toolbar-outline-text: var( --kno-toolbar-outline-text, null ) !default;
+/// The color of the border around the outline Toolbar.
+/// @group toolbar
+$kno-toolbar-outline-border: var( --kno-toolbar-outline-border, $kno-toolbar-border ) !default;
+/// The width of the border around the outline Toolbar.
+/// @group toolbar
+$kno-toolbar-outline-border-width: var( --kno-toolbar-outline-border-width, $kno-toolbar-border-width ) !default;
+/// The left and right scroll overlay of the outline Toolbar.
+/// @group toolbar
+$kno-toolbar-outline-scroll-overlay: var( --kno-toolbar-outline-scroll-overlay, #{k-color(app-surface), color-mix(in srgb, k-color(app-surface) 0%, transparent)} ) !default;
+
+
+/// The text color of the flat Toolbar.
+/// @group toolbar
+$kno-toolbar-flat-text: var( --kno-toolbar-flat-text, null ) !default;
+/// The color of the border around the flat Toolbar.
+/// @group toolbar
+$kno-toolbar-flat-border: var( --kno-toolbar-flat-border, transparent transparent color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+/// The left and right scroll overlay of the flat Toolbar.
+/// @group toolbar
+$kno-toolbar-flat-scroll-overlay: var( --kno-toolbar-flat-scroll-overlay, #{k-color(app-surface), color-mix(in srgb, k-color(app-surface) 0%, transparent)} ) !default;
+
+
+/// The color of the separator border of the Toolbar.
+/// @group toolbar
+$kno-toolbar-separator-border: var( --kno-toolbar-separator-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+
+/// The width of the input in the Toolbar.
+/// @group toolbar
+$kno-toolbar-input-width: var( --kno-toolbar-input-width, 10em ) !default;
+/// The minimum width of the Smart ToolBox in the Toolbar.
+/// @group toolbar
+$kno-toolbar-smart-box-min-width: var( --kno-toolbar-smart-box-min-width, 350px ) !default;
+
+/// The border width of the focused Toolbar item.
+/// @group toolbar
+$kno-toolbar-item-focus-outline-width: var( --kno-toolbar-item-focus-outline-width, 1px ) !default;
+/// The border style of the focused Toolbar item.
+/// @group toolbar
+$kno-toolbar-item-focus-outline-style: var( --kno-toolbar-item-focus-outline-style, solid ) !default;
+/// The border color of the focused Toolbar item.
+/// @group toolbar
+$kno-toolbar-item-focus-outline-color: var( --kno-toolbar-item-focus-outline-color, #{k-color(base-emphasis)} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/toolbar/_variables.scss" with (
+    $kno-toolbar-default-fill-mode: $kno-toolbar-default-fill-mode,
+    $kno-toolbar-default-size: $kno-toolbar-default-size,
+    $kno-toolbar-sm-padding-x: $kno-toolbar-sm-padding-x,
+    $kno-toolbar-md-padding-x: $kno-toolbar-md-padding-x,
+    $kno-toolbar-lg-padding-x: $kno-toolbar-lg-padding-x,
+    $kno-toolbar-sm-padding-y: $kno-toolbar-sm-padding-y,
+    $kno-toolbar-md-padding-y: $kno-toolbar-md-padding-y,
+    $kno-toolbar-lg-padding-y: $kno-toolbar-lg-padding-y,
+    $kno-toolbar-sm-spacing: $kno-toolbar-sm-spacing,
+    $kno-toolbar-md-spacing: $kno-toolbar-md-spacing,
+    $kno-toolbar-lg-spacing: $kno-toolbar-lg-spacing,
+    $kno-toolbar-sm-separator-height: $kno-toolbar-sm-separator-height,
+    $kno-toolbar-md-separator-height: $kno-toolbar-md-separator-height,
+    $kno-toolbar-lg-separator-height: $kno-toolbar-lg-separator-height,
+    $kno-toolbar-border-width: $kno-toolbar-border-width,
+    $kno-toolbar-font-family: $kno-toolbar-font-family,
+    $kno-toolbar-font-size: $kno-toolbar-font-size,
+    $kno-toolbar-line-height: $kno-toolbar-line-height,
+    $kno-toolbar-bg: $kno-toolbar-bg,
+    $kno-toolbar-text: $kno-toolbar-text,
+    $kno-toolbar-border: $kno-toolbar-border,
+    $kno-toolbar-scroll-overlay: $kno-toolbar-scroll-overlay,
+    $kno-toolbar-outline-text: $kno-toolbar-outline-text,
+    $kno-toolbar-outline-border: $kno-toolbar-outline-border,
+    $kno-toolbar-outline-border-width: $kno-toolbar-outline-border-width,
+    $kno-toolbar-outline-scroll-overlay: $kno-toolbar-outline-scroll-overlay,
+    $kno-toolbar-flat-text: $kno-toolbar-flat-text,
+    $kno-toolbar-flat-border: $kno-toolbar-flat-border,
+    $kno-toolbar-flat-scroll-overlay: $kno-toolbar-flat-scroll-overlay,
+    $kno-toolbar-separator-border: $kno-toolbar-separator-border,
+    $kno-toolbar-input-width: $kno-toolbar-input-width,
+    $kno-toolbar-smart-box-min-width: $kno-toolbar-smart-box-min-width,
+);

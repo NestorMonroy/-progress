@@ -1,0 +1,79 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { default as PropTypes } from 'prop-types';
+import { AnimationInterface } from './AnimationInterface';
+import * as React from 'react';
+/**
+ * Specifies the direction of the Expand Animation ([see example]).
+ *
+ * The supported directions are:
+ * * (Default) `vertical`&mdash;Expands the content from center to top and bottom, and vice-versa.
+ * * `horizontal`&mdash;Expands the content from center to left and right, and vice-versa.
+ */
+export type ExpandDirection = 'horizontal' | 'vertical';
+/**
+ * Represents the props of the [knoReact Expand Animation component].
+ */
+export interface ExpandProps extends AnimationInterface {
+    /**
+     * A function for customizing the rendering of child elements.
+     *
+     * @example
+     * <Expand childFactory={(child) => React.cloneElement(child, { role: "button" })} />
+     */
+    childFactory?: any;
+    /**
+     * Specifies the CSS class names to be applied to the Animation container.
+     *
+     * @example
+     * <Expand className="expand-animation" />
+     */
+    className?: string;
+    /**
+     * Specifies the direction of the Expand Animation.
+     *
+     * @default "vertical"
+     * @example
+     * <Expand direction="horizontal" />
+     */
+    direction?: ExpandDirection;
+    /**
+     * Specifies the HTML tag of the parent Animation container.
+     *
+     * @default "div"
+     * @example
+     * <Expand component="nav" />
+     */
+    component?: React.ReactNode;
+    /**
+     * Specifies the `id` attribute of the Animation container.
+     *
+     * @example
+     * <Expand id="expand-animation-container" />
+     */
+    id?: string;
+    /**
+     * Specifies the inline styles to be applied to the Animation container.
+     *
+     * @example
+     * <Expand style={{ display: "flex" }} />
+     */
+    style?: any;
+}
+export declare const Expand: {
+    (props: ExpandProps): React.JSX.Element;
+    propTypes: {
+        children: PropTypes.Requireable<NonNullable<PropTypes.ReactNodeLike>>;
+        childFactory: PropTypes.Requireable<any>;
+        className: PropTypes.Requireable<string>;
+        direction: PropTypes.Requireable<string>;
+        component: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+        id: PropTypes.Requireable<string>;
+        style: PropTypes.Requireable<any>;
+    };
+};

@@ -1,0 +1,259 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../icons/_variables.scss" as *;
+
+// Breadcrumb
+
+/// The default size of the Breadcrumb.
+/// @group breadcrumb
+/// @role default
+$kno-breadcrumb-default-size: "md" !default;
+
+/// The width of the border around the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-border-width: 0px !default;
+
+/// The horizontal margin of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-margin-x: null !default;
+/// The vertical margin of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-margin-y: null !default;
+/// The horizontal padding of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-padding-x: null !default;
+/// The vertical padding of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-padding-y: null !default;
+
+/// The font family of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-font-family: var(--kno-font-family) !default;
+
+/// The font size of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-font-size: var(--kno-font-size) !default;
+/// The font size of the small Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-sm-font-size: var(--kno-font-size) !default;
+/// The font size of the medium Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-md-font-size: $kno-breadcrumb-font-size !default;
+/// The font size of the large Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-lg-font-size: var(--kno-font-size) !default;
+
+/// The line-height of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-line-height: var(--kno-line-height) !default;
+/// The line-height of the small Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-sm-line-height: var(--kno-line-height) !default;
+/// The line-height of the medium Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-md-line-height: $kno-breadcrumb-line-height !default;
+/// The line-height of the height Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-lg-line-height: var(--kno-line-height) !default;
+
+/// The base background of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-bg: null !default;
+/// The base text color of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-text: k-color(primary-on-surface) !default;
+/// The base border color of the Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-border: null !default;
+
+/// The box shadow of the focused Breadcrumb.
+/// @group breadcrumb
+$kno-breadcrumb-focus-shadow: null !default;
+
+/// The horizontal padding of the small Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-sm-link-padding-x: k-spacing(3) !default;
+/// The horizontal padding of the medium Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-md-link-padding-x: k-spacing(3) !default;
+/// The horizontal padding of the large Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-lg-link-padding-x: k-spacing(3) !default;
+
+/// The vertical padding of the small Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-sm-link-padding-y: k-spacing(1.5) !default;
+/// The vertical padding of the medium Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-md-link-padding-y: k-spacing(2.5) !default;
+/// The vertical padding of the large Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-lg-link-padding-y: k-spacing(3.5) !default;
+
+/// The border-radius of the Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-border-radius: k-border-radius(md) !default;
+
+/// The vertical padding of the small Breadcrumb link icon.
+/// @group breadcrumb
+$kno-breadcrumb-sm-icon-link-padding-y: k-spacing(2) !default;
+/// The vertical padding of the medium Breadcrumb link icon.
+/// @group breadcrumb
+$kno-breadcrumb-md-icon-link-padding-y: k-spacing(3) !default;
+/// The vertical padding of the large Breadcrumb link icon.
+/// @group breadcrumb
+$kno-breadcrumb-lg-icon-link-padding-y: k-spacing(4) !default;
+
+/// The horizontal padding of the small Breadcrumb link icon.
+/// @group breadcrumb
+$kno-breadcrumb-sm-icon-link-padding-x: $kno-breadcrumb-sm-icon-link-padding-y !default;
+/// The horizontal padding of the medium Breadcrumb link icon.
+/// @group breadcrumb
+$kno-breadcrumb-md-icon-link-padding-x: $kno-breadcrumb-md-icon-link-padding-y !default;
+/// The horizontal padding of the large Breadcrumb link icon.
+/// @group breadcrumb
+$kno-breadcrumb-lg-icon-link-padding-x: $kno-breadcrumb-lg-icon-link-padding-y !default;
+
+/// The spacing of the Breadcrumb link icon.
+/// @group breadcrumb
+$kno-breadcrumb-link-icon-spacing: $kno-icon-spacing !default;
+
+/// The text color of the Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-initial-text: inherit !default;
+
+/// The background color of the Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-bg: null !default;
+/// The text color of the Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-text: k-color(primary-on-surface) !default;
+/// The border color of the Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-border: null !default;
+
+/// The background color of the hovered Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-hover-bg: color-mix(in srgb, currentColor 8%, transparent) !default;
+/// The text color of the hovered Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-hover-text: k-color(primary-on-surface) !default;
+/// The border color of the hovered Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-hover-border: null !default;
+
+/// The background color of the focused Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-focus-bg: color-mix(in srgb, currentColor 12%, transparent) !default;
+/// The text color of the focused Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-focus-text: k-color(primary-on-surface) !default;
+/// The border color of the focused Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-focus-border: null !default;
+/// The box shadow of the focused Breadcrumb link.
+/// @group breadcrumb
+$kno-breadcrumb-link-focus-shadow: null !default;
+
+/// The background color of the Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-bg: null !default;
+/// The text color of the Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-text: null !default;
+/// The border color of the Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-border: null !default;
+
+/// The background color of the hovered Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-hover-bg: color-mix(in srgb, currentColor 8%, transparent) !default;
+/// The text color of the hovered Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-hover-text: null !default;
+/// The border color of the hovered Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-hover-border: null !default;
+
+/// The background color of the focused Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-focus-bg: color-mix(in srgb, currentColor 12%, transparent) !default;
+/// The text color of the focused Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-focus-text: null !default;
+/// The border color of the focused Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-focus-border: null !default;
+/// The box shadow of the focused Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-root-link-focus-shadow: null !default;
+
+/// The background color of the current Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-current-item-bg: null !default;
+/// The text color of the current Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-current-item-text: null !default;
+/// The border color of the current Breadcrumb root link.
+/// @group breadcrumb
+$kno-breadcrumb-current-item-border: null !default;
+
+@forward "@progress/kno-theme-core/scss/components/breadcrumb/_variables.scss" with (
+    $kno-breadcrumb-default-size: $kno-breadcrumb-default-size,
+    $kno-breadcrumb-border-width: $kno-breadcrumb-border-width,
+    $kno-breadcrumb-margin-x: $kno-breadcrumb-margin-x,
+    $kno-breadcrumb-margin-y: $kno-breadcrumb-margin-y,
+    $kno-breadcrumb-padding-x: $kno-breadcrumb-padding-x,
+    $kno-breadcrumb-padding-y: $kno-breadcrumb-padding-y,
+    $kno-breadcrumb-font-family: $kno-breadcrumb-font-family,
+    $kno-breadcrumb-font-size: $kno-breadcrumb-font-size,
+    $kno-breadcrumb-sm-font-size: $kno-breadcrumb-sm-font-size,
+    $kno-breadcrumb-md-font-size: $kno-breadcrumb-md-font-size,
+    $kno-breadcrumb-lg-font-size: $kno-breadcrumb-lg-font-size,
+    $kno-breadcrumb-line-height: $kno-breadcrumb-line-height,
+    $kno-breadcrumb-sm-line-height: $kno-breadcrumb-sm-line-height,
+    $kno-breadcrumb-md-line-height: $kno-breadcrumb-md-line-height,
+    $kno-breadcrumb-lg-line-height: $kno-breadcrumb-lg-line-height,
+    $kno-breadcrumb-bg: $kno-breadcrumb-bg,
+    $kno-breadcrumb-text: $kno-breadcrumb-text,
+    $kno-breadcrumb-border: $kno-breadcrumb-border,
+    $kno-breadcrumb-focus-shadow: $kno-breadcrumb-focus-shadow,
+    $kno-breadcrumb-sm-link-padding-x: $kno-breadcrumb-sm-link-padding-x,
+    $kno-breadcrumb-md-link-padding-x: $kno-breadcrumb-md-link-padding-x,
+    $kno-breadcrumb-lg-link-padding-x: $kno-breadcrumb-lg-link-padding-x,
+    $kno-breadcrumb-sm-link-padding-y: $kno-breadcrumb-sm-link-padding-y,
+    $kno-breadcrumb-md-link-padding-y: $kno-breadcrumb-md-link-padding-y,
+    $kno-breadcrumb-lg-link-padding-y: $kno-breadcrumb-lg-link-padding-y,
+    $kno-breadcrumb-link-border-radius: $kno-breadcrumb-link-border-radius,
+    $kno-breadcrumb-sm-icon-link-padding-y: $kno-breadcrumb-sm-icon-link-padding-y,
+    $kno-breadcrumb-md-icon-link-padding-y: $kno-breadcrumb-md-icon-link-padding-y,
+    $kno-breadcrumb-lg-icon-link-padding-y: $kno-breadcrumb-lg-icon-link-padding-y,
+    $kno-breadcrumb-sm-icon-link-padding-x: $kno-breadcrumb-sm-icon-link-padding-x,
+    $kno-breadcrumb-md-icon-link-padding-x: $kno-breadcrumb-md-icon-link-padding-x,
+    $kno-breadcrumb-lg-icon-link-padding-x: $kno-breadcrumb-lg-icon-link-padding-x,
+    $kno-breadcrumb-link-icon-spacing: $kno-breadcrumb-link-icon-spacing,
+    $kno-breadcrumb-link-initial-text: $kno-breadcrumb-link-initial-text,
+    $kno-breadcrumb-link-bg: $kno-breadcrumb-link-bg,
+    $kno-breadcrumb-link-text: $kno-breadcrumb-link-text,
+    $kno-breadcrumb-link-border: $kno-breadcrumb-link-border,
+    $kno-breadcrumb-link-hover-bg: $kno-breadcrumb-link-hover-bg,
+    $kno-breadcrumb-link-hover-text: $kno-breadcrumb-link-hover-text,
+    $kno-breadcrumb-link-hover-border: $kno-breadcrumb-link-hover-border,
+    $kno-breadcrumb-link-focus-bg: $kno-breadcrumb-link-focus-bg,
+    $kno-breadcrumb-link-focus-text: $kno-breadcrumb-link-focus-text,
+    $kno-breadcrumb-link-focus-border: $kno-breadcrumb-link-focus-border,
+    $kno-breadcrumb-link-focus-shadow: $kno-breadcrumb-link-focus-shadow,
+    $kno-breadcrumb-root-link-bg: $kno-breadcrumb-root-link-bg,
+    $kno-breadcrumb-root-link-text: $kno-breadcrumb-root-link-text,
+    $kno-breadcrumb-root-link-border: $kno-breadcrumb-root-link-border,
+    $kno-breadcrumb-root-link-hover-bg: $kno-breadcrumb-root-link-hover-bg,
+    $kno-breadcrumb-root-link-hover-text: $kno-breadcrumb-root-link-hover-text,
+    $kno-breadcrumb-root-link-hover-border: $kno-breadcrumb-root-link-hover-border,
+    $kno-breadcrumb-root-link-focus-bg: $kno-breadcrumb-root-link-focus-bg,
+    $kno-breadcrumb-root-link-focus-text: $kno-breadcrumb-root-link-focus-text,
+    $kno-breadcrumb-root-link-focus-border: $kno-breadcrumb-root-link-focus-border,
+    $kno-breadcrumb-root-link-focus-shadow: $kno-breadcrumb-root-link-focus-shadow,
+    $kno-breadcrumb-current-item-bg: $kno-breadcrumb-current-item-bg,
+    $kno-breadcrumb-current-item-text: $kno-breadcrumb-current-item-text,
+    $kno-breadcrumb-current-item-border: $kno-breadcrumb-current-item-border,
+);

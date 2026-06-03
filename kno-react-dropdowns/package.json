@@ -1,0 +1,101 @@
+{
+  "name": "@progress/kno-react-dropdowns",
+  "version": "15.0.0",
+  "description": "React DropDowns offer an interface for users to select different items from a list and more. knoReact Dropdowns package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "/kno-react-ui",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-react-buttons": "15.0.0",
+    "@progress/kno-react-common": "15.0.0",
+    "@progress/kno-react-inputs": "15.0.0",
+    "@progress/kno-react-intl": "15.0.0",
+    "@progress/kno-react-labels": "15.0.0",
+    "@progress/kno-react-layout": "15.0.0",
+    "@progress/kno-react-popup": "15.0.0",
+    "@progress/kno-react-treeview": "15.0.0",
+    "@progress/kno-svg-icons": "^4.9.0 || ^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "knoReact",
+    "",
+    "reactjs",
+    "UI",
+    "components",
+    "React component",
+    "free React component",
+    "Telerik",
+    "Dropdowns",
+    "AutoComplete",
+    "ComboBox",
+    "DropDownList",
+    "MultiSelect",
+    "DropDownTree",
+    "MultiColumnComboBox",
+    "MultiSelectTree"
+  ],
+  "@progress": {
+    "friendlyName": "Dropdowns",
+    "framework": "knoReact",
+    "migrations": {
+      "options": {
+        "parser": "tsx",
+        "pattern": "*.{js,jsx,ts,tsx}"
+      },
+      "codemods": {
+        "14": [
+          {
+            "description": "Remove deprecated groupMode prop from ComboBox, DropDownList, MultiSelect, MultiColumnComboBox, and AutoComplete. Modern grouping is now the only available mode.",
+            "file": "codemods/v14/group-mode",
+            "prompt": true
+          }
+        ]
+      }
+    },
+    "package": {
+      "productName": "knoReact",
+      "productCode": "knoUIREACT",
+      "publishDate": 1779275426,
+      "licensingDocsUrl": "?utm_medium=product&utm_source=knoreact&utm_campaign=kno-ui-react-purchase-license-keys-warning"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependenciesMeta": {
+    "@progress/kno-svg-icons": {
+      "optional": true
+    }
+  }
+}

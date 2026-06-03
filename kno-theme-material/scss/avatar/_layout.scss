@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/avatar/_layout.scss" as *;
+
+
+@mixin kno-avatar--layout() {
+    @include kno-avatar--layout-base();
+}

@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/time-marker/_theme.scss" as *;
+
+
+@mixin kno-time-marker--theme() {
+    @include kno-time-marker--theme-base();
+}

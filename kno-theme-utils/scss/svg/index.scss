@@ -1,0 +1,7 @@
+@use "./_fill.scss" as *;
+@use "./_stroke.scss" as *;
+
+@mixin kno-utils--svg() {
+    @include kno-utils--svg--fill();
+    @include kno-utils--svg--stroke();
+}

@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { CardProps } from './CardProps';
+/**
+ * Represents the target(element and props) of the Card component.
+ */
+export interface CardHandle {
+    /**
+     * The current element or `null` if there is no one.
+     */
+    element: HTMLDivElement | null;
+    /**
+     * The props values of the Card.
+     */
+    props: CardProps;
+}

@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/chart-wizard/_theme.scss" as *;
+
+@mixin kno-chart-wizard--theme() {
+    @include kno-chart-wizard--theme-base();
+}

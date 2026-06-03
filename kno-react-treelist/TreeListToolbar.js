@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=require("react"),m=require("@progress/kno-react-common"),d=require("@progress/kno-react-buttons");function f(e){const n=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const t in e)if(t!=="default"){const o=Object.getOwnPropertyDescriptor(e,t);Object.defineProperty(n,t,o.get?o:{enumerable:!0,get:()=>e[t]})}}return n.default=e,Object.freeze(n)}const r=f(i),s=r.forwardRef((e,n)=>{const{className:t,...o}=e,a=r.useRef(null),c=r.useRef(null);r.useImperativeHandle(c,()=>({element:a.current,props:e})),r.useImperativeHandle(n,()=>c.current);const u=r.useMemo(()=>m.classNames("k-grid-toolbar",t),[t]);return r.createElement(d.Toolbar,{id:e.id,ref:l=>{l&&(a.current=l.element)},className:u,...o},e.children)});s.displayName="KendoReactTreeListToolbar";exports.TreeListToolbar=s;

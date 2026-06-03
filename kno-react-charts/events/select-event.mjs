@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { PreventableEvent as e } from "./preventable-event.mjs";
+class i extends e {
+  /**
+   * @hidden
+   */
+  constructor(t, s) {
+    super(s), this.axis = t.axis, this.from = t.from, this.to = t.to;
+  }
+}
+export {
+  i as SelectEvent
+};

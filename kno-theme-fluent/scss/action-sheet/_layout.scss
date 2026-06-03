@@ -1,0 +1,53 @@
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/action-sheet/_layout.scss" as *;
+
+@mixin kno-action-sheet--layout() {
+    @include kno-action-sheet--layout-base();
+
+    .k-actionsheet {
+        border-color: transparent;
+    }
+
+    .k-actionsheet-item {
+        &:focus,
+        &.k-focus {
+            outline-width: $kno-actionsheet-item-focus-outline-width;
+            outline-style: solid;
+            outline-offset: calc( -1 * #{$kno-actionsheet-item-focus-outline-width} );
+        }
+    }
+
+    .k-actionsheet-top {
+        border-width: $kno-actionsheet-border-width;
+        border-block-start-width: 0;
+    }
+
+    .k-actionsheet-bottom {
+        border-width: $kno-actionsheet-border-width;
+        border-block-end-width: 0;
+    }
+
+    .k-actionsheet-left {
+        border-width: $kno-actionsheet-border-width;
+        border-inline-start-width: $kno-actionsheet-border-width;
+    }
+
+    .k-actionsheet-right {
+        border-width: $kno-actionsheet-border-width;
+        border-inline-end-width: 0;
+    }
+
+    .k-adaptive-actionsheet .k-coloreditor {
+        box-shadow: none;
+    }
+}
+
+@mixin kno-action-sheet--layout-jq() {
+
+    .k-actionsheet-jq {
+        &.k-actionsheet {
+            position: relative;
+        }
+    }
+
+}

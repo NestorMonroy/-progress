@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { FOCUSABLE_ELEMENTS as r } from "@progress/kno-react-common";
+const n = (e) => {
+  if (e) {
+    const t = e.querySelectorAll(r.join(", "));
+    if (t.length)
+      return t[0];
+  }
+}, l = (e) => {
+  if (e) {
+    const t = e.querySelectorAll(r.join(", "));
+    if (t.length)
+      return t[t.length - 1];
+  }
+}, c = (e) => {
+  const t = n(document.querySelector(".k-popover-inner")), o = l(document.querySelector(".k-popover-inner"));
+  e.shiftKey && e.target === t ? (o && o.focus(), e.preventDefault()) : !e.shiftKey && e.target === o && (t && t.focus(), e.preventDefault());
+};
+export {
+  n as getFirstFocusableElement,
+  l as getLastFocusableElement,
+  c as handleFocusTrap
+};

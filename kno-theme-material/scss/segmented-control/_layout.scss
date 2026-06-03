@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/segmented-control/_layout.scss" as *;
+
+
+@mixin kno-segmented-control--layout() {
+    @include kno-segmented-control--layout-base();
+}

@@ -1,0 +1,6 @@
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/overlay/_theme.scss" as *;
+
+@mixin kno-overlay--theme() {
+    @include kno-overlay--theme-base();
+}

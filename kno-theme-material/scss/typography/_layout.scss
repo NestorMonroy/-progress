@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/typography/_layout.scss" as *;
+
+
+@mixin kno-typography--layout() {
+    @include kno-typography--layout-base();
+}

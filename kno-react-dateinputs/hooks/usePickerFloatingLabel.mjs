@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as n from "react";
+import { FloatingLabel as a } from "@progress/kno-react-labels";
+const c = (e) => {
+  const [t, o] = n.useState(!1), r = () => {
+    var s;
+    e.current && o(!!((s = e.current.element) != null && s.value || e.current.text));
+  };
+  return n.useEffect(r), {
+    editorValue: t
+  };
+}, i = (e) => {
+  const { dateInput: t, ...o } = e, r = c(t);
+  return /* @__PURE__ */ n.createElement(a, { ...o, ...r });
+};
+export {
+  i as PickerFloatingLabel,
+  c as usePickerFloatingLabel
+};

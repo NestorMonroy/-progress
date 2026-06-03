@@ -1,0 +1,115 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../window/_variables.scss"as *;
+@use "../dialog/_variables.scss"as *;
+
+/// The width of the border around the Popover.
+/// @group popover
+$kno-popover-border-width: var( --kno-popover-border-width, 0 ) !default;
+/// The style of the border around the Popover.
+/// @group popover
+$kno-popover-border-style: var( --kno-popover-border-style, solid ) !default;
+/// The radius of the border around the Popover.
+/// @group popover
+$kno-popover-border-radius: var( --kno-popover-border-radius, #{$kno-window-border-radius} ) !default;
+/// The font family of the Popover.
+/// @group popover
+$kno-popover-font-family: var( --kno-popover-font-family, #{$kno-window-font-family} ) !default;
+/// The font size of the Popover.
+/// @group popover
+$kno-popover-font-size: var( --kno-popover-font-size, #{$kno-window-font-size} ) !default;
+/// The line height of the Popover.
+/// @group popover
+$kno-popover-line-height: var( --kno-popover-line-height, #{$kno-window-line-height} ) !default;
+
+/// The text color of the Popover.
+/// @group popover
+$kno-popover-text: var( --kno-popover-text, k-color(on-app-surface) ) !default;
+/// The background color of the Popover.
+/// @group popover
+$kno-popover-bg: var( --kno-popover-bg, k-color(surface-alt) ) !default;
+/// The border color of the Popover.
+/// @group popover
+$kno-popover-border: var( --kno-popover-border, transparent ) !default;
+/// The box shadow of the Popover.
+/// @group popover
+$kno-popover-shadow: var( --kno-popover-shadow, k-elevation(3) ) !default;
+
+/// The horizontal padding of the Popover header.
+/// @group popover
+$kno-popover-header-padding-x: var( --kno-popover-header-padding-x, k-spacing(4) ) !default;
+/// The vertical padding of the Popover header.
+/// @group popover
+$kno-popover-header-padding-y: var( --kno-popover-header-padding-y, k-spacing(4) ) !default;
+/// The border width of the Popover header.
+/// @group popover
+$kno-popover-header-border-width: var( --kno-popover-header-border-width, 0 ) !default;
+/// The border style of the Popover header.
+/// @group popover
+$kno-popover-header-border-style: var( --kno-popover-header-border-style, #{$kno-popover-border-style} ) !default;
+/// The text color of the Popover header.
+/// @group popover
+$kno-popover-header-text: var( --kno-popover-header-text, #{$kno-dialog-titlebar-text} ) !default;
+/// The background color of the Popover header.
+/// @group popover
+$kno-popover-header-bg: var( --kno-popover-header-bg, #{$kno-dialog-titlebar-bg} ) !default;
+/// The border color of the Popover header.
+/// @group popover
+$kno-popover-header-border: var( --kno-popover-header-border, #{$kno-dialog-titlebar-border} ) !default;
+
+/// The horizontal padding of the Popover body.
+/// @group popover
+$kno-popover-body-padding-x: var( --kno-popover-body-padding-x, k-spacing(4) ) !default;
+/// The vertical padding of the Popover body.
+/// @group popover
+$kno-popover-body-padding-y: var( --kno-popover-body-padding-y, k-spacing(4) ) !default;
+
+/// The border width of the Popover actions.
+/// @group popover
+$kno-popover-actions-border-width: var( --kno-popover-actions-border-width, 0 ) !default;
+/// The horizontal padding of the Popover actions.
+/// @group popover
+$kno-popover-actions-padding-x: var( --kno-popover-actions-padding-x, k-spacing(4) ) !default;
+/// The vertical padding of the Popover actions.
+/// @group popover
+$kno-popover-actions-padding-y: var( --kno-popover-actions-padding-y, k-spacing(4) ) !default;
+
+/// The width of the Popover callout.
+/// @group popover
+$kno-popover-callout-width: var( --kno-popover-callout-width, k-spacing(6) ) !default;
+/// The height of the Popover callout.
+/// @group popover
+$kno-popover-callout-height: var( --kno-popover-callout-height, #{$kno-popover-callout-width} ) !default;
+/// The border width of the Popover callout.
+/// @group popover
+$kno-popover-callout-border-width: var( --kno-popover-callout-border-width, #{$kno-popover-border-width} ) !default;
+/// The border style of the Popover callout.
+/// @group popover
+$kno-popover-callout-border-style: var( --kno-popover-callout-border-style, #{$kno-popover-border-style} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/popover/_variables.scss" with (
+    $kno-popover-border-width: $kno-popover-border-width,
+    $kno-popover-border-style: $kno-popover-border-style,
+    $kno-popover-border-radius: $kno-popover-border-radius,
+    $kno-popover-font-family: $kno-popover-font-family,
+    $kno-popover-font-size: $kno-popover-font-size,
+    $kno-popover-line-height: $kno-popover-line-height,
+    $kno-popover-text: $kno-popover-text,
+    $kno-popover-bg: $kno-popover-bg,
+    $kno-popover-border: $kno-popover-border,
+    $kno-popover-shadow: $kno-popover-shadow,
+    $kno-popover-header-padding-x: $kno-popover-header-padding-x,
+    $kno-popover-header-padding-y: $kno-popover-header-padding-y,
+    $kno-popover-header-border-width: $kno-popover-header-border-width,
+    $kno-popover-header-border-style: $kno-popover-header-border-style,
+    $kno-popover-header-text: $kno-popover-header-text,
+    $kno-popover-header-bg: $kno-popover-header-bg,
+    $kno-popover-header-border: $kno-popover-header-border,
+    $kno-popover-body-padding-x: $kno-popover-body-padding-x,
+    $kno-popover-body-padding-y: $kno-popover-body-padding-y,
+    $kno-popover-actions-border-width: $kno-popover-actions-border-width,
+    $kno-popover-callout-width: $kno-popover-callout-width,
+    $kno-popover-callout-height: $kno-popover-callout-height,
+    $kno-popover-callout-border-width: $kno-popover-callout-border-width,
+    $kno-popover-callout-border-style: $kno-popover-callout-border-style
+);

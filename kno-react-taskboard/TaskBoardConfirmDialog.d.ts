@@ -1,0 +1,41 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * Represents the props of the TaskBoardConfirmDialog component
+ */
+export interface TaskBoardConfirmDialogProps {
+    /**
+     * The dialog message.
+     */
+    dialogMessage: React.ReactNode;
+    /**
+     * The dialog title.
+     */
+    dialogTitle: string;
+    /**
+     * The dialog confirm button.
+     */
+    dialogConfirmButton: React.ReactNode;
+    /**
+     * The dialog cancel button.
+     */
+    dialogCancelButton: React.ReactNode;
+    /**
+     * The Close Button click event handler of the TaskBoardConfirmDialog component.
+     */
+    onClose: (event: React.MouseEvent<HTMLButtonElement>) => void;
+    /**
+     * The Confirm Button click event handler of the TaskBoardConfirmDialog component.
+     */
+    onConfirm: (event: React.MouseEvent<HTMLButtonElement>) => void;
+}
+/**
+ * Represents the TaskBoardConfirmDialog component.
+ */
+export declare const TaskBoardConfirmDialog: React.FunctionComponent<TaskBoardConfirmDialogProps>;

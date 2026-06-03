@@ -1,0 +1,164 @@
+@use "sass:color";
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// The default size of the Slider.
+/// @group slider
+$kno-slider-size: var( --kno-slider-size, 200px ) !default;
+/// The default size of the Slider's track wrap.
+/// @group slider
+$kno-slider-alt-size: var( --kno-slider-alt-size, 26px ) !default;
+/// The spacing of the Slider.
+/// @group slider
+$kno-slider-spacing: var( --kno-slider-spacing, #{k-spacing(2)} ) !default;
+
+/// The font family of the Slider.
+/// @group slider
+$kno-slider-font-family: var( --kno-slider-font-family, var(--kno-font-family) ) !default;
+/// The font size of the Slider.
+/// @group slider
+$kno-slider-font-size: var( --kno-slider-font-size, var(--kno-font-size-sm) ) !default;
+/// The line height of the Slider.
+/// @group slider
+$kno-slider-line-height: var( --kno-slider-line-height, var(--kno-line-height) ) !default;
+/// The text color of the Slider.
+/// @group slider
+$kno-slider-text: var( --kno-slider-text, inherit ) !default;
+
+/// The size of the Slider track.
+/// @group slider
+$kno-slider-track-size: var( --kno-slider-track-size, #{k-spacing(1)} ) !default;
+/// The border radius of the Slider track.
+/// @group slider
+$kno-slider-track-border-radius: var( --kno-slider-track-border-radius, #{k-spacing(0.5)} ) !default;
+/// The background color of the Slider track.
+/// @group slider
+$kno-slider-track-bg: var( --kno-slider-track-bg, #{k-color(border)} ) !default;
+/// The border color of the Slider track.
+/// @group slider
+$kno-slider-track-border: var( --kno-slider-track-border, inherit ) !default;
+
+/// The background color of the Slider's track selection.
+/// @group slider
+$kno-slider-selection-bg: var( --kno-slider-selection-bg, #{k-color(primary)} ) !default;
+
+/// The default size of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-size: var( --kno-slider-thumb-size, 18px ) !default;
+/// The default border width of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-border-width: var( --kno-slider-thumb-border-width, 1px ) !default;
+/// The border radius of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-border-radius: var( --kno-slider-thumb-border-radius, 999em ) !default;
+/// The transition scale of the active Slider thumb.
+/// @group slider
+$kno-slider-thumb-active-scale: null !default;
+
+/// The background color of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-bg: var( --kno-slider-thumb-bg, #{k-color(surface-alt)} ) !default;
+/// The text color of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-text: var( --kno-slider-thumb-text, inherit ) !default;
+/// The border color of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-border: var( --kno-slider-thumb-border, color-mix(in srgb, k-color(border) 26%, transparent) ) !default;
+/// The gradient of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-gradient: var( --kno-slider-thumb-gradient, transparent ) !default;
+
+/// The background color of the hovered Slider thumb.
+/// @group slider
+$kno-slider-thumb-hover-bg: var( --kno-slider-thumb-hover-bg, #{$kno-slider-thumb-bg} ) !default;
+/// The text color of the hovered Slider thumb.
+/// @group slider
+$kno-slider-thumb-hover-text: var( --kno-slider-thumb-hover-text, inherit ) !default;
+/// The border color of the hovered Slider thumb.
+/// @group slider
+$kno-slider-thumb-hover-border: var( --kno-slider-thumb-hover-border, color-mix( in srgb, k-color(border) 34%, transparent ) ) !default;
+/// The gradient of the hovered Slider thumb.
+/// @group slider
+$kno-slider-thumb-hover-gradient: var( --kno-slider-thumb-hover-gradient, transparent ) !default;
+
+/// The background color of the active Slider thumb.
+/// @group slider
+$kno-slider-thumb-active-bg: var( --kno-slider-thumb-active-bg, #{$kno-slider-thumb-hover-bg} ) !default;
+/// The text color of the active Slider thumb.
+/// @group slider
+$kno-slider-thumb-active-text: var( --kno-slider-thumb-active-text, inherit ) !default;
+/// The border color of the active Slider thumb.
+/// @group slider
+$kno-slider-thumb-active-border: var( --kno-slider-thumb-active-border, #{k-color(primary-active)} ) !default;
+/// The gradient of the active Slider thumb.
+/// @group slider
+$kno-slider-thumb-active-gradient: var( --kno-slider-thumb-active-gradient, transparent ) !default;
+
+/// The background color of the focused Slider thumb.
+/// @group slider
+$kno-slider-thumb-focus-bg: var( --kno-slider-thumb-focus-bg, #{$kno-slider-thumb-hover-bg} ) !default;
+/// The text color of the focused Slider thumb.
+/// @group slider
+$kno-slider-thumb-focus-text: var( --kno-slider-thumb-focus-text, inherit ) !default;
+/// The border color of the focused Slider thumb.
+/// @group slider
+$kno-slider-thumb-focus-border: var( --kno-slider-thumb-focus-border, #{$kno-slider-thumb-active-border} ) !default;
+/// The gradient of the focused Slider thumb.
+/// @group slider
+$kno-slider-thumb-focus-gradient: var( --kno-slider-thumb-focus-gradient, transparent ) !default;
+
+/// The text color of the disabled Slider.
+/// @group slider
+$kno-slider-disabled-text: var( --kno-slider-disabled-text, #{color-mix(in srgb, k-color(on-app-surface) 70%, transparent)} ) !default;
+/// The background color of the disabled Slider track.
+/// @group slider
+$kno-slider-track-disabled-bg: var( --kno-slider-track-disabled-bg, #{color-mix(in srgb, k-color(on-app-surface) 14%, transparent)} ) !default;
+/// The background color of the disabled Slider's track selection.
+/// @group slider
+$kno-slider-selection-disabled-bg: var( --kno-slider-selection-disabled-bg, #{color-mix(in srgb, k-color(on-app-surface) 30%, transparent)} ) !default;
+/// The background color of the disabled Slider thumb.
+/// @group slider
+$kno-slider-thumb-disabled-border: var( --kno-slider-thumb-disabled-border, #{color-mix(in srgb, k-color(on-app-surface) 28%, transparent)} ) !default;
+
+
+/// The transition speed of the Slider.
+/// @group slider
+$kno-slider-transition-speed: var( --kno-slider-transition-speed, k-duration(brisk) ) !default;
+/// The transition function of the Slider.
+/// @group slider
+$kno-slider-transition-function: var( --kno-slider-transition-function, k-easing(standard) ) !default;
+
+/// The transition speed of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-transition-speed: var( --kno-slider-thumb-transition-speed, k-duration(quick) ) !default;
+$kno-slider-draghandle-transition-speed: $kno-slider-thumb-transition-speed !default;
+/// The transition function of the Slider thumb.
+/// @group slider
+$kno-slider-thumb-transition-function: var( --kno-slider-thumb-transition-function, k-easing(decelerate) ) !default;
+$kno-slider-draghandle-transition-function: $kno-slider-thumb-transition-function !default;
+
+/// The background image of the horizontal Slider tick.
+/// @group slider
+$kno-slider-tick-h-image: "data:image/gif;base64,R0lGODlhAQC0AIABALi4uAAAACH5BAEAAAEALAAAAAABALQAAAIWjIGJxqzazlux2ovlzND2rAHgSIZWAQA7" !default;
+/// The background image of the vertical Slider tick.
+/// @group slider
+$kno-slider-tick-v-image: "data:image/gif;base64,R0lGODlhtAABAIABALi4uAAAACH5BAEAAAEALAAAAAC0AAEAAAIWjIGJxqzazlux2ovlzND2rAHgSIZWAQA7" !default;
+
+@forward "@progress/kno-theme-core/scss/components/slider/_variables.scss" with (
+    $kno-slider-size: $kno-slider-size,
+    $kno-slider-alt-size: $kno-slider-alt-size,
+    $kno-slider-font-family: $kno-slider-font-family,
+    $kno-slider-font-size: $kno-slider-font-size,
+    $kno-slider-line-height: $kno-slider-line-height,
+    $kno-slider-transition-speed: $kno-slider-transition-speed,
+    $kno-slider-transition-function: $kno-slider-transition-function,
+    $kno-slider-draghandle-transition-speed: $kno-slider-draghandle-transition-speed,
+    $kno-slider-draghandle-transition-function: $kno-slider-draghandle-transition-function,
+    $kno-slider-track-bg: $kno-slider-track-bg,
+    $kno-slider-selection-bg: $kno-slider-selection-bg,
+    $kno-slider-tick-horizontal-image: $kno-slider-tick-h-image,
+    $kno-slider-tick-vertical-image: $kno-slider-tick-v-image,
+    $kno-slider-draghandle-active-scale: $kno-slider-thumb-active-scale,
+    $kno-slider-track-thickness: $kno-slider-track-size,
+    $kno-slider-draghandle-size: $kno-slider-spacing
+);

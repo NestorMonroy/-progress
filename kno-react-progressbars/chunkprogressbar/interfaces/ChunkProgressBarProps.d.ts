@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseProps } from '../../common/BaseProps';
+/**
+ * Represents the props of the [knoReact ChunkProgressBar component](components/progressbars/chunkprogressbar).
+ */
+export interface ChunkProgressBarProps extends BaseProps {
+    /**
+     * Defines the number of chunks into which the ChunkProgressBar is divided. Defaults to `5`.
+     * Each chunk visually represents a portion of the progress bar.
+     *
+     * @default 5
+     *
+     * @example
+     * ```jsx
+     * <ChunkProgressBar chunkCount={10} />
+     * ```
+     */
+    chunkCount?: number;
+}

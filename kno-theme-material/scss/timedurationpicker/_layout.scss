@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/timedurationpicker/_layout.scss" as *;
+
+
+@mixin kno-time-duration-picker--layout() {
+    @include kno-time-duration-picker--layout-base();
+}

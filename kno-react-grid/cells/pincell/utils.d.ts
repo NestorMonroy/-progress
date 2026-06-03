@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { GridCellProps } from '../../interfaces/GridCellProps';
+import { GridTdAttributes } from '../../index.js';
+/**
+ * @hidden
+ */
+export declare const getPinCellTdProps: (props: GridCellProps) => {
+    tdProps: GridTdAttributes | null;
+    content: any;
+};
+/**
+ * @hidden
+ */
+export declare const getCustomCell: (props: GridCellProps) => any;

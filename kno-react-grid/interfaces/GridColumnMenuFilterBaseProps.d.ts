@@ -1,0 +1,31 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { CompositeFilterDescriptor } from '@progress/kno-data-query';
+import { GridColumnMenuBaseProps } from './GridColumnMenuBaseProps';
+import { GridFilterOperators } from './GridFilterOperators';
+/**
+ * The props passed to the ColumnMenu filter component.
+ */
+export interface GridColumnMenuFilterBaseProps extends GridColumnMenuBaseProps {
+    /**
+     * The current filter state of the Grid.It takes value of type [CompositeFilterDescriptor](components/datatools/api/compositefilterdescriptor)
+     */
+    filter?: CompositeFilterDescriptor;
+    /**
+     * The filterable option of the column.
+     */
+    filterable?: boolean | undefined;
+    /**
+     * The filter operators for the Grid filters.
+     */
+    filterOperators: GridFilterOperators;
+    /**
+     * The method that will be called to notify the parent Grid about a filter change.
+     */
+    onFilterChange?: (filter: CompositeFilterDescriptor | null, syntheticEvent: React.SyntheticEvent<any>) => any;
+}

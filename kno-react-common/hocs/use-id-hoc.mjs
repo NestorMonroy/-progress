@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as e from "react";
+import { useId as i } from "../hooks/use-id.mjs";
+const a = (r) => e.forwardRef((t, o) => {
+  const d = i(t.id);
+  return /* @__PURE__ */ e.createElement(r, { ...t, id: d, ref: o });
+});
+export {
+  a as withIdHOC
+};

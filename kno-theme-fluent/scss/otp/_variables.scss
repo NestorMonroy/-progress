@@ -1,0 +1,55 @@
+@use "../core/_index.scss" as *;
+@use "../input/_variables.scss" as *;
+
+// OTP
+
+/// The gap between the items in the OTP.
+/// @group one-time-password
+$kno-otp-gap: var( --kno-otp-gap, #{k-spacing(1.5)} ) !default;
+/// The gap between the items in the small OTP.
+/// @group one-time-password
+$kno-otp-sm-gap: var( --kno-otp-sm-gap, #{k-spacing(1)} ) !default;
+/// The gap between the items in the medium OTP.
+/// @group one-time-password
+$kno-otp-md-gap: var( --kno-otp-md-gap, #{$kno-otp-gap} ) !default;
+/// The gap between the items in the large OTP.
+/// @group one-time-password
+$kno-otp-lg-gap: var( --kno-otp-lg-gap, #{k-spacing(2)} ) !default;
+
+/// The horizontal padding of the OTP separator.
+/// @group one-time-password
+$kno-otp-separator-padding-x: var( --kno-otp-separator-padding-x, #{$kno-otp-gap} ) !default;
+/// The horizontal padding of the small OTP separator.
+/// @group one-time-password
+$kno-otp-sm-separator-padding-x: var( --kno-otp-sm-separator-padding-x, #{$kno-otp-sm-gap} ) !default;
+/// The horizontal padding of the medium OTP separator.
+/// @group one-time-password
+$kno-otp-md-separator-padding-x: var( --kno-otp-md-separator-padding-x, #{$kno-otp-separator-padding-x} ) !default;
+/// The horizontal padding of the large OTP separator.
+/// @group one-time-password
+$kno-otp-lg-separator-padding-x: var( --kno-otp-lg-separator-padding-x, #{$kno-otp-lg-gap} ) !default;
+
+/// The horizontal padding of the OTP separator.
+/// @group one-time-password
+$kno-otp-input-width: var( --kno-otp-input-width, #{$kno-input-calc-size} ) !default;
+/// The horizontal padding of the small OTP separator.
+/// @group one-time-password
+$kno-otp-sm-input-width: var( --kno-otp-sm-input-width, #{$kno-input-sm-calc-size} ) !default;
+/// The horizontal padding of the medium OTP separator.
+/// @group one-time-password
+$kno-otp-md-input-width: var( --kno-otp-md-input-width, #{$kno-otp-input-width} ) !default;
+/// The horizontal padding of the large OTP separator.
+/// @group one-time-password
+$kno-otp-lg-input-width: var( --kno-otp-lg-input-width, #{$kno-input-lg-calc-size} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/otp/_variables.scss" with (
+    $kno-otp-sm-gap: $kno-otp-sm-gap,
+    $kno-otp-md-gap: $kno-otp-md-gap,
+    $kno-otp-lg-gap: $kno-otp-lg-gap,
+    $kno-otp-sm-separator-padding-x: $kno-otp-sm-separator-padding-x,
+    $kno-otp-md-separator-padding-x: $kno-otp-md-separator-padding-x,
+    $kno-otp-lg-separator-padding-x: $kno-otp-lg-separator-padding-x,
+    $kno-otp-sm-input-width: $kno-otp-sm-input-width,
+    $kno-otp-md-input-width: $kno-otp-md-input-width,
+    $kno-otp-lg-input-width: $kno-otp-lg-input-width
+);

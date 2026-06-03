@@ -1,0 +1,80 @@
+{
+  "name": "@progress/kno-react-pdf-viewer",
+  "version": "15.0.0",
+  "description": "knoReact PDFViewer package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "/kno-react-ui",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/kno-file-saver": "^1.1.1",
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-react-buttons": "15.0.0",
+    "@progress/kno-react-common": "15.0.0",
+    "@progress/kno-react-data-tools": "15.0.0",
+    "@progress/kno-react-dropdowns": "15.0.0",
+    "@progress/kno-react-indicators": "15.0.0",
+    "@progress/kno-react-inputs": "15.0.0",
+    "@progress/kno-react-intl": "15.0.0",
+    "@progress/kno-react-upload": "15.0.0",
+    "@progress/kno-svg-icons": "^4.9.0 || ^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
+    "@progress/kno-pdfviewer-common": "1.0.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "PDFViewer",
+    "Progress",
+    "knoReact",
+    "reactjs",
+    "UI component",
+    "React component",
+    "PDFViewer",
+    "Pivot Table"
+  ],
+  "@progress": {
+    "friendlyName": "PDF Viewer",
+    "framework": "knoReact",
+    "package": {
+      "productName": "knoReact",
+      "productCode": "knoUIREACT",
+      "publishDate": 1779275774,
+      "licensingDocsUrl": "my-license/?utm_medium=product&utm_source=knoreact&utm_campaign=kno-ui-react-purchase-license-keys-warning"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependenciesMeta": {
+    "@progress/kno-svg-icons": {
+      "optional": true
+    }
+  }
+}

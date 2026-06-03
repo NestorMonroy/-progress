@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/window/_theme.scss" as *;
+
+@mixin kno-window--theme() {
+    @include kno-window--theme-base();
+
+    .k-window{
+        &:focus,
+        &.k-focus{
+            outline-color: k-color(on-base);
+        }
+    }
+}

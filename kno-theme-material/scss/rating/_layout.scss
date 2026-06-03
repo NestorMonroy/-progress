@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/rating/_layout.scss" as *;
+
+
+@mixin kno-rating--layout() {
+    @include kno-rating--layout-base();
+}

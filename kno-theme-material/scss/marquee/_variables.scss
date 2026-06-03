@@ -1,0 +1,17 @@
+@use "../core/_index.scss" as *;
+
+/// The text color of the Marquee.
+/// @group marquee
+$kno-marquee-text: k-color(on-primary) !default;
+/// The background color of the Marquee.
+/// @group marquee
+$kno-marquee-bg: k-color(primary) !default;
+/// The border color of the Marquee.
+/// @group marquee
+$kno-marquee-border: k-color(base) !default;
+
+@forward "@progress/kno-theme-core/scss/components/marquee/_variables.scss" with (
+    $kno-marquee-text: $kno-marquee-text,
+    $kno-marquee-bg: $kno-marquee-bg,
+    $kno-marquee-border: $kno-marquee-border
+);

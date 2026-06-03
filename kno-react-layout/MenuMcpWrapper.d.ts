@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { MenuHandle } from './menu/components/Menu.js';
+import { MenuProps } from './menu/MenuProps';
+/**
+ * Menu wrapper that integrates the Web MCP hook.
+ *
+ * @hidden
+ */
+import * as React from 'react';
+/** @hidden */
+export declare const MenuWrapper: React.ForwardRefExoticComponent<MenuProps & React.RefAttributes<MenuHandle>>;

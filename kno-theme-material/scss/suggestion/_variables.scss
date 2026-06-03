@@ -1,0 +1,68 @@
+@use "../core/_index.scss" as *;
+
+
+/// The vertical padding of the Suggestion wrapper.
+/// @group suggestion
+$kno-suggestion-padding-y: k-spacing(2.5) !default;
+/// The horizontal padding of the Suggestion wrapper.
+/// @group suggestion
+$kno-suggestion-padding-x: k-spacing(3) !default;
+/// The horizontal padding of the Suggestion wrapper.
+/// @group suggestion
+$kno-suggestion-spacing: k-spacing(2) !default;
+/// The border width of the Suggestion.
+/// @group suggestion
+$kno-suggestion-border-width: 1px !default;
+/// The border style of the Suggestion.
+/// @group suggestion
+$kno-suggestion-border-style: solid !default;
+
+/// The font size of the Suggestion.
+/// @group suggestion
+$kno-suggestion-font-size: var(--kno-font-size) !default;
+
+/// The line height of the Suggestion.
+/// @group suggestion
+$kno-suggestion-line-height: var(--kno-line-height-sm) !default;
+/// The font weight of the Suggestion.
+/// @group suggestion
+$kno-suggestion-font-weight: null !default;
+/// The border radius of the Suggestion.
+/// @group suggestion
+$kno-suggestion-border-radius: k-border-radius(full) !default;
+
+/// The shadow blur of the focused Suggestion.
+/// @group suggestion
+$kno-suggestion-focus-shadow-blur: 0 !default;
+/// The shadow spread of the focused Suggestion.
+/// @group suggestion
+$kno-suggestion-focus-shadow-spread: 3px !default;
+/// The shadow color of the focused Suggestion.
+/// @group suggestion
+$kno-suggestion-focus-shadow-color: k-color(surface) !default;
+
+/// The default theme color of the Suggestion.
+/// @group suggestion
+/// @role default
+$kno-suggestion-default-theme-color: "base" !default;
+
+/// The gradient used for scroll indicators in the Suggestion group.
+/// @group suggestion
+$kno-suggestion-scroll-gradient: rgba(255, 255, 255, 0.00) 0%, k-color(app-surface) 100% !default;
+
+@forward "@progress/kno-theme-core/scss/components/suggestion/_variables.scss" with (
+    $kno-suggestion-padding-y: $kno-suggestion-padding-y,
+    $kno-suggestion-padding-x: $kno-suggestion-padding-x,
+    $kno-suggestion-spacing: $kno-suggestion-spacing,
+    $kno-suggestion-border-width: $kno-suggestion-border-width,
+    $kno-suggestion-border-style: $kno-suggestion-border-style,
+    $kno-suggestion-font-size: $kno-suggestion-font-size,
+    $kno-suggestion-line-height: $kno-suggestion-line-height,
+    $kno-suggestion-font-weight: $kno-suggestion-font-weight,
+    $kno-suggestion-border-radius: $kno-suggestion-border-radius,
+    $kno-suggestion-focus-shadow-blur: $kno-suggestion-focus-shadow-blur,
+    $kno-suggestion-focus-shadow-spread: $kno-suggestion-focus-shadow-spread,
+    $kno-suggestion-focus-shadow-color: $kno-suggestion-focus-shadow-color,
+    $kno-suggestion-default-theme-color: $kno-suggestion-default-theme-color,
+    $kno-suggestion-scroll-gradient: $kno-suggestion-scroll-gradient,
+);

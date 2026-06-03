@@ -1,0 +1,18 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/timeselector/_theme.scss" as *;
+
+@mixin kno-time-selector--theme() {
+    @include kno-time-selector--theme-base();
+
+    .k-time-list {
+        .k-item:hover {
+            color: k-color(primary);
+        }
+    }
+
+    .k-time-list::before,
+    .k-time-list::after {
+        box-shadow: none;
+    }
+}

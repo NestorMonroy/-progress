@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/ripple/_layout.scss" as *;
+
+@mixin kno-ripple--layout() {
+    @include kno-ripple--layout-base();
+}

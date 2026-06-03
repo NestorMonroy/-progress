@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/no-data/_theme.scss" as *;
+
+@mixin kno-no-data--theme() {
+    @include kno-no-data--theme-base();
+
+}

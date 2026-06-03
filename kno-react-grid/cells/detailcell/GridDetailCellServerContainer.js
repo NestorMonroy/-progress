@@ -1,0 +1,9 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const l=require("../../utils/index.js"),r=require("./useDetailCellClientTdProps.js"),i=e=>{const t=r.useDetailCellClientTdProps(e);return l.cloneReactElement(e.children,{...t})};exports.GridDetailCellServerContainer=i;

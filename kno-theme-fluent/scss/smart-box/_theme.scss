@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/smart-box/_theme.scss" as *;
+
+
+@mixin kno-smart-box--theme() {
+    @include kno-smart-box--theme-base();
+}

@@ -1,0 +1,29 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../utils/_index.scss" as *;
+@use "../input/_index.scss" as *;
+@use "../button/_index.scss" as *;
+@use "../textbox/_index.scss" as *;
+@use "../slider/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-captcha--styles() {
+    @include import-once( "captcha" ) {
+        @include core-styles();
+        @include kno-icon--styles();
+        @include kno-input--styles();
+        @include kno-button--styles();
+        @include kno-textbox--styles();
+        @include kno-slider--styles();
+        @include kno-captcha--layout();
+        @include kno-captcha--theme();
+        @include kno-utils--typography--text-color();
+        @include kno-utils--layout--position();
+    }
+}

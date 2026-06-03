@@ -1,0 +1,43 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { GroupedFiles } from './interfaces/FileGroup';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface UploadDropZoneProps {
+    addButtonComponent: any;
+    fileGroup: GroupedFiles;
+    disabled: boolean | undefined;
+    multiple: boolean;
+    onAdd: (files: FileList) => void;
+}
+/**
+ * @hidden
+ */
+export declare class UploadDropZone extends React.Component<UploadDropZoneProps, {}> {
+    private _documentInterval;
+    private _elementInterval;
+    private _lastDocumentDragOver;
+    private _lastElementDragOver;
+    private _documentActive;
+    private _elementActive;
+    private get documentActive();
+    private set documentActive(value);
+    private get elementActive();
+    private set elementActive(value);
+    componentDidMount(): void;
+    componentWillUnmount(): void;
+    onDocumentDragEnter: () => void;
+    onDocumentDragOver: () => void;
+    onElementDragEnter: () => void;
+    onElementDragOver: (event: any) => void;
+    onDrop: (event: any) => void;
+    isDragOver: (prevDate: Date | null) => boolean;
+    render(): React.JSX.Element;
+}

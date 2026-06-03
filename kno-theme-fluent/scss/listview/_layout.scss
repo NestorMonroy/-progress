@@ -1,0 +1,8 @@
+@use "@progress/kendo-theme-core/scss/components/listview/_layout.scss" as *;
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+
+@mixin kendo-listview--layout() {
+    @include kendo-listview--layout-base();
+
+}

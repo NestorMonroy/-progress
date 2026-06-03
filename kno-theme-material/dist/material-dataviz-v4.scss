@@ -1,0 +1,40 @@
+@forward "../scss/index.scss" with (
+
+	$kendo-colors: (
+	series-a: oklch(47.82% 0.1590 271.40deg),
+	series-a-bold: oklch(39.28% 0.1258 271.47deg),
+	series-a-bolder: oklch(30.33% 0.0898 272.29deg),
+	series-a-subtle: oklch(61.10% 0.1150 274.48deg),
+	series-a-subtler: oklch(74.23% 0.0731 276.53deg),
+	series-b: oklch(65.82% 0.1691 248.83deg),
+	series-b-bold: oklch(53.50% 0.1335 248.16deg),
+	series-b-bolder: oklch(40.25% 0.0977 248.23deg),
+	series-b-subtle: oklch(73.28% 0.1323 245.33deg),
+	series-b-subtler: oklch(81.85% 0.0892 242.62deg),
+	series-c: oklch(62.91% 0.1543 144.23deg),
+	series-c-bold: oklch(51.14% 0.1229 144.29deg),
+	series-c-bolder: oklch(38.70% 0.0877 144.48deg),
+	series-c-subtle: oklch(71.90% 0.1191 145.20deg),
+	series-c-subtler: oklch(81.23% 0.0796 145.94deg),
+	series-d: oklch(84.42% 0.1721 84.94deg),
+	series-d-bold: oklch(68.18% 0.1386 85.71deg),
+	series-d-bolder: oklch(51.02% 0.1030 86.36deg),
+	series-d-subtle: oklch(87.74% 0.1578 89.97deg),
+	series-d-subtler: oklch(91.32% 0.1178 91.52deg),
+	series-e: oklch(67.92% 0.2127 36.52deg),
+	series-e-bold: oklch(54.91% 0.1689 36.57deg),
+	series-e-bolder: oklch(41.39% 0.1221 37.27deg),
+	series-e-subtle: oklch(73.92% 0.1632 38.21deg),
+	series-e-subtler: oklch(81.69% 0.1060 37.91deg),
+	series-f: oklch(60.62% 0.2297 9.61deg),
+	series-f-bold: oklch(49.13% 0.1838 9.24deg),
+	series-f-bolder: oklch(36.93% 0.1352 7.78deg),
+	series-f-subtle: oklch(67.00% 0.1921 2.87deg),
+	series-f-subtler: oklch(76.57% 0.1276 358.92deg),
+	) !default,
+
+);
+
+@use "../scss/index.scss" as *;
+
+@include kendo-theme--styles();

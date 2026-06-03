@@ -1,0 +1,28 @@
+/// This is equivalent to `box-sizing: border-box;`.
+/// @example box-sizing: border-box;
+/// @name .k-box-sizing-border
+/// @group box-sizing
+/// @contextType css
+
+/// This is equivalent to `box-sizing: content-box;`.
+/// @example box-sizing: content-box;
+/// @name .k-box-sizing-content
+/// @group box-sizing
+/// @contextType css
+
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--layout--box-sizing() {
+    @include import-once("utils-layout-box-sizing") {
+
+        // box-sizing utility classes
+        $kno-utils-box-sizing: map.get( $kno-utils, "box-sizing" ) !default;
+        @include generate-utils( box-sizing, box-sizing, $kno-utils-box-sizing );
+
+    }
+}

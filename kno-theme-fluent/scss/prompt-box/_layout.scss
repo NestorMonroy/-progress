@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/prompt-box/_layout.scss" as *;
+
+
+@mixin kno-prompt-box--layout() {
+    @include kno-prompt-box--layout-base();
+}

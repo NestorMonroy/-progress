@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const m=require("react"),g=require("@progress/kno-react-buttons"),b=require("@progress/kno-react-intl"),f=require("./utils.js"),p=require("../messages/index.js"),k=require("@progress/kno-editor-common"),q=require("../config/toolsSettings.js"),v=require("@progress/kno-react-common");function C(t){const e=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(t){for(const n in t)if(n!=="default"){const o=Object.getOwnPropertyDescriptor(t,n);Object.defineProperty(e,n,o.get?o:{enumerable:!0,get:()=>t[n]})}}return e.default=t,Object.freeze(e)}const i=C(m),{cleanFormatting:N}=q.EditorToolsSettings,l=k.cleanFormatting(),S=t=>{const{view:e,render:n,settings:o=N,...u}=t,s=o.messages.title,a=!e||!l(e.state),d=i.useCallback(()=>{e&&l(e.state,r=>{r.setMeta("commandName",o.commandName),e.dispatch(r)})},[e]),c=i.createElement(g.Button,{onClick:a?void 0:d,"aria-disabled":a?!0:void 0,title:b.useLocalization().toLanguageString(s,p.messages[s]),...f.onDownPreventDefault,...o.props,...u,className:v.classNames(t.className,o.props.className,{"k-disabled":a})});return n?n.call(void 0,c,{view:e}):c};exports.CleanFormatting=S;

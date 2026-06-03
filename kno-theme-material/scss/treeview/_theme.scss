@@ -1,0 +1,15 @@
+@use "@progress/kno-theme-core/scss/components/treeview/_theme.scss" as *;
+
+
+@mixin kno-treeview--theme() {
+
+    @include kno-treeview--theme-base();
+
+    // Treeview leaf
+    .k-treeview-leaf {
+        &.k-selected {
+            font-weight: var(--kno-font-weight-semibold);
+        }
+    }
+
+}

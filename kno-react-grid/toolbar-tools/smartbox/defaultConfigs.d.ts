@@ -1,0 +1,30 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { SpeechToTextButtonProps } from '@progress/kno-react-buttons';
+import { GridSmartBoxSearchProps, GridSmartBoxSemanticSearchConfigProps, GridSmartBoxAIAssistantConfigProps } from './interfaces/index.js';
+import { GridSmartBoxHistoryProps } from './interfaces/utilTypes';
+/**
+ * @hidden
+ */
+export declare const defaultHistoryProps: GridSmartBoxHistoryProps;
+/**
+ * @hidden
+ */
+export declare const defaultSearchProps: GridSmartBoxSearchProps;
+/**
+ * @hidden
+ */
+export declare const defaultSemanticSearchProps: GridSmartBoxSemanticSearchConfigProps;
+/**
+ * @hidden
+ */
+export declare const defaultAiAssistantProps: GridSmartBoxAIAssistantConfigProps;
+/**
+ * @hidden
+ */
+export declare const DEFAULT_STB_SETTINGS: SpeechToTextButtonProps;

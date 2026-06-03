@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { DragAction, MousewheelZoom } from '../common/property-types';
+/**
+ * @hidden
+ */
+export interface Zoomable {
+    /**
+     * Specifies if the Chart can be zoomed by using the mousewheel.
+     */
+    mousewheel?: boolean | MousewheelZoom;
+    /**
+     * Specifies if the Chart can be zoomed by using selection.
+     */
+    selection?: boolean | DragAction;
+}

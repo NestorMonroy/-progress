@@ -1,0 +1,44 @@
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "../bubble/_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/chat/_layout.scss" as *;
+
+@mixin kendo-chat--layout() {
+    @include kendo-chat--layout-base();
+
+    .k-chat .k-chat-file-name {
+        font-weight: var(--kendo-font-weight-semibold);;
+    }
+
+    // Message group
+    .k-chat-message-group {
+
+        .k-chat-file-wrapper {
+            min-width: 0;
+            max-width: 100%;
+        }
+    }
+
+    // Bubble
+    .k-chat-bubble {
+
+        a {
+            font-weight: normal;
+        }
+    }
+
+    // Message states
+    .k-chat .k-card-deck {
+        margin-inline: calc( #{$kendo-chat-message-list-padding-x} * -1 );
+        padding-block-start: $kendo-chat-message-list-padding-y;
+        padding-block-end: $kendo-chat-message-list-padding-y;
+        padding-inline: $kendo-chat-message-list-padding-x;
+
+    }
+
+    .k-chat .k-card-deck-scrollwrap {
+        margin-inline: calc( #{$kendo-chat-message-list-padding-x} * -1 );
+        padding-inline: $kendo-chat-message-list-padding-x;
+    }
+}

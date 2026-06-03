@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/badge/_layout.scss" as *;
+
+@mixin kno-badge--layout() {
+    @include kno-badge--layout-base();
+}

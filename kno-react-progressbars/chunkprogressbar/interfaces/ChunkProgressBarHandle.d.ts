@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * The ChunkProgressBar ref.
+ */
+export interface ChunkProgressBarHandle {
+    /**
+     * The ChunkProgressBar element.
+     */
+    element: HTMLDivElement | null;
+    /**
+     * Focus the ChunkProgressBar.
+     */
+    focus: () => void;
+}

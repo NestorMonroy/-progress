@@ -1,0 +1,75 @@
+@use "sass:map";
+@use "./_variables.scss" as *;
+@use "../core/z-index/index.scss" as *;
+@use "../core/functions/index.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/fab/_layout.scss" as *;
+
+@mixin kendo-fab--layout() {
+    @include kendo-fab--layout-base();
+
+    .k-fab {
+        &:focus::before,
+        &.k-focus::before {
+            content: "";
+            position: absolute;
+            border: medium none;
+            inset: $kendo-fab-focus-offset;
+            outline-width: $kendo-fab-focus-outline-width;
+            outline-style: $kendo-fab-focus-outline-style;
+            z-index: k-z-index("base", 1);
+        }
+
+        &:focus::after,
+        &.k-focus::after {
+            content: "";
+            position: absolute;
+            border: medium none;
+            inset: calc( #{ $kendo-fab-focus-offset} + 1px );
+            outline-width: calc( #{ $kendo-fab-focus-outline-width} - 1px );
+            outline-style: $kendo-fab-focus-outline-style;
+            z-index: k-z-index("base", 1);
+        }
+
+        #{k-when-default($kendo-fab-default-roundness, "full")}
+        &.k-rounded-full {
+            &:focus::before,
+            &.k-focus::before,
+            &:focus::after,
+            &.k-focus::after {
+               border-radius: inherit;
+            }
+        }
+
+        // Sizes
+        @each $size, $size-props in $kendo-fab-sizes {
+            $_gap: map.get( $size-props, gap );
+
+            #{k-when-default($kendo-fab-default-size, $size)}
+            &.k-fab-#{$size} {
+                gap: $_gap;
+            }
+
+        }
+    }
+
+    .k-fab-item {
+        &:focus .k-fab-item-text,
+        &:focus .k-fab-item-icon,
+        &.k-focus .k-fab-item-text,
+        &.k-focus .k-fab-item-icon {
+            outline-width: $kendo-fab-focus-outline-width;
+            outline-style: $kendo-fab-focus-outline-style;
+            outline-offset: calc( #{$kendo-fab-border-width} * 2 * -1);
+        }
+    }
+
+    .k-fab-item-text {
+        position: relative;
+        border-style: $kendo-fab-item-text-border-style;
+    }
+
+
+    .k-fab-item-icon {
+        border-style: $kendo-fab-item-icon-border-style;
+    }
+}

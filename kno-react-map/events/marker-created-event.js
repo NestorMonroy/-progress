@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const t=require("./preventable-event.js");class a extends t.PreventableEvent{constructor(e,r){super(r),this.marker=e.marker,this.layer=e.layer}}exports.MarkerCreatedEvent=a;

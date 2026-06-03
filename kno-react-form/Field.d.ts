@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { FieldProps } from './interfaces/FieldProps';
+import * as React from 'react';
+/**
+ * Represents the Field component that is used inside the knoReact Form component.
+ * It uses `name` property to access field value and meta information from Form state.
+ */
+export declare const Field: {
+    (props: FieldProps & {
+        [customProp: string]: any;
+    }): React.ReactElement<any, string | React.JSXElementConstructor<any>> | null;
+    displayName: string;
+};

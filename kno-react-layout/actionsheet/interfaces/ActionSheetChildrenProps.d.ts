@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export interface ActionSheetChildrenProps {
+    /**
+     * ClassName of the rendered element.
+     */
+    className?: any;
+    /**
+     * Represents the children that are passed to the ActionSheet.
+     */
+    children?: any;
+}

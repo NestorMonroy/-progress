@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseEvent as r } from "./base-event.mjs";
+class p extends r {
+  /**
+   * @hidden
+   */
+  constructor(t, e) {
+    super(e), this.dataItem = t.dataItem, this.layer = t.layer, this.group = t.group, this.properties = t.properties;
+  }
+}
+export {
+  p as ShapeFeatureCreatedEvent
+};

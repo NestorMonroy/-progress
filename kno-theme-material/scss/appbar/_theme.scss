@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/appbar/_theme.scss" as *;
+
+
+@mixin kno-appbar--theme() {
+    @include kno-appbar--theme-base();
+}

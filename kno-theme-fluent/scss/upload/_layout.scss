@@ -1,0 +1,43 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/upload/_layout.scss" as *;
+
+@mixin kno-upload--layout() {
+    @include kno-upload--layout-base();
+
+    .k-upload {
+        .k-filename {
+            margin-inline-start: k-spacing(2);
+        }
+
+        .k-upload-files .k-file-info {
+            margin-inline-start: 0;
+            margin-inline-end: 0;
+        }
+
+        .k-upload-files .k-file {
+            padding-block: $kno-upload-item-padding-y;
+        }
+
+        .k-file-size,
+        .k-file-validation-message {
+            line-height: var(--kno-line-height-xs);
+        }
+
+        .k-multiple-files-wrapper,
+        .k-file-single > .k-file-info {
+            margin-inline-start: k-spacing(2);
+            margin-inline-end: 0;
+        }
+
+        .k-upload-files .k-file-info {
+            min-height: auto;
+        }
+
+        .k-progressbar {
+            inset-inline-start: $kno-upload-item-padding-x;
+            inset-inline-end: $kno-upload-item-padding-x;
+            inset-block-end: $kno-upload-item-padding-y;
+        }
+    }
+}

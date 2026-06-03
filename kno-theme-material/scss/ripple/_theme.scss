@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/ripple/_theme.scss" as *;
+
+
+@mixin kno-ripple--theme() {
+    @include kno-ripple--theme-base();
+}

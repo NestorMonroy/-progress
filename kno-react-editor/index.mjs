@@ -1,0 +1,183 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import { Editor as Qo } from "./Editor.mjs";
+import { EditorWrapper as e } from "./EditorMcpWrapper.mjs";
+import { deleteTable as o, goToNextCell as t, toggleHeaderCell as l, toggleHeaderColumn as r, toggleHeaderRow as a, toggleHeader as i, setCellAttr as n, splitCellWithType as d, splitCell as p, mergeCells as s, deleteRow as c, addRowAfter as m, addRowBefore as u, addRow as g, rowIsHeader as C, deleteColumn as S, addColumnAfter as R, addColumnBefore as f, addColumn as T, selectedRect as w, updateColumnsOnResize as y, columnResizingPluginKey as k, columnResizing as b, tableEditingKey as x, TableMap as E, CellSelection as I, tableNodeTypes as M, tableNodes as N, columnIsHeader as P, addColSpan as D, removeColSpan as B, nextCell as h, colCount as K, findCell as A, inSameTable as H, moveCellForward as L, selectionCell as j, isInTable as Q, cellAround as v, fixTablesKey as z, fixTables as F, tableEditing as O, gapCursor as W, dropCursor as J, sinkListItem as U, liftListItem as V, splitListItem as q, wrapInList as G, addListNodes as X, listItem as Y, bulletList as Z, orderedList as _, keydownHandler as $, keymap as ee, textblockTypeInputRule as oe, wrappingInputRule as te, smartQuotes as le, closeSingleQuote as re, openSingleQuote as ae, closeDoubleQuote as ie, openDoubleQuote as ne, ellipsis as de, emDash as pe, undoInputRule as se, inputRules as ce, InputRule as me, redoDepth as ue, undoDepth as ge, redo as Ce, undo as Se, history as Re, baseKeymap as fe, macBaseKeymap as Te, pcBaseKeymap as we, chainCommands as ye, autoJoin as ke, toggleMark as be, setBlockType as xe, wrapIn as Ee, selectAll as Ie, selectParentNode as Me, splitBlockKeepMarks as Ne, splitBlock as Pe, liftEmptyBlock as De, createParagraphNear as Be, exitCode as he, newlineInCode as Ke, lift as Ae, joinDown as He, joinUp as Le, selectNodeForward as je, joinForward as Qe, selectNodeBackward as ve, joinBackward as ze, deleteSelection as Fe, replaceStep as Oe, ReplaceAroundStep as We, ReplaceStep as Je, RemoveMarkStep as Ue, AddMarkStep as Ve, Mapping as qe, MapResult as Ge, StepMap as Xe, findWrapping as Ye, liftTarget as Ze, dropPoint as _e, insertPoint as $e, canSplit as eo, canJoin as oo, joinPoint as to, StepResult as lo, Step as ro, Transform as ao, DOMSerializer as io, DOMParser as no, ContentMatch as po, MarkType as so, NodeType as co, Schema as mo, Mark as uo, ReplaceError as go, Slice as Co, Fragment as So, NodeRange as Ro, ResolvedPos as fo, Node as To, EditorView as wo, DecorationSet as yo, Decoration as ko, Transaction as bo, PluginKey as xo, Plugin as Eo, EditorState as Io, AllSelection as Mo, NodeSelection as No, TextSelection as Po, SelectionRange as Do, Selection as Bo } from "@progress/kno-editor-common";
+import { getHtml as zo, marks as Fo, nodes as Oo, parseContent as Wo } from "@progress/kno-editor-common";
+import { EditorTools as Uo } from "./tools/index.mjs";
+import { EditorToolsSettings as qo } from "./config/toolsSettings.mjs";
+import { EditorUtils as Xo } from "./utils/index.mjs";
+import { EditorDialogs as Zo } from "./dialogs/index.mjs";
+import { editorPropsKey as $o } from "./utils/props-key.mjs";
+const Ao = e, Ho = {
+  // prosemirror-state
+  Selection: Bo,
+  SelectionRange: Do,
+  TextSelection: Po,
+  NodeSelection: No,
+  AllSelection: Mo,
+  EditorState: Io,
+  Plugin: Eo,
+  PluginKey: xo,
+  Transaction: bo,
+  // prosemirror-view
+  Decoration: ko,
+  DecorationSet: yo,
+  EditorView: wo,
+  // prosemirror-model
+  Node: To,
+  ResolvedPos: fo,
+  NodeRange: Ro,
+  Fragment: So,
+  Slice: Co,
+  ReplaceError: go,
+  Mark: uo,
+  Schema: mo,
+  NodeType: co,
+  MarkType: so,
+  ContentMatch: po,
+  DOMParser: no,
+  DOMSerializer: io,
+  // prosemirror-transform
+  Transform: ao,
+  Step: ro,
+  StepResult: lo,
+  joinPoint: to,
+  canJoin: oo,
+  canSplit: eo,
+  insertPoint: $e,
+  dropPoint: _e,
+  liftTarget: Ze,
+  findWrapping: Ye,
+  StepMap: Xe,
+  MapResult: Ge,
+  Mapping: qe,
+  AddMarkStep: Ve,
+  RemoveMarkStep: Ue,
+  ReplaceStep: Je,
+  ReplaceAroundStep: We,
+  replaceStep: Oe,
+  // prosemirror-commands
+  deleteSelection: Fe,
+  joinBackward: ze,
+  selectNodeBackward: ve,
+  joinForward: Qe,
+  selectNodeForward: je,
+  joinUp: Le,
+  joinDown: He,
+  lift: Ae,
+  newlineInCode: Ke,
+  exitCode: he,
+  createParagraphNear: Be,
+  liftEmptyBlock: De,
+  splitBlock: Pe,
+  splitBlockKeepMarks: Ne,
+  selectParentNode: Me,
+  selectAll: Ie,
+  wrapIn: Ee,
+  setBlockType: xe,
+  toggleMark: be,
+  autoJoin: ke,
+  chainCommands: ye,
+  pcBaseKeymap: we,
+  macBaseKeymap: Te,
+  baseKeymap: fe,
+  // prosemirror-history
+  history: Re,
+  undo: Se,
+  redo: Ce,
+  undoDepth: ge,
+  redoDepth: ue,
+  // prosemirror-inputrules
+  InputRule: me,
+  inputRules: ce,
+  undoInputRule: se,
+  emDash: pe,
+  ellipsis: de,
+  openDoubleQuote: ne,
+  closeDoubleQuote: ie,
+  openSingleQuote: ae,
+  closeSingleQuote: re,
+  smartQuotes: le,
+  wrappingInputRule: te,
+  textblockTypeInputRule: oe,
+  // prosemirror-keymap
+  keymap: ee,
+  keydownHandler: $,
+  // prosemirror-schema-list
+  orderedList: _,
+  bulletList: Z,
+  listItem: Y,
+  addListNodes: X,
+  wrapInList: G,
+  splitListItem: q,
+  liftListItem: V,
+  sinkListItem: U,
+  // prosemirror-dropcursor
+  dropCursor: J,
+  // prosemirror-gapcursor
+  gapCursor: W,
+  // prosemirror-tables
+  tableEditing: O,
+  fixTables: F,
+  fixTablesKey: z,
+  cellAround: v,
+  isInTable: Q,
+  selectionCell: j,
+  moveCellForward: L,
+  inSameTable: H,
+  findCell: A,
+  colCount: K,
+  nextCell: h,
+  removeColSpan: B,
+  addColSpan: D,
+  columnIsHeader: P,
+  tableNodes: N,
+  tableNodeTypes: M,
+  CellSelection: I,
+  TableMap: E,
+  tableEditingKey: x,
+  columnResizing: b,
+  columnResizingPluginKey: k,
+  updateColumnsOnResize: y,
+  selectedRect: w,
+  addColumn: T,
+  addColumnBefore: f,
+  addColumnAfter: R,
+  deleteColumn: S,
+  rowIsHeader: C,
+  addRow: g,
+  addRowBefore: u,
+  addRowAfter: m,
+  deleteRow: c,
+  mergeCells: s,
+  splitCell: p,
+  splitCellWithType: d,
+  setCellAttr: n,
+  toggleHeader: i,
+  toggleHeaderRow: a,
+  toggleHeaderColumn: r,
+  toggleHeaderCell: l,
+  goToNextCell: t,
+  deleteTable: o
+};
+export {
+  Ao as Editor,
+  Qo as EditorClassComponent,
+  Zo as EditorDialogs,
+  Uo as EditorTools,
+  qo as EditorToolsSettings,
+  Xo as EditorUtils,
+  Ho as ProseMirror,
+  $o as editorPropsKey,
+  zo as getHtml,
+  Fo as marks,
+  Oo as nodes,
+  Wo as parseContent
+};

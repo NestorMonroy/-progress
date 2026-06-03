@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});class a{constructor(t,e,r,n){this.target=t,this.prevIndex=e,this.nextIndex=r,this.newState=n}}exports.SortableOnDragOverEvent=a;

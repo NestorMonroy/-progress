@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+import { ConfigurationComponent as e } from "../base/ConfigurationComponent.mjs";
+const n = (o) => /* @__PURE__ */ t.createElement(e, { ...o, _chartKey: "icon" });
+export {
+  n as ChartSeriesNotesIcon
+};

@@ -1,0 +1,24 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export declare function tableColumnsVirtualization(args: {
+    enabled?: boolean;
+    columns: {
+        width?: string | number;
+        locked?: boolean;
+    }[];
+    tableViewPortWidth: number;
+    scrollLeft: number;
+    getColSpan?: any;
+    dataItem?: any;
+}): {
+    colSpans: number[];
+    hiddenColumns: boolean[];
+};

@@ -1,0 +1,91 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/breadcrumb/_theme.scss" as *;
+
+@mixin kendo-breadcrumb--theme() {
+
+    @include kendo-breadcrumb--theme-base();
+
+    // Breadcrumb link
+    .k-breadcrumb-link {
+        // Active state
+        &:active,
+        &.k-active {
+            @include fill(
+                $kendo-breadcrumb-link-active-text,
+                $kendo-breadcrumb-link-active-bg,
+                $kendo-breadcrumb-link-active-border
+            );
+        }
+
+        // Focused state
+        &:focus,
+        &.k-focus {
+            background: $kendo-breadcrumb-link-focus-bg;
+        }
+
+        // Disabled state
+        &:disabled,
+        &[disabled],
+        &.k-disabled {
+            @include fill(
+                $kendo-breadcrumb-link-disabled-text,
+                $kendo-breadcrumb-link-disabled-bg,
+                $kendo-breadcrumb-link-disabled-border
+            );
+        }
+
+        // Selected state
+        &.k-selected {
+            @include fill(
+                $kendo-breadcrumb-link-selected-text,
+                $kendo-breadcrumb-link-selected-bg,
+                $kendo-breadcrumb-link-selected-border
+            );
+        }
+    }
+
+    // Breadcrumb root link
+    .k-breadcrumb-root-link {
+        // Active state
+        &:active,
+        &.k-active {
+            @include fill(
+                $kendo-breadcrumb-root-link-active-text,
+                $kendo-breadcrumb-root-link-active-bg,
+                $kendo-breadcrumb-root-link-active-border
+            );
+        }
+
+        // Disabled state
+        &:disabled,
+        &[disabled],
+        &.k-disabled {
+            @include fill(
+                $kendo-breadcrumb-root-link-disabled-text,
+                $kendo-breadcrumb-root-link-disabled-bg,
+                $kendo-breadcrumb-root-link-disabled-border
+            );
+        }
+    }
+
+    .k-breadcrumb-icontext-link,
+    .k-breadcrumb-icon-link {
+
+        &:hover,
+        &.k-hover {
+
+            .k-icon {
+                color: k-color(primary-hover);
+            }
+        }
+        &:active,
+        &.k-selected {
+
+            .k-icon {
+                color: k-color(primary-active);
+            }
+        }
+    }
+
+}

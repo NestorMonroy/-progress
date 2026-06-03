@@ -1,0 +1,399 @@
+@use "../core/_index.scss" as *;
+
+// Switch
+
+/// The default size of the Switch.
+/// @group switch
+/// @role default
+$kno-switch-default-size: "md" !default;
+/// The default border radius of the Switch track.
+/// @group switch
+/// @role default
+$kno-switch-default-track-roundness: "full" !default;
+/// The default border radius of the Switch thumb.
+/// @group switch
+/// @role default
+$kno-switch-default-thumb-roundness: "full" !default;
+
+/// The font family of the Switch.
+/// @group switch
+$kno-switch-font-family: null !default;
+
+/// The border width of the Switch track.
+/// @group switch
+$kno-switch-track-border-width: 2px !default;
+
+/// The border width of the Switch thumb.
+/// @group switch
+$kno-switch-thumb-border-width: 0px !default;
+
+/// The text transform of the Switch label.
+/// @group switch
+$kno-switch-label-text-transform: unset !default;
+
+/// The display of the Switch label.
+/// @group switch
+$kno-switch-label-display: none !default;
+
+/// The font size of the small Switch.
+/// @group switch
+$kno-switch-sm-font-size: null !default;
+/// The track width of the small Switch.
+/// @group switch
+$kno-switch-sm-track-width: 52px !default;
+/// The track height of the small Switch.
+/// @group switch
+$kno-switch-sm-track-height: 28px !default;
+/// The thumb width of the small Switch.
+/// @group switch
+$kno-switch-sm-thumb-width: 20px !default;
+/// The thumb height of the small Switch.
+/// @group switch
+$kno-switch-sm-thumb-height: 20px !default;
+/// The thumb offset of the small Switch.
+/// @group switch
+$kno-switch-sm-thumb-offset: 4px !default;
+/// The label offset of the small Switch.
+/// @group switch
+$kno-switch-sm-label-offset: 0px !default;
+/// The thumb indicator size of the small Switch.
+/// @group switch
+$kno-switch-sm-thumb-indicator-size: 36px !default;
+
+/// The font size of the medium Switch.
+/// @group switch
+$kno-switch-md-font-size: null !default;
+/// The track width of the medium Switch.
+/// @group switch
+$kno-switch-md-track-width: 52px !default;
+/// The track height of the medium Switch.
+/// @group switch
+$kno-switch-md-track-height: 32px !default;
+/// The thumb width of the medium Switch.
+/// @group switch
+$kno-switch-md-thumb-width: 24px !default;
+/// The thumb height of the medium Switch.
+/// @group switch
+$kno-switch-md-thumb-height: 24px !default;
+/// The thumb offset of the medium Switch.
+/// @group switch
+$kno-switch-md-thumb-offset: 4px !default;
+/// The label offset of the medium Switch.
+/// @group switch
+$kno-switch-md-label-offset: 0px !default;
+/// The thumb indicator size of the medium Switch.
+/// @group switch
+$kno-switch-md-thumb-indicator-size: 40px !default;
+
+/// The font size of the large Switch.
+/// @group switch
+$kno-switch-lg-font-size: null !default;
+/// The track width of the large Switch.
+/// @group switch
+$kno-switch-lg-track-width: 60px !default;
+/// The track height of the large Switch.
+/// @group switch
+$kno-switch-lg-track-height: 36px !default;
+/// The thumb width of the large Switch.
+/// @group switch
+$kno-switch-lg-thumb-width: 28px !default;
+/// The thumb height of the large Switch.
+/// @group switch
+$kno-switch-lg-thumb-height: 28px !default;
+/// The thumb offset of the large Switch.
+/// @group switch
+$kno-switch-lg-thumb-offset: 4px !default;
+/// The label offset of the large Switch.
+/// @group switch
+$kno-switch-lg-label-offset: 0px !default;
+/// The thumb indicator size of the large Switch.
+/// @group switch
+$kno-switch-lg-thumb-indicator-size: 44px !default;
+
+/// The map with the different Switch sizes.
+/// @group switch
+$kno-switch-sizes: (
+    sm: ( font-size: $kno-switch-sm-font-size, track-width: $kno-switch-sm-track-width, track-height: $kno-switch-sm-track-height, thumb-width: $kno-switch-sm-thumb-width, thumb-height: $kno-switch-sm-thumb-height, thumb-offset: $kno-switch-sm-thumb-offset, label-offset: $kno-switch-sm-label-offset, thumb-indicator-size: $kno-switch-sm-thumb-indicator-size ),
+    md: ( font-size: $kno-switch-md-font-size, track-width: $kno-switch-md-track-width, track-height: $kno-switch-md-track-height, thumb-width: $kno-switch-md-thumb-width, thumb-height: $kno-switch-md-thumb-height, thumb-offset: $kno-switch-md-thumb-offset, label-offset: $kno-switch-md-label-offset, thumb-indicator-size: $kno-switch-md-thumb-indicator-size ),
+    lg: ( font-size: $kno-switch-lg-font-size, track-width: $kno-switch-lg-track-width, track-height: $kno-switch-lg-track-height, thumb-width: $kno-switch-lg-thumb-width, thumb-height: $kno-switch-lg-thumb-height, thumb-offset: $kno-switch-lg-thumb-offset, label-offset: $kno-switch-lg-label-offset, thumb-indicator-size: $kno-switch-lg-thumb-indicator-size )
+) !default;
+
+/// The background of the track when the Switch is not checked.
+/// @group switch
+$kno-switch-off-track-bg: k-color(base) !default;
+/// The text color of the track when the Switch is not checked.
+/// @group switch
+$kno-switch-off-track-text: unset !default;
+/// The border color of the track when the Switch is not checked
+/// @group switch
+$kno-switch-off-track-border: k-color(base-emphasis) !default;
+/// The background gradient of the track when the Switch is not checked.
+/// @group switch
+$kno-switch-off-track-gradient: null !default;
+
+/// The background of the track when the hovered Switch is not checked.
+/// @group switch
+$kno-switch-off-track-hover-bg: null !default;
+/// The text color of the track when the hovered Switch is not checked.
+/// @group switch
+$kno-switch-off-track-hover-text: null !default;
+/// The border color of the track when the hovered Switch is not checked.
+/// @group switch
+$kno-switch-off-track-hover-border: null !default;
+/// The background gradient of the track when the hovered Switch is not checked.
+/// @group switch
+$kno-switch-off-track-hover-gradient: null !default;
+
+/// The background of the track when the focused Switch is not checked.
+/// @group switch
+$kno-switch-off-track-focus-bg: null !default;
+/// The text color of the track when the focused Switch is not checked.
+/// @group switch
+$kno-switch-off-track-focus-text: null !default;
+/// The border color of the track when the focused Switch is not checked.
+/// @group switch
+$kno-switch-off-track-focus-border: null !default;
+/// The background gradient of the track when the focused Switch is not checked.
+/// @group switch
+$kno-switch-off-track-focus-gradient: null !default;
+/// The ring around the track when the focused Switch is not checked.
+/// @group switch
+$kno-switch-off-track-focus-ring: unset !default;
+
+/// The background of the track when the disabled Switch is not checked.
+/// @group switch
+$kno-switch-off-track-disabled-bg: color-mix(in srgb, k-color(base) 38%, transparent) !default;
+/// The text color of the track when the disabled Switch is not checked.
+/// @group switch
+$kno-switch-off-track-disabled-text: color-mix(in srgb, k-color(on-app-surface) 38%, transparent) !default;
+/// The border color of the track when the disabled Switch is not checked.
+/// @group switch
+$kno-switch-off-track-disabled-border: color-mix(in srgb, k-color(base-emphasis) 38%, transparent) !default;
+/// The background gradient of the track when the disabled Switch is not checked.
+/// @group switch
+$kno-switch-off-track-disabled-gradient: null !default;
+
+/// The background of the thumb when the Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-bg: k-color(base-emphasis) !default;
+/// The text color of the thumb when the Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-text: unset !default;
+/// The border color of the thumb when the Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-border: unset !default;
+/// The background gradient of the thumb when the Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-gradient: null !default;
+
+/// The background of the thumb when the hovered Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-hover-bg: null !default;
+/// The text color of the thumb when the hovered Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-hover-text: null !default;
+/// The border color of the thumb when the hovered Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-hover-border: null !default;
+/// The background gradient of the thumb when the hovered Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-hover-gradient: null !default;
+
+/// The background of the thumb when the disabled Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-disabled-bg: color-mix(in srgb, k-color(base-emphasis) 38%, transparent) !default;
+/// The text color of the thumb when the disabled Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-disabled-text: null !default;
+/// The border color of the thumb when the disabled Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-disabled-border: null !default;
+/// The background gradient of the thumb when the disabled Switch is not checked.
+/// @group switch
+$kno-switch-off-thumb-disabled-gradient: null !default;
+
+
+/// The background of the track when the Switch is checked.
+/// @group switch
+$kno-switch-on-track-bg: k-color(primary) !default;
+/// The text color of the track when the Switch is checked.
+/// @group switch
+$kno-switch-on-track-text: unset !default;
+/// The border color of the track when the Switch is checked.
+/// @group switch
+$kno-switch-on-track-border: k-color(primary) !default;
+/// The background gradient of the track when the Switch is checked.
+/// @group switch
+$kno-switch-on-track-gradient: null !default;
+
+/// The background of the track when the hovered Switch is checked.
+/// @group switch
+$kno-switch-on-track-hover-bg: null !default;
+/// The text color of the track when the hovered Switch is checked.
+/// @group switch
+$kno-switch-on-track-hover-text: null !default;
+/// The border color of the track when the hovered Switch is checked.
+/// @group switch
+$kno-switch-on-track-hover-border: null !default;
+/// The background gradient of the track when the hovered Switch is checked.
+/// @group switch
+$kno-switch-on-track-hover-gradient: null !default;
+
+/// The background of the track when the focused Switch is checked.
+/// @group switch
+$kno-switch-on-track-focus-bg: null !default;
+/// The text color of the track when the focused Switch is checked.
+/// @group switch
+$kno-switch-on-track-focus-text: null !default;
+/// The border color of the track when the focused Switch is checked.
+/// @group switch
+$kno-switch-on-track-focus-border: null !default;
+/// The background gradient of the track when the focused Switch is checked.
+/// @group switch
+$kno-switch-on-track-focus-gradient: null !default;
+/// The ring around the track when the focused Switch is checked.
+/// @group switch
+$kno-switch-on-track-focus-ring: unset !default;
+
+/// The background of the track when the disabled Switch is checked.
+/// @group switch
+$kno-switch-on-track-disabled-bg: color-mix(in srgb, k-color(on-app-surface) 12%, transparent) !default;
+/// The text color of the track when the disabled Switch is checked.
+/// @group switch
+$kno-switch-on-track-disabled-text: null !default;
+/// The border color of the track when the disabled Switch is checked.
+/// @group switch
+$kno-switch-on-track-disabled-border: transparent !default;
+/// The background gradient of the track when the disabled Switch is checked.
+/// @group switch
+$kno-switch-on-track-disabled-gradient: null !default;
+
+/// The background of the thumb when the Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-bg: k-color(primary-subtle) !default;
+/// The text color of the thumb when the Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-text: unset !default;
+/// The border color of the thumb when the Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-border: unset !default;
+/// The background gradient of the thumb when the Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-gradient: null !default;
+
+/// The background of the thumb when the hovered Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-hover-bg: null !default;
+/// The text color of the thumb when the hovered Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-hover-text: null !default;
+/// The border color of the thumb when the hovered Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-hover-border: null !default;
+/// The background gradient of the thumb when the hovered Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-hover-gradient: null !default;
+
+/// The background of the thumb when the disabled Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-disabled-bg: k-color(app-surface) !default;
+/// The text color of the thumb when the disabled Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-disabled-text: null !default;
+/// The border color of the thumb when the disabled Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-disabled-border: null !default;
+/// The background gradient of the thumb when the disabled Switch is checked.
+/// @group switch
+$kno-switch-on-thumb-disabled-gradient: null !default;
+
+@forward "@progress/kno-theme-core/scss/components/switch/_variables.scss" with (
+    $kno-switch-default-size: $kno-switch-default-size,
+    $kno-switch-default-track-roundness: $kno-switch-default-track-roundness,
+    $kno-switch-default-thumb-roundness: $kno-switch-default-thumb-roundness,
+    $kno-switch-font-family: $kno-switch-font-family,
+    $kno-switch-track-border-width: $kno-switch-track-border-width,
+    $kno-switch-thumb-border-width: $kno-switch-thumb-border-width,
+    $kno-switch-label-text-transform: $kno-switch-label-text-transform,
+    $kno-switch-label-display: $kno-switch-label-display,
+    $kno-switch-sm-font-size: $kno-switch-sm-font-size,
+    $kno-switch-sm-track-width: $kno-switch-sm-track-width,
+    $kno-switch-sm-track-height: $kno-switch-sm-track-height,
+    $kno-switch-sm-thumb-width: $kno-switch-sm-thumb-width,
+    $kno-switch-sm-thumb-height: $kno-switch-sm-thumb-height,
+    $kno-switch-sm-thumb-offset: $kno-switch-sm-thumb-offset,
+    $kno-switch-sm-label-offset: $kno-switch-sm-label-offset,
+    $kno-switch-md-font-size: $kno-switch-md-font-size,
+    $kno-switch-md-track-width: $kno-switch-md-track-width,
+    $kno-switch-md-track-height: $kno-switch-md-track-height,
+    $kno-switch-md-thumb-width: $kno-switch-md-thumb-width,
+    $kno-switch-md-thumb-height: $kno-switch-md-thumb-height,
+    $kno-switch-md-thumb-offset: $kno-switch-md-thumb-offset,
+    $kno-switch-md-label-offset: $kno-switch-md-label-offset,
+    $kno-switch-lg-font-size: $kno-switch-lg-font-size,
+    $kno-switch-lg-track-width: $kno-switch-lg-track-width,
+    $kno-switch-lg-track-height: $kno-switch-lg-track-height,
+    $kno-switch-lg-thumb-width: $kno-switch-lg-thumb-width,
+    $kno-switch-lg-thumb-height: $kno-switch-lg-thumb-height,
+    $kno-switch-lg-thumb-offset: $kno-switch-lg-thumb-offset,
+    $kno-switch-lg-label-offset: $kno-switch-lg-label-offset,
+    $kno-switch-off-track-bg: $kno-switch-off-track-bg,
+    $kno-switch-off-track-text: $kno-switch-off-track-text,
+    $kno-switch-off-track-border: $kno-switch-off-track-border,
+    $kno-switch-off-track-gradient: $kno-switch-off-track-gradient,
+    $kno-switch-off-track-hover-bg: $kno-switch-off-track-hover-bg,
+    $kno-switch-off-track-hover-text: $kno-switch-off-track-hover-text,
+    $kno-switch-off-track-hover-border: $kno-switch-off-track-hover-border,
+    $kno-switch-off-track-hover-gradient: $kno-switch-off-track-hover-gradient,
+    $kno-switch-off-track-focus-bg: $kno-switch-off-track-focus-bg,
+    $kno-switch-off-track-focus-text: $kno-switch-off-track-focus-text,
+    $kno-switch-off-track-focus-border: $kno-switch-off-track-focus-border,
+    $kno-switch-off-track-focus-gradient: $kno-switch-off-track-focus-gradient,
+    $kno-switch-off-track-focus-ring: $kno-switch-off-track-focus-ring,
+    $kno-switch-off-track-disabled-bg: $kno-switch-off-track-disabled-bg,
+    $kno-switch-off-track-disabled-text: $kno-switch-off-track-disabled-text,
+    $kno-switch-off-track-disabled-border: $kno-switch-off-track-disabled-border,
+    $kno-switch-off-track-disabled-gradient: $kno-switch-off-track-disabled-gradient,
+    $kno-switch-off-thumb-bg: $kno-switch-off-thumb-bg,
+    $kno-switch-off-thumb-text: $kno-switch-off-thumb-text,
+    $kno-switch-off-thumb-border: $kno-switch-off-thumb-border,
+    $kno-switch-off-thumb-gradient: $kno-switch-off-thumb-gradient,
+    $kno-switch-off-thumb-hover-bg: $kno-switch-off-thumb-hover-bg,
+    $kno-switch-off-thumb-hover-text: $kno-switch-off-thumb-hover-text,
+    $kno-switch-off-thumb-hover-border: $kno-switch-off-thumb-hover-border,
+    $kno-switch-off-thumb-hover-gradient: $kno-switch-off-thumb-hover-gradient,
+    $kno-switch-off-thumb-disabled-bg: $kno-switch-off-thumb-disabled-bg,
+    $kno-switch-off-thumb-disabled-text: $kno-switch-off-thumb-disabled-text,
+    $kno-switch-off-thumb-disabled-border: $kno-switch-off-thumb-disabled-border,
+    $kno-switch-off-thumb-disabled-gradient: $kno-switch-off-thumb-disabled-gradient,
+    $kno-switch-on-track-bg: $kno-switch-on-track-bg,
+    $kno-switch-on-track-text: $kno-switch-on-track-text,
+    $kno-switch-on-track-border: $kno-switch-on-track-border,
+    $kno-switch-on-track-gradient: $kno-switch-on-track-gradient,
+    $kno-switch-on-track-hover-bg: $kno-switch-on-track-hover-bg,
+    $kno-switch-on-track-hover-text: $kno-switch-on-track-hover-text,
+    $kno-switch-on-track-hover-border: $kno-switch-on-track-hover-border,
+    $kno-switch-on-track-hover-gradient: $kno-switch-on-track-hover-gradient,
+    $kno-switch-on-track-focus-bg: $kno-switch-on-track-focus-bg,
+    $kno-switch-on-track-focus-text: $kno-switch-on-track-focus-text,
+    $kno-switch-on-track-focus-border: $kno-switch-on-track-focus-border,
+    $kno-switch-on-track-focus-gradient: $kno-switch-on-track-focus-gradient,
+    $kno-switch-on-track-focus-ring: $kno-switch-on-track-focus-ring,
+    $kno-switch-on-track-disabled-bg: $kno-switch-on-track-disabled-bg,
+    $kno-switch-on-track-disabled-text: $kno-switch-on-track-disabled-text,
+    $kno-switch-on-track-disabled-border: $kno-switch-on-track-disabled-border,
+    $kno-switch-on-track-disabled-gradient: $kno-switch-on-track-disabled-gradient,
+    $kno-switch-on-thumb-bg: $kno-switch-on-thumb-bg,
+    $kno-switch-on-thumb-text: $kno-switch-on-thumb-text,
+    $kno-switch-on-thumb-border: $kno-switch-on-thumb-border,
+    $kno-switch-on-thumb-gradient: $kno-switch-on-thumb-gradient,
+    $kno-switch-on-thumb-hover-bg: $kno-switch-on-thumb-hover-bg,
+    $kno-switch-on-thumb-hover-text: $kno-switch-on-thumb-hover-text,
+    $kno-switch-on-thumb-hover-border: $kno-switch-on-thumb-hover-border,
+    $kno-switch-on-thumb-hover-gradient: $kno-switch-on-thumb-hover-gradient,
+    $kno-switch-on-thumb-disabled-bg: $kno-switch-on-thumb-disabled-bg,
+    $kno-switch-on-thumb-disabled-text: $kno-switch-on-thumb-disabled-text,
+    $kno-switch-on-thumb-disabled-border: $kno-switch-on-thumb-disabled-border,
+    $kno-switch-on-thumb-disabled-gradient: $kno-switch-on-thumb-disabled-gradient,
+    $kno-switch-sizes: $kno-switch-sizes
+);

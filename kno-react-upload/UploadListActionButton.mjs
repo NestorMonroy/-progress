@@ -1,0 +1,98 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as r from "react";
+import { classNames as h } from "@progress/kno-react-common";
+import { Button as l } from "@progress/kno-react-buttons";
+import { arrowRotateCwIcon as m, cancelIcon as g, xIcon as f } from "@progress/kno-svg-icons";
+import { UploadFileStatus as e } from "./interfaces/UploadFileStatus.mjs";
+import { provideLocalizationService as y, registerForLocalization as F } from "@progress/kno-react-intl";
+import { cancel as u, messages as c, remove as d, retry as p } from "./messages/index.mjs";
+class b extends r.Component {
+  constructor(t) {
+    super(t), this.buttonClassNames = (o) => {
+      const { actionFocused: s, retryFocused: i } = this.state;
+      return h(
+        "k-icon-button k-upload-action",
+        this.props.disabled ? "k-disabled" : "",
+        s && o === "action" || i && o === "retry" ? "k-focus" : ""
+      );
+    }, this.onRetryFocus = () => {
+      this.setState({
+        retryFocused: !0
+      });
+    }, this.onRetryBlur = () => {
+      this.setState({
+        retryFocused: !1
+      });
+    }, this.onActionFocus = () => {
+      this.setState({
+        actionFocused: !0
+      });
+    }, this.onActionBlur = () => {
+      this.setState({
+        actionFocused: !1
+      });
+    }, this.onActionClick = () => {
+      const { status: o, uid: s, disabled: i, onCancel: a, onRemove: n } = this.props;
+      i || o === e.Removing || (o === e.Uploading ? a.call(void 0, s) : n.call(void 0, s));
+    }, this.onRetryClick = () => {
+      const { uid: o, disabled: s, onRetry: i } = this.props;
+      s || i.call(void 0, o);
+    }, this.state = {
+      retryFocused: !1,
+      actionFocused: !1
+    };
+  }
+  actionButtonTitle(t, o) {
+    return t === e.Uploading ? o.toLanguageString(u, c[u]) : o.toLanguageString(d, c[d]);
+  }
+  retryButtonTitle(t) {
+    return t.toLanguageString(p, c[p]);
+  }
+  render() {
+    const { status: t, progress: o } = this.props, s = t === e.UploadFailed, i = t === e.Uploading, a = (t === e.Uploaded || t === e.Initial) && !this.props.async.removeUrl, n = y(this);
+    return /* @__PURE__ */ r.createElement("span", { className: "k-upload-actions" }, i ? /* @__PURE__ */ r.createElement("span", { className: "k-upload-pct" }, o, "%") : void 0, s ? /* @__PURE__ */ r.createElement(
+      l,
+      {
+        type: "button",
+        fillMode: "flat",
+        size: "xs",
+        tabIndex: -1,
+        className: this.buttonClassNames("retry"),
+        onFocus: this.onRetryFocus,
+        onBlur: this.onRetryBlur,
+        onClick: this.onRetryClick,
+        "aria-label": this.retryButtonTitle(n),
+        title: this.retryButtonTitle(n),
+        icon: "arrow-rotate-cw",
+        svgIcon: m
+      }
+    ) : void 0, a ? void 0 : /* @__PURE__ */ r.createElement(
+      l,
+      {
+        type: "button",
+        fillMode: "flat",
+        size: "xs",
+        tabIndex: -1,
+        className: this.buttonClassNames("action"),
+        onFocus: this.onActionFocus,
+        onBlur: this.onActionBlur,
+        onClick: this.onActionClick,
+        "aria-label": this.actionButtonTitle(t, n),
+        "aria-hidden": !0,
+        title: this.actionButtonTitle(t, n),
+        icon: t === e.Uploading ? "cancel" : "x",
+        svgIcon: t === e.Uploading ? g : f
+      }
+    ));
+  }
+}
+F(b);
+export {
+  b as UploadListActionButton
+};

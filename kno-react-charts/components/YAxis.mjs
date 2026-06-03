@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as i from "react";
+import { CollectionConfigurationComponent as a } from "./base/CollectionConfigurationComponent.mjs";
+import { ChartYAxisItem as m } from "./YAxisItem.mjs";
+import { validateChildren as n } from "../utils/index.mjs";
+const t = (r) => /* @__PURE__ */ i.createElement(a, { ...r, _chartKey: "yAxis" });
+t.propTypes = {
+  children: function(r, o, e) {
+    return n(r, o, e, m);
+  }
+};
+t.displayName = "ChartYAxis";
+export {
+  t as ChartYAxis
+};

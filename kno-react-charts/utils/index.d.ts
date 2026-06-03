@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+declare function hasParent(element: any, parent: any): boolean;
+/**
+ * @hidden
+ */
+declare function validateChildren<P>(props: P, propName: string, componentName: string, childType: React.FunctionComponent): Error | null;
+/**
+ * @hidden
+ */
+declare const toggle: (flag: any) => boolean;
+export { hasParent, validateChildren, toggle };

@@ -1,0 +1,30 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ *
+ * Represents the base properties of a knoReact component.
+ */
+export interface KendoReactComponentBaseProps {
+    /**
+     * Sets the `id` property of the top div element of the component.
+     */
+    id?: string;
+    /**
+     * Determines the children nodes.
+     */
+    children?: React.ReactNode;
+    /**
+     * Sets additional classes to the component.
+     */
+    className?: string;
+    /**
+     * Sets additional CSS styles to the component.
+     */
+    style?: React.CSSProperties;
+}

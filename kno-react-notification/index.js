@@ -1,0 +1,9 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const i=require("./Notification.js"),o=require("./NotificationGroup.js");exports.Notification=i.Notification;exports.NotificationGroup=o.NotificationGroup;

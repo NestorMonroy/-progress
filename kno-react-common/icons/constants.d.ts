@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export declare const SIZE_CLASSES: {
+    default: string;
+    xsmall: string;
+    small: string;
+    medium: string;
+    large: string;
+    xlarge: string;
+    xxlarge: string;
+    xxxlarge: string;
+};

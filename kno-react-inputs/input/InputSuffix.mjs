@@ -1,0 +1,30 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { useUnstyled as o, classNames as r, uTextBox as f } from "@progress/kno-react-common";
+const x = e.forwardRef(
+  ({ orientation: t = "horizontal", ...s }, u) => {
+    const a = e.useRef(null), m = e.useRef(null), n = o(), l = n && n.uTextBox;
+    e.useImperativeHandle(a, () => ({ element: m.current })), e.useImperativeHandle(u, () => a.current);
+    const c = e.useMemo(
+      () => r(
+        f.suffix({
+          c: l,
+          orientation: t
+        }),
+        s.className
+      ),
+      [s.className, l, t]
+    );
+    return /* @__PURE__ */ e.createElement("span", { ...s, className: c });
+  }
+);
+x.displayName = "KendoReactInputSuffix";
+export {
+  x as InputSuffix
+};

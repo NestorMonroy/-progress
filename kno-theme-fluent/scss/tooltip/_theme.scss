@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/tooltip/_theme.scss" as *;
+
+@mixin kno-tooltip--theme() {
+    @include kno-tooltip--theme-base();
+
+    .k-tooltip-button {
+        color: $kno-tooltip-button-text;
+    }
+}

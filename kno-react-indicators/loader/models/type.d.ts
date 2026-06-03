@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * Specifies the Loader animation type.
+ *
+ * The possible values are:
+ * - `pulsing` (default)
+ * - `infinite-spinner`
+ * - `converging-spinner`
+ *
+ */
+export type LoaderType = 'pulsing' | 'infinite-spinner' | 'converging-spinner';

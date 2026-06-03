@@ -1,0 +1,61 @@
+{
+  "name": "@progress/kno-recurrence",
+  "description": "Kno UI package for recurrence events calculations.",
+  "version": "1.0.5",
+  "keywords": [
+    "Kno UI"
+  ],
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "main": "dist/npm/main.js",
+  "module": "dist/es/main.js",
+  "jsnext:main": "dist/es/main.js",
+  "es2015": "dist/es2015/main.js",
+  "typings": "dist/npm/main.d.ts",
+  "jsdelivr": "dist/cdn/main.js",
+  "unpkg": "dist/cdn/main.js",
+  "scripts": {
+    "test": "npm run test:local && npm run test:brazil && npm run test:utc && npm run test:sofia",
+    "test:local": "vitest --run",
+    "test:brazil": "TZ=America/Sao_Paulo vitest --run",
+    "test:utc": "TZ=Etc/UTC vitest --run",
+    "test:sofia": "TZ=Europe/Sofia vitest --run",
+    "start": "gulp start",
+    "lint": "eslint src",
+    "api-check": "gulp api-check",
+    "build": "gulp build-package build-es2015-bundle",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@progress/kno-intl": "^3.0.0"
+  },
+  "peerDependencies": {
+    "@progress/kno-date-math": "^1.5.16"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20.0.1",
+    "@commitlint/config-conventional": "^20.0.0",
+    "@progress/kno-date-math": "^1.5.16",
+    "@progress/kno-typescript-tasks": "^12.0.0",
+    "@types/jest": "^30.0.0",
+    "eslint": "^9.39.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jest": "^29.2.0",
+    "eslint-plugin-prettier": "^5.5.4",
+    "gulp": "^5.0.1",
+    "husky": "^9.1.7",
+    "typescript": "~5.2.2",
+    "typescript-eslint": "^8.47.0",
+    "vitest": "^4.0.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlk/kno-recurrence.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tlk/kno-angular"
+  },
+  "files": [
+    "dist"
+  ]
+}

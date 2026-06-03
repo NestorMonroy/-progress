@@ -1,0 +1,32 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * Represent the `ref` of the `InputSuffix` component.
+ */
+export type InputSuffixHandle = {
+    element: HTMLSpanElement | null;
+};
+/**
+ * Represents the `props` of the `InputSuffix` component.
+ */
+export type InputSuffixProps = React.HTMLAttributes<HTMLSpanElement> & {
+    /**
+     * Sets the `orientation` property of the `InputSuffix` component.
+     */
+    orientation?: 'horizontal' | 'vertical';
+};
+/**
+ * Represents the knoReact InputSuffix component.
+ */
+export declare const InputSuffix: React.ForwardRefExoticComponent<React.HTMLAttributes<HTMLSpanElement> & {
+    /**
+     * Sets the `orientation` property of the `InputSuffix` component.
+     */
+    orientation?: "vertical" | "horizontal" | undefined;
+} & React.RefAttributes<InputSuffixHandle>>;

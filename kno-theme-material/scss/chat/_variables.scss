@@ -1,0 +1,309 @@
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use "../button/_variables.scss" as *;
+@use "../toolbar/_variables.scss" as *;
+
+
+// Chat
+
+/// The horizontal padding of the Chat.
+/// @group chat
+$kno-chat-padding-x: k-spacing(6) !default;
+/// The vertical padding of the Chat.
+/// @group chat
+$kno-chat-padding-y: k-spacing(6) !default;
+/// The minimum width of the Chat.
+/// @group chat
+$kno-chat-width: 280px !default;
+/// The minimum height of the Chat.
+/// @group chat
+$kno-chat-height: 320px !default;
+/// The border width of the Chat.
+/// @group chat
+$kno-chat-border-width: 1px !default;
+/// The border radius of the Chat.
+/// @group chat
+$kno-chat-border-radius: null !default;
+/// The font family of the Chat.
+/// @group chat
+$kno-chat-font-family: var(--kno-font-family) !default;
+/// The font size of the Chat.
+/// @group chat
+$kno-chat-font-size: var(--kno-font-size) !default;
+/// The line height of the Chat.
+/// @group chat
+$kno-chat-line-height: var(--kno-line-height) !default;
+
+/// The vertical spacing between the items of the Chat.
+/// @group chat
+$kno-chat-item-spacing-y: k-spacing(4) !default;
+
+/// The maximum width of the Chat message.
+/// @group chat
+$kno-chat-message-max-width: min(75%, 460px) !default;
+/// The spacing between the items of the Chat message.
+/// @group chat
+$kno-chat-message-gap: k-spacing(2) !default;
+
+/// The border radius of sequential Chat messages.
+/// @group chat
+$kno-sequential-messages-border-radius: k-border-radius(sm) !default;
+
+/// The horizontal padding of the Chat message list.
+/// @group chat
+$kno-chat-message-list-padding-x: $kno-chat-padding-x !default;
+/// The vertical padding of the Chat message list.
+/// @group chat
+$kno-chat-message-list-padding-y: $kno-chat-padding-y !default;
+/// The spacing of the Chat message list.
+/// @group chat
+$kno-chat-message-list-spacing: $kno-chat-item-spacing-y !default;
+/// The spacing of the Chat message box wrapper.
+/// @group chat
+$kno-chat-message-box-wrapper-spacing: k-spacing(4) !default;
+
+/// The minimum size of the Chat message status.
+/// @group chat
+$kno-chat-status-min-size: k-spacing(1.5) !default;
+/// The maximum size of the Chat message status.
+/// @group chat
+$kno-chat-status-max-size: k-spacing(8) !default;
+/// The spacing between the icon and text in the Chat message status.
+/// @group chat
+$kno-chat-message-status-gap: k-spacing(1) !default;
+
+/// The font size of the Chat timestamp.
+/// @group chat
+$kno-chat-timestamp-font-size: var(--kno-font-size-sm) !default;
+/// The line height of the Chat timestamp.
+/// @group chat
+$kno-chat-timestamp-line-height: var(--kno-line-height-lg) !default;
+/// The text transform of the Chat timestamp.
+/// @group chat
+$kno-chat-timestamp-transform: none !default;
+/// The text color of the Chat timestamp.
+/// @group chat
+$kno-chat-timestamp-text: k-color(subtle) !default;
+/// The background color of the Chat timestamp.
+/// @group chat
+$kno-chat-timestamp-bg: null !default;
+/// The background color of the Chat timestamp separator.
+/// @group chat
+$kno-chat-timestamp-separator-bg: k-color(border) !default;
+/// The spacing between the Chat timestamp and its separator.
+/// @group chat
+$kno-chat-timestamp-separator-spacing: k-spacing(1) !default;
+
+
+/// The font size of the Chat message meta text.
+/// @group chat
+$kno-chat-message-meta-font-size: var(--kno-font-size-sm) !default;
+/// The line height of the Chat message meta text.
+/// @group chat
+$kno-chat-message-meta-line-height: var(--kno-line-height-xs) !default;
+
+/// The font size of the Chat author text.
+/// @group chat
+$kno-chat-author-font-size: var(--kno-font-size-sm) !default;
+/// The line height of the Chat author text.
+/// @group chat
+$kno-chat-author-line-height: var(--kno-line-height-xs) !default;
+
+/// The text color of the Chat status.
+/// @group chat
+$kno-chat-status-text: k-color(subtle) !default;
+
+/// The spacing of the Chat bubble message.
+/// @group chat
+$kno-chat-bubble-spacing: k-spacing(1) !default;
+
+/// The background color of the Chat Toolbar.
+/// @group chat
+$kno-chat-toolbar-bg: $kno-toolbar-bg !default;
+/// The text color of the Chat Toolbar.
+/// @group chat
+$kno-chat-toolbar-text: $kno-toolbar-text !default;
+/// The border color of the Chat Toolbar.
+/// @group chat
+$kno-chat-toolbar-border: inherit !default;
+
+/// The background color of the Chat.
+/// @group chat
+$kno-chat-bg: k-color(app-surface) !default;
+/// The text color of the Chat.
+/// @group chat
+$kno-chat-text: k-color(on-app-surface) !default;
+/// The border color of the Chat.
+/// @group chat
+$kno-chat-border: k-color(border) !default;
+
+/// The background color of the Chat alt bubble.
+/// @group chat
+$kno-chat-alt-bubble-bg: k-color(primary) !default;
+/// The text color of the Chat alt bubble.
+/// @group chat
+$kno-chat-alt-bubble-text: k-color(on-primary) !default;
+/// The border color of the Chat alt bubble.
+/// @group chat
+$kno-chat-alt-bubble-border: $kno-chat-alt-bubble-bg !default;
+/// The shadow of the Chat alt bubble.
+/// @group chat
+$kno-chat-alt-bubble-shadow: none !default;
+/// The background color of the hovered alt Bubble.
+/// @group bubble
+$kno-chat-alt-bubble-hover-bg: k-color(primary-hover) !default;
+/// The border color of the hovered alt Bubble.
+/// @group bubble
+$kno-chat-alt-bubble-hover-border: $kno-chat-alt-bubble-hover-bg !default;
+/// The background color of the active Bubble.
+/// @group bubble
+$kno-chat-alt-bubble-active-bg: k-color(primary-active) !default;
+/// The border color of the active alt Bubble.
+/// @group bubble
+$kno-chat-alt-bubble-active-border: $kno-chat-alt-bubble-active-bg !default;
+/// The background color of the focused alt Bubble.
+/// @group bubble
+$kno-chat-alt-bubble-focus-bg: $kno-chat-alt-bubble-bg !default;
+/// The border color of the focused alt Bubble.
+/// @group bubble
+$kno-chat-alt-bubble-focus-border: $kno-chat-alt-bubble-focus-bg !default;
+/// The box shadow of the focused alt Bubble.
+/// @group bubble
+$kno-chat-alt-bubble-focus-shadow: null !default;
+
+/// The text color of the bubble of the failed Chat message.
+/// @group chat
+$kno-chat-failed-bubble-text: k-color(base-on-subtle) !default;
+/// The background color of the bubble of the failed Chat message.
+/// @group chat
+$kno-chat-failed-bubble-bg: k-color(error-subtle) !default;
+/// The border color of the bubble of the failed Chat message.
+/// @group chat
+$kno-chat-failed-bubble-border: k-color(error-emphasis) !default;
+/// The text color of the failed Chat message content.
+/// @group chat
+$kno-chat-failed-content-color: k-color(error-on-surface) !default;
+
+/// The background color of the hovered bubble of the failed Chat message.
+/// @group chat
+$kno-chat-failed-bubble-hover-bg: k-color(error-subtle-hover) !default;
+
+/// The background color of the selected bubble of the failed Chat message.
+/// @group chat
+$kno-chat-failed-bubble-selected-bg: k-color(error-subtle-active) !default;
+
+/// The color of the typing indicator dots.
+/// @group chat
+$kno-chat-typing-indicator-text: k-color(base-on-subtle) !default;
+
+/// The background color of the Chat sender file.
+/// @group chat
+$kno-chat-sender-file-bg: color-mix(in srgb, k-color(on-primary) 14%, transparent) !default;
+/// The text color of the Chat sender file.
+/// @group chat
+$kno-chat-sender-file-text: k-color(on-primary) !default;
+/// The border color of the Chat sender file.
+/// @group chat
+$kno-chat-sender-file-border: $kno-chat-sender-file-bg !default;
+
+/// The border width of the Chat pinned message;
+/// @group chat
+$kno-chat-message-pinned-border-width: 1px !default;
+/// The border style of the Chat pinned message;
+/// @group chat
+$kno-chat-message-pinned-border-style: solid !default;
+/// The border color of the Chat pinned message;
+/// @group chat
+$kno-chat-message-pinned-border-color: k-color(border) !default;
+
+/// The horizontal padding of the Chat message reference.
+/// @group chat
+$kno-chat-message-reference-padding-x: k-spacing(1) !default;
+/// The vertical padding of the Chat message reference.
+/// @group chat
+$kno-chat-message-reference-padding-y: k-spacing(1) !default;
+
+/// The background color of the Chat message reference.
+/// @group chat
+$kno-chat-message-reference-bg: color-mix(in srgb, k-color(surface) 90%, transparent) !default;
+/// The text color of the Chat message reference.
+/// @group chat
+$kno-chat-message-reference-text: k-color(on-app-surface) !default;
+/// The background color of the message reference marker.
+/// @group chat
+$kno-chat-message-reference-marker-bg: k-color(base-emphasis) !default;
+/// The background color of the message reference alt marker.
+/// @group chat
+$kno-chat-message-reference-marker-alt-bg: k-color(primary-emphasis) !default;
+
+@forward "@progress/kno-theme-core/scss/components/chat/_variables.scss" with (
+    $kno-chat-padding-x: $kno-chat-padding-x,
+    $kno-chat-padding-y: $kno-chat-padding-y,
+    $kno-chat-width: $kno-chat-width,
+    $kno-chat-height: $kno-chat-height,
+    $kno-chat-border-width: $kno-chat-border-width,
+    $kno-chat-border-radius: $kno-chat-border-radius,
+    $kno-chat-font-family: $kno-chat-font-family,
+    $kno-chat-font-size: $kno-chat-font-size,
+    $kno-chat-line-height: $kno-chat-line-height,
+    $kno-chat-item-spacing-y: $kno-chat-item-spacing-y,
+    $kno-chat-message-max-width: $kno-chat-message-max-width,
+    $kno-chat-message-gap: $kno-chat-message-gap,
+    $kno-sequential-messages-border-radius: $kno-sequential-messages-border-radius,
+    $kno-chat-message-list-padding-x: $kno-chat-message-list-padding-x,
+    $kno-chat-message-list-padding-y: $kno-chat-message-list-padding-y,
+    $kno-chat-message-list-spacing: $kno-chat-message-list-spacing,
+    $kno-chat-message-box-wrapper-spacing: $kno-chat-message-box-wrapper-spacing,
+    $kno-chat-status-min-size: $kno-chat-status-min-size,
+    $kno-chat-status-max-size: $kno-chat-status-max-size,
+    $kno-chat-message-status-gap: $kno-chat-message-status-gap,
+    $kno-chat-timestamp-font-size: $kno-chat-timestamp-font-size,
+    $kno-chat-timestamp-line-height: $kno-chat-timestamp-line-height,
+    $kno-chat-timestamp-transform: $kno-chat-timestamp-transform,
+    $kno-chat-timestamp-text: $kno-chat-timestamp-text,
+    $kno-chat-timestamp-bg: $kno-chat-timestamp-bg,
+    $kno-chat-timestamp-separator-bg: $kno-chat-timestamp-separator-bg,
+    $kno-chat-timestamp-separator-spacing: $kno-chat-timestamp-separator-spacing,
+    $kno-chat-message-meta-font-size: $kno-chat-message-meta-font-size,
+    $kno-chat-message-meta-line-height: $kno-chat-message-meta-line-height,
+    $kno-chat-author-font-size: $kno-chat-author-font-size,
+    $kno-chat-author-line-height: $kno-chat-author-line-height,
+    $kno-chat-status-text: $kno-chat-status-text,
+    $kno-chat-bubble-spacing: $kno-chat-bubble-spacing,
+    $kno-chat-toolbar-bg: $kno-chat-toolbar-bg,
+    $kno-chat-toolbar-text: $kno-chat-toolbar-text,
+    $kno-chat-toolbar-border: $kno-chat-toolbar-border,
+    $kno-chat-bg: $kno-chat-bg,
+    $kno-chat-text: $kno-chat-text,
+    $kno-chat-border: $kno-chat-border,
+    $kno-chat-alt-bubble-bg: $kno-chat-alt-bubble-bg,
+    $kno-chat-alt-bubble-text: $kno-chat-alt-bubble-text,
+    $kno-chat-alt-bubble-border: $kno-chat-alt-bubble-border,
+    $kno-chat-alt-bubble-shadow: $kno-chat-alt-bubble-shadow,
+    $kno-chat-alt-bubble-hover-bg: $kno-chat-alt-bubble-hover-bg,
+    $kno-chat-alt-bubble-hover-border: $kno-chat-alt-bubble-hover-border,
+    $kno-chat-alt-bubble-active-bg: $kno-chat-alt-bubble-active-bg,
+    $kno-chat-alt-bubble-active-border: $kno-chat-alt-bubble-active-border,
+    $kno-chat-alt-bubble-focus-bg: $kno-chat-alt-bubble-focus-bg,
+    $kno-chat-alt-bubble-focus-border: $kno-chat-alt-bubble-focus-border,
+    $kno-chat-alt-bubble-focus-shadow: $kno-chat-alt-bubble-focus-shadow,
+    $kno-chat-failed-bubble-text: $kno-chat-failed-bubble-text,
+    $kno-chat-failed-bubble-bg: $kno-chat-failed-bubble-bg,
+    $kno-chat-failed-bubble-border: $kno-chat-failed-bubble-border,
+    $kno-chat-failed-content-color: $kno-chat-failed-content-color,
+    $kno-chat-failed-bubble-hover-bg: $kno-chat-failed-bubble-hover-bg,
+    $kno-chat-failed-bubble-selected-bg: $kno-chat-failed-bubble-selected-bg,
+    $kno-chat-typing-indicator-text: $kno-chat-typing-indicator-text,
+    $kno-chat-sender-file-bg: $kno-chat-sender-file-bg,
+    $kno-chat-sender-file-text: $kno-chat-sender-file-text,
+    $kno-chat-sender-file-border: $kno-chat-sender-file-border,
+    $kno-chat-message-pinned-border-width: $kno-chat-message-pinned-border-width,
+    $kno-chat-message-pinned-border-style: $kno-chat-message-pinned-border-style,
+    $kno-chat-message-pinned-border-color:  $kno-chat-message-pinned-border-color,
+    $kno-chat-message-reference-padding-x: $kno-chat-message-reference-padding-x,
+    $kno-chat-message-reference-padding-y: $kno-chat-message-reference-padding-y,
+    $kno-chat-message-reference-bg: $kno-chat-message-reference-bg,
+    $kno-chat-message-reference-text: $kno-chat-message-reference-text,
+    $kno-chat-message-reference-marker-bg: $kno-chat-message-reference-marker-bg,
+    $kno-chat-message-reference-marker-alt-bg: $kno-chat-message-reference-marker-alt-bg,
+);

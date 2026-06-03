@@ -1,0 +1,88 @@
+{
+  "name": "@progress/kno-ooxml",
+  "description": "Kno UI OOXML formatting library",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "version": "1.9.0",
+  "main": "dist/npm/main.js",
+  "module": "dist/es/main.js",
+  "jsnext:main": "dist/es/main.js",
+  "typings": "dist/npm/main.d.ts",
+  "es2015": "dist/es2015/main.js",
+  "jsdelivr": "dist/cdn/js/kno-ooxml.js",
+  "unpkg": "dist/cdn/js/kno-ooxml.js",
+  "sideEffects": false,
+  "scripts": {
+    "build-package": "gulp build-module build-cdn",
+    "test": "jest",
+    "e2e": "gulp e2e",
+    "lint": "eslint --quiet .",
+    "semantic-release": "semantic-release pre && semantic-prerelease publish && semantic-release post"
+  },
+  "keywords": [
+    "Kno UI"
+  ],
+  "dependencies": {
+    "@progress/jszip-esm": "^1.0.3",
+    "@progress/pako-esm": "^1.0.1"
+  },
+  "devDependencies": {
+    "@progress/kno-package-tasks": "^4.0.34",
+    "@tlk/semantic-prerelease": "^1.0.0",
+    "cz-conventional-changelog": "^1.1.5",
+    "es-jest": "^1.5.0",
+    "eslint": "^8.17.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.5.3",
+    "ghooks": "^1.0.3",
+    "gulp": "^4.0.0",
+    "jest-cli": "^26.6.3",
+    "jquery": "3.2.1",
+    "semantic-release": "^6.3.6",
+    "validate-commit-msg": "^1.1.1"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    },
+    "ghooks": {
+      "commit-msg": "validate-commit-msg"
+    },
+    "validate-commit-msg": {
+      "types": [
+        "feat",
+        "fix",
+        "docs",
+        "style",
+        "refactor",
+        "perf",
+        "test",
+        "chore",
+        "revert"
+      ],
+      "warnOnFail": false,
+      "maxSubjectLength": 100
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlk/kno-ooxml.git"
+  },
+  "release": {
+    "debug": false,
+    "branchTags": {
+      "develop": "dev"
+    },
+    "fallbackTags": {
+      "dev": "latest"
+    },
+    "analyzeCommits": "@tlk/semantic-prerelease/analyzeCommits",
+    "generateNotes": "@tlk/semantic-prerelease/generateNotes",
+    "getLastRelease": "@tlk/semantic-prerelease/getLastRelease",
+    "verifyConditions": "@tlk/semantic-prerelease/verifyConditions",
+    "verifyRelease": "@tlk/semantic-prerelease/verifyRelease"
+  },
+  "files": [
+    "dist"
+  ]
+}

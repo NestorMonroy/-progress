@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+import { Button as e } from "@progress/kno-react-buttons";
+const m = t.forwardRef((o, r) => /* @__PURE__ */ t.createElement(e, { ref: r, ...o }));
+m.displayName = "PromptBoxActionButton";
+export {
+  m as PromptBoxActionButton
+};

@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { ButtonHandle } from '../../Button.js';
+/**
+ * Represents the ref handle of the SmartPasteButton component.
+ */
+export interface SmartPasteButtonHandle extends ButtonHandle {
+    /**
+     * Programmatically triggers a click on the SmartPasteButton.
+     */
+    click: () => void;
+}

@@ -1,0 +1,236 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "../icons/_variables.scss" as *;
+@use "../core/z-index/index.scss" as *;
+@use "../core/functions/index.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/input/_layout.scss" as *;
+
+@mixin kendo-input--layout() {
+
+    @include kendo-input--layout-base();
+
+    .k-input,
+    .k-picker {
+
+        &::after {
+            content: '';
+            box-sizing: border-box;
+            display: block;
+            position: absolute;
+            inset-inline-end: -1px;
+            inset-block-end: -1px;
+            inset-inline-start: -1px;
+            height: 4px;
+            border-width: 0 0 $kendo-input-border-width;
+            border-style: solid;
+            border-end-start-radius: inherit;
+            border-end-end-radius: inherit;
+            pointer-events: none;
+            z-index: k-z-index("base", 1);
+        }
+    }
+
+    // Solid and flat Numeric Textbox
+    .k-numerictextbox {
+
+        #{k-when-default($kendo-input-default-fill-mode, ("solid", "flat"))}
+        &.k-input-solid,
+        &.k-input-flat {
+
+            .k-spinner-increase,
+            .k-spinner-decrease {
+                border-width: 0;
+            }
+        }
+
+        #{k-when-default($kendo-input-default-fill-mode, "outline")}
+        &.k-input-outline {
+
+            .k-spinner-increase,
+            .k-spinner-decrease {
+                border-inline-start-width: $kendo-input-button-border-width;
+            }
+        }
+    }
+
+
+    // Icon picker
+    .k-icon-picker {
+        > .k-input-inner {
+            padding: 0;
+            box-sizing: content-box;
+            justify-content: center;
+        }
+
+        .k-value-icon {
+            border: 0;
+            border-radius: 0;
+        }
+    }
+
+    // Input with icon styles
+    .k-input-icon,
+    .k-input-validation-icon,
+    .k-input-loading-icon {
+        padding-inline: $kendo-input-md-padding-y;
+        padding-block: $kendo-input-md-padding-y;
+    }
+
+    .k-input {
+
+        #{k-when-default($kendo-input-default-fill-mode, "outline")}
+        &.k-input-outline {
+            .k-input-button {
+                border-inline-start-width: $kendo-input-button-border-width;
+            }
+        }
+    }
+
+
+    // Input spinner
+    .k-input-spinner {
+        border-color: inherit;
+
+        .k-spinner-increase,
+        .k-spinner-decrease {
+            border-radius: 0;
+            border-color: inherit;
+        }
+    }
+
+
+    // Fill mode
+    .k-input,
+    .k-picker {
+
+        &:focus,
+        &.k-focus,
+        &:focus-within {
+
+            &::after {
+                border-width: 0 0 $kendo-input-focus-border-width;
+            }
+
+        }
+
+        &.k-invalid,
+        &.ng-invalid.ng-touched,
+        &.ng-invalid.ng-dirty {
+
+            &:focus,
+            &.k-focus,
+            &:focus-within {
+
+                &::after {
+                    border-width: 0 0 $kendo-input-focus-border-width;
+                }
+            }
+        }
+    }
+
+    .k-input {
+
+        #{k-when-default($kendo-input-default-fill-mode, "outline")}
+        &.k-input-outline {
+
+            &::after {
+                display: none;
+            }
+
+            &:focus,
+            &.k-focus,
+            &:focus-within {
+                outline: $kendo-input-focus-border-width solid k-color(primary);
+                outline-offset: calc( -1 * #{$kendo-input-focus-border-width} );
+            }
+
+            &.k-invalid,
+            &.ng-invalid.ng-touched,
+            &.ng-invalid.ng-dirty {
+
+                &:focus,
+                &.k-focus,
+                &:focus-within {
+                    outline-color: k-color(error-on-surface);
+                }
+            }
+
+        }
+
+        // Sizing
+        @each $size, $size-props in $kendo-input-sizes {
+            $_button-padding-x: map.get( $size-props, button-padding-x );
+            $_button-padding-y: map.get( $size-props, button-padding-y );
+            $_button-width: map.get( $size-props, button-width );
+            $_icon-size: map.get( $size-props, icon-size );
+
+            #{k-when-default($kendo-input-default-size, $size)}
+            &.k-input-#{$size} {
+
+                .k-input-spinner {
+                    width: if( $kendo-use-input-spinner-width, var( --kendo-input-spinner-width, #{$_button-width} ), auto );
+
+                    .k-spinner-increase,
+                    .k-spinner-decrease {
+                        padding-inline: $_button-padding-x;
+                        padding-block: $_button-padding-y;
+                    }
+                }
+
+                // Clear value
+                .k-clear-value {
+                    width: $_icon-size;
+                    height: $_icon-size;
+                    padding: 0;
+                    box-sizing: border-box;
+                }
+
+            }
+        }
+    }
+
+    .k-picker {
+        #{k-when-default($kendo-picker-default-fill-mode, "outline")}
+        &.k-picker-outline {
+
+            &::after {
+                display: none;
+            }
+
+            &:focus,
+            &.k-focus,
+            &:focus-within {
+                outline: $kendo-input-focus-border-width solid k-color(primary);
+                outline-offset: calc( -1 * #{$kendo-input-focus-border-width} );
+            }
+
+            &.k-invalid,
+            &.ng-invalid.ng-touched,
+            &.ng-invalid.ng-dirty {
+
+                &:focus,
+                &.k-focus,
+                &:focus-within {
+                    outline-color: k-color(error-on-surface);
+                }
+            }
+
+        }
+
+        // Sizing
+        @each $size, $size-props in $kendo-input-sizes {
+            $_button-width: map.get( $size-props, button-width );
+
+            #{k-when-default($kendo-picker-default-size, $size)}
+            &.k-picker-#{$size} {
+
+                &.k-icon-picker > .k-input-inner {
+                    width: var( --kendo-input-icon-picker-width, #{$_button-width} );
+                    height: auto;
+                    padding: 0;
+                }
+            }
+        }
+    }
+}

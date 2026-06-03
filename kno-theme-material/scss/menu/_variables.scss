@@ -1,0 +1,399 @@
+@use "sass:color";
+@use "sass:list";
+@use "../core/_index.scss" as *;
+@use "../icons/_variables.scss" as *;
+@use "../button/_variables.scss" as *;
+@use "../popup/_variables.scss" as *;
+@use "../list/_variables.scss" as *;
+
+
+// Menu
+
+/// The default size of the Menu group.
+/// @group menu
+/// @role default
+$kno-menu-group-default-size: "md" !default;
+
+/// The width of the border around the Menu.
+/// @group menu
+$kno-menu-border-width: 0px !default;
+/// The font family of the Menu.
+/// @group menu
+$kno-menu-font-family: var(--kno-font-family) !default;
+/// The font size of the Menu.
+/// @group menu
+$kno-menu-font-size: var(--kno-font-size-lg) !default;
+/// The line height of the Menu used along with $kno-font-size.
+/// @group menu
+$kno-menu-line-height: var(--kno-line-height-lg) !default;
+
+/// The background color of the Menu.
+/// @group menu
+$kno-menu-bg: transparent !default;
+/// The text color of the Menu.
+/// @group menu
+$kno-menu-text: k-color(on-app-surface) !default;
+/// The border color of the Menu.
+/// @group menu
+$kno-menu-border: null !default;
+/// The background gradient of the Menu.
+/// @group menu
+$kno-menu-gradient: null !default;
+
+// Menu item
+
+/// The horizontal padding of the Menu item.
+/// @group menu
+$kno-menu-item-padding-x: k-spacing(3) !default;
+/// The vertical padding of the Menu item.
+/// @group menu
+$kno-menu-item-padding-y: k-spacing(3) !default;
+/// The spacing between the Menu items.
+/// @group menu
+$kno-menu-item-spacing: 0 !default;
+/// The spacing between the Menu item text and icons.
+/// @group menu
+$kno-menu-item-icon-spacing: k-spacing(3) !default;
+
+/// The font weight of the selected Menu item.
+/// @group menu
+$kno-menu-item-selected-font-weight: var(--kno-font-weight-normal) !default;
+
+/// The background color of the Menu item.
+/// @group menu
+$kno-menu-item-bg: null !default;
+/// The text color of the Menu item.
+/// @group menu
+$kno-menu-item-text: null !default;
+/// The border color of the Menu item.
+/// @group menu
+$kno-menu-item-border: null !default;
+/// The background gradient of the Menu item.
+/// @group menu
+$kno-menu-item-gradient: null !default;
+
+/// The background color of hovered Menu item.
+/// @group menu
+$kno-menu-item-hover-bg: color-mix(in srgb, currentColor 8%, transparent) !default;
+/// The text color of hovered Menu item.
+/// @group menu
+$kno-menu-item-hover-text: null !default;
+/// The border color of hovered Menu item.
+/// @group menu
+$kno-menu-item-hover-border: null !default;
+/// The background gradient of hovered Menu item.
+/// @group menu
+$kno-menu-item-hover-gradient: null !default;
+
+/// The background color of active Menu item.
+/// @group menu
+$kno-menu-item-active-bg: color-mix(in srgb, currentColor 12%, transparent) !default;
+/// The text color of active Menu item.
+/// @group menu
+$kno-menu-item-active-text: null !default;
+/// The border color of active Menu item.
+/// @group menu
+$kno-menu-item-active-border: null !default;
+/// The background gradient of active Menu item.
+/// @group menu
+$kno-menu-item-active-gradient: null !default;
+
+/// The base shadow of focused Menu item.
+/// @group menu
+$kno-menu-item-focus-shadow: inset 0 0 0 2px color-mix(in srgb, currentColor 20%, transparent) !default;
+
+/// The background color of selected Menu item.
+/// @group menu
+$kno-menu-item-selected-bg: k-color(secondary) !default;
+/// The text color of selected Menu item.
+/// @group menu
+$kno-menu-item-selected-text: k-color(on-secondary) !default;
+/// The border color of selected Menu item.
+/// @group menu
+$kno-menu-item-selected-border: null !default;
+/// The background gradient of selected Menu item.
+/// @group menu
+$kno-menu-item-selected-gradient: null !default;
+
+/// The background color of the Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-bg: null !default;
+/// The text color of the Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-text: $kno-menu-text !default;
+/// The border color of the Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-border: null !default;
+/// The background gradient of the Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-gradient: null !default;
+
+/// The background color of hovered Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-hover-bg: color-mix(in srgb, k-color(on-app-surface) 8%, transparent) !default;
+/// The text color of hovered Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-hover-text: $kno-menu-item-hover-text !default;
+/// The border color of hovered Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-hover-border: null !default;
+/// The background gradient of hovered Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-hover-gradient: null !default;
+
+/// The horizontal padding of the Menu expand arrow icon.
+/// @group menu
+$kno-menu-icon-padding-x: k-spacing(1) !default;
+/// The vertical padding of the Menu expand arrow icon.
+/// @group menu
+$kno-menu-icon-padding-y: k-spacing(1) !default;
+
+
+// Menu Separator
+
+/// The inline margin of the horizontal Menu separator.
+/// @group menu
+$kno-menu-separator-margin-inline: k-spacing(1) !default;
+/// The block margin of the horizontal Menu separator.
+/// @group menu
+$kno-menu-separator-margin-block: k-spacing(1) !default;
+/// The border color of Menu separator.
+/// @group menu
+$kno-menu-separator-border: k-color(border) !default;
+
+
+// Menu popup
+
+/// The horizontal padding of the Menu popup.
+/// @group menu
+$kno-menu-popup-padding-x: null !default;
+
+/// The vertical padding of the Menu popup.
+/// @group menu
+$kno-menu-popup-padding-y: null !default;
+
+/// The width of the border around the Menu popup.
+/// @group menu
+$kno-menu-popup-border-width: $kno-popup-border-width !default;
+
+/// The font size of the small Menu popup.
+/// @group menu
+$kno-menu-popup-sm-font-size: var(--kno-font-size) !default;
+/// The font size of the medium Menu popup.
+/// @group menu
+$kno-menu-popup-md-font-size: var(--kno-font-size) !default;
+/// The font size of the large Menu popup.
+/// @group menu
+$kno-menu-popup-lg-font-size: var(--kno-font-size) !default;
+
+/// The line height of the small Menu popup.
+/// @group menu
+$kno-menu-popup-sm-line-height: $kno-menu-line-height !default;
+/// The line height of the medium Menu popup.
+/// @group menu
+$kno-menu-popup-md-line-height: $kno-menu-line-height !default;
+/// The line height of the large Menu popup.
+/// @group menu
+$kno-menu-popup-lg-line-height: $kno-menu-line-height !default;
+
+/// The background color of the Menu popup.
+/// @group menu
+$kno-menu-popup-bg: $kno-popup-bg !default;
+/// The text color of the Menu popup.
+/// @group menu
+$kno-menu-popup-text: $kno-popup-text !default;
+/// The border color of the Menu popup.
+/// @group menu
+$kno-menu-popup-border: $kno-popup-border !default;
+/// The background gradient of the Menu popup.
+/// @group menu
+$kno-menu-popup-gradient: null !default;
+
+
+// Menu popup item
+
+/// The horizontal padding of the small Menu popup item.
+/// @group menu
+$kno-menu-popup-sm-item-padding-x: $kno-menu-item-padding-x !default;
+/// The horizontal padding of the medium Menu popup item.
+/// @group menu
+$kno-menu-popup-md-item-padding-x: $kno-menu-item-padding-x !default;
+/// The horizontal padding of the large Menu popup item.
+/// @group menu
+$kno-menu-popup-lg-item-padding-x: $kno-menu-item-padding-x !default;
+
+/// The vertical padding of the small Menu popup item.
+/// @group menu
+$kno-menu-popup-sm-item-padding-y: k-spacing(2) !default;
+/// The vertical padding of the medium Menu popup item.
+/// @group menu
+$kno-menu-popup-md-item-padding-y: $kno-menu-item-padding-y !default;
+/// The vertical padding of the large Menu popup item.
+/// @group menu
+$kno-menu-popup-lg-item-padding-y: k-spacing(4) !default;
+
+/// The end padding of the small Menu popup item.
+/// @group menu
+$kno-menu-popup-sm-item-padding-end: calc( #{$kno-menu-popup-sm-item-padding-x} * 2 + #{$kno-icon-size} ) !default;
+/// The end padding of the medium Menu popup item.
+/// @group menu
+$kno-menu-popup-md-item-padding-end: calc( #{$kno-menu-popup-md-item-padding-x} * 2 + #{$kno-icon-size} ) !default;
+/// The end padding of the large Menu popup item.
+/// @group menu
+$kno-menu-popup-lg-item-padding-end: calc( #{$kno-menu-popup-lg-item-padding-x} * 2 + #{$kno-icon-size} ) !default;
+
+/// The start margin of the small Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-sm-item-icon-margin-start: $kno-menu-popup-sm-item-padding-x !default;
+/// The start margin of the medium Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-md-item-icon-margin-start: $kno-menu-popup-md-item-padding-x !default;
+/// The start margin of the large Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-lg-item-icon-margin-start: $kno-menu-popup-lg-item-padding-x !default;
+
+/// The end margin of the small Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-sm-item-icon-margin-end: calc( -1 * (#{$kno-menu-popup-sm-item-padding-end} - #{list.slash( $kno-menu-popup-sm-item-padding-x, 2 )}) ) !default;
+/// The end margin of the medium Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-md-item-icon-margin-end: calc( -1 * (#{$kno-menu-popup-md-item-padding-end} - #{list.slash( $kno-menu-popup-md-item-padding-x, 2 )}) ) !default;
+/// The end margin of the large Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-lg-item-icon-margin-end: calc( -1 * (#{$kno-menu-popup-lg-item-padding-end} - #{list.slash( $kno-menu-popup-lg-item-padding-x, 2 )}) ) !default;
+
+/// The spacing between the Menu items in popup.
+/// @group menu
+$kno-menu-popup-item-spacing: k-spacing(0) !default;
+
+/// The background color of the Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-bg: null !default;
+/// The text color of the Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-text: null !default;
+/// The border color of the Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-border: null !default;
+/// The background gradient of the Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-gradient: null !default;
+
+/// The background color of hovered Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-hover-bg: $kno-menu-item-hover-bg !default;
+/// The text color of hovered Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-hover-text: inherit !default;
+/// The border color of hovered Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-hover-border: null !default;
+/// The background gradient of hovered Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-hover-gradient: null !default;
+
+/// The background color of active Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-active-bg: $kno-menu-item-active-bg !default;
+/// The text color of active Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-active-text: inherit !default;
+/// The border color of active Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-active-border: null !default;
+/// The background gradient of active Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-active-gradient: null !default;
+
+/// The base shadow of focused Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-focus-shadow: null !default;
+
+@forward "@progress/kno-theme-core/scss/components/menu/_variables.scss" with (
+    $kno-menu-group-default-size: $kno-menu-group-default-size,
+    $kno-menu-border-width: $kno-menu-border-width,
+    $kno-menu-font-family: $kno-menu-font-family,
+    $kno-menu-font-size: $kno-menu-font-size,
+    $kno-menu-line-height: $kno-menu-line-height,
+    $kno-menu-bg: $kno-menu-bg,
+    $kno-menu-text: $kno-menu-text,
+    $kno-menu-border: $kno-menu-border,
+    $kno-menu-gradient: $kno-menu-gradient,
+    $kno-menu-item-padding-x: $kno-menu-item-padding-x,
+    $kno-menu-item-padding-y: $kno-menu-item-padding-y,
+    $kno-menu-item-spacing: $kno-menu-item-spacing,
+    $kno-menu-item-icon-spacing: $kno-menu-item-icon-spacing,
+    $kno-menu-item-selected-font-weight: $kno-menu-item-selected-font-weight,
+    $kno-menu-item-bg: $kno-menu-item-bg,
+    $kno-menu-item-text: $kno-menu-item-text,
+    $kno-menu-item-border: $kno-menu-item-border,
+    $kno-menu-item-gradient: $kno-menu-item-gradient,
+    $kno-menu-item-hover-bg: $kno-menu-item-hover-bg,
+    $kno-menu-item-hover-text: $kno-menu-item-hover-text,
+    $kno-menu-item-hover-border: $kno-menu-item-hover-border,
+    $kno-menu-item-hover-gradient: $kno-menu-item-hover-gradient,
+    $kno-menu-item-active-bg: $kno-menu-item-active-bg,
+    $kno-menu-item-active-text: $kno-menu-item-active-text,
+    $kno-menu-item-active-border: $kno-menu-item-active-border,
+    $kno-menu-item-active-gradient: $kno-menu-item-active-gradient,
+    $kno-menu-item-focus-shadow: $kno-menu-item-focus-shadow,
+    $kno-menu-item-selected-bg: $kno-menu-item-selected-bg,
+    $kno-menu-item-selected-text: $kno-menu-item-selected-text,
+    $kno-menu-item-selected-border: $kno-menu-item-selected-border,
+    $kno-menu-item-selected-gradient: $kno-menu-item-selected-gradient,
+    $kno-menu-scroll-button-bg: $kno-menu-scroll-button-bg,
+    $kno-menu-scroll-button-text: $kno-menu-scroll-button-text,
+    $kno-menu-scroll-button-border: $kno-menu-scroll-button-border,
+    $kno-menu-scroll-button-gradient: $kno-menu-scroll-button-gradient,
+    $kno-menu-scroll-button-hover-bg: $kno-menu-scroll-button-hover-bg,
+    $kno-menu-scroll-button-hover-text: $kno-menu-scroll-button-hover-text,
+    $kno-menu-scroll-button-hover-border: $kno-menu-scroll-button-hover-border,
+    $kno-menu-scroll-button-hover-gradient: $kno-menu-scroll-button-hover-gradient,
+    $kno-menu-icon-padding-x: $kno-menu-icon-padding-x,
+    $kno-menu-icon-padding-y: $kno-menu-icon-padding-y,
+    $kno-menu-separator-margin-inline: $kno-menu-separator-margin-inline,
+    $kno-menu-separator-margin-block: $kno-menu-separator-margin-block,
+    $kno-menu-separator-border: $kno-menu-separator-border,
+    $kno-menu-popup-padding-x: $kno-menu-popup-padding-x,
+    $kno-menu-popup-padding-y: $kno-menu-popup-padding-y,
+    $kno-menu-popup-border-width: $kno-menu-popup-border-width,
+    $kno-menu-popup-sm-font-size: $kno-menu-popup-sm-font-size,
+    $kno-menu-popup-md-font-size: $kno-menu-popup-md-font-size,
+    $kno-menu-popup-lg-font-size: $kno-menu-popup-lg-font-size,
+    $kno-menu-popup-sm-line-height: $kno-menu-popup-sm-line-height,
+    $kno-menu-popup-md-line-height: $kno-menu-popup-md-line-height,
+    $kno-menu-popup-lg-line-height: $kno-menu-popup-lg-line-height,
+    $kno-menu-popup-bg: $kno-menu-popup-bg,
+    $kno-menu-popup-text: $kno-menu-popup-text,
+    $kno-menu-popup-border: $kno-menu-popup-border,
+    $kno-menu-popup-gradient: $kno-menu-popup-gradient,
+    $kno-menu-popup-sm-item-padding-x: $kno-menu-popup-sm-item-padding-x,
+    $kno-menu-popup-md-item-padding-x: $kno-menu-popup-md-item-padding-x,
+    $kno-menu-popup-lg-item-padding-x: $kno-menu-popup-lg-item-padding-x,
+    $kno-menu-popup-sm-item-padding-y: $kno-menu-popup-sm-item-padding-y,
+    $kno-menu-popup-md-item-padding-y: $kno-menu-popup-md-item-padding-y,
+    $kno-menu-popup-lg-item-padding-y: $kno-menu-popup-lg-item-padding-y,
+    $kno-menu-popup-sm-item-padding-end: $kno-menu-popup-sm-item-padding-end,
+    $kno-menu-popup-md-item-padding-end: $kno-menu-popup-md-item-padding-end,
+    $kno-menu-popup-lg-item-padding-end: $kno-menu-popup-lg-item-padding-end,
+    $kno-menu-popup-sm-item-icon-margin-start: $kno-menu-popup-sm-item-icon-margin-start,
+    $kno-menu-popup-md-item-icon-margin-start: $kno-menu-popup-md-item-icon-margin-start,
+    $kno-menu-popup-lg-item-icon-margin-start: $kno-menu-popup-lg-item-icon-margin-start,
+    $kno-menu-popup-sm-item-icon-margin-end: $kno-menu-popup-sm-item-icon-margin-end,
+    $kno-menu-popup-md-item-icon-margin-end: $kno-menu-popup-md-item-icon-margin-end,
+    $kno-menu-popup-lg-item-icon-margin-end: $kno-menu-popup-lg-item-icon-margin-end,
+    $kno-menu-popup-item-spacing: $kno-menu-popup-item-spacing,
+    $kno-menu-popup-item-bg: $kno-menu-popup-item-bg,
+    $kno-menu-popup-item-text: $kno-menu-popup-item-text,
+    $kno-menu-popup-item-border: $kno-menu-popup-item-border,
+    $kno-menu-popup-item-gradient: $kno-menu-popup-item-gradient,
+    $kno-menu-popup-item-hover-bg: $kno-menu-popup-item-hover-bg,
+    $kno-menu-popup-item-hover-text: $kno-menu-popup-item-hover-text,
+    $kno-menu-popup-item-hover-border: $kno-menu-popup-item-hover-border,
+    $kno-menu-popup-item-hover-gradient: $kno-menu-popup-item-hover-gradient,
+    $kno-menu-popup-item-active-bg: $kno-menu-popup-item-active-bg,
+    $kno-menu-popup-item-active-text: $kno-menu-popup-item-active-text,
+    $kno-menu-popup-item-active-border: $kno-menu-popup-item-active-border,
+    $kno-menu-popup-item-active-gradient: $kno-menu-popup-item-active-gradient,
+    $kno-menu-popup-item-focus-shadow: $kno-menu-popup-item-focus-shadow
+);

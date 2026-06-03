@@ -1,0 +1,40 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { TextAreaProps } from './interfaces/TextAreaProps';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface TextAreaHandle {
+    element: React.RefObject<HTMLTextAreaElement | null>;
+    focus: any;
+    blur: any;
+    name?: string | null;
+    value?: string;
+}
+/**
+ * Represents the PropsContext of the `TextArea` component.
+ * Used for global configuration of all `TextArea` instances.
+ *
+ * For more information, refer to the [Inputs Props Context](components/inputs/props-context) article.
+ */
+export declare const TextAreaPropsContext: React.Context<(p: TextAreaProps) => TextAreaProps>;
+/**
+ * Represents the [knoReact TextArea component](components/inputs/textarea).
+ *
+ *
+ * Accepts properties of type [TextAreaProps](components/inputs/api/textareaprops).
+ *
+ * @example
+ * ```jsx
+ * const App = () => {
+ *     return <TextArea />;
+ * }
+ * ```
+ */
+export declare const TextArea: React.ForwardRefExoticComponent<TextAreaProps & React.RefAttributes<TextAreaHandle | null>>;

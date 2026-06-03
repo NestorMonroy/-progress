@@ -1,0 +1,10 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { CardTitleProps } from './interfaces/CardTitleProps';
+import * as React from 'react';
+export declare const CardTitle: React.FunctionComponent<CardTitleProps>;

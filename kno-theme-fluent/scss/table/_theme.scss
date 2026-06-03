@@ -1,0 +1,24 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/table/_theme.scss" as *;
+
+@mixin kno-table--theme() {
+    @include kno-table--theme-base();
+
+    .k-table-group-sticky-header,
+    .k-table-group-header {
+        @include fill(
+            $kno-table-sticky-header-text,
+            $kno-table-sticky-header-bg,
+            $kno-table-sticky-header-border
+        );
+        @include box-shadow($kno-table-sticky-header-shadow);
+    }
+
+    .k-table-group-td > span {
+        @include fill (
+            $kno-table-group-label-text,
+            $kno-table-group-label-bg
+        );
+    }
+}

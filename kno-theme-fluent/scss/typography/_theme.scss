@@ -1,0 +1,7 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/typography/_theme.scss" as *;
+
+@mixin kno-typography--theme() {
+    @include kno-typography--theme-base();
+}

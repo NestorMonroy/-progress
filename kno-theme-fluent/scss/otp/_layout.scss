@@ -1,0 +1,9 @@
+@use "sass:map";
+@use "./_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "../input/_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/otp/_layout.scss" as *;
+
+@mixin kno-otp--layout() {
+    @include kno-otp--layout-base();
+}

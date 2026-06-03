@@ -1,0 +1,27 @@
+/// This is equivalent to `pointer-events: none;`.
+/// @example pointer-events: none;
+/// @name .k-pointer-events-none
+/// @group pointer-events
+/// @contextType css
+
+/// This is equivalent to `pointer-events: auto;`.
+/// @example pointer-events: auto;
+/// @name .k-pointer-events-auto
+/// @group pointer-events
+/// @contextType css
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--interactivity--pointer-events() {
+    @include import-once("utils-interactivity-pointer-events") {
+
+        // Pointer events utility classes
+        $kno-utils-pointer-events: map.get( $kno-utils, "pointer-events" ) !default;
+        @include generate-utils( pointer-events, pointer-events, $kno-utils-pointer-events );
+
+    }
+}

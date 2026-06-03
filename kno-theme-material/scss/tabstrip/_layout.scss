@@ -1,0 +1,161 @@
+@use "./_variables.scss" as *;
+@use "../core/z-index/index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/tabstrip/_layout.scss" as *;
+
+
+@mixin kno-tabstrip--layout() {
+
+    @include kno-tabstrip--layout-base();
+
+    .k-tabstrip-items {
+        .k-tabstrip-item,
+        .k-item {
+            font-weight: var(--kno-font-weight-medium);
+        }
+    }
+
+    .k-tabstrip .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item.k-active::after,
+        .k-item.k-active::after {
+            border-width: 0;
+        }
+    }
+
+    .k-tabstrip-items .k-item-actions {
+        align-self: center;
+    }
+
+    .k-tabstrip-top > .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item:active,
+        .k-tabstrip-item.k-active,
+        .k-item:active,
+        .k-item.k-active {
+            margin-block-end: 0;
+            border-block-end-width: 0;
+        }
+    }
+
+    .k-tabstrip-top,
+    .k-tabstrip-bottom {
+        .k-tabstrip-items-wrapper {
+            .k-tabstrip-item::after,
+            .k-item::after {
+                display: none;
+            }
+
+            .k-tabstrip-item .k-link,
+            .k-item .k-link {
+                position: relative;
+            }
+
+            .k-tabstrip-item .k-link::after,
+            .k-item .k-link::after {
+                content: "";
+                display: none;
+                position: absolute;
+                z-index: k-z-index("base", 2);
+                inset-block-start: 0;
+                inset-inline-end: 0;
+                inset-block-end: 0;
+                inset-inline-start: 0;
+                height: $kno-tabstrip-indicator-size;
+                margin: 0 $kno-tabstrip-md-item-padding-x;
+                pointer-events: none;
+            }
+
+            .k-tabstrip-item.k-active .k-link::after,
+            .k-item.k-active .k-link::after {
+                display: block;
+            }
+
+            .k-tabstrip-item > .k-link,
+            .k-item > .k-link {
+                z-index: k-z-index("base", 1);
+            }
+        }
+    }
+
+    .k-tabstrip-right,
+    .k-tabstrip-left {
+        .k-tabstrip-items-wrapper {
+            .k-tabstrip-item::after,
+            .k-item::after {
+                content: "";
+                display: none;
+                position: absolute;
+                z-index: k-z-index("base", 2);
+                inset-block-start: 0;
+                inset-inline-end: 0;
+                inset-block-end: 0;
+                inset-inline-start: 0;
+                pointer-events: none;
+                width: $kno-tabstrip-indicator-size;
+                height: auto;
+                margin: $kno-tabstrip-md-item-padding-y 0;
+            }
+            .k-tabstrip-item.k-active::after,
+            .k-item.k-active::after {
+                display: block;
+            }
+        }
+    }
+
+    // Variants
+    .k-tabstrip-top > .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item .k-link::after,
+        .k-item .k-link::after {
+            inset-block-start: auto;
+        }
+    }
+
+    .k-tabstrip-left > .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item::after,
+        .k-item::after {
+            left: auto;
+        }
+    }
+
+    .k-tabstrip-right > .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item::after,
+        .k-item::after {
+            right: auto;
+        }
+    }
+
+    .k-tabstrip-top .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item.k-active .k-link::after,
+        .k-item.k-active .k-link::after {
+            border-radius: var( --kno-border-radius-full, 9999px ) var( --kno-border-radius-full, 9999px ) 0 0;
+        }
+    }
+
+    .k-tabstrip-bottom .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item.k-active .k-link::after,
+        .k-item.k-active .k-link::after {
+            border-radius: 0 0 var( --kno-border-radius-full, 9999px ) var( --kno-border-radius-full, 9999px );
+        }
+    }
+
+    .k-tabstrip-left .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item.k-active::after,
+        .k-item.k-active::after {
+            border-radius: var( --kno-border-radius-full, 9999px ) 0 0 var( --kno-border-radius-full, 9999px );
+        }
+    }
+
+    .k-tabstrip-right .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item.k-active::after,
+        .k-item.k-active::after {
+            border-radius: 0 var( --kno-border-radius-full, 9999px ) var( --kno-border-radius-full, 9999px ) 0;
+        }
+    }
+}

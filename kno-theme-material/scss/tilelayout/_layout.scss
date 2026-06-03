@@ -1,0 +1,12 @@
+@use "@progress/kno-theme-core/scss/components/tilelayout/_layout.scss" as *;
+@use "../card/_variables.scss" as *;
+
+@mixin kno-tile-layout--layout() {
+    @include kno-tile-layout--layout-base();
+
+    .k-tilelayout {
+        .k-card {
+            box-shadow: $kno-card-shadow;
+        }
+    }
+}

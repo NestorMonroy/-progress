@@ -1,0 +1,22 @@
+@mixin kno-utils--responsive-layout--container() {
+
+    // Page Container
+    .k-container,
+    .k-container-fluid {
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+}
+
+@mixin kno-utils--responsive-layout--container--responsive($key, $val) {
+
+    // Page Container responsive
+    .k-container {
+        max-width: var(--kno-container-#{$key}-max-width, #{$val});
+    }
+
+}

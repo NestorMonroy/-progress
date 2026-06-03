@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { ExtendedColumnProps } from '../GridColumn.js';
+import { GridCellRenderModel } from '../interfaces/GridCellRenderModel';
+/**
+ * @hidden
+ */
+export declare function getVirtualCellsToRender(args: {
+    cellModels: GridCellRenderModel[];
+    columns: ExtendedColumnProps[];
+    tableViewPortWidth: number;
+    scrollLeft: number;
+}): GridCellRenderModel[];

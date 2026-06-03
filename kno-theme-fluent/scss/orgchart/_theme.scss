@@ -1,0 +1,19 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/orgchart/_theme.scss" as *;
+
+@mixin kno-orgchart--theme() {
+    @include kno-orgchart--theme-base();
+
+    .k-orgchart-card {
+        &:focus,
+        &.k-focus {
+            @include box-shadow( $kno-orgchart-card-focus-shadow );
+        }
+    }
+
+    .k-orgchart-node-group-container:focus,
+    .k-orgchart-node-group-container.k-focus {
+        @include box-shadow( $kno-orgchart-node-group-focus-shadow );
+    }
+}

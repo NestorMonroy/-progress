@@ -1,0 +1,62 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as d from "react";
+import { DropDownList as g } from "@progress/kno-react-dropdowns";
+import { applyInlineStyle as S, getInlineStyles as z } from "@progress/kno-editor-common";
+import { userSelectNone as w, itemRender as x } from "./utils.mjs";
+import { registerForLocalization as I, provideLocalizationService as D } from "@progress/kno-react-intl";
+import { messages as K } from "../messages/index.mjs";
+var f;
+((y) => {
+  y.createStyleDropDownList = (o) => {
+    const c = class extends d.Component {
+      constructor() {
+        super(...arguments), this.onChange = (i) => {
+          const a = i.target.value, { view: t } = this.props, { style: r } = o;
+          if (t) {
+            S({ style: r, value: a.value }, o.commandName)(t.state, t.dispatch);
+            const { syntheticEvent: n } = i;
+            n && n.type === "click" && t.focus();
+          }
+        };
+      }
+      render() {
+        const { style: i } = o, { view: a, render: t, data: r, defaultItem: n, ...s } = this.props, m = r || o.items;
+        let e = n || o.defaultItem;
+        const u = a ? z(a.state, { name: i, value: /^.+$/ }) : [], v = D(this);
+        e && e.localizationKey && (e = { ...e }, e.text = e.localizationKey ? v.toLanguageString(
+          e.localizationKey,
+          K[e.localizationKey]
+        ) : e.text);
+        let l = new Set(u).size === 1 ? u[0] : null;
+        l === null && s.defaultValue && (l = s.defaultValue);
+        const p = /* @__PURE__ */ d.createElement(
+          g,
+          {
+            value: l && m.find((h) => h.value === l),
+            data: m,
+            defaultItem: e,
+            itemRender: x,
+            textField: "text",
+            dataItemKey: "value",
+            onChange: this.onChange,
+            style: w,
+            leftRightKeysNavigation: !1,
+            title: e && e.text,
+            ...s
+          }
+        );
+        return t ? t.call(void 0, p, { view: a }) : p;
+      }
+    };
+    return I(c), c;
+  };
+})(f || (f = {}));
+export {
+  f as FontStyleToolNS
+};

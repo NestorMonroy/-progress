@@ -1,0 +1,32 @@
+@use "./_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "../bubble/_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/chat/_theme.scss" as *;
+
+
+@mixin kno-chat--theme() {
+    @include kno-chat--theme-base();
+
+    .k-chat {
+
+        .k-chat-download-button {
+            color: inherit;
+        }
+    }
+
+    .k-message-group-sender .k-chat-bubble {
+        &:focus,
+        &.k-focus {
+            outline-color: $kno-chat-alt-bubble-focus-border;
+            box-shadow: inset 0 0 0 calc( #{$kno-bubble-border-width} * 3 ) k-color(app-surface),
+                        inset 0 0 0 calc( #{$kno-bubble-border-width} * 5 ) $kno-chat-alt-bubble-focus-border;
+
+            &:hover,
+            &.k-hover {
+                box-shadow: inset 0 0 0 calc( #{$kno-bubble-border-width} * 3 ) k-color(app-surface),
+                            inset 0 0 0 calc( #{$kno-bubble-border-width} * 5 ) $kno-chat-alt-bubble-hover-border;
+            }
+        }
+    }
+
+}

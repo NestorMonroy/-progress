@@ -1,0 +1,115 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/pivotgrid/_layout.scss" as *;
+
+@mixin kno-pivotgrid--layout() {
+    @include kno-pivotgrid--layout-base();
+
+    .k-pivotgrid-empty-cell {
+        border-inline-end-style: solid;
+        border-inline-end-width: $kno-pivotgrid-cell-border-width;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    .k-pivotgrid-column-headers .k-pivotgrid-cell {
+        border-inline-start-style: solid;
+        border-inline-start-width: $kno-pivotgrid-cell-border-width;
+
+        &:first-child {
+            border-inline-start-width: initial;
+            border-inline-start-width: 0;
+        }
+
+        &.k-first {
+            border-inline-start-width: initial;
+            border-inline-start-width: $kno-pivotgrid-cell-border-width;
+        }
+    }
+
+    .k-pivotgrid-values .k-pivotgrid-cell {
+        border-inline-start-width: 0;
+    }
+
+    .k-pivotgrid-configurator-content .k-form .k-label {
+        font-weight: 400;
+    }
+
+    .k-pivotgrid-configurator-button .k-icon {
+        margin-inline-start: $kno-pivotgrid-configurator-button-icon-spacing;
+    }
+
+    .k-pivotgrid-configurator-content {
+        .k-row-fields,
+        .k-column-fields,
+        .k-filter-fields {
+            margin-block-start: initial;
+            margin-block-start: $kno-pivotgrid-configurator-fields-margin-y;
+        }
+
+        .k-value-fields {
+            gap: $kno-pivotgrid-configurator-fields-gap;
+        }
+
+        .k-settings-description {
+            margin-block-start: initial;
+            margin-block-start: k-spacing(4);
+        }
+    }
+
+    .k-calculated-field-header-text {
+        margin-inline-end: initial;
+        margin-inline-end: 5px;
+    }
+
+    .k-calculated-field-actions .k-icon {
+        margin-inline-end: initial;
+        margin-inline-end: k-spacing(2);
+    }
+
+    .k-pivotgrid-configurator-horizontal .k-pivotgrid-configurator-content .k-form-field-wrapper {
+        padding-inline-start: initial;
+        padding-inline-start: $kno-pivotgrid-spacer;
+
+        & > *:first-child {
+            margin-block-start: initial;
+            margin-block-start: 0;
+        }
+        &:first-child {
+            padding-inline-start: initial;
+            padding-inline-start: 0;
+        }
+    }
+
+    .k-pivotgrid-wrapper {
+        gap: $kno-pivotgrid-spacer;
+    }
+
+    .k-pivotgrid-configurator-panel.kno-jquery {
+        .k-pivotgrid-configurator-content {
+            padding: $kno-pivotgrid-spacer;
+            gap: $kno-pivotgrid-spacer;
+        }
+
+        .k-pivotgrid-targets {
+            gap: $kno-pivotgrid-spacer;
+        }
+
+        .k-pivotgrid-configurator-section {
+            gap: $kno-pivotgrid-spacer;
+        }
+
+        .k-column-fields {
+            padding: calc( $kno-pivotgrid-spacer / 2 );
+            gap: calc( $kno-pivotgrid-spacer / 2 );
+        }
+    }
+
+    .k-pivotgrid-toggle {
+        margin-block: calc( var( --kno-icon-padding ) * -1 );
+        padding: var( --kno-icon-padding, .25rem );
+    }
+}

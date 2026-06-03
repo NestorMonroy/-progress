@@ -1,0 +1,121 @@
+@use "sass:map";
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "../core/functions/index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/radio/_layout.scss" as *;
+
+@mixin kno-radio--layout() {
+
+    @include kno-radio--layout-base();
+
+    .k-radio {
+        // Radio size
+        @each $size, $size-props in $kno-radio-sizes {
+            $_indicator-size: map.get( $size-props, indicator-size );
+
+            #{k-when-default($kno-radio-default-size, $size)}
+            &.k-radio-#{$size} {
+                &::before {
+                    width: $_indicator-size;
+                    height: $_indicator-size;
+                }
+            }
+        }
+    }
+
+    // Radio indicator
+    .k-radio::before {
+        @if $kno-radio-indicator-type == "pseudo" {
+            content: "";
+            border-width: 0;
+            border-radius: $kno-radio-indicator-border-radius;
+            background-color: currentColor;
+            overflow: hidden;
+            transform: scale(0) translate(-50%, -50%);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    }
+
+
+    // Hover state
+    .k-radio:hover,
+    .k-radio.k-hover {
+        @if $kno-radio-indicator-type == "image" {
+            &::before {
+                background-color: currentColor;
+                mask-image: $kno-radio-hover-image;
+            }
+        }
+
+        @if $kno-radio-indicator-type == "pseudo" {
+            &::before {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        @if $kno-radio-indicator-type == "glyph" {
+            &::before {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+    }
+
+
+    // Focus state
+    .k-radio:focus,
+    .k-radio.k-focus {
+        outline-offset: $kno-radio-focus-outline-offset;
+    }
+
+
+    // Checked state
+    .k-radio:checked,
+    .k-radio.k-checked {
+        @if $kno-radio-indicator-type == "image" {
+            &::before {
+                background-color: currentColor;
+                mask-image: $kno-radio-checked-image;
+            }
+        }
+
+        @if $kno-radio-indicator-type == "pseudo" {
+            &::before {
+                transform: scale(1) translate(-50%, -50%);
+            }
+        }
+
+        @if $kno-radio-indicator-type == "glyph" {
+            &::before {
+                transform: scale(1) translate(-50%, -50%);
+            }
+        }
+    }
+
+    .k-radio-item,
+    .k-radio-list-item {
+        gap: $kno-radio-list-item-gap;
+    }
+
+    .k-radio-list.k-list-vertical {
+        gap: k-spacing(2);
+    }
+
+    // Ripple
+    .k-ripple-container {
+        .k-radio::after {
+            content: "";
+            width: var( --kno-radio-ripple-width, 300% );
+            height: var( --kno-radio-ripple-height, 300% );
+        }
+
+        .k-radio:focus,
+        .k-radio.k-focus {
+            box-shadow: none !important; // stylelint-disable-line declaration-no-important
+            outline: none !important; // stylelint-disable-line declaration-no-important
+        }
+    }
+
+}

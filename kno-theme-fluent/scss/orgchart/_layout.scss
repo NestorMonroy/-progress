@@ -1,0 +1,32 @@
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/orgchart/_layout.scss" as *;
+
+@mixin kno-orgchart--layout() {
+    @include kno-orgchart--layout-base();
+
+
+    .k-orgchart-group {
+        gap: $kno-orgchart-group-spacing;
+    }
+
+    .k-orgchart-node-container {
+        gap: $kno-orgchart-node-spacing;
+    }
+
+    .k-orgchart-card {
+
+        .k-card-title {
+            line-height: $kno-orgchart-card-title-line-height;
+        }
+        .k-card-subtitle {
+            line-height: $kno-orgchart-card-subtitle-line-height;
+        }
+        .k-card-body {
+            padding-inline: $kno-orgchart-card-body-padding-x;
+            padding-block: $kno-orgchart-card-body-padding-y;
+        }
+        .k-card-title-wrap .k-card-title + .k-spacer {
+            flex: 0;
+        }
+    }
+}

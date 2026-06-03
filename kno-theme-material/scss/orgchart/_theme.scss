@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/orgchart/_theme.scss" as *;
+
+
+@mixin kno-orgchart--theme() {
+    @include kno-orgchart--theme-base();
+}

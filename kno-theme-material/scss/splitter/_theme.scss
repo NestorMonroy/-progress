@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/splitter/_theme.scss" as *;
+
+
+@mixin kno-splitter--theme() {
+    @include kno-splitter--theme-base();
+}

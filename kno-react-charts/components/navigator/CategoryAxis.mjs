@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as a from "react";
+import { ConfigurationComponent as o } from "../base/ConfigurationComponent.mjs";
+const r = (t) => /* @__PURE__ */ a.createElement(o, { ...t, _chartKey: "categoryAxis" });
+r.displayName = "ChartNavigatorCategoryAxis";
+export {
+  r as ChartNavigatorCategoryAxis
+};

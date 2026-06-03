@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/window/_theme.scss" as *;
+
+
+@mixin kno-window--theme() {
+    @include kno-window--theme-base();
+}

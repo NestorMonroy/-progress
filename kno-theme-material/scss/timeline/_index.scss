@@ -1,0 +1,22 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../button/_index.scss" as *;
+@use "../card/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-timeline--styles() {
+    @include import-once( "timeline" ) {
+        @include core-styles();
+        @include kno-button--styles();
+        @include kno-card--styles();
+        @include kno-icon--styles();
+        @include kno-timeline--layout();
+        @include kno-timeline--theme();
+    }
+}

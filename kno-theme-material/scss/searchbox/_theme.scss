@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/searchbox/_theme.scss" as *;
+
+
+@mixin kno-searchbox--theme() {
+    @include kno-searchbox--theme-base();
+}

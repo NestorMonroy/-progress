@@ -1,0 +1,8 @@
+@use "sass:map";
+@use "./_variables.scss" as *;
+@use "../button/_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/split-button/_layout.scss" as *;
+
+@mixin kno-split-button--layout() {
+    @include kno-split-button--layout-base();
+}

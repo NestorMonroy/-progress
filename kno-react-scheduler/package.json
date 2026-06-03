@@ -1,0 +1,86 @@
+{
+  "name": "@progress/kno-react-scheduler",
+  "version": "15.0.0",
+  "description": "React Scheduler brings the functionality of Outlook's Calendar to a single UI component. knoReact Scheduler package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "/kno-react-ui",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/kno-data-query": "^1.7.2",
+    "@progress/kno-date-math": "^1.4.1",
+    "@progress/kno-drawing": "^1.21.2",
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-react-buttons": "15.0.0",
+    "@progress/kno-react-common": "15.0.0",
+    "@progress/kno-react-dateinputs": "15.0.0",
+    "@progress/kno-react-dialogs": "15.0.0",
+    "@progress/kno-react-dropdowns": "15.0.0",
+    "@progress/kno-react-form": "15.0.0",
+    "@progress/kno-react-inputs": "15.0.0",
+    "@progress/kno-react-intl": "15.0.0",
+    "@progress/kno-react-popup": "15.0.0",
+    "@progress/kno-svg-icons": "^4.9.0 || ^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "@progress/kno-draggable": "^3.0.1",
+    "@progress/kno-recurrence": "^1.0.1",
+    "prop-types": "^15.6.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "Progress",
+    "Scheduler",
+    "knoReact",
+    "reactjs",
+    "Scheduler view",
+    "Recurring event",
+    "Timezone support",
+    "Telerik",
+    "components",
+    "React component"
+  ],
+  "@progress": {
+    "friendlyName": "Scheduler",
+    "framework": "knoReact",
+    "package": {
+      "productName": "knoReact",
+      "productCode": "KNOUIREACT",
+      "publishDate": 1779275773,
+      "licensingDocsUrl": "/kno-react-ui"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "peerDependenciesMeta": {
+    "@progress/kno-svg-icons": {
+      "optional": true
+    }
+  }
+}

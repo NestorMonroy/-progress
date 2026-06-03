@@ -1,0 +1,357 @@
+@use "sass:map";
+@use "sass:math";
+@use "../core/_index.scss" as *;
+
+// Button
+
+/// The default theme color of the Button.
+/// @group button
+/// @role default
+$kno-button-default-theme-color: "base" !default;
+/// The default fill mode of the Button.
+/// @group button
+/// @role default
+$kno-button-default-fill-mode: "solid" !default;
+/// The default roundness of the Button.
+/// @group button
+/// @role default
+$kno-button-default-roundness: "md" !default;
+/// The default size of the Button.
+/// @group button
+/// @role default
+$kno-button-default-size: "md" !default;
+
+/// The width of the border around the Button.
+/// @group button
+$kno-button-border-width: 1px !default;
+
+/// The border radius of the Button.
+/// @group button
+$kno-button-border-radius: null !default;
+
+/// The spacing between icon and text inside the Button.
+/// @group button
+$kno-button-gap: k-spacing(2) !default;
+
+/// The horizontal padding of the xsmall Button.
+/// @group button
+$kno-button-xs-padding-x: k-spacing(3) !default;
+/// The horizontal padding of the small Button.
+/// @group button
+$kno-button-sm-padding-x: k-spacing(6) !default;
+/// The horizontal padding of the medium Button.
+/// @group button
+$kno-button-md-padding-x: k-spacing(6) !default;
+/// The horizontal padding of the large Button.
+/// @group button
+$kno-button-lg-padding-x: k-spacing(6) !default;
+
+/// The vertical padding of the xsmall Button.
+/// @group button
+$kno-button-xs-padding-y: k-spacing(0.5) !default;
+/// The vertical padding of the small Button.
+/// @group button
+$kno-button-sm-padding-y: calc( k-spacing(3.5) / 2 ) !default;
+/// The vertical padding of the medium Button.
+/// @group button
+$kno-button-md-padding-y: calc( k-spacing(4.5) / 2 ) !default;
+/// The vertical padding of the large Button.
+/// @group button
+$kno-button-lg-padding-y: calc( k-spacing(5.5) / 2 ) !default;
+
+/// The font family of the Button.
+/// @group button
+$kno-button-font-family: var(--kno-font-family) !default;
+/// The font weight of the Button.
+/// @group button
+$kno-button-font-weight: var(--kno-font-weight-medium) !default;
+
+/// The font size of the Button.
+/// @group button
+$kno-button-font-size: var(--kno-font-size) !default;
+/// The font size of the xsmall Button.
+/// @group button
+$kno-button-xs-font-size: var(--kno-font-size) !default;
+/// The font size of the small Button.
+/// @group button
+$kno-button-sm-font-size: var(--kno-font-size) !default;
+/// The font size of the medium Button.
+/// @group button
+$kno-button-md-font-size: var(--kno-font-size) !default;
+/// The font size of the large Button.
+/// @group button
+$kno-button-lg-font-size: var(--kno-font-size) !default;
+
+/// Line heights used along with the $kno-font-size variable.
+/// @group button
+$kno-button-line-height: var(--kno-line-height) !default;
+/// The line height used along with the $kno-font-size variable of the xsmall Button.
+/// @group button
+$kno-button-xs-line-height: var(--kno-line-height) !default;
+/// The line height used along with the $kno-font-size variable of the small Button.
+/// @group button
+$kno-button-sm-line-height: $kno-button-line-height !default;
+/// The line height used along with the $kno-font-size variable of the medium Button.
+/// @group button
+$kno-button-md-line-height: $kno-button-line-height !default;
+/// The line height used along with the $kno-font-size variable of the large Button.
+/// @group button
+$kno-button-lg-line-height: $kno-button-line-height !default;
+
+$kno-button-xs-calc-size: calc( ( #{$kno-button-xs-line-height} * 1em ) + ( #{$kno-button-xs-padding-y} * 2 ) + ( #{$kno-button-border-width} * 2 ) ) !default;
+$kno-button-sm-calc-size: calc( ( #{$kno-button-sm-line-height} * 1em ) + ( #{$kno-button-sm-padding-y} * 2 ) + ( #{$kno-button-border-width} * 2 ) ) !default;
+$kno-button-md-calc-size: calc( ( #{$kno-button-md-line-height} * 1em ) + ( #{$kno-button-md-padding-y} * 2 ) + ( #{$kno-button-border-width} * 2 ) ) !default;
+$kno-button-lg-calc-size: calc( ( #{$kno-button-lg-line-height} * 1em ) + ( #{$kno-button-lg-padding-y} * 2 ) + ( #{$kno-button-border-width} * 2 ) ) !default;
+
+$kno-button-inner-calc-size: calc( ( #{$kno-button-line-height} * 1em ) + ( #{$kno-button-md-padding-y} * 2 ) ) !default;
+$kno-button-xs-inner-calc-size: calc( ( #{$kno-button-xs-line-height} * 1em ) + ( #{$kno-button-xs-padding-y} * 2 ) ) !default;
+$kno-button-sm-inner-calc-size: calc( ( #{$kno-button-sm-line-height} * 1em ) + ( #{$kno-button-sm-padding-y} * 2 ) ) !default;
+$kno-button-md-inner-calc-size: calc( ( #{$kno-button-md-line-height} * 1em ) + ( #{$kno-button-md-padding-y} * 2 ) ) !default;
+$kno-button-lg-inner-calc-size: calc( ( #{$kno-button-lg-line-height} * 1em ) + ( #{$kno-button-lg-padding-y} * 2 ) ) !default;
+
+/// The base background of the Button.
+/// @group button
+$kno-button-bg: k-color(base) !default;
+/// The base text color of the Button.
+/// @group button
+$kno-button-text: k-color(on-base) !default;
+/// The base border color of the Button.
+/// @group button
+$kno-button-border: $kno-button-bg !default;
+/// The base background gradient of the Button.
+/// @group button
+$kno-button-gradient: none !default;
+/// The base shadow of the Button.
+/// @group button
+$kno-button-shadow: null !default;
+
+/// The base background of the hovered Button.
+/// @group button
+$kno-button-hover-bg: k-color(base-hover) !default;
+/// The base text color of the hovered Button.
+/// @group button
+$kno-button-hover-text: null !default;
+/// The base border color of the hovered Button.
+/// @group button
+$kno-button-hover-border: k-color(base-hover) !default;
+/// The base background gradient of the hovered Button.
+/// @group button
+$kno-button-hover-gradient: null !default;
+/// The base shadow of the hovered Button.
+/// @group button
+$kno-button-hover-shadow: k-elevation(1) !default;
+
+/// The base background color of the active Button.
+/// @group button
+$kno-button-active-bg: k-color(base-active) !default;
+/// The base text color of the active Button.
+/// @group button
+$kno-button-active-text: k-color(on-base) !default;
+/// The base border color of the active Button.
+/// @group button
+$kno-button-active-border: $kno-button-active-bg !default;
+/// The base background gradient of the active Button.
+/// @group button
+$kno-button-active-gradient: null !default;
+/// The base shadow of the active Button.
+/// @group button
+$kno-button-active-shadow: null !default;
+
+/// The base background color of the selected Button.
+/// @group button
+$kno-button-selected-bg: $kno-button-active-bg !default;
+/// The base text color of the selected Button.
+/// @group button
+$kno-button-selected-text: $kno-button-active-text !default;
+/// The base border color of the selected Button.
+/// @group button
+$kno-button-selected-border: $kno-button-active-bg !default;
+/// The base background gradient of the selected Button.
+/// @group button
+$kno-button-selected-gradient: none !default;
+/// The base shadow of the selected Button.
+/// @group button
+$kno-button-selected-shadow: null !default;
+
+/// The base border color of the focused Button.
+/// @group button
+$kno-button-focus-border: k-color(base-emphasis) !default;
+/// The base shadow of the focused Button.
+/// @group button
+$kno-button-focus-shadow: null !default;
+
+/// The base background color of the disabled Button.
+/// @group button
+$kno-button-disabled-bg: color-mix(in srgb, k-color(on-app-surface) 12%, transparent) !default;
+/// The base text color of the disabled Button.
+/// @group button
+$kno-button-disabled-text: color-mix(in srgb, k-color(on-app-surface) 38%, transparent) !default;
+/// The base border color of the disabled Button.
+/// @group button
+$kno-button-disabled-border: transparent !default;
+/// The base background gradient of the disabled Button.
+/// @group button
+$kno-button-disabled-gradient: null !default;
+/// The base shadow of the disabled Button.
+/// @group button
+$kno-button-disabled-shadow: null !default;
+
+/// The opacity of the pulsing animation for the generating Button.
+/// @group button
+$kno-button-pulsing-opacity: .6 !default;
+
+// Solid Button
+/// The gradient of the solid Button.
+/// @group button
+$kno-solid-button-gradient: none !default;
+/// The shadow of the solid Button.
+/// @group button
+$kno-solid-button-shadow: false !default;
+/// The shadow blur of the solid Button.
+/// @group button
+$kno-solid-button-shadow-blur: unset !default;
+/// The shadow spread of the solid Button.
+/// @group button
+$kno-solid-button-shadow-spread: unset !default;
+/// The shadow opacity of the solid Button.
+/// @group button
+$kno-solid-button-shadow-opacity: 0 !default;
+
+// Outline Button
+/// The shadow of the outline Button.
+/// @group button
+$kno-outline-button-shadow: false !default;
+/// The shadow blur of the outline Button.
+/// @group button
+$kno-outline-button-shadow-blur: unset !default;
+/// The shadow spread of the outline Button.
+/// @group button
+$kno-outline-button-shadow-spread: unset !default;
+/// The shadow opacity of the outline Button.
+/// @group button
+$kno-outline-button-shadow-opacity: 0 !default;
+
+// Link Button
+/// The shadow of the link Button.
+/// @group button
+$kno-link-button-shadow: false !default;
+/// The shadow blur of the link Button.
+/// @group button
+$kno-link-button-shadow-blur: unset !default;
+/// The shadow spread of the link Button.
+/// @group button
+$kno-link-button-shadow-spread: unset !default;
+/// The shadow opacity of the link Button.
+/// @group button
+$kno-link-button-shadow-opacity: 0 !default;
+
+// Clear Button
+/// The opacity of the clear Button.
+/// @group button
+$kno-clear-button-focus-opacity: .12 !default; // equal to 10% of black
+
+/// The overlay opacity of the hovered flat Button. Used to create a background for the flat Button.
+/// @group button
+$kno-flat-button-hover-opacity: .08 !default;
+/// The overlay opacity of the focused flat Button. Used to create a background for the flat Button.
+/// @group button
+$kno-flat-button-focus-opacity: .12 !default;
+/// The overlay opacity of the active flat Button. Used to create a background for the flat Button.
+/// @group button
+$kno-flat-button-active-opacity: .16 !default;
+/// The overlay opacity of the selected flat Button. Used to create a background for the flat Button.
+/// @group button
+$kno-flat-button-selected-opacity: .22 !default;
+/// The opacity of the flat Button focus ring. Used to create a border for the flat Button.
+/// @group button
+$kno-flat-button-focus-ring-opacity: unset !default;
+
+/// The transition of the Button.
+/// @group button
+$kno-button-transition: color k-transition(rapid), background-color k-transition(rapid), border-color k-transition(rapid), box-shadow k-transition(rapid), opacity k-transition(rapid) !default;
+
+@forward "@progress/kno-theme-core/scss/components/button/_variables.scss" with (
+    $kno-button-border-width: $kno-button-border-width,
+    $kno-button-border-radius: $kno-button-border-radius,
+    $kno-button-gap: $kno-button-gap,
+    $kno-button-xs-padding-x: $kno-button-xs-padding-x,
+    $kno-button-sm-padding-x: $kno-button-sm-padding-x,
+    $kno-button-md-padding-x: $kno-button-md-padding-x,
+    $kno-button-lg-padding-x: $kno-button-lg-padding-x,
+    $kno-button-xs-padding-y: $kno-button-xs-padding-y,
+    $kno-button-sm-padding-y: $kno-button-sm-padding-y,
+    $kno-button-md-padding-y: $kno-button-md-padding-y,
+    $kno-button-lg-padding-y: $kno-button-lg-padding-y,
+    $kno-button-font-family: $kno-button-font-family,
+    $kno-button-font-weight: $kno-button-font-weight,
+    $kno-button-font-size: $kno-button-font-size,
+    $kno-button-xs-font-size: $kno-button-xs-font-size,
+    $kno-button-sm-font-size: $kno-button-sm-font-size,
+    $kno-button-md-font-size: $kno-button-md-font-size,
+    $kno-button-lg-font-size: $kno-button-lg-font-size,
+    $kno-button-line-height: $kno-button-line-height,
+    $kno-button-xs-line-height: $kno-button-xs-line-height,
+    $kno-button-sm-line-height: $kno-button-sm-line-height,
+    $kno-button-md-line-height: $kno-button-md-line-height,
+    $kno-button-lg-line-height: $kno-button-lg-line-height,
+    $kno-button-xs-calc-size: $kno-button-xs-calc-size,
+    $kno-button-sm-calc-size: $kno-button-sm-calc-size,
+    $kno-button-md-calc-size: $kno-button-md-calc-size,
+    $kno-button-lg-calc-size: $kno-button-lg-calc-size,
+    $kno-button-inner-calc-size: $kno-button-inner-calc-size,
+    $kno-button-xs-inner-calc-size: $kno-button-xs-inner-calc-size,
+    $kno-button-sm-inner-calc-size: $kno-button-sm-inner-calc-size,
+    $kno-button-md-inner-calc-size: $kno-button-md-inner-calc-size,
+    $kno-button-lg-inner-calc-size: $kno-button-lg-inner-calc-size,
+    $kno-button-transition: $kno-button-transition,
+    $kno-button-bg: $kno-button-bg,
+    $kno-button-text: $kno-button-text,
+    $kno-button-border: $kno-button-border,
+    $kno-button-gradient: $kno-button-gradient,
+    $kno-button-shadow: $kno-button-shadow,
+    $kno-button-hover-bg: $kno-button-hover-bg,
+    $kno-button-hover-text: $kno-button-hover-text,
+    $kno-button-hover-border: $kno-button-hover-border,
+    $kno-button-hover-gradient: $kno-button-hover-gradient,
+    $kno-button-hover-shadow: $kno-button-hover-shadow,
+    $kno-button-active-bg: $kno-button-active-bg,
+    $kno-button-active-text: $kno-button-active-text,
+    $kno-button-active-border: $kno-button-active-border,
+    $kno-button-active-gradient: $kno-button-active-gradient,
+    $kno-button-active-shadow: $kno-button-active-shadow,
+    $kno-button-selected-bg: $kno-button-selected-bg,
+    $kno-button-selected-text: $kno-button-selected-text,
+    $kno-button-selected-border: $kno-button-selected-border,
+    $kno-button-selected-gradient: $kno-button-selected-gradient,
+    $kno-button-selected-shadow: $kno-button-selected-shadow,
+    $kno-button-focus-shadow: $kno-button-focus-shadow,
+    $kno-button-disabled-bg: $kno-button-disabled-bg,
+    $kno-button-disabled-text: $kno-button-disabled-text,
+    $kno-button-disabled-border: $kno-button-disabled-border,
+    $kno-button-disabled-gradient: $kno-button-disabled-gradient,
+    $kno-button-disabled-shadow: $kno-button-disabled-shadow,
+    $kno-button-pulsing-opacity: $kno-button-pulsing-opacity,
+    $kno-solid-button-gradient: $kno-solid-button-gradient,
+    $kno-solid-button-shadow: $kno-solid-button-shadow,
+    $kno-solid-button-shadow-blur: $kno-solid-button-shadow-blur,
+    $kno-solid-button-shadow-spread: $kno-solid-button-shadow-spread,
+    $kno-solid-button-shadow-opacity: $kno-solid-button-shadow-opacity,
+    $kno-outline-button-shadow: $kno-outline-button-shadow,
+    $kno-outline-button-shadow-blur: $kno-outline-button-shadow-blur,
+    $kno-outline-button-shadow-spread: $kno-outline-button-shadow-spread,
+    $kno-outline-button-shadow-opacity: $kno-outline-button-shadow-opacity,
+    $kno-link-button-shadow: $kno-link-button-shadow,
+    $kno-link-button-shadow-blur: $kno-link-button-shadow-blur,
+    $kno-link-button-shadow-spread: $kno-link-button-shadow-spread,
+    $kno-link-button-shadow-opacity: $kno-link-button-shadow-opacity,
+    $kno-clear-button-focus-opacity: $kno-clear-button-focus-opacity,
+    $kno-flat-button-hover-opacity: $kno-flat-button-hover-opacity,
+    $kno-flat-button-focus-opacity: $kno-flat-button-focus-opacity,
+    $kno-flat-button-active-opacity: $kno-flat-button-active-opacity,
+    $kno-flat-button-selected-opacity: $kno-flat-button-selected-opacity,
+    $kno-flat-button-focus-ring-opacity: $kno-flat-button-focus-ring-opacity,
+    $kno-button-default-theme-color: $kno-button-default-theme-color,
+    $kno-button-default-fill-mode: $kno-button-default-fill-mode,
+    $kno-button-default-roundness: $kno-button-default-roundness,
+    $kno-button-default-size: $kno-button-default-size
+);

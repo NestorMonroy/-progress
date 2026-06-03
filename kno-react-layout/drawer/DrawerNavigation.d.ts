@@ -1,0 +1,49 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { DrawerNavigationProps } from './interfaces/DrawerNavigationProps';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface DrawerNavigationHandle {
+    element: HTMLDivElement | null;
+    focus: () => void;
+}
+/**
+ * Represents the [knoReact Drawer component](components/layout/drawer).
+ *
+ * @example
+ * ```jsx
+ *   const App = () => {
+ *       const [expanded, setExpanded] = React.useState(true);
+ *       const handleClick = () => setExpanded(prevState => !prevState);
+ *
+ *       return (
+ *           <Drawer expanded={expanded} position='start' mode='push'>
+ *               <DrawerNavigation>
+ *                   <ul className="k-drawer-items">
+ *                       <li className="k-drawer-item k-selected">
+ *                           <span className="k-item-text">Home</span>
+ *                       </li>
+ *                       <li className="k-drawer-item">
+ *                           <span className="k-item-text">Products</span>
+ *                       </li>
+ *                       <li className="k-drawer-item">
+ *                           <span className="k-item-text">About</span>
+ *                       </li>
+ *                   </ul>
+ *               </DrawerNavigation>
+ *               <DrawerContent>
+ *                   <Button onClick={handleClick}>Toggle the drawer state</Button>
+ *               </DrawerContent>
+ *           </Drawer>
+ *       );
+ *   };
+ * ```
+ */
+export declare const DrawerNavigation: React.ForwardRefExoticComponent<DrawerNavigationProps & React.RefAttributes<DrawerNavigationHandle | null>>;

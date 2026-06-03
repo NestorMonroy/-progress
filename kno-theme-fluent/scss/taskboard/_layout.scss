@@ -1,0 +1,57 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "../toolbar/_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/taskboard/_layout.scss" as *;
+
+@mixin kno-task-board--layout() {
+    @include kno-task-board--layout-base();
+
+    .k-taskboard {
+        border-width: $kno-taskboard-border-width;
+        border-style: $kno-taskboard-border-style;
+    }
+
+    .k-taskboard-content {
+        padding-inline: $kno-taskboard-content-padding-x;
+        padding-block-start: 0;
+        padding-block-end: $kno-taskboard-content-padding-y;
+    }
+
+     .k-taskboard-column-cards-container {
+        margin-block-end: 0;
+     }
+
+    .k-taskboard-column-cards {
+        margin-block-end: $kno-taskboard-column-container-spacing-y;
+    }
+
+    .k-taskboard-pane-header {
+        font-size: $kno-taskboard-pane-header-font-size;
+    }
+
+    .k-taskboard-card {
+        .k-card-title {
+            font-size: $kno-taskboard-card-title-font-size;
+            font-weight: $kno-taskboard-card-title-font-weight;
+
+            &:focus,
+            &.k-focus,
+            &:hover,
+            &.k-hover {
+                text-decoration: none;
+            }
+        }
+    }
+
+    .k-taskboard-pane {
+        border: 0;
+    }
+
+    // Toolbar
+    .k-taskboard-toolbar {
+        border-width: $kno-toolbar-border-width;
+        border-inline-width: 0;
+        border-block-start-width: 0;
+        padding: k-spacing(2);
+    }
+}

@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { canUseDOM as f } from "@progress/kno-react-common";
+const u = (o) => {
+  let r, t = [];
+  const a = () => r, c = (e) => {
+    r = o(r, e), f && t.forEach((s) => s());
+  }, n = (e) => (t.push(e), () => t = t.filter((s) => s !== e));
+  return c({}), { getState: a, dispatch: c, subscribe: n };
+};
+export {
+  u as default
+};

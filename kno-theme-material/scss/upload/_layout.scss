@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/upload/_layout.scss" as *;
+
+
+@mixin kno-upload--layout() {
+    @include kno-upload--layout-base();
+}

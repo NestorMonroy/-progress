@@ -1,0 +1,333 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../list/_variables.scss"as *;
+@use "../popup/_variables.scss"as *;
+
+/// The default size of the Menu group.
+/// @group menu
+/// @role default
+$kno-menu-group-default-size: "md" !default;
+
+/// The width of the border around the Menu.
+/// @group menu
+$kno-menu-border-width: var( --kno-menu-border-width, #{k-spacing(0)} ) !default;
+
+/// The font family of the Menu.
+/// @group menu
+$kno-menu-font-family: var( --kno-menu-font-family, var(--kno-font-family) ) !default;
+/// The font size of the Menu.
+/// @group menu
+$kno-menu-font-size: var( --kno-menu-font-size, var(--kno-font-size) ) !default;
+/// The line heights of the Menu used along with $kno-font-size.
+/// @group menu
+$kno-menu-line-height: var( --kno-menu-line-height, var(--kno-line-height) ) !default;
+
+/// The background color of the Menu.
+/// @group menu
+$kno-menu-bg: var( --kno-menu-bg, transparent ) !default;
+/// The text color of the Menu.
+/// @group menu
+$kno-menu-text: var( --kno-menu-text, #{k-color(on-app-surface)} ) !default;
+/// The border color of the Menu.
+/// @group menu
+$kno-menu-border: var( --kno-menu-border, initial ) !default;
+/// The shadow of the Menu.
+/// @group menu
+$kno-menu-shadow: var( --kno-menu-shadow, none ) !default;
+
+
+// Menu item
+
+/// The horizontal padding of Menu item.
+/// @group menu
+$kno-menu-item-padding-x: var( --kno-menu-item-padding-x, #{k-spacing(2)} ) !default;
+/// The vertical padding of the Menu item.
+/// @group menu
+$kno-menu-item-padding-y: var( --kno-menu-item-padding-y, #{k-spacing(3)} ) !default;
+
+/// The spacing between the Menu items.
+/// @group menu
+$kno-menu-item-spacing: var( --kno-menu-item-spacing, #{k-spacing(0)} ) !default;
+/// The spacing between the Menu item text and icons.
+/// @group menu
+$kno-menu-item-icon-spacing: var( --kno-menu-item-icon-spacing, var( --kno-icon-spacing, .5rem ) ) !default;
+
+/// The font weight of the selected Menu item.
+/// @group menu
+$kno-menu-item-selected-font-weight: var( --kno-menu-item-selected-font-weight, var(--kno-font-weight-bold) ) !default;
+
+/// The text color of Menu item.
+/// @group menu
+$kno-menu-item-text: var( --kno-menu-item-text, #{$kno-menu-text} ) !default;
+/// The background color of Menu item.
+/// @group menu
+$kno-menu-item-bg: var( --kno-menu-item-bg, transparent ) !default;
+
+/// The text color of hovered Menu item.
+/// @group menu
+$kno-menu-item-hover-text: var( --kno-menu-item-hover-text, #{k-color(on-base)} ) !default;
+/// The background color of hovered Menu item.
+/// @group menu
+$kno-menu-item-hover-bg: var( --kno-menu-item-hover-bg, #{k-color(base-hover)} ) !default;
+
+/// The text color of active Menu item.
+/// @group menu
+$kno-menu-item-active-text: var( --kno-menu-item-active-text, #{$kno-menu-item-hover-text} ) !default;
+/// The background color of active Menu item.
+/// @group menu
+$kno-menu-item-active-bg: var( --kno-menu-item-active-bg, #{k-color(base-active)} ) !default;
+
+/// The text color of focused Menu item.
+/// @group menu
+$kno-menu-item-focus-text: var( --kno-menu-item-focus-text, #{$kno-menu-item-text} ) !default;
+/// The background color of focused Menu item.
+/// @group menu
+$kno-menu-item-focus-bg: var( --kno-menu-item-focus-bg, #{$kno-menu-item-bg} ) !default;
+
+/// The outline of focused Menu item.
+/// @group menu
+$kno-menu-item-focus-outline: var( --kno-menu-item-focus-outline, #{k-color(border-alt)} ) !default;
+/// The outline of the Menu item.
+/// @group menu
+$kno-menu-item-focus-outline-offset: var( --kno-menu-item-focus-outline-offset, calc( #{k-spacing(0.5)} * -1 ) ) !default;
+/// The width of the Menu item.
+/// @group menu
+$kno-menu-item-focus-outline-width: var( --kno-menu-item-focus-outline-width, 2px ) !default;
+/// The outline of the Menu item.
+/// @group menu
+$kno-menu-item-focus-outline-style: var( --kno-menu-item-focus-outline-style, solid ) !default;
+
+/// The text color of disabled Menu item.
+/// @group menu
+$kno-menu-item-disabled-text: var( --kno-menu-item-disabled-text, color-mix(in srgb, k-color(on-app-surface) 46%, transparent) ) !default;
+/// The background color of disabled Menu item.
+/// @group menu
+$kno-menu-item-disabled-bg: var( --kno-menu-item-disabled-bg, #{$kno-menu-item-bg} ) !default;
+
+/// The text color of selected Menu item.
+/// @group menu
+$kno-menu-item-selected-text: var( --kno-menu-item-selected-text, null ) !default;
+/// The background color of selected Menu item.
+/// @group menu
+$kno-menu-item-selected-bg: var( --kno-menu-item-selected-bg, null ) !default;
+
+
+// Menu Separator
+
+/// The inline margin of the horizontal Menu separator.
+/// @group menu
+$kno-menu-separator-margin-inline: var( --kno-menu-separator-margin-inline, #{k-spacing(1)} ) !default;
+/// The block margin of the horizontal Menu separator.
+/// @group menu
+$kno-menu-separator-margin-block: var( --kno-menu-separator-margin-block, #{k-spacing(3)} ) !default;
+/// The width of the Menu separator.
+/// @group menu
+$kno-menu-separator-width: var( --kno-menu-separator-width, 1px ) !default;
+/// The border color of Menu separator.
+/// @group menu
+$kno-menu-separator-border: var( --kno-menu-separator-border, color-mix(in srgb, var(--kno-color-border, #8a8886) 16%, transparent) ) !default;
+
+
+// Menu Popup
+
+/// The horizontal padding of the Menu popup.
+/// @group menu
+$kno-menu-popup-padding-x: var( --kno-menu-popup-padding-x, #{$kno-popup-padding-x} ) !default;
+/// The vertical padding of the Menu popup.
+/// @group menu
+$kno-menu-popup-padding-y: var( --kno-menu-popup-padding-y, #{$kno-popup-padding-y} ) !default;
+
+/// The width of the border around the Menu popup.
+/// @group menu
+$kno-menu-popup-border-width: var( --kno-menu-popup-border-width, #{$kno-popup-border-width} ) !default;
+
+/// The font size of the small Menu popup.
+/// @group menu
+$kno-menu-popup-sm-font-size: var( --kno-menu-popup-sm-font-size, var(--kno-font-size) ) !default;
+/// The font size of the medium Menu popup.
+/// @group menu
+$kno-menu-popup-md-font-size: var( --kno-menu-popup-md-font-size, var(--kno-font-size) ) !default;
+/// The font size of the large Menu popup.
+/// @group menu
+$kno-menu-popup-lg-font-size: var( --kno-menu-popup-lg-font-size, var(--kno-font-size-lg) ) !default;
+
+/// The line height of the small Menu popup.
+/// @group menu
+$kno-menu-popup-sm-line-height: var( --kno-menu-popup-sm-line-height, var(--kno-line-height) ) !default;
+/// The line height of the medium Menu popup.
+/// @group menu
+$kno-menu-popup-md-line-height: var( --kno-menu-popup-md-line-height, var(--kno-line-height) ) !default;
+/// The line height of the large Menu popup.
+/// @group menu
+$kno-menu-popup-lg-line-height: var( --kno-menu-popup-lg-line-height, var(--kno-line-height) ) !default;
+
+/// The background color of the Menu popup.
+/// @group menu
+$kno-menu-popup-bg: var( --kno-menu-popup-bg, #{k-color(surface-alt)} ) !default;
+/// The border color of the Menu popup.
+/// @group menu
+$kno-menu-popup-border: var( --kno-menu-popup-border, initial ) !default;
+/// The shadow of the Menu popup.
+/// @group menu
+$kno-menu-popup-shadow: var( --kno-menu-popup-shadow, k-elevation(3) ) !default;
+
+/// The horizontal padding of the small Menu popup item.
+/// @group menu
+$kno-menu-popup-sm-item-padding-x: var( --kno-menu-popup-sm-item-padding-x, #{k-spacing(2)} ) !default;
+/// The horizontal padding of the medium Menu popup item.
+/// @group menu
+$kno-menu-popup-md-item-padding-x: var( --kno-menu-popup-md-item-padding-x, #{k-spacing(2)} ) !default;
+/// The horizontal padding of the large Menu popup item.
+/// @group menu
+$kno-menu-popup-lg-item-padding-x: var( --kno-menu-popup-lg-item-padding-x, #{k-spacing(2)} ) !default;
+/// The vertical padding of the small Menu popup item.
+/// @group menu
+$kno-menu-popup-sm-item-padding-y: var( --kno-menu-popup-sm-item-padding-y, #{$kno-list-sm-item-padding-y} ) !default;
+/// The vertical padding of the medium Menu popup item.
+/// @group menu
+$kno-menu-popup-md-item-padding-y: var( --kno-menu-popup-md-item-padding-y, #{$kno-list-md-item-padding-y} ) !default;
+/// The vertical padding of the large Menu popup item.
+/// @group menu
+$kno-menu-popup-lg-item-padding-y: var( --kno-menu-popup-lg-item-padding-y, #{$kno-list-lg-item-padding-y} ) !default;
+/// The end padding of the small Menu popup item.
+/// @group menu
+$kno-menu-popup-sm-item-padding-end: calc( calc( #{$kno-menu-popup-sm-item-padding-x} * 2 ) + var( --kno-icon-size, 1rem ) ) !default;
+/// The end padding of the medium Menu popup item.
+/// @group menu
+$kno-menu-popup-md-item-padding-end: calc( calc( #{$kno-menu-popup-md-item-padding-x} * 2 ) + var( --kno-icon-size, 1rem ) ) !default;
+/// The end padding of the large Menu popup item.
+/// @group menu
+$kno-menu-popup-lg-item-padding-end: calc( calc( #{$kno-menu-popup-lg-item-padding-x} * 2 ) + var( --kno-icon-size, 1rem ) ) !default;
+
+/// The start margin of the small Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-sm-item-icon-margin-start: k-spacing(0) !default;
+/// The start margin of the medium Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-item-icon-md-margin-start: k-spacing(0) !default;
+/// The start margin of the large Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-lg-item-icon-margin-start: k-spacing(0) !default;
+/// The end margin of the small Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-sm-item-icon-margin-end: calc( -1 * (var( --kno-icon-size, 1rem ) + #{$kno-menu-popup-sm-item-padding-x}) ) !default;
+/// The end margin of the medium Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-item-icon-md-margin-end: calc( -1 * (var( --kno-icon-size, 1rem ) + #{$kno-menu-popup-md-item-padding-x}) ) !default;
+/// The end margin of the large Menu popup item expand icon.
+/// @group menu
+$kno-menu-popup-lg-item-icon-margin-end: calc( -1 * (var( --kno-icon-size, 1rem ) + #{$kno-menu-popup-lg-item-padding-x}) ) !default;
+
+/// The spacing between the Menu items in popup.
+/// @group menu
+$kno-menu-popup-item-spacing: var( --kno-menu-popup-item-spacing, #{k-spacing(0)} ) !default;
+
+/// The text color of the Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-text: var( --kno-menu-popup-item-text, #{$kno-list-item-text} ) !default;
+/// The background color of the Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-bg: var( --kno-menu-popup-item-bg, #{$kno-list-item-bg} ) !default;
+
+/// The text color of hovered Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-hover-text: var( --kno-menu-popup-item-hover-text, #{$kno-list-item-hover-text} ) !default;
+/// The background color of hovered Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-hover-bg: var( --kno-menu-popup-item-hover-bg, #{$kno-list-item-hover-bg} ) !default;
+
+/// The outline of focused Menu items.
+/// @group menu
+$kno-menu-popup-item-focus-outline: var( --kno-menu-popup-item-focus-outline, #{k-color(border-alt)} ) !default;
+
+/// The text color of active Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-active-text: var( --kno-menu-popup-item-active-text, #{$kno-list-item-selected-text} ) !default;
+/// The background color of active Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-active-bg: var( --kno-menu-popup-item-active-bg, #{$kno-list-item-selected-bg} ) !default;
+
+/// The text color of disabled Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-disabled-text: var( --kno-menu-popup-item-disabled-text, #{$kno-list-item-disabled-text} ) !default;
+/// The background color of disabled Menu item in popup.
+/// @group menu
+$kno-menu-popup-item-disabled-bg: var( --kno-menu-popup-item-disabled-bg, #{$kno-list-item-disabled-bg} ) !default;
+
+/// The background color of Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-bg: var( --kno-menu-scroll-button-bg, #{k-color(surface-alt)} ) !default;
+/// The border color of Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-border: var( --kno-menu-scroll-button-border, color-mix(in srgb, k-color(border) 16%, transparent) ) !default;
+
+/// The background color of hover Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-hover-bg: var( --kno-menu-scroll-button-hover-bg, null ) !default;
+/// The border color of hover Menu scroll buttons.
+/// @group menu
+$kno-menu-scroll-button-hover-border: var( --kno-menu-scroll-button-hover-border, null ) !default;
+
+/// The color of the Menu items icon.
+/// @group menu
+$kno-menu-icon-color: var( --kno-menu-icon-color, #{k-color(primary)} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/menu/_variables.scss" with (
+    $kno-menu-group-default-size: $kno-menu-group-default-size,
+    $kno-menu-border-width: $kno-menu-border-width,
+    $kno-menu-font-family: $kno-menu-font-family,
+    $kno-menu-font-size: $kno-menu-font-size,
+    $kno-menu-line-height: $kno-menu-line-height,
+    $kno-menu-bg: $kno-menu-bg,
+    $kno-menu-text: $kno-menu-text,
+    $kno-menu-border: $kno-menu-border,
+    $kno-menu-item-padding-x: $kno-menu-item-padding-x,
+    $kno-menu-item-padding-y: $kno-menu-item-padding-y,
+    $kno-menu-item-spacing: $kno-menu-item-spacing,
+    $kno-menu-item-icon-spacing: $kno-menu-item-icon-spacing,
+    $kno-menu-item-selected-font-weight: $kno-menu-item-selected-font-weight,
+    $kno-menu-item-bg: $kno-menu-item-bg,
+    $kno-menu-item-text: $kno-menu-item-text,
+    $kno-menu-item-hover-bg: $kno-menu-item-hover-bg,
+    $kno-menu-item-hover-text: $kno-menu-item-hover-text,
+    $kno-menu-item-active-bg: $kno-menu-item-active-bg,
+    $kno-menu-item-active-text: $kno-menu-item-active-text,
+    $kno-menu-item-selected-bg: $kno-menu-item-selected-bg,
+    $kno-menu-item-selected-text: $kno-menu-item-selected-text,
+    $kno-menu-separator-margin-inline: $kno-menu-separator-margin-inline,
+    $kno-menu-separator-margin-block: $kno-menu-separator-margin-block,
+    $kno-menu-separator-border: $kno-menu-separator-border,
+    $kno-menu-popup-padding-x: $kno-menu-popup-padding-x,
+    $kno-menu-popup-padding-y: $kno-menu-popup-padding-y,
+    $kno-menu-popup-border-width: $kno-menu-popup-border-width,
+    $kno-menu-popup-sm-font-size: $kno-menu-popup-sm-font-size,
+    $kno-menu-popup-md-font-size: $kno-menu-popup-md-font-size,
+    $kno-menu-popup-lg-font-size: $kno-menu-popup-lg-font-size,
+    $kno-menu-popup-sm-line-height: $kno-menu-popup-sm-line-height,
+    $kno-menu-popup-md-line-height: $kno-menu-popup-md-line-height,
+    $kno-menu-popup-lg-line-height: $kno-menu-popup-lg-line-height,
+    $kno-menu-popup-bg: $kno-menu-popup-bg,
+    $kno-menu-popup-border: $kno-menu-popup-border,
+    $kno-menu-popup-sm-item-padding-x: $kno-menu-popup-sm-item-padding-x,
+    $kno-menu-popup-md-item-padding-x: $kno-menu-popup-md-item-padding-x,
+    $kno-menu-popup-lg-item-padding-x: $kno-menu-popup-lg-item-padding-x,
+    $kno-menu-popup-sm-item-padding-y: $kno-menu-popup-sm-item-padding-y,
+    $kno-menu-popup-md-item-padding-y: $kno-menu-popup-md-item-padding-y,
+    $kno-menu-popup-lg-item-padding-y: $kno-menu-popup-lg-item-padding-y,
+    $kno-menu-popup-sm-item-padding-end: $kno-menu-popup-sm-item-padding-end,
+    $kno-menu-popup-md-item-padding-end: $kno-menu-popup-md-item-padding-end,
+    $kno-menu-popup-lg-item-padding-end: $kno-menu-popup-lg-item-padding-end,
+    $kno-menu-popup-sm-item-icon-margin-start: $kno-menu-popup-sm-item-icon-margin-start,
+    $kno-menu-popup-md-item-icon-margin-start: $kno-menu-popup-item-icon-md-margin-start,
+    $kno-menu-popup-lg-item-icon-margin-start: $kno-menu-popup-lg-item-icon-margin-start,
+    $kno-menu-popup-sm-item-icon-margin-end: $kno-menu-popup-sm-item-icon-margin-end,
+    $kno-menu-popup-md-item-icon-margin-end: $kno-menu-popup-item-icon-md-margin-end,
+    $kno-menu-popup-lg-item-icon-margin-end: $kno-menu-popup-lg-item-icon-margin-end,
+    $kno-menu-popup-item-spacing: $kno-menu-popup-item-spacing,
+    $kno-menu-popup-item-bg: $kno-menu-popup-item-bg,
+    $kno-menu-popup-item-text: $kno-menu-popup-item-text,
+    $kno-menu-popup-item-hover-bg: $kno-menu-popup-item-hover-bg,
+    $kno-menu-popup-item-hover-text: $kno-menu-popup-item-hover-text,
+    $kno-menu-popup-item-active-bg: $kno-menu-popup-item-active-bg,
+    $kno-menu-popup-item-active-text: $kno-menu-popup-item-active-text
+);

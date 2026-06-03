@@ -1,0 +1,34 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseEvent } from './BaseEvent.js';
+import { Sortable } from '../Sortable.js';
+/**
+ * The `SortableOnDragEndEvent` event.
+ */
+export declare class SortableOnDragEndEvent implements BaseEvent<Sortable> {
+    /**
+     * The Sortable component.
+     */
+    target: Sortable;
+    /**
+     * The previous index of the dragged item.
+     */
+    prevIndex: number;
+    /**
+     * The new index of the dragged item.
+     */
+    nextIndex: number;
+    /**
+     * The new state of the Sortable data.
+     */
+    newState: Array<object>;
+    /**
+     * @hidden
+     */
+    constructor(target: Sortable, prevIndex: number, nextIndex: number, newState: Array<object>);
+}

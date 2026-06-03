@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/panelbar/_theme.scss" as *;
+
+@mixin kno-panelbar--theme() {
+    @include kno-panelbar--theme-base();
+}

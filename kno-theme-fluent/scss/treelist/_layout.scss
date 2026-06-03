@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/treelist/_layout.scss" as *;
+
+@mixin kno-treelist--layout() {
+    @include kno-treelist--layout-base();
+
+    // Base
+    .k-treelist {
+        .k-status {
+            // TODO: see what this does and use a better name
+            .k-loading {
+                margin-inline-end: k-spacing(1);
+            }
+        }
+
+        .k-i-caret-alt-down,
+        .k-i-caret-alt-right {
+            margin-inline-end: k-spacing(2);
+        }
+    }
+
+    .k-treelist-toggle {
+        padding: var( --kno-icon-padding, k-spacing(1) );
+    }
+}

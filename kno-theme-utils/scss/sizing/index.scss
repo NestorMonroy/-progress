@@ -1,0 +1,8 @@
+@use "./_height.scss" as *;
+@use "./_width.scss" as *;
+
+
+@mixin kno-utils--sizing() {
+    @include kno-utils--sizing--height();
+    @include kno-utils--sizing--width();
+}

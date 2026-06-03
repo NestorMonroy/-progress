@@ -1,0 +1,22 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { keys as o } from "../messages.mjs";
+import { ColorTool as r } from "./utils.mjs";
+import { foregroundColorIcon as e } from "@progress/kno-svg-icons";
+const t = r({
+  icon: "foreground-color",
+  svgIcon: e,
+  view: "palette",
+  property: "color",
+  titleKey: o.textColor,
+  ariaLabel: "Text Color"
+});
+t.displayName = "TextColor";
+export {
+  t as TextColor
+};

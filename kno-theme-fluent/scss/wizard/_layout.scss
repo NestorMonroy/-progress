@@ -1,0 +1,44 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/wizard/_layout.scss" as *;
+
+@mixin kno-wizard--layout() {
+    @include kno-wizard--layout-base();
+
+    .k-wizard {
+        .k-wizard-step {
+            padding-inline: $kno-wizard-content-padding-x;
+            padding-block: $kno-wizard-content-padding-y;
+
+            &:focus,
+            &.k-focus {
+                // TODO: use scss variable for outline width
+                outline-width: 2px;
+                outline-style: solid;
+                outline-offset: -2px;
+            }
+        }
+
+        .k-wizard-content {
+            padding-inline: $kno-wizard-content-padding-x;
+            padding-block: $kno-wizard-content-padding-y;
+        }
+
+        .k-wizard-buttons {
+            margin-block-start: $kno-wizard-buttons-margin-y;
+        }
+    }
+
+    .k-wizard-vertical {
+        .k-wizard-steps {
+            margin-inline-start: $kno-wizard-steps-padding-x;
+        }
+    }
+
+    .k-wizard-left {
+        .k-wizard-steps {
+            margin-inline-end: var( --kno-wizard-content-padding-x, #{$kno-wizard-content-padding-x} );
+            margin-inline-start: 0;
+        }
+    }
+}

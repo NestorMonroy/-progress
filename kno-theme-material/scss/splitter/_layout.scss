@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/splitter/_layout.scss" as *;
+
+
+@mixin kno-splitter--layout() {
+    @include kno-splitter--layout-base();
+}

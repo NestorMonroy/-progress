@@ -1,0 +1,13 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as r from "react";
+import { classNames as e } from "@progress/kno-react-common";
+const t = (a) => /* @__PURE__ */ r.createElement("div", { ref: a._ref, className: e("k-toolbar-separator k-separator", a.className) });
+export {
+  t as ToolbarSeparator
+};

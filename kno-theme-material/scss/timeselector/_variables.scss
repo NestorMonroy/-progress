@@ -1,0 +1,197 @@
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use "../action-buttons/_variables.scss" as *;
+@use "../list/_variables.scss" as *;
+
+// Time selector
+
+/// The default size of the TimeSelector.
+/// @group time-selector
+/// @role default
+$kno-time-selector-default-size: "md" !default;
+
+/// The width of the border around the TimeSelector.
+/// @group time-selector
+$kno-time-selector-border-width: 1px !default;
+/// The font family of the TimeSelector.
+/// @group time-selector
+$kno-time-selector-font-family: var(--kno-font-family) !default;
+/// The font size of the TimeSelector.
+/// @group time-selector
+$kno-time-selector-font-size: null !default;
+/// The line height of the TimeSelector.
+/// @group time-selector
+$kno-time-selector-line-height: null !default;
+
+/// The background color of the TimeSelector.
+/// @group time-selector
+$kno-time-selector-bg: k-color(surface) !default;
+/// The text color of the TimeSelector.
+/// @group time-selector
+$kno-time-selector-text: k-color(on-app-surface) !default;
+/// The border color of the TimeSelector.
+/// @group time-selector
+$kno-time-selector-border: k-color(border) !default;
+
+/// The horizontal padding of the TimeSelector header.
+/// @group time-selector
+$kno-time-selector-header-padding-x: k-spacing(1) !default;
+/// The vertical padding of the TimeSelector header.
+/// @group time-selector
+$kno-time-selector-header-padding-y: k-spacing(3) !default;
+/// The width of the border around the TimeSelector header.
+/// @group time-selector
+$kno-time-selector-header-border-width: 0px !default;
+/// The text color of the TimeSelector header title.
+/// @group time-selector
+$kno-time-selector-header-title-text: k-color(primary-on-surface) !default;
+/// The text color of the TimeSelector header current time indicator.
+/// @group time-selector
+$kno-time-selector-header-time-now-text: unset !default;
+/// The text color of the hovered TimeSelector header current time indicator.
+/// @group time-selector
+$kno-time-selector-header-time-now-hover-text: unset !default;
+
+/// The gap of the TimeSelector fast selection.
+/// @group time-selector
+$kno-time-selector-fast-selection-gap: null !default;
+
+/// The width of the TimeSelector list.
+/// @group time-selector
+$kno-time-list-width: 4em !default;
+/// The height of the TimeSelector list.
+/// @group time-selector
+$kno-time-list-height: 240px !default;
+
+/// The font size of the TimeSelector list title.
+/// @group time-selector
+$kno-time-list-title-font-size: var(--kno-font-size-sm) !default;
+/// The line height of the TimeSelector list title.
+/// @group time-selector
+$kno-time-list-title-line-height: var(--kno-line-height-sm) !default;
+/// The height of the TimeSelector list title.
+/// @group time-selector
+$kno-time-list-title-height: calc( #{$kno-time-list-title-font-size} * #{$kno-time-list-title-line-height} ) !default;
+/// The text color of the TimeSelector list title.
+/// @group time-selector
+$kno-time-list-title-text: k-color(subtle) !default;
+/// The text color of the focused TimeSelector list title.
+/// @group time-selector
+$kno-time-list-title-focus-text: k-color(on-app-surface) !default;
+
+/// The horizontal padding of the TimeSelector list item.
+/// @group time-selector
+$kno-time-list-item-padding-x: $kno-list-md-item-padding-x !default;
+/// The vertical padding of the TimeSelector list item.
+/// @group time-selector
+$kno-time-list-item-padding-y: $kno-list-md-item-padding-y !default;
+
+/// The background color of the focused TimeSelector list.
+/// @group time-selector
+$kno-time-list-focus-bg: color-mix(in srgb, k-color(on-app-surface) 8%, transparent) !default;
+
+/// The font size of the medium TimeSelector.
+/// @group time-selector
+$kno-time-selector-md-font-size: var(--kno-font-size-lg) !default;
+/// The line height of the medium TimeSelector.
+/// @group time-selector
+$kno-time-selector-md-line-height: var(--kno-line-height-lg) !default;
+/// The horizontal padding of the medium TimeSelector list item.
+/// @group time-selector
+$kno-time-selector-md-list-item-padding-x: k-spacing(3) !default;
+/// The vertical padding of the medium TimeSelector list item.
+/// @group time-selector
+$kno-time-selector-md-list-item-padding-y: k-spacing(3) !default;
+
+// Time selector sizes
+/// The font size of the small TimeSelector.
+/// @group time-selector
+$kno-time-selector-sm-font-size: var(--kno-font-size-lg) !default;
+/// The line height of the small TimeSelector.
+/// @group time-selector
+$kno-time-selector-sm-line-height: $kno-time-selector-md-line-height !default;
+/// The horizontal padding of the small TimeSelector list item.
+/// @group time-selector
+$kno-time-selector-sm-list-item-padding-x: k-spacing(2) !default;
+/// The vertical padding of the small TimeSelector list item.
+/// @group time-selector
+$kno-time-selector-sm-list-item-padding-y: k-spacing(2) !default;
+
+/// The font size of the large TimeSelector.
+/// @group time-selector
+$kno-time-selector-lg-font-size: var(--kno-font-size-lg) !default;
+/// The line height of the large TimeSelector.
+/// @group time-selector
+$kno-time-selector-lg-line-height: var(--kno-line-height-lg) !default;
+/// The horizontal padding of the large TimeSelector list item.
+/// @group time-selector
+$kno-time-selector-lg-list-item-padding-x: k-spacing(4) !default;
+/// The vertical padding of the large TimeSelector list item.
+/// @group time-selector
+$kno-time-selector-lg-list-item-padding-y: k-spacing(4) !default;
+
+/// The width of the border around the TimeSelector list highlight.
+/// @group time-selector
+$kno-time-list-highlight-border-width: 1px !default;
+/// The height of the TimeSelector list highlight.
+/// @group time-selector
+$kno-time-list-highlight-height: calc( calc( #{$kno-time-selector-md-font-size} * #{$kno-time-selector-md-line-height} ) + calc( #{$kno-time-list-item-padding-y} * 2 ) ) !default;
+/// The background color of the TimeSelector list highlight.
+/// @group time-selector
+$kno-time-list-highlight-bg: transparent !default;
+/// The border color of the TimeSelector list highlight.
+/// @group time-selector
+$kno-time-list-highlight-border: k-color(primary-on-subtle) !default;
+
+/// The text color of the TimeSelector button.
+/// @group time-selector
+$kno-time-selector-now-button-text: k-color(secondary) !default;
+/// The text color of the hovered TimeSelector button.
+/// @group time-selector
+$kno-time-selector-now-button-hover-text: k-color(secondary-hover) !default;
+
+@forward "@progress/kno-theme-core/scss/components/timeselector/_variables.scss" with (
+    $kno-time-selector-default-size: $kno-time-selector-default-size,
+    $kno-time-selector-border-width: $kno-time-selector-border-width,
+    $kno-time-selector-font-family: $kno-time-selector-font-family,
+    $kno-time-selector-font-size: $kno-time-selector-font-size,
+    $kno-time-selector-line-height: $kno-time-selector-line-height,
+    $kno-time-selector-bg: $kno-time-selector-bg,
+    $kno-time-selector-text: $kno-time-selector-text,
+    $kno-time-selector-border: $kno-time-selector-border,
+    $kno-time-selector-header-padding-x: $kno-time-selector-header-padding-x,
+    $kno-time-selector-header-padding-y: $kno-time-selector-header-padding-y,
+    $kno-time-selector-header-border-width: $kno-time-selector-header-border-width,
+    $kno-time-selector-fast-selection-gap: $kno-time-selector-fast-selection-gap,
+    $kno-time-selector-header-title-text: $kno-time-selector-header-title-text,
+    $kno-time-selector-header-time-now-text: $kno-time-selector-header-time-now-text,
+    $kno-time-selector-header-time-now-hover-text: $kno-time-selector-header-time-now-hover-text,
+    $kno-time-list-width: $kno-time-list-width,
+    $kno-time-list-height: $kno-time-list-height,
+    $kno-time-list-title-font-size: $kno-time-list-title-font-size,
+    $kno-time-list-title-line-height: $kno-time-list-title-line-height,
+    $kno-time-list-title-height: $kno-time-list-title-height,
+    $kno-time-list-title-text: $kno-time-list-title-text,
+    $kno-time-list-title-focus-text: $kno-time-list-title-focus-text,
+    $kno-time-list-item-padding-x: $kno-time-list-item-padding-x,
+    $kno-time-list-item-padding-y: $kno-time-list-item-padding-y,
+    $kno-time-list-highlight-border-width: $kno-time-list-highlight-border-width,
+    $kno-time-list-highlight-height: $kno-time-list-highlight-height,
+    $kno-time-list-highlight-bg: $kno-time-list-highlight-bg,
+    $kno-time-list-highlight-border: $kno-time-list-highlight-border,
+    $kno-time-list-focus-bg: $kno-time-list-focus-bg,
+    $kno-time-selector-sm-font-size: $kno-time-selector-sm-font-size,
+    $kno-time-selector-sm-line-height: $kno-time-selector-sm-line-height,
+    $kno-time-selector-sm-list-item-padding-x: $kno-time-selector-sm-list-item-padding-x,
+    $kno-time-selector-sm-list-item-padding-y: $kno-time-selector-sm-list-item-padding-y,
+    $kno-time-selector-md-font-size: $kno-time-selector-md-font-size,
+    $kno-time-selector-md-line-height: $kno-time-selector-md-line-height,
+    $kno-time-selector-md-list-item-padding-x: $kno-time-selector-md-list-item-padding-x,
+    $kno-time-selector-md-list-item-padding-y: $kno-time-selector-md-list-item-padding-y,
+    $kno-time-selector-lg-font-size: $kno-time-selector-lg-font-size,
+    $kno-time-selector-lg-line-height: $kno-time-selector-lg-line-height,
+    $kno-time-selector-lg-list-item-padding-x: $kno-time-selector-lg-list-item-padding-x,
+    $kno-time-selector-lg-list-item-padding-y: $kno-time-selector-lg-list-item-padding-y,
+    $kno-time-selector-now-button-text: $kno-time-selector-now-button-text,
+    $kno-time-selector-now-button-hover-text: $kno-time-selector-now-button-hover-text
+);

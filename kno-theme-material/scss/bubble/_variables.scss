@@ -1,0 +1,92 @@
+@use "../core/_index.scss" as *;
+
+/// The border radius of the Bubble.
+/// @group bubble
+$kno-bubble-border-radius: k-border-radius(xxl) !default;
+/// The small border radius of the Bubble.
+/// @group bubble
+$kno-bubble-border-radius-sm: k-border-radius(sm) !default;
+/// The vertical padding of the Bubble.
+/// @group bubble
+$kno-bubble-padding-y: k-spacing(3) !default;
+/// The horizontal padding of the Bubble.
+/// @group bubble
+$kno-bubble-padding-x: k-spacing(4) !default;
+/// The border width of the Bubble.
+/// @group bubble
+$kno-bubble-border-width: 1px !default;
+/// The border style of the Bubble.
+/// @group bubble
+$kno-bubble-border-style: solid !default;
+/// The line height of the Bubble.
+/// @group bubble
+$kno-bubble-line-height: var(--kno-line-height) !default;
+
+/// The text color of the Bubble.
+/// @group bubble
+$kno-bubble-text: k-color(base-on-subtle) !default;
+/// The background color of the Bubble.
+/// @group bubble
+$kno-bubble-bg: k-color(base-subtle) !default;
+/// The border color of the Bubble.
+/// @group bubble
+$kno-bubble-border: $kno-bubble-bg !default;
+/// The shadow of the Bubble.
+/// @group bubble
+$kno-bubble-shadow: none !default;
+
+/// The background color of the hover Bubble.
+/// @group bubble
+$kno-bubble-hover-bg: k-color(base-subtle-hover) !default;
+/// The border color of the active Bubble.
+/// @group bubble
+$kno-bubble-hover-border: $kno-bubble-hover-bg !default;
+/// The background color of the active Bubble.
+/// @group bubble
+$kno-bubble-active-bg: k-color(base-subtle-active) !default;
+/// The border color of the active Bubble.
+/// @group bubble
+$kno-bubble-active-border: $kno-bubble-active-bg !default;
+/// The background color of the focused Bubble.
+/// @group bubble
+$kno-bubble-focus-bg: k-color(base-subtle) !default;
+/// The border color of the focused Bubble.
+/// @group bubble
+$kno-bubble-focus-border: $kno-bubble-focus-bg !default;
+/// The box shadow of the focused Bubble.
+/// @group bubble
+$kno-bubble-focus-shadow: 0 0 0 2px color-mix(in srgb, k-color(on-app-surface) 8%, transparent) !default;
+
+/// The spacing between content and icon in expandable Bubble.
+/// @group bubble
+$kno-bubble-expandable-spacing: $kno-bubble-padding-x !default;
+/// The horizontal padding of the expandable Bubble icon.
+/// @group bubble
+$kno-bubble-expandable-icon-padding-x: k-spacing(2.5) !default;
+/// The vertical padding of the expandable Bubble icon.
+/// @group bubble
+$kno-bubble-expandable-icon-padding-y: k-spacing(2.5) !default;
+
+@forward "@progress/kno-theme-core/scss/components/bubble/_variables.scss" with (
+    $kno-bubble-border-radius: $kno-bubble-border-radius,
+    $kno-bubble-border-radius-sm: $kno-bubble-border-radius-sm,
+    $kno-bubble-padding-y: $kno-bubble-padding-y,
+    $kno-bubble-padding-x: $kno-bubble-padding-x,
+    $kno-bubble-border-width: $kno-bubble-border-width,
+    $kno-bubble-border-style: $kno-bubble-border-style,
+    $kno-bubble-line-height: $kno-bubble-line-height,
+    $kno-bubble-text: $kno-bubble-text,
+    $kno-bubble-bg: $kno-bubble-bg,
+    $kno-bubble-border: $kno-bubble-border,
+    $kno-bubble-shadow: $kno-bubble-shadow,
+    $kno-bubble-hover-bg: $kno-bubble-hover-bg,
+    $kno-bubble-hover-border: $kno-bubble-hover-border,
+    $kno-bubble-active-bg: $kno-bubble-active-bg,
+    $kno-bubble-active-border: $kno-bubble-active-border,
+    $kno-bubble-focus-bg: $kno-bubble-focus-bg,
+    $kno-bubble-focus-border: $kno-bubble-focus-border,
+    $kno-bubble-focus-shadow: $kno-bubble-focus-shadow,
+    $kno-bubble-expandable-spacing: $kno-bubble-expandable-spacing,
+    $kno-bubble-expandable-icon-padding-x: $kno-bubble-expandable-icon-padding-x,
+    $kno-bubble-expandable-icon-padding-y: $kno-bubble-expandable-icon-padding-y,
+);

@@ -1,0 +1,26 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Charts } from '../common/charts';
+import { BaseEvent } from './base-event.js';
+/**
+ * The arguments for the `navigatorFilter` event.
+ */
+export declare class NavigatorFilterEvent extends BaseEvent {
+    /**
+     * The start of the navigator range.
+     */
+    from: Date;
+    /**
+     * The end of the navigator range.
+     */
+    to: Date;
+    /**
+     * Constructs the event arguments from a raw object.
+     */
+    constructor(e: any, target: Charts);
+}

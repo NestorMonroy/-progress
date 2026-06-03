@@ -1,0 +1,7 @@
+@use "@progress/kno-theme-core/scss/components/notification/_theme.scss" as *;
+
+
+@mixin kno-notification--theme() {
+    @include kno-notification--theme-base();
+
+}

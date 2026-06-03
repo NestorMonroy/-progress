@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { MaskedTextBoxHandle } from './maskedtextbox/MaskedTextBox.js';
+import { MaskedTextBoxProps } from './maskedtextbox/MaskedTextBoxProps';
+/**
+ * MaskedTextBox wrapper that integrates the Web MCP hook.
+ *
+ * @hidden
+ */
+import * as React from 'react';
+/** @hidden */
+export declare const MaskedTextBoxWrapper: React.ForwardRefExoticComponent<MaskedTextBoxProps & React.RefAttributes<MaskedTextBoxHandle>>;

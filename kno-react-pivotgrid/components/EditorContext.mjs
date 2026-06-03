@@ -1,0 +1,12 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+const o = t.createContext({ axes: null });
+export {
+  o as PivotGridConfiguratorEditorAxesContext
+};

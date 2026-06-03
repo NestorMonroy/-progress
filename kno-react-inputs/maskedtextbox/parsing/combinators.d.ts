@@ -1,0 +1,16 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Parser } from './parsers.js';
+/**
+ * @hidden
+ */
+export declare const sequence: (list: any) => any;
+/**
+ * @hidden
+ */
+export declare const greedy: (parser: any) => Parser;

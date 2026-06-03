@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { GridDetailCellProps } from './GridDetailCell.js';
+/**
+ * @hidden
+ */
+export declare const getDetailCellTdProps: (props: GridDetailCellProps) => {
+    tdProps: {
+        className: string;
+        colSpan: number;
+        'aria-colindex': number;
+        role: string;
+    };
+};

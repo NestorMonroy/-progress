@@ -1,0 +1,92 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as l from "react";
+import { ComboBox as F } from "@progress/kno-react-dropdowns";
+import { DEFAULT_FONT_SIZE as I, FONT_SIZES as v } from "./utils.mjs";
+import { keys as m, messages as y } from "../messages.mjs";
+import { useLocalization as z } from "@progress/kno-react-intl";
+import { Button as x } from "@progress/kno-react-buttons";
+import { fontGrowIcon as N, fontShrinkIcon as b } from "@progress/kno-svg-icons";
+const u = 1, f = 409, d = (e) => typeof e == "string" ? parseFloat(e) : e, k = (e) => {
+  const { spreadsheetRef: i } = e, o = d(e.value), p = l.useCallback(
+    (a) => {
+      var c;
+      let t = a.value ? d(a.value) : o;
+      t = isNaN(t) ? o : t, t = Math.min(f, Math.max(u, t));
+      const r = {
+        command: "PropertyChangeCommand",
+        options: { property: "fontSize", value: t }
+      };
+      a.nativeEvent.type === "keydown" || a.nativeEvent.type === "focusout" ? (c = i.current) == null || c.executeCommand(r) : setTimeout(() => {
+        var n;
+        (n = i.current) == null || n.executeCommand(r);
+      }, 0);
+    },
+    [o]
+  ), s = z().toLanguageString(m.fontSize, y[m.fontSize]);
+  return /* @__PURE__ */ l.createElement(
+    F,
+    {
+      onChange: p,
+      value: o,
+      data: v,
+      defaultValue: I,
+      allowCustom: !0,
+      fillMode: "flat",
+      title: s,
+      tabIndex: -1,
+      clearButton: !1,
+      ariaLabel: s
+    }
+  );
+};
+k.displayName = "FontSize";
+const g = (e) => {
+  const i = (o) => {
+    const { property: p, icon: s, svgIcon: a, titleKey: t, step: r } = e, { spreadsheetRef: c } = o, n = d(o.value), C = l.useCallback(() => {
+      var S;
+      const h = {
+        command: "PropertyChangeCommand",
+        options: { property: p, value: Math.min(f, Math.max(u, n + r)) }
+      };
+      (S = c.current) == null || S.executeCommand(h);
+    }, [n]);
+    return /* @__PURE__ */ l.createElement(
+      x,
+      {
+        type: "button",
+        icon: s,
+        svgIcon: a,
+        fillMode: "flat",
+        onClick: C,
+        disabled: n + r < u || n + r > f,
+        title: z().toLanguageString(t, y[t])
+      }
+    );
+  };
+  return i.displayName = e.displayName, i;
+}, B = g({
+  property: "fontSize",
+  icon: "font-grow",
+  svgIcon: N,
+  titleKey: m.fontSizeIncrease,
+  displayName: "IncreaseFontSize",
+  step: 1
+}), K = g({
+  property: "fontSize",
+  icon: "font-shrink",
+  svgIcon: b,
+  titleKey: m.fontSizeDecrease,
+  displayName: "DecreaseFontSize",
+  step: -1
+});
+export {
+  K as DecreaseFontSize,
+  k as FontSize,
+  B as IncreaseFontSize
+};

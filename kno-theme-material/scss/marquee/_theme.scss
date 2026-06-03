@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/marquee/_theme.scss" as *;
+
+
+@mixin kno-marquee--theme() {
+    @include kno-marquee--theme-base();
+}

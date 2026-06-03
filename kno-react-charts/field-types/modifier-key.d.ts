@@ -1,0 +1,11 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * Specifies a modifier key.
+ */
+export type ModifierKey = 'none' | 'ctrl' | 'shift' | 'alt';

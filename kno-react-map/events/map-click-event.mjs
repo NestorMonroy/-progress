@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseEvent as i } from "./base-event.mjs";
+class r extends i {
+  /**
+   * @hidden
+   */
+  constructor(t, o) {
+    super(o), this.location = t.location, this.originalEvent = t.originalEvent;
+  }
+}
+export {
+  r as MapClickEvent
+};

@@ -1,0 +1,42 @@
+/// This is equivalent to `transform: scaleX( -1 );`.
+/// @example transform: scaleX( -1 );
+/// @name .k-flip-h
+/// @group transform
+/// @contextType css
+
+/// This is equivalent to `transform: scaleY( -1 );`.
+/// @example transform: scaleY( -1 );
+/// @name .k-flip-v
+/// @group transform
+/// @contextType css
+
+// TODO: consider globally horizontal vs h vs x
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--transform--flip() {
+    @include import-once("utils-transform-flip") {
+
+        // Flip utility classes
+        $kno-utils-flip: map.get( $kno-utils, "flip" ) !default;
+        @if $kno-utils-flip {
+            .#{$kno-prefix}flip-h { transform: scaleX( -1 ); }
+            .\!#{$kno-prefix}flip-h { transform: scaleX( -1 ) !important; } // stylelint-disable-line declaration-no-important
+            .#{$kno-prefix}flip-v { transform: scaleY( -1 ); }
+            .\!#{$kno-prefix}flip-v { transform: scaleY( -1 ) !important; } // stylelint-disable-line declaration-no-important
+            .#{$kno-prefix}flip-h.#{$kno-prefix}flip-v { transform: scale( -1, -1 ); }
+            .\!#{$kno-prefix}flip-h.\!#{$kno-prefix}flip-v { transform: scale( -1, -1 ) !important; } // stylelint-disable-line declaration-no-important
+
+            // Legacy aliases
+            .#{$kno-prefix}flip-x { @extend .#{$kno-prefix}flip-h !optional; }
+            .\!#{$kno-prefix}flip-x { @extend .\!#{$kno-prefix}flip-h !optional; }
+            .#{$kno-prefix}flip-y { @extend .#{$kno-prefix}flip-v !optional; }
+            .\!#{$kno-prefix}flip-y { @extend .\!#{$kno-prefix}flip-v !optional; }
+        }
+
+    }
+}

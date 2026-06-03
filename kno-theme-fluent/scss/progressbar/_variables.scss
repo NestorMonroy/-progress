@@ -1,0 +1,142 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+/// The height of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-height: var( --kno-progressbar-height, 4px ) !default;
+/// The horizontal width of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-horizontal-width: var( --kno-progressbar-horizontal-width, 100% ) !default;
+/// The animation timing of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-animation-timing: var( --kno-progressbar-animation-timing, 1s linear infinite ) !default;
+/// The width of the border around the ProgressBar.
+/// @group progressbar
+$kno-progressbar-border-width: var( --kno-progressbar-border-width, 0px ) !default;
+/// The border radius of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-border-radius: var( --kno-progressbar-border-radius, var( --kno-border-radius-sm, initial ) ) !default;
+/// The font family of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-font-family: var( --kno-progressbar-font-family, var(--kno-font-family) ) !default;
+/// The font size of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-font-size: var( --kno-progressbar-font-size, var(--kno-font-size-sm) ) !default;
+/// The line height of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-line-height: var( --kno-progressbar-line-height, var(--kno-line-height-lg) ) !default;
+/// The horizontal padding of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-padding-x: var( --kno-progressbar-padding-x, #{k-spacing(0)} ) !default;
+/// The vertical padding of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-padding-y: var( --kno-progressbar-padding-y, #{k-spacing(0)} ) !default;
+
+/// The background color of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-bg: var( --kno-progressbar-bg, #{k-color(secondary-on-surface)} ) !default;
+/// The text color of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-text: var( --kno-progressbar-text, #{k-color(on-app-surface)} ) !default;
+/// The border color of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-border: var( --kno-progressbar-border, #{$kno-progressbar-bg} ) !default;
+/// The background gradient of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-gradient: var( --kno-progressbar-gradient, null ) !default;
+
+/// The progress background color of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-value-bg: var( --kno-progressbar-value-bg, #{k-color(primary)} ) !default;
+/// The progress text color of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-value-text: var( --kno-progressbar-value-text, #{k-color(on-app-surface)} ) !default;
+/// The progress border color of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-value-border: var( --kno-progressbar-value-border, #{$kno-progressbar-value-bg} ) !default;
+/// The progress background gradient of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-value-gradient: var( --kno-progressbar-value-gradient, null ) !default;
+
+/// The progress status offset of the ProgressBar.
+/// @group progressbar
+$kno-progressbar-offset-y: var( --kno-progressbar-offset-y, #{k-spacing(2)} ) !default;
+/// The progress status offset of the vertical ProgressBar.
+/// @group progressbar
+$kno-progressbar-vertical-status-offset: var( --kno-progressbar-vertical-status-offset, calc( (#{$kno-progressbar-font-size} * #{$kno-progressbar-line-height} + #{$kno-progressbar-offset-y}) * -1) ) !default;
+
+/// The background color of the disabled ProgressBar.
+/// @group progressbar
+$kno-progressbar-disabled-bg: var( --kno-progressbar-disabled-bg, #{color-mix(in srgb, k-color(on-app-surface) 6%, transparent)} ) !default;
+/// The text color of the disabled ProgressBar.
+/// @group progressbar
+$kno-progressbar-disabled-text: var( --kno-progressbar-disabled-text, #{color-mix(in srgb, k-color(on-app-surface) 30%, transparent)} ) !default;
+/// The border color of the disabled ProgressBar.
+/// @group progressbar
+$kno-progressbar-disabled-border: var( --kno-progressbar-disabled-border, #{$kno-progressbar-disabled-bg} ) !default;
+
+/// The progress background color of the disabled ProgressBar.
+/// @group progressbar
+$kno-progressbar-value-disabled-bg: var( --kno-progressbar-disabled-bg, #{color-mix(in srgb, k-color(primary) 46%, transparent)} ) !default;
+
+/// The background color of the indeterminate ProgressBar.
+/// @group progressbar
+$kno-progressbar-indeterminate-bg: var( --kno-progressbar-indeterminate-bg, #{k-color(base-subtle)} ) !default;
+/// The text color of the indeterminate ProgressBar.
+/// @group progressbar
+$kno-progressbar-indeterminate-text: var( --kno-progressbar-indeterminate-text, #{$kno-progressbar-text} ) !default;
+/// The border color of the indeterminate ProgressBar.
+/// @group progressbar
+$kno-progressbar-indeterminate-border: var( --kno-progressbar-indeterminate-border, #{k-color(base-subtle)} ) !default;
+/// The background gradient of the horizontal indeterminate ProgressBar.
+/// @group progressbar
+$kno-progressbar-indeterminate-gradient-horizontal: var( --kno-progressbar-indeterminate-gradient-horizontal, linear-gradient(270deg, #{k-color(base-subtle)} 15%, #{k-color(primary)} 50%, #{k-color(base-subtle)} 85%) ) !default;
+/// The background gradient of the vertical indeterminate ProgressBar.
+/// @group progressbar
+$kno-progressbar-indeterminate-gradient-vertical: var( --kno-progressbar-indeterminate-gradient-vertical, linear-gradient(180deg, #{k-color(base-subtle)} 15%, #{k-color(primary)} 50% #{k-color(base-subtle)} 85%) ) !default;
+/// The gradient size of the horizontal indeterminate ProgressBar.
+/// @group progressbar
+$kno-progressbar-indeterminate-animation-horizontal: var( --kno-progressbar-indeterminate-animation-horizontal, 3s ease 0s infinite running progressbar-indeterminate-animation-horizontal ) !default;
+/// The gradient size of the vertical indeterminate ProgressBar.
+/// @group progressbar
+$kno-progressbar-indeterminate-animation-vertical: var( --kno-progressbar-indeterminate-animation-vertical, 3s ease 0s infinite running progressbar-indeterminate-animation-vertical ) !default;
+
+/// The border color of the chunk ProgressBar.
+/// @group progressbar
+$kno-progressbar-chunk-border: var( --kno-progressbar-chunk-border, #{k-color(app-surface)} ) !default;
+
+/// The border radius of the chunk ProgressBar chunks.
+/// @group progressbar
+$kno-progressbar-chunk-border-radius: null !default;
+
+// Circular Progressbar
+/// The arc stroke color of the circular ProgressBar.
+/// @group progressbar
+$kno-circular-progressbar-arc-stroke: var( --kno-circular-progressbar-arc-stroke, #{k-color(primary)} ) !default;
+/// The scale stroke background color of the circular ProgressBar.
+/// @group progressbar
+$kno-circular-progressbar-scale-stroke: var( --kno-circular-progressbar-scale-stroke, #{$kno-progressbar-bg} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/progressbar/_variables.scss" with (
+    $kno-progressbar-height: $kno-progressbar-height,
+    $kno-progressbar-horizontal-width: $kno-progressbar-horizontal-width,
+    $kno-progressbar-animation-timing: $kno-progressbar-animation-timing,
+    $kno-progressbar-border-width: $kno-progressbar-border-width,
+    $kno-progressbar-font-family: $kno-progressbar-font-family,
+    $kno-progressbar-font-size: $kno-progressbar-font-size,
+    $kno-progressbar-line-height: $kno-progressbar-line-height,
+    $kno-progressbar-bg: $kno-progressbar-bg,
+    $kno-progressbar-text: $kno-progressbar-text,
+    $kno-progressbar-border: $kno-progressbar-border,
+    $kno-progressbar-gradient: $kno-progressbar-gradient,
+    $kno-progressbar-value-bg: $kno-progressbar-value-bg,
+    $kno-progressbar-value-text: $kno-progressbar-value-text,
+    $kno-progressbar-value-border: $kno-progressbar-value-border,
+    $kno-progressbar-value-gradient: $kno-progressbar-value-gradient,
+    $kno-progressbar-indeterminate-bg: $kno-progressbar-indeterminate-bg,
+    $kno-progressbar-indeterminate-text: $kno-progressbar-indeterminate-text,
+    $kno-progressbar-indeterminate-border: $kno-progressbar-indeterminate-border,
+    $kno-progressbar-chunk-border-radius: $kno-progressbar-chunk-border-radius,
+    $kno-circular-progressbar-arc-stroke: $kno-circular-progressbar-arc-stroke,
+    $kno-circular-progressbar-scale-stroke: $kno-circular-progressbar-scale-stroke
+);

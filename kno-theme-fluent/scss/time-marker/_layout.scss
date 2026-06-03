@@ -1,0 +1,6 @@
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/time-marker/_layout.scss" as *;
+
+@mixin kno-time-marker--layout() {
+    @include kno-time-marker--layout-base();
+}

@@ -1,0 +1,7 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/pdf-viewer/_theme.scss" as *;
+
+@mixin kno-pdf-viewer--theme() {
+    @include kno-pdf-viewer--theme-base();
+}

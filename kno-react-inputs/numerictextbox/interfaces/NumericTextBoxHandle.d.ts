@@ -1,0 +1,46 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { FormComponentValidity } from '@progress/kno-react-common';
+import { NumericTextBoxProps } from './NumericTextBoxProps';
+/**
+ * The NumericTextBox ref.
+ */
+export interface NumericTextBoxHandle {
+    /**
+     * The NumericTextBox element.
+     */
+    element: HTMLInputElement | null;
+    /**
+     * Focus the NumericTextBox.
+     */
+    focus: () => void;
+    /**
+     * Gets the `name` property of the NumericTextBox.
+     */
+    name: string | undefined;
+    /**
+     * Gets the value of the NumericTextBox.
+     */
+    value: number | null;
+    /**
+     * Represents the validity state into which the NumericTextBox is set.
+     */
+    validity: FormComponentValidity;
+    /**
+     * @hidden
+     */
+    props: NumericTextBoxProps;
+    /**
+     * @hidden
+     */
+    validityStyles: boolean;
+    /**
+     * @hidden
+     */
+    required: boolean;
+}

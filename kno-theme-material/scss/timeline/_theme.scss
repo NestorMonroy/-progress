@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/timeline/_theme.scss" as *;
+
+
+@mixin kno-timeline--theme() {
+    @include kno-timeline--theme-base();
+}

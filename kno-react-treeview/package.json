@@ -1,0 +1,72 @@
+{
+  "name": "@progress/kno-react-treeview",
+  "version": "15.0.0",
+  "description": "React TreeView displays hierarchical data in a traditional tree structure, supports user interaction. knoReact TreeView package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "/kno-react-ui",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-react-animation": "15.0.0",
+    "@progress/kno-react-common": "15.0.0",
+    "@progress/kno-svg-icons": "^4.9.0 || ^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "Progress",
+    "TreeView",
+    "knoReact",
+    "reactjs",
+    "UI",
+    "components",
+    "React component",
+    "Telerik"
+  ],
+  "@progress": {
+    "friendlyName": "TreeView",
+    "framework": "knoReact",
+    "package": {
+      "productName": "knoReact",
+      "productCode": "KNOUIREACT",
+      "publishDate": 1779275385,
+      "licensingDocsUrl": ""
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependenciesMeta": {
+    "@progress/kno-svg-icons": {
+      "optional": true
+    }
+  }
+}

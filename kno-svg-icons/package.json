@@ -1,0 +1,37 @@
+{
+  "name": "@progress/kendo-svg-icons",
+  "description": "",
+  "version": "5.0.0",
+  "author": "Progress",
+  "repository": "tlk/kendo-icons",
+  "bugs": "https://github.com/tlk/kendo-icons/issues",
+  "license": "Apache-2.0",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist",
+    "scss",
+    "NOTICE.txt"
+  ],
+  "scripts": {
+    "prebuild": "node scripts/prepare-svg.js && node scripts/prepare-nuget.js",
+    "build": "rollup -c --bundleConfigAsCjs && npx sass scss/all.scss dist/index.css",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "Kno UI",
+    "SVG",
+    "Icons"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "rollup": "^4.2.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.0.3"
+  },
+  "gitHead": "ee0e7316e55a6a1004dff6ff75c00ed10f1197a6"
+}

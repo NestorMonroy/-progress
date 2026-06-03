@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { PreventableEvent as n } from "./preventable-event.mjs";
+class r extends n {
+  /**
+   * @hidden
+   */
+  constructor(e, t) {
+    super(t), this.axisRanges = e.axisRanges, this.nativeEvent = e.originalEvent;
+  }
+}
+export {
+  r as DragEvent
+};

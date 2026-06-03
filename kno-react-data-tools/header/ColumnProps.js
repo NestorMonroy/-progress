@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e={filterable:!0,editable:!0,sortable:!0,resizable:!0,reorderable:!0,groupable:!0};exports.ColumnDefaultProps=e;

@@ -1,0 +1,28 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { VirtualizationHandle } from '../../virtualization/Virtualization.js';
+import { DOMService } from './DOMService.js';
+import { CalendarViewEnum } from '../models/CalendarViewEnum.js';
+/**
+ * @hidden
+ */
+export declare class ScrollSyncService {
+    dom: DOMService;
+    private divideByMagnitude;
+    private powerByMagnitude;
+    private navigator;
+    private view;
+    private monthScrolled;
+    private navScrolled;
+    constructor(dom: DOMService);
+    configure(activeView: CalendarViewEnum): void;
+    sync(navigator: VirtualizationHandle, view: VirtualizationHandle, e: any): void;
+    scrollSiblingOf(scrolledElement: any): void;
+    siblingComponent(scrollableElement: HTMLElement): VirtualizationHandle;
+    calculateScroll(component: VirtualizationHandle, scrollTop: number): number;
+}

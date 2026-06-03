@@ -1,0 +1,7 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/skeleton/_theme.scss" as *;
+
+@mixin kno-skeleton--theme() {
+    @include kno-skeleton--theme-base();
+}

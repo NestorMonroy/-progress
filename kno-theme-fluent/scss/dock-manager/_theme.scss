@@ -1,0 +1,34 @@
+@use "./_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/dock-manager/_theme.scss" as *;
+
+@mixin kendo-dock-manager--theme() {
+    @include kendo-dock-manager--theme-base();
+
+    .k-dock-manager-splitter .k-pane-header,
+    .k-dock-manager-unpinned-container .k-pane-header {
+        > .k-pane-title {
+            color: $kendo-dock-manager-pane-header-text;
+        }
+    }
+
+    .k-dock-manager-unpinned-container {
+        box-shadow: $kendo-dock-manager-unpinned-container-shadow;
+    }
+}
+
+@mixin kendo-dock-indicator--theme() {
+    @include kendo-dock-navigator--theme();
+
+    .k-dock-indicator {
+        box-shadow: $kendo-dock-indicator-shadow;
+
+        &.k-disabled,
+        &:disabled {
+            color: color-mix(in srgb, k-color(on-app-surface) 30%, transparent);
+            background-color: color-mix(in srgb, k-color(on-app-surface) 7%, transparent);
+            outline-color: color-mix(in srgb, k-color(on-app-surface) 7%, transparent);
+            box-shadow: none;
+        }
+    }
+}

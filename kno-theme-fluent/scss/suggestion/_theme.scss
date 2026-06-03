@@ -1,0 +1,16 @@
+@use "./_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/suggestion/_theme.scss" as *;
+
+@mixin kno-suggestion--theme() {
+    @include kno-suggestion--theme-base();
+
+    .k-suggestion {
+        &:focus,
+        &.k-focus {
+            outline-color: $kno-suggestion-focus-shadow-color;
+            box-shadow: inset 0 0 $kno-suggestion-focus-shadow-blur $kno-suggestion-focus-shadow-spread $kno-suggestion-focus-shadow-color,
+                        inset 0 0 0 calc( #{$kno-suggestion-border-width} * 2 ) k-color(surface);
+        }
+    }
+}

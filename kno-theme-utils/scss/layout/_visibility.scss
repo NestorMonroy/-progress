@@ -1,0 +1,39 @@
+/// This is equivalent to `visibility: visble;`.
+/// @example visibility: visble;
+/// @name .k-visible
+/// @group visibility
+/// @contextType css
+
+/// This is equivalent to `visibility: hidden;`.
+/// @example visibility: hidden;
+/// @name .k-invisible
+/// @group visibility
+/// @contextType css
+
+/// This is equivalent to `visibility: collapse;`.
+/// @example visibility: collapse;
+/// @name .k-collapse
+/// @group visibility
+/// @contextType css
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--layout--visibility() {
+    @include import-once("utils-layout-visibility") {
+
+        // Visibility utility classes
+        $kno-utils-visibility: map.get( $kno-utils, "visibility" ) !default;
+        @include generate-utils( visibility, visibility, $kno-utils-visibility );
+
+        // Legacy aliases
+        .#{$kno-prefix}visible { @extend .#{$kno-prefix}visibility-visible !optional; }
+        .\!#{$kno-prefix}visible { @extend .\!#{$kno-prefix}visibility-visible !optional; }
+        .#{$kno-prefix}invisible { @extend .#{$kno-prefix}visibility-hidden !optional; }
+        .\!#{$kno-prefix}invisible { @extend .\!#{$kno-prefix}visibility-hidden !optional; }
+
+    }
+}

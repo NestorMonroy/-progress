@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as e from "react";
+import { ConfigurationComponent as a } from "./base/ConfigurationComponent.mjs";
+const o = (t) => /* @__PURE__ */ e.createElement(a, { ...t });
+o.displayName = "ChartValueAxisItem";
+export {
+  o as ChartValueAxisItem
+};

@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export declare enum CHIP_DATA_ACTION {
+    remove = "remove",
+    add = "add",
+    reorder = "reorder"
+}
+/**
+ * @hidden
+ */
+export type DataAction = {
+    type: CHIP_DATA_ACTION;
+    payload?: any;
+    valueField: string;
+    event?: React.SyntheticEvent<any>;
+};
+/**
+ * @hidden
+ */
+export declare const dataReducer: (state: any, action: DataAction) => any;

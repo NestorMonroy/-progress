@@ -1,0 +1,24 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface ResizeHandlersProps {
+    onResize: (e: any, args: {
+        end: boolean;
+        direction: any;
+    }) => void;
+}
+/**
+ * @hidden
+ */
+export declare class ResizeHandlers extends React.Component<ResizeHandlersProps, {}> {
+    private isDragging;
+    render(): React.JSX.Element;
+}

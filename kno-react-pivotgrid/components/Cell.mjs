@@ -1,0 +1,41 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as t from "react";
+import { useMouse as d, classNames as n } from "@progress/kno-react-common";
+const c = t.forwardRef((e, r) => {
+  const a = t.useRef(null), l = t.useRef(null);
+  t.useImperativeHandle(a, () => ({
+    element: l.current,
+    props: e
+  })), t.useImperativeHandle(r, () => a.current);
+  const i = d(e, a);
+  return /* @__PURE__ */ t.createElement(
+    "td",
+    {
+      ref: l,
+      ...i,
+      id: e.id,
+      style: e.style,
+      tabIndex: e.tabIndex,
+      role: e.role,
+      "aria-describedby": e.ariaDescribedby,
+      className: n(
+        "k-pivotgrid-cell",
+        {
+          "k-pivotgrid-header-total": e.total
+        },
+        e.className
+      )
+    },
+    e.children
+  );
+});
+c.displayName = "KendoReactPivotGridCell";
+export {
+  c as PivotGridCell
+};

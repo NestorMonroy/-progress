@@ -1,0 +1,90 @@
+{
+  "name": "@progress/kno-react-indicators",
+  "version": "15.0.0",
+  "description": "React Indicators offer an interface to represent a visual indication for their UI elements. knoReact Indicators package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "/kno-react-ui",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-react-common": "15.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "Progress",
+    "Indicators",
+    "Badge",
+    "knoReact",
+    "",
+    "reactjs",
+    "UI",
+    "components",
+    "React component",
+    "free React component",
+    "loader",
+    "skeleton",
+    "Telerik"
+  ],
+  "@progress": {
+    "friendlyName": "Indicators",
+    "framework": "knoReact",
+    "migrations": {
+      "options": {
+        "parser": "tsx",
+        "pattern": "*.{js,jsx,ts,tsx}"
+      },
+      "codemods": {
+        "15": [
+          {
+            "description": "Remove deprecated themeColor values ('dark', 'light', 'inverse', 'inherit') from Badge. Valid values: 'base' | 'primary' | 'secondary' | 'tertiary' | 'info' | 'success' | 'warning' | 'error'.",
+            "file": "codemods/v15/badge-theme-color",
+            "prompt": true
+          },
+          {
+            "description": "Remove deprecated themeColor values from Loader. Valid values: 'base' | 'primary' | 'secondary' | 'tertiary'.",
+            "file": "codemods/v15/loader-theme-color",
+            "prompt": true
+          }
+        ]
+      }
+    },
+    "package": {
+      "productName": "knoReact",
+      "productCode": "KNOUIREACT",
+      "publishDate": 1779275467,
+      "licensingDocsUrl": ""
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

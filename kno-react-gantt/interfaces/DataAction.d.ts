@@ -1,0 +1,32 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { DataItem } from './DataItem';
+/**
+ * Specifies the available [DataAction](components/gantt/api/data_action) types.
+ */
+export declare enum DATA_ACTION {
+    create = 0,
+    update = 1,
+    remove = 2
+}
+/**
+ * Specifies the action which can be dispatched through the Gantt context.
+ */
+export interface DataAction {
+    /**
+     * The `type` of the action. The available types are:
+     * - `create`
+     * - `update`
+     * - `remove`
+     */
+    type: DATA_ACTION;
+    /**
+     * Specifies the `dataItem` being edited.
+     */
+    dataItem: DataItem;
+}

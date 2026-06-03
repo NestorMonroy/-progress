@@ -1,0 +1,4 @@
+export { knoSmartPaste } from './smartpaste/smart-paste';
+export { SmartPasteField } from './smartpaste/types/SmartPasteField';
+export { SmartPasteOptions } from './smartpaste/types/SmartPasteOptions';
+export { SmartPasteCustomInput } from './smartpaste/types/SmartPasteCustomInput';

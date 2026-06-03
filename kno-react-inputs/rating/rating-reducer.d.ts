@@ -1,0 +1,39 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export declare enum RATING_ACTION {
+    select = "select",
+    deselect = "deselect",
+    increase = "increase",
+    decrease = "decrease",
+    min = "min",
+    max = "max",
+    reset = "reset"
+}
+/**
+ * @hidden
+ */
+export type RatingActionDispatch = {
+    type: RATING_ACTION;
+    payload?: number;
+    event?: React.SyntheticEvent<any>;
+};
+/**
+ * @hidden
+ */
+export type RatingAction = {
+    min: number;
+    max: number;
+    step?: number;
+};
+/**
+ * @hidden
+ */
+export declare const ratingReducer: (state: any, action: RatingAction & RatingActionDispatch) => any;

@@ -1,0 +1,70 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+const e = "multiviewcalendar.prevView", t = "multiviewcalendar.nextView", a = "dateinput.increment", c = "dateinput.decrement", n = "dateinput.clear", i = "calendar.today", r = "datepicker.toggleCalendar", o = "datepicker.selectDate", l = "daterangepicker.swapStartEnd", s = "daterangepicker.start", d = "daterangepicker.selectStartDate", g = "daterangepicker.selectEndDate", m = "daterangepicker.end", p = "daterangepicker.separator", k = "datetimepicker.toggleDateTimeSelector", S = "datetimepicker.selectDateAndTime", T = "timepicker.now", w = "timepicker.selectNow", v = "timepicker.cancel", D = "timepicker.set", u = "timepicker.toggleTimeSelector", C = "timepicker.toggleClock", E = "timepicker.selectTime", N = "datetimepicker.date", P = "datetimepicker.time", V = "datetimepicker.cancel", x = "datetimepicker.set", y = "daterangepicker.cancel", A = "daterangepicker.set", R = {
+  [i]: "Today",
+  [T]: "NOW",
+  [D]: "Set",
+  [v]: "Cancel",
+  [N]: "Date",
+  [P]: "Time",
+  [V]: "Cancel",
+  [x]: "Set",
+  [y]: "Cancel",
+  [A]: "Set",
+  [s]: "Start",
+  [m]: "End",
+  [p]: " ",
+  [w]: "Select Now",
+  [u]: "Toggle TimeSelector",
+  [C]: "Toggle Clock",
+  [E]: "Select time",
+  [a]: "Increase value",
+  [c]: "Decrease value",
+  [n]: "clear",
+  [r]: "Toggle calendar",
+  [o]: "Select date",
+  [e]: "Navigate to previous view",
+  [t]: "Navigate to next view",
+  [l]: "Swap start and end values",
+  [k]: "Toggle date-time selector",
+  [S]: "Select date and time",
+  [d]: "Start date",
+  [g]: "End date"
+};
+export {
+  n as clear,
+  N as date,
+  y as dateRangePickerCancel,
+  A as dateRangePickerSet,
+  V as dateTimePickerCancel,
+  x as dateTimePickerSet,
+  c as decreaseValue,
+  m as end,
+  a as increaseValue,
+  R as messages,
+  t as nextView,
+  T as now,
+  e as prevView,
+  o as selectDate,
+  S as selectDateAndTime,
+  g as selectEndDate,
+  w as selectNow,
+  d as selectStartDate,
+  E as selectTime,
+  p as separator,
+  s as start,
+  l as swapStartEnd,
+  P as time,
+  v as timePickerCancel,
+  D as timePickerSet,
+  i as today,
+  r as toggleCalendar,
+  C as toggleClock,
+  k as toggleDateTimeSelector,
+  u as toggleTimeSelector
+};

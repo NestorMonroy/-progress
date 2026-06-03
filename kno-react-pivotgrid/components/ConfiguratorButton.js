@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const f=require("react"),a=require("@progress/kno-react-common"),g=require("@progress/kno-react-intl"),b=require("@progress/kno-svg-icons"),c=require("../messages/index.js");function v(e){const o=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const n in e)if(n!=="default"){const r=Object.getOwnPropertyDescriptor(e,n);Object.defineProperty(o,n,r.get?r:{enumerable:!0,get:()=>e[n]})}}return o.default=e,Object.freeze(o)}const t=v(f),u=t.forwardRef((e,o)=>{const n=t.useRef(null),r=t.useRef(null),i=g.useLocalization();t.useImperativeHandle(n,()=>({props:e,element:r.current})),t.useImperativeHandle(o,()=>n.current);const[s,l]=a.useCustomComponent(e.icon||I.icon),d=t.useMemo(()=>a.classNames("k-pivotgrid-configurator-button",e.className),[e.className]),m=a.useMouse(e,n);return t.createElement("div",{ref:r,id:e.id,className:d,tabIndex:e.tabIndex,...m},t.createElement("span",null,i.toLanguageString(c.configuratorButtonLabel,c.messages[c.configuratorButtonLabel]),t.createElement(s,{name:"gear",icon:b.gearIcon,...l})))}),I={icon:a.IconWrap};u.displayName="KendoReactPivotGridConfiguratorButton";exports.PivotGridConfiguratorButton=u;

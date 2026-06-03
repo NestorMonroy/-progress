@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/autocomplete/_layout.scss" as *;
+
+
+@mixin kno-autocomplete--layout() {
+    @include kno-autocomplete--layout-base();
+}

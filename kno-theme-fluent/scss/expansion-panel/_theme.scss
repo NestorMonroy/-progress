@@ -1,0 +1,49 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/expansion-panel/_theme.scss" as *;
+
+@mixin kendo-expander--theme() {
+
+    @include kendo-expander--theme-base();
+
+    .k-expander {
+        &.k-expanded {
+            background-color: $kendo-expander-expanded-bg;
+        }
+
+        &.k-focus,
+        &:focus {
+            box-shadow: $kendo-expander-focus-shadow;
+
+            .k-expander-title {
+                @include fill(
+                    $color: k-color(primary-on-surface),
+                );
+            }
+
+            &::after {
+                outline-color: $kendo-expander-focus-outline;
+            }
+        }
+
+        &:disabled,
+        &.k-disabled {
+            @include fill(
+                $color: $kendo-expander-disabled-text
+            );
+
+            .k-expander-header,
+            .k-expander-title,
+            .k-expander-sub-title,
+            .k-expander-indicator {
+                @include fill(
+                    $color: $kendo-expander-disabled-text,
+                );
+            }
+        }
+    }
+
+    .k-expander-indicator {
+        color: $kendo-expander-indicator-text;
+    }
+}

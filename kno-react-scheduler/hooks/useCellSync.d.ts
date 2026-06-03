@@ -1,0 +1,17 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/** @hidden */
+export interface CellSyncArgs {
+    element: React.RefObject<any>;
+    selector: string;
+    attribute?: string;
+    explicitDepth: boolean;
+}
+/** @hidden */
+export declare const useCellSync: (args: CellSyncArgs, inputs?: any[]) => void;

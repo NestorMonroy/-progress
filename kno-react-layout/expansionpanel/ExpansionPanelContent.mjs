@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { classNames as s } from "@progress/kno-react-common";
+import * as n from "react";
+const r = n.forwardRef(
+  (a, t) => {
+    const { children: o, ...e } = a;
+    return /* @__PURE__ */ n.createElement("div", { ref: t, ...e, className: s("k-expander-content", e.className) }, o);
+  }
+);
+r.displayName = "knoReactExpansionPanelContent";
+export {
+  r as ExpansionPanelContent
+};

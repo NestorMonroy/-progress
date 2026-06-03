@@ -1,0 +1,439 @@
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use "../list/_variables.scss" as *;
+
+// Calendar
+
+/// The default size of the Calendar.
+/// @group calendar
+/// @role default
+$kno-calendar-default-size: "md" !default;
+
+/// The width of the border around the Calendar.
+/// @group calendar
+$kno-calendar-border-width: 1px !default;
+
+/// The font family of the Calendar.
+/// @group calendar
+$kno-calendar-font-family: var(--kno-font-family) !default;
+/// The font size of the Calendar.
+/// @group calendar
+$kno-calendar-font-size: null !default;
+/// The line height of the Calendar.
+/// @group calendar
+$kno-calendar-line-height: null !default;
+/// The border-radius of the Calendar.
+/// @group calendar
+$kno-calendar-border-radius: k-border-radius(xxxl) !default;
+
+/// The size of the cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-size: 48px !default;
+
+/// The background color of the Calendar.
+/// @group calendar
+$kno-calendar-bg: k-color(surface) !default;
+/// The text color of the Calendar.
+/// @group calendar
+$kno-calendar-text: k-color(on-app-surface) !default;
+/// The border color of the Calendar.
+/// @group calendar
+$kno-calendar-border: k-color(border) !default;
+
+/// The horizontal padding of the header in the Calendar.
+/// @group calendar
+$kno-calendar-header-padding-x: k-spacing(1) !default;
+/// The vertical padding of the header in the Calendar.
+/// @group calendar
+$kno-calendar-header-padding-y: k-spacing(3) !default;
+/// The height of the header in the Calendar.
+/// @group calendar
+$kno-calendar-header-border-width: 0px !default;
+
+/// The background color of the header in the Calendar.
+/// @group calendar
+$kno-calendar-header-bg: transparent !default;
+/// The border color of the header in the Calendar.
+/// @group calendar
+$kno-calendar-header-border: k-color(border) !default;
+/// The gradient of the header in the Calendar.
+/// @group calendar
+$kno-calendar-header-gradient: none !default;
+/// The shadow of the header in the Calendar.
+/// @group calendar
+$kno-calendar-header-shadow: null !default;
+
+/// The gap between the items in the navigation of the Calendar.
+/// @group calendar
+$kno-calendar-nav-gap: null !default;
+
+/// The horizontal padding of the footer in the Calendar.
+/// @group calendar
+$kno-calendar-footer-padding-x: k-spacing(3) !default;
+/// The vertical padding of the footer in the Calendar.
+/// @group calendar
+$kno-calendar-footer-padding-y: k-spacing(3) !default;
+
+/// The horizontal padding of the cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-padding-x: k-spacing(3) !default;
+/// The vertical padding of the cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-padding-y: $kno-calendar-cell-padding-x !default;
+
+/// The border radius of the cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-border-radius: k-border-radius( full ) !default;
+
+/// The horizontal padding of the header cells in the Calendar.
+/// @group calendar
+$kno-calendar-header-cell-padding-x: null !default;
+/// The vertical padding of the header cells in the Calendar.
+/// @group calendar
+$kno-calendar-header-cell-padding-y: null !default;
+/// The width of the header cells in the Calendar.
+/// @group calendar
+$kno-calendar-header-cell-width: $kno-calendar-cell-size !default;
+/// The height of the header cells in the Calendar.
+/// @group calendar
+$kno-calendar-header-cell-height: $kno-calendar-cell-size !default;
+/// The font size of the header cells in the Calendar.
+/// @group calendar
+$kno-calendar-header-cell-font-size: var(--kno-font-size-lg) !default;
+/// The line height of the header cells in the Calendar.
+/// @group calendar
+$kno-calendar-header-cell-line-height: var(--kno-line-height-lg) !default;
+
+/// The text color of the header cells in the Calendar.
+/// @group calendar
+$kno-calendar-header-cell-text: k-color(subtle) !default;
+
+/// The opacity of the header cells in the Calendar.
+/// @group calendar
+$kno-calendar-header-cell-opacity: null !default;
+
+/// The horizontal padding of the caption in the Calendar.
+/// @group calendar
+$kno-calendar-caption-padding-x: k-spacing(6) !default;
+/// The vertical padding of the caption in the Calendar.
+/// @group calendar
+$kno-calendar-caption-padding-y: k-spacing(3.5) !default;
+
+/// The height of the caption in the Calendar.
+/// @group calendar
+$kno-calendar-caption-height: $kno-calendar-cell-size !default;
+/// The font size of the caption in the Calendar.
+/// @group calendar
+$kno-calendar-caption-font-size: var(--kno-font-size) !default;
+/// The line height of the caption in the Calendar.
+/// @group calendar
+$kno-calendar-caption-line-height: var(--kno-line-height) !default;
+/// The font weight of the caption in the Calendar.
+/// @group calendar
+$kno-calendar-caption-font-weight: var(--kno-font-weight-normal) !default;
+
+/// The font size of the week number cells in the Calendar.
+/// @group calendar
+$kno-calendar-week-number-font-size: $kno-calendar-font-size !default;
+
+/// The width of the Calendar view.
+/// @group calendar
+$kno-calendar-view-width: ($kno-calendar-cell-size * 8) !default;
+/// The height of the Calendar view.
+/// @group calendar
+$kno-calendar-view-height: ($kno-calendar-cell-size * 7) !default;
+
+/// The gap between the items in the Calendar view.
+/// @group calendar
+$kno-calendar-view-gap: k-spacing(6) !default;
+
+/// The background color of the weekend cells in the Calendar.
+/// @group calendar
+$kno-calendar-weekend-bg: null !default;
+/// The text color of the weekend cells in the Calendar.
+/// @group calendar
+$kno-calendar-weekend-text: null !default;
+
+/// The style of the current day in the Calendar.
+/// @group calendar
+$kno-calendar-today-style: color !default;
+/// The color of the current day in the Calendar.
+/// @group calendar
+$kno-calendar-today-color: k-color(primary-on-surface) !default;
+/// The font weight of the current day in the Calendar.
+/// @group calendar
+$kno-calendar-today-font-weight: var(--kno-font-weight-normal) !default;
+/// The box shadow of the current day in the Calendar.
+/// @group calendar
+$kno-calendar-today-box-shadow: inset 0 0 0 1px k-color(primary) !default;
+
+/// The background color of the week number cells in the Calendar.
+/// @group calendar
+$kno-calendar-week-number-bg: null !default;
+/// The text color of the week number cells in the Calendar.
+/// @group calendar
+$kno-calendar-week-number-text: k-color(base-emphasis) !default;
+
+/// The background color of the preceding/subsequent month cells in the Calendar.
+/// @group calendar
+$kno-calendar-other-month-bg: null !default;
+/// The text color of the preceding/subsequent month cells in the Calendar.
+/// @group calendar
+$kno-calendar-other-month-text: k-color(subtle) !default;
+
+/// The border color of the cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-border: null !default;
+
+/// The background color of the hovered cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-hover-bg: color-mix(in srgb, k-color(on-app-surface) 8%, transparent) !default;
+/// The text color of the hovered cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-hover-text: null !default;
+/// The border color of the hovered cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-hover-border: null !default;
+/// The gradient of the hovered cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-hover-gradient: null !default;
+
+/// The background color of the selected cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-bg: k-color(primary) !default;
+/// The text color of the selected cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-text: k-color(on-primary) !default;
+/// The border color of the selected cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-border: null !default;
+/// The gradient of the selected cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-gradient: null !default;
+
+/// The background color of the selected and hovered cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-hover-bg: k-color(primary-hover) !default;
+/// The text color of the selected and hovered cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-hover-text: $kno-calendar-cell-selected-text !default;
+/// The border color of the selected and hovered cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-hover-border: null !default;
+/// The gradient of the selected and hovered cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-hover-gradient: null !default;
+
+/// The shadow of the focused cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-focus-shadow: null !default;
+/// The shadow of the selected and focused cells in the Calendar.
+/// @group calendar
+$kno-calendar-cell-selected-focus-shadow: null !default;
+
+
+/// The width of the Calendar navigation.
+/// @group calendar
+$kno-calendar-navigation-width: 5em !default;
+/// The height of the items in the Calendar navigation.
+/// @group calendar
+$kno-calendar-navigation-item-height: $kno-calendar-cell-size !default;
+
+/// The background color of the Calendar navigation.
+/// @group calendar
+$kno-calendar-navigation-bg: $kno-calendar-bg !default;
+/// The text color of the Calendar navigation.
+/// @group calendar
+$kno-calendar-navigation-text: $kno-calendar-text !default;
+/// The border color of the Calendar navigation.
+/// @group calendar
+$kno-calendar-navigation-border: k-color(border) !default;
+/// The background color of the hovered items in the Calendar navigation.
+/// @group calendar
+$kno-calendar-navigation-hover-text: k-color(on-app-surface) !default;
+/// The text color of the marker in the Calendar navigation.
+/// @group calendar
+$kno-calendar-navigation-marker-text: k-color(primary-on-surface) !default;
+
+/// The background color of the Calendar range selection.
+/// @group calendar
+$kno-calendar-range-bg: k-color(secondary) !default;
+/// The background color of the Calendar range start selection.
+/// @group calendar
+$kno-calendar-range-start-bg: linear-gradient(to right, k-color(surface) 0%, k-color(surface) 50%, k-color(secondary) 50%, k-color(secondary) 100%) !default;
+/// The background color of the Calendar range end selection.
+/// @group calendar
+$kno-calendar-range-end-bg: linear-gradient(to left, k-color(surface) 0%, k-color(surface) 50%, k-color(secondary) 50%, k-color(secondary) 100%) !default;
+
+/// The horizontal padding of the header in the Infinite Calendar.
+/// @group calendar
+$kno-infinite-calendar-header-padding-x: k-spacing(1) !default;
+/// The vertical padding of the header in the Infinite Calendar.
+/// @group calendar
+$kno-infinite-calendar-header-padding-y: k-spacing(3) !default;
+
+/// The horizontal padding of the Calendar view in the Infinite Calendar.
+/// @group calendar
+$kno-infinite-calendar-view-padding-x: k-spacing(1) !default;
+/// The vertical padding of the Calendar view in the Infinite Calendar.
+/// @group calendar
+$kno-infinite-calendar-view-padding-y: k-spacing(0) !default;
+
+/// The height of the Calendar view in the Infinite Calendar.
+/// @group calendar
+$kno-infinite-calendar-view-height: ( $kno-calendar-cell-size * 9 ) !default;
+
+
+// Multiview calendar
+
+/// The border radius of the range cells in the Multiview Calendar.
+/// @group calendar
+$kno-calendar-range-cell-border-radius: k-border-radius(full) !default;
+
+// Calendar sizes
+
+/// The font size of the small Calendar.
+/// @group calendar
+$kno-calendar-sm-font-size: var(--kno-font-size) !default;
+/// The line height of the small Calendar.
+/// @group calendar
+$kno-calendar-sm-line-height: var(--kno-line-height) !default;
+/// The size of the cells in the small Calendar.
+/// @group calendar
+$kno-calendar-sm-cell-size: 40px !default;
+/// The horizontal padding of the cells in the small Calendar.
+/// @group calendar
+$kno-calendar-sm-cell-padding-x: k-spacing(2) !default;
+/// The vertical padding of the cells in the small Calendar.
+/// @group calendar
+$kno-calendar-sm-cell-padding-y: k-spacing(2) !default;
+
+/// The font size of the medium Calendar.
+/// @group calendar
+$kno-calendar-md-font-size: var(--kno-font-size-lg) !default;
+/// The line height of the medium Calendar.
+/// @group calendar
+$kno-calendar-md-line-height: var(--kno-line-height-lg) !default;
+/// The size of the cells in the medium Calendar.
+/// @group calendar
+$kno-calendar-md-cell-size: $kno-calendar-cell-size !default;
+/// The horizontal padding of the cells in the medium Calendar.
+/// @group calendar
+$kno-calendar-md-cell-padding-x: k-spacing(3) !default;
+/// The vertical padding of the cells in the medium Calendar.
+/// @group calendar
+$kno-calendar-md-cell-padding-y: k-spacing(3) !default;
+
+/// The font size of the large Calendar.
+/// @group calendar
+$kno-calendar-lg-font-size: var(--kno-font-size-lg) !default;
+/// The line height of the large Calendar.
+/// @group calendar
+$kno-calendar-lg-line-height: var(--kno-line-height-lg) !default;
+/// The size of the cells in the large Calendar.
+/// @group calendar
+$kno-calendar-lg-cell-size: 56px !default;
+/// The horizontal padding of the cells in the large Calendar.
+/// @group calendar
+$kno-calendar-lg-cell-padding-x: k-spacing(4) !default;
+/// The vertical padding of the cells in the large Calendar.
+/// @group calendar
+$kno-calendar-lg-cell-padding-y: k-spacing(4) !default;
+
+@forward "@progress/kno-theme-core/scss/components/calendar/_variables.scss" with (
+    $kno-calendar-default-size: $kno-calendar-default-size,
+    $kno-calendar-border-width: $kno-calendar-border-width,
+    $kno-calendar-font-family: $kno-calendar-font-family,
+    $kno-calendar-font-size: $kno-calendar-font-size,
+    $kno-calendar-line-height: $kno-calendar-line-height,
+    $kno-calendar-border-radius: $kno-calendar-border-radius,
+    $kno-calendar-cell-size: $kno-calendar-cell-size,
+    $kno-calendar-bg: $kno-calendar-bg,
+    $kno-calendar-text: $kno-calendar-text,
+    $kno-calendar-border: $kno-calendar-border,
+    $kno-calendar-header-padding-x: $kno-calendar-header-padding-x,
+    $kno-calendar-header-padding-y: $kno-calendar-header-padding-y,
+    $kno-calendar-header-border-width: $kno-calendar-header-border-width,
+    $kno-calendar-header-bg: $kno-calendar-header-bg,
+    $kno-calendar-header-border: $kno-calendar-header-border,
+    $kno-calendar-header-gradient: $kno-calendar-header-gradient,
+    $kno-calendar-header-shadow: $kno-calendar-header-shadow,
+    $kno-calendar-nav-gap: $kno-calendar-nav-gap,
+    $kno-calendar-footer-padding-x: $kno-calendar-footer-padding-x,
+    $kno-calendar-footer-padding-y: $kno-calendar-footer-padding-y,
+    $kno-calendar-cell-padding-x: $kno-calendar-cell-padding-x,
+    $kno-calendar-cell-padding-y: $kno-calendar-cell-padding-y,
+    $kno-calendar-cell-border-radius: $kno-calendar-cell-border-radius,
+    $kno-calendar-header-cell-padding-x: $kno-calendar-header-cell-padding-x,
+    $kno-calendar-header-cell-padding-y: $kno-calendar-header-cell-padding-y,
+    $kno-calendar-header-cell-width: $kno-calendar-header-cell-width,
+    $kno-calendar-header-cell-height: $kno-calendar-header-cell-height,
+    $kno-calendar-header-cell-font-size: $kno-calendar-header-cell-font-size,
+    $kno-calendar-header-cell-line-height: $kno-calendar-header-cell-line-height,
+    $kno-calendar-header-cell-text: $kno-calendar-header-cell-text,
+    $kno-calendar-header-cell-opacity: $kno-calendar-header-cell-opacity,
+    $kno-calendar-caption-padding-x: $kno-calendar-caption-padding-x,
+    $kno-calendar-caption-padding-y: $kno-calendar-caption-padding-y,
+    $kno-calendar-caption-height: $kno-calendar-caption-height,
+    $kno-calendar-caption-font-size: $kno-calendar-caption-font-size,
+    $kno-calendar-caption-line-height: $kno-calendar-caption-line-height,
+    $kno-calendar-caption-font-weight: $kno-calendar-caption-font-weight,
+    $kno-calendar-week-number-font-size: $kno-calendar-week-number-font-size,
+    $kno-calendar-view-width: $kno-calendar-view-width,
+    $kno-calendar-view-height: $kno-calendar-view-height,
+    $kno-calendar-view-gap: $kno-calendar-view-gap,
+    $kno-calendar-weekend-bg: $kno-calendar-weekend-bg,
+    $kno-calendar-weekend-text: $kno-calendar-weekend-text,
+    $kno-calendar-today-style: $kno-calendar-today-style,
+    $kno-calendar-today-color: $kno-calendar-today-color,
+    $kno-calendar-today-font-weight: $kno-calendar-today-font-weight,
+    $kno-calendar-today-box-shadow: $kno-calendar-today-box-shadow,
+    $kno-calendar-week-number-bg: $kno-calendar-week-number-bg,
+    $kno-calendar-week-number-text: $kno-calendar-week-number-text,
+    $kno-calendar-other-month-bg: $kno-calendar-other-month-bg,
+    $kno-calendar-other-month-text: $kno-calendar-other-month-text,
+    $kno-calendar-cell-border: $kno-calendar-cell-border,
+    $kno-calendar-cell-hover-bg: $kno-calendar-cell-hover-bg,
+    $kno-calendar-cell-hover-text: $kno-calendar-cell-hover-text,
+    $kno-calendar-cell-hover-border: $kno-calendar-cell-hover-border,
+    $kno-calendar-cell-hover-gradient: $kno-calendar-cell-hover-gradient,
+    $kno-calendar-cell-selected-bg: $kno-calendar-cell-selected-bg,
+    $kno-calendar-cell-selected-text: $kno-calendar-cell-selected-text,
+    $kno-calendar-cell-selected-border: $kno-calendar-cell-selected-border,
+    $kno-calendar-cell-selected-gradient: $kno-calendar-cell-selected-gradient,
+    $kno-calendar-cell-selected-hover-bg: $kno-calendar-cell-selected-hover-bg,
+    $kno-calendar-cell-selected-hover-text: $kno-calendar-cell-selected-hover-text,
+    $kno-calendar-cell-selected-hover-border: $kno-calendar-cell-selected-hover-border,
+    $kno-calendar-cell-selected-hover-gradient: $kno-calendar-cell-selected-hover-gradient,
+    $kno-calendar-cell-focus-shadow: $kno-calendar-cell-focus-shadow,
+    $kno-calendar-cell-selected-focus-shadow: $kno-calendar-cell-selected-focus-shadow,
+    $kno-calendar-navigation-width: $kno-calendar-navigation-width,
+    $kno-calendar-navigation-item-height: $kno-calendar-navigation-item-height,
+    $kno-calendar-navigation-bg: $kno-calendar-navigation-bg,
+    $kno-calendar-navigation-text: $kno-calendar-navigation-text,
+    $kno-calendar-navigation-border: $kno-calendar-navigation-border,
+    $kno-calendar-navigation-hover-text: $kno-calendar-navigation-hover-text,
+    $kno-calendar-navigation-marker-text: $kno-calendar-navigation-marker-text,
+    $kno-infinite-calendar-header-padding-x: $kno-infinite-calendar-header-padding-x,
+    $kno-infinite-calendar-header-padding-y: $kno-infinite-calendar-header-padding-y,
+    $kno-infinite-calendar-view-padding-x: $kno-infinite-calendar-view-padding-x,
+    $kno-infinite-calendar-view-padding-y: $kno-infinite-calendar-view-padding-y,
+    $kno-infinite-calendar-view-height: $kno-infinite-calendar-view-height,
+    $kno-calendar-range-bg: $kno-calendar-range-bg,
+    $kno-calendar-range-cell-border-radius: $kno-calendar-range-cell-border-radius,
+    $kno-calendar-sm-font-size: $kno-calendar-sm-font-size,
+    $kno-calendar-sm-line-height: $kno-calendar-sm-line-height,
+    $kno-calendar-sm-cell-size: $kno-calendar-sm-cell-size,
+    $kno-calendar-sm-cell-padding-x: $kno-calendar-sm-cell-padding-x,
+    $kno-calendar-sm-cell-padding-y: $kno-calendar-sm-cell-padding-y,
+    $kno-calendar-md-font-size: $kno-calendar-md-font-size,
+    $kno-calendar-md-line-height: $kno-calendar-md-line-height,
+    $kno-calendar-md-cell-size: $kno-calendar-md-cell-size,
+    $kno-calendar-md-cell-padding-x: $kno-calendar-md-cell-padding-x,
+    $kno-calendar-md-cell-padding-y: $kno-calendar-md-cell-padding-y,
+    $kno-calendar-lg-font-size: $kno-calendar-lg-font-size,
+    $kno-calendar-lg-line-height: $kno-calendar-lg-line-height,
+    $kno-calendar-lg-cell-size: $kno-calendar-lg-cell-size,
+    $kno-calendar-lg-cell-padding-x: $kno-calendar-lg-cell-padding-x,
+    $kno-calendar-lg-cell-padding-y: $kno-calendar-lg-cell-padding-y
+);

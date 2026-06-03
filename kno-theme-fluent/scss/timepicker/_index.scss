@@ -1,0 +1,26 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../input/_index.scss" as *;
+@use "../button/_index.scss" as *;
+@use "../popup/_index.scss" as *;
+@use "../list/_index.scss" as *;
+@use "../timeselector/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-time-picker--styles() {
+    @include import-once( "time-picker" ) {
+        @include core-styles();
+        @include kno-input--styles();
+        @include kno-button--styles();
+        @include kno-popup--styles();
+        @include kno-list--styles();
+        @include kno-time-selector--styles();
+        @include kno-time-picker--layout();
+        @include kno-time-picker--theme();
+    }
+}

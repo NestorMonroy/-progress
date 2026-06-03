@@ -1,0 +1,24 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/pager/_theme.scss" as *;
+
+@mixin kno-pager--theme() {
+    @include kno-pager--theme-base();
+
+    .k-pager {
+        &:focus,
+        &.k-focus {
+            color: $kno-pager-focus-text;
+            background-color: $kno-pager-focus-bg;
+            border-color: $kno-pager-focus-border;
+        }
+    }
+
+    .k-pager-sizes {
+        color: $kno-pager-sizes-label-text;
+    }
+
+    .k-pager-info {
+        color: $kno-pager-info-label-text;
+    }
+}

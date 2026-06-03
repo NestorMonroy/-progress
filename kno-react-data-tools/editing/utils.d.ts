@@ -1,0 +1,12 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { TableEditableSettings } from './TableEditableSettings';
+/**
+ * @hidden
+ */
+export declare const getEditableOptions: (editable?: boolean | TableEditableSettings) => Required<TableEditableSettings>;

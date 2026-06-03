@@ -1,0 +1,41 @@
+@use "./_variables.scss" as *;
+@use "../core/typography/_index.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/dock-manager/_layout.scss" as *;
+
+@mixin kendo-dock-manager--layout() {
+    @include kendo-dock-manager--layout-base();
+
+    .k-dock-manager-splitter {
+        .k-pane-header {
+            padding-block-start: $kendo-dock-manager-pane-header-padding-x;
+        }
+    }
+
+    .k-dock-manager-splitter,
+    .k-dock-manager-unpinned-container {
+        .k-splitbar {
+            border-width: 0;
+        }
+    }
+
+    .k-dock-manager-toolbar {
+        box-shadow: none;
+    }
+
+    .k-dock-manager-splitter,
+    .k-dock-manager-unpinned-container {
+        .k-pane-tabbed {
+            padding-block-end: $kendo-dock-manager-tabbed-pane-padding-x;
+        }
+    }
+}
+
+@mixin  kendo-dock-indicator--layout() {
+    @include kendo-dock-navigator--layout();
+
+    .k-dock-indicator {
+        &.k-dock-indicator-middle {
+            box-shadow: none;
+        }
+    }
+}

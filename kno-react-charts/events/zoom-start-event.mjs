@@ -1,0 +1,20 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { PreventableEvent as n } from "./preventable-event.mjs";
+class r extends n {
+  // tslint:enable:max-line-length
+  /**
+   * @hidden
+   */
+  constructor(t, e) {
+    super(e), this.axisRanges = t.axisRanges, this.nativeEvent = t.originalEvent;
+  }
+}
+export {
+  r as ZoomStartEvent
+};

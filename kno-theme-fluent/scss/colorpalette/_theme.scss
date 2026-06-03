@@ -1,0 +1,25 @@
+@use "../core/_index.scss" as *;
+@use "@progress/kendo-theme-core/scss/components/colorpalette/_theme.scss" as *;
+@use "./_variables.scss" as *;
+
+@mixin kendo-color-palette--theme() {
+    @include kendo-color-palette--theme-base();
+
+    .k-colorpalette-tile {
+
+        &:hover,
+        &.k-hover {
+            @include box-shadow( $kendo-color-palette-tile-hover-shadow );
+        }
+
+        &:focus,
+        &.k-focus {
+            @include box-shadow( $kendo-color-palette-tile-focus-shadow );
+        }
+
+        &:active,
+        &.k-selected {
+            @include box-shadow( $kendo-color-palette-tile-selected-shadow );
+        }
+    }
+}

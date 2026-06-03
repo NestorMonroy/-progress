@@ -1,0 +1,47 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/rating/_layout.scss" as *;
+
+@mixin kno-rating--layout() {
+
+    @include kno-rating--layout-base();
+
+    .k-rating {
+        gap: $kno-rating-spacing;
+    }
+
+    .k-rating-item {
+        margin: 0;
+        padding-inline: $kno-rating-item-padding-x;
+        padding-block: $kno-rating-item-padding-y;
+        vertical-align: middle;
+        display: inline-flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        outline: 0;
+
+        * {
+            pointer-events: none;
+        }
+
+        svg {
+            fill: currentColor;
+        }
+
+        &:focus,
+        &.k-focus {
+            outline-width: $kno-rating-item-focus-outline-width;
+            outline-style: $kno-rating-item-focus-outline-style;
+            outline-offset: calc( -1 * #{$kno-rating-item-focus-outline-width} );
+            border-radius: k-border-radius(md);
+        }
+    }
+
+    .k-rating-precision-part,
+    .k-rating-precision-complement {
+        inset-block-start: $kno-rating-item-padding-y;
+        inset-inline-start: $kno-rating-item-padding-x;
+    }
+
+}

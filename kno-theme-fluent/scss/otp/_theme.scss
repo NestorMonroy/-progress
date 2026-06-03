@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "@progress/kno-theme-core/scss/components/otp/_theme.scss" as *;
+
+@mixin kno-otp--theme() {
+    @include kno-otp--theme-base();
+}

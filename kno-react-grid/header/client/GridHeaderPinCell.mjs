@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as r from "react";
+import { GridHeaderCell as t } from "../GridHeaderCell.mjs";
+const a = (e) => /* @__PURE__ */ r.createElement(t, { ...e });
+export {
+  a as GridHeaderPinCell
+};

@@ -1,0 +1,22 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { TimelineEventProps } from './Timeline.js';
+/**
+ * Sort the events list based on event date.
+ */
+export declare const sortEventList: (eventList: TimelineEventProps[]) => TimelineEventProps[];
+/**
+ * @hidden
+ */
+export interface yearFlagProps {
+    yearFlag?: number;
+}
+/**
+ * @hidden
+ */
+export declare const addYearsFlags: (eventsData: TimelineEventProps[]) => (TimelineEventProps | yearFlagProps)[];

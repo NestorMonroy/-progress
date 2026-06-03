@@ -1,0 +1,38 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/tooltip/_layout.scss" as *;
+
+@mixin kno-tooltip--layout() {
+    @include kno-tooltip--layout-base();
+
+    .k-tooltip-icon {
+        margin-inline-end: .5rem;
+    }
+
+    .k-tooltip-title {
+        margin-block-end: $kno-tooltip-title-margin;
+        font-size: $kno-tooltip-title-font-size;
+        line-height: $kno-tooltip-title-line-height;
+    }
+
+    .k-tooltip-button {
+        margin-inline-start: .5rem;
+    }
+
+    .k-callout {
+        color: inherit;
+    }
+
+    .k-callout-n {
+        margin-inline-start: calc( #{$kno-tooltip-callout-size} * -1 );
+    }
+    .k-callout-e {
+        margin-block-start: calc( #{$kno-tooltip-callout-size} * -1 );
+    }
+    .k-callout-s {
+        margin-inline-start: calc( #{$kno-tooltip-callout-size} * -1 );
+    }
+    .k-callout-w {
+        margin-block-start: calc( #{$kno-tooltip-callout-size} * -1 );
+    }
+}

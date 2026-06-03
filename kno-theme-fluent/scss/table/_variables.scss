@@ -1,0 +1,228 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "../list/_variables.scss" as *;
+
+/// The default size of the Table.
+/// @group table
+/// @role default
+$kno-table-default-size: "md" !default;
+
+/// The width of the table border.
+/// @group table
+$kno-table-border-width: var( --kno-table-border-width, 1px ) !default;
+
+/// The width of vertical border of table cells.
+/// @group table
+$kno-table-cell-vertical-border-width: var( --kno-table-cell-vertical-border-width, 0px ) !default;
+/// The width of horizontal border of table cells.
+/// @group table
+$kno-table-cell-horizontal-border-width: var( --kno-table-cell-horizontal-border-width, 1px ) !default;
+/// The horizontal padding of the cells in the table for small size.
+/// @group table
+$kno-table-sm-cell-padding-x: var( --kno-table-sm-cell-padding-x, #{k-spacing(2)} ) !default;
+/// The vertical padding of the cells in the table for small size.
+/// @group table
+$kno-table-sm-cell-padding-y: var( --kno-table-sm-cell-padding-y, #{k-spacing(2)} ) !default;
+/// The horizontal padding of the cells in the table for medium size.
+/// @group table
+$kno-table-md-cell-padding-x: var( --kno-table-md-cell-padding-x, #{k-spacing(2)} ) !default;
+/// The vertical padding of the cells in the table for medium size.
+/// @group table
+$kno-table-md-cell-padding-y: var( --kno-table-md-cell-padding-y, #{k-spacing(2.5)} ) !default;
+/// The horizontal padding of the cells in the table for large size.
+/// @group table
+$kno-table-lg-cell-padding-x: var( --kno-table-lg-cell-padding-x, #{k-spacing(2)} ) !default;
+/// The vertical padding of the cells in the table for large size.
+/// @group table
+$kno-table-lg-cell-padding-y: var( --kno-table-lg-cell-padding-y, #{k-spacing(3)} ) !default;
+
+/// The font size of the Table for small size.
+/// @group table
+$kno-table-sm-font-size: var( --kno-table-sm-font-size, var(--kno-font-size) ) !default;
+/// The line height of the Table for small size.
+/// @group table
+$kno-table-sm-line-height: var( --kno-table-sm-line-height, var(--kno-line-height) ) !default;
+
+/// The font size of the Table for medium size.
+/// @group table
+$kno-table-md-font-size: var( --kno-table-md-font-size, var(--kno-font-size) ) !default;
+/// The line height of the Table for medium size.
+/// @group table
+$kno-table-md-line-height: var( --kno-table-md-line-height, var(--kno-line-height) ) !default;
+
+/// The font size of the Table for large size.
+/// @group table
+$kno-table-lg-font-size: var( --kno-table-lg-font-size, var(--kno-font-size) ) !default;
+/// The line height of the Table for large size.
+/// @group table
+$kno-table-lg-line-height: var( --kno-table-lg-line-height, var(--kno-line-height) ) !default;
+
+/// Font weight of the table header cells.
+/// @group table
+$kno-table-header-font-weight: var( --kno-table-header-font-weight, var(--kno-font-weight-normal) ) !default;
+
+/// Background color of tables.
+/// @group table
+$kno-table-bg: var( --kno-table-bg, #{k-color(surface-alt)} ) !default;
+/// Text color of tables.
+/// @group table
+$kno-table-text: var( --kno-table-text, #{k-color(on-app-surface)} ) !default;
+/// Border color of tables.
+/// @group table
+$kno-table-border: var( --kno-table-border, #{color-mix(in srgb, k-color(border) 16%, transparent)} ) !default;
+
+/// Background color of table headers.
+/// @group table
+$kno-table-header-bg: var( --kno-table-header-bg, #{$kno-table-bg} ) !default;
+/// Text color of table headers.
+/// @group table
+$kno-table-header-text: var( --kno-table-header-text, #{k-color(on-app-surface)} ) !default;
+/// Border color of table headers.
+/// @group table
+$kno-table-header-border: var( --kno-table-header-border, #{$kno-table-border} ) !default;
+
+/// Text color of the sticky table header.
+/// @group table
+$kno-table-sticky-header-text: var( --kno-table-sticky-header-text, #{$kno-list-header-text} ) !default;
+/// Background color of the sticky table header.
+/// @group table
+$kno-table-sticky-header-bg: var( --kno-table-sticky-header-bg, #{$kno-list-header-bg} ) !default;
+/// Border color of the sticky table header.
+/// @group table
+$kno-table-sticky-header-border: var( --kno-table-sticky-header-border, #{$kno-list-header-border} ) !default;
+/// Shadow of the sticky table header.
+/// @group table
+$kno-table-sticky-header-shadow: var( --kno-table-sticky-header-shadow, #{$kno-list-header-shadow} ) !default;
+
+/// Background color of table footers.
+/// @group table
+$kno-table-footer-bg: var( --kno-table-footer-bg, #{$kno-table-header-bg} ) !default;
+/// Text color of table footers.
+/// @group table
+$kno-table-footer-text: var( --kno-table-footer-text, #{$kno-table-header-text} ) !default;
+/// Border color of table footers.
+/// @group table
+$kno-table-footer-border: var( --kno-table-footer-border, #{$kno-table-header-border} ) !default;
+
+/// Background color of group rows in table.
+/// @group table
+$kno-table-group-row-bg: var( --kno-table-group-row-bg, #{$kno-table-header-bg} ) !default;
+/// Text color of group rows in table.
+/// @group table
+$kno-table-group-row-text: var( --kno-table-group-row-text, #{$kno-table-header-text} ) !default;
+/// Border color of group rows in table.
+/// @group table
+$kno-table-group-row-border: var( --kno-table-group-row-border, #{$kno-table-header-border} ) !default;
+
+/// Text color of group label in table.
+/// @group table
+$kno-table-group-label-text: var( --kno-table-group-label-text, #{$kno-list-bg} ) !default;
+/// Background color of group label in table.
+/// @group table
+$kno-table-group-label-bg: var( --kno-table-group-label-bg, #{$kno-list-text} ) !default;
+
+/// Background color of alternating rows in table.
+/// @group table
+$kno-table-alt-row-bg: var( --kno-table-alt-row-bg, initial ) !default;
+/// Text color of alternating rows in table.
+/// @group table
+$kno-table-alt-row-text: var( --kno-table-alt-row-text, #{$kno-table-text} ) !default;
+/// Border color of alternating rows in table.
+/// @group table
+$kno-table-alt-row-border: var( --kno-table-alt-row-border, #{$kno-table-border} ) !default;
+
+/// Background color of hovered rows in table.
+/// @group table
+$kno-table-hover-bg: var( --kno-table-hover-bg, #{color-mix(in srgb, k-color(on-app-surface) 5%, transparent)} ) !default;
+/// Text color of hovered rows in table.
+/// @group table
+$kno-table-hover-text: var( --kno-table-hover-text, #{k-color(on-base)} ) !default;
+/// Border color of hovered rows in table.
+/// @group table
+$kno-table-hover-border: var( --kno-table-hover-border, #{$kno-table-border} ) !default;
+
+/// Background color of focused rows in table.
+/// @group table
+$kno-table-focus-bg: var( --kno-table-focus-bg, inherit ) !default;
+/// Text color of focused rows in table.
+/// @group table
+$kno-table-focus-text: var( --kno-table-focus-text, inherit ) !default;
+/// Border color of focused rows in table.
+/// @group table
+$kno-table-focus-border: var( --kno-table-focus-border, inherit ) !default;
+/// Box shadow of focused rows in table.
+/// @group table
+$kno-table-focus-shadow: var( --kno-table-focus-shadow, #{$kno-list-item-focus-shadow} ) !default;
+
+/// Background color of selected rows in table.
+/// @group table
+$kno-table-selected-bg: var( --kno-table-selected-bg, #{color-mix(in srgb, k-color(primary) 8%, transparent)} ) !default;
+/// Text color of selected rows in table.
+/// @group table
+$kno-table-selected-text: var( --kno-table-selected-text, #{$kno-table-text} ) !default;
+/// Border color of selected rows in table.
+/// @group table
+$kno-table-selected-border: var( --kno-table-selected-border, #{$kno-table-border} ) !default;
+
+/// Background color of highlighted rows in table.
+/// @group table
+$kno-table-highlighted-bg: var( --kno-table-highlighted-bg, #{color-mix(in srgb, k-color(warning) 8%, transparent)} ) !default;
+/// The font weight of highlighted rows in table.
+/// @group table
+$kno-table-highlighted-font-weight: var( --kno-table-highlighted-font-weight, var(--kno-font-weight-semibold) ) !default;
+
+/// Background color of selected highlighted rows in table.
+/// @group table
+$kno-table-selected-highlighted-bg: var( --kno-table-selected-highlighted-bg, #{color-mix(in srgb, color-mix(in srgb, k-color(primary), k-color(warning)) 23%, transparent)} ) !default;
+
+/// The box shadow of the row spanned cells.
+/// @group table
+$kno-table-cell-row-span-shadow: var( --kno-table-cell-row-span-shadow, inset 0 0 0 1px #{$kno-table-border} ) !default;
+
+@forward "@progress/kno-theme-core/scss/components/table/_variables.scss" with (
+    $kno-table-default-size: $kno-table-default-size,
+    $kno-table-border-width: $kno-table-border-width,
+    $kno-table-cell-vertical-border-width: $kno-table-cell-vertical-border-width,
+    $kno-table-cell-horizontal-border-width: $kno-table-cell-horizontal-border-width,
+    $kno-table-sm-cell-padding-x: $kno-table-sm-cell-padding-x,
+    $kno-table-sm-cell-padding-y: $kno-table-sm-cell-padding-y,
+    $kno-table-md-cell-padding-x: $kno-table-md-cell-padding-x,
+    $kno-table-md-cell-padding-y: $kno-table-md-cell-padding-y,
+    $kno-table-lg-cell-padding-x: $kno-table-lg-cell-padding-x,
+    $kno-table-lg-cell-padding-y: $kno-table-lg-cell-padding-y,
+    $kno-table-sm-font-size: $kno-table-sm-font-size,
+    $kno-table-sm-line-height: $kno-table-sm-line-height,
+    $kno-table-md-font-size: $kno-table-md-font-size,
+    $kno-table-md-line-height: $kno-table-md-line-height,
+    $kno-table-lg-font-size: $kno-table-lg-font-size,
+    $kno-table-lg-line-height: $kno-table-lg-line-height,
+    $kno-table-bg: $kno-table-bg,
+    $kno-table-text: $kno-table-text,
+    $kno-table-border: $kno-table-border,
+    $kno-table-header-bg: $kno-table-header-bg,
+    $kno-table-header-text: $kno-table-header-text,
+    $kno-table-header-border: $kno-table-header-border,
+    $kno-table-footer-bg: $kno-table-footer-bg,
+    $kno-table-footer-text: $kno-table-footer-text,
+    $kno-table-footer-border: $kno-table-footer-border,
+    $kno-table-group-row-bg: $kno-table-group-row-bg,
+    $kno-table-group-row-text: $kno-table-group-row-text,
+    $kno-table-group-row-border: $kno-table-group-row-border,
+    $kno-table-alt-row-bg: $kno-table-alt-row-bg,
+    $kno-table-alt-row-text: $kno-table-alt-row-text,
+    $kno-table-alt-row-border: $kno-table-alt-row-border,
+    $kno-table-hover-bg: $kno-table-hover-bg,
+    $kno-table-hover-text: $kno-table-hover-text,
+    $kno-table-hover-border: $kno-table-hover-border,
+    $kno-table-focus-bg: $kno-table-focus-bg,
+    $kno-table-focus-text: $kno-table-focus-text,
+    $kno-table-focus-border: $kno-table-focus-border,
+    $kno-table-focus-shadow: $kno-table-focus-shadow,
+    $kno-table-selected-bg: $kno-table-selected-bg,
+    $kno-table-selected-text: $kno-table-selected-text,
+    $kno-table-selected-border: $kno-table-selected-border,
+    $kno-table-highlighted-bg: $kno-table-highlighted-bg,
+    $kno-table-highlighted-font-weight: $kno-table-highlighted-font-weight,
+    $kno-table-selected-highlighted-bg: $kno-table-selected-highlighted-bg,
+    $kno-table-cell-row-span-shadow: $kno-table-cell-row-span-shadow
+);

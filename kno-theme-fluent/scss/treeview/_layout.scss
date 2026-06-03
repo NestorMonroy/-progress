@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/treeview/_layout.scss" as *;
+
+@mixin kno-treeview--layout() {
+    @include kno-treeview--layout-base();
+
+    .k-treeview-filter {
+        padding-inline: $kno-treeview-filter-padding-x;
+        padding-block: $kno-treeview-filter-padding-y;
+    }
+
+    .k-treeview-toggle .k-icon {
+        padding: var( --kno-icon-padding, k-spacing(1) );
+    }
+
+    .k-treeview-loading {
+        margin-inline-end: var( --kno-icon-spacing, k-spacing(2) );
+    }
+
+    .k-treeview-leaf {
+        .k-icon,
+        .k-image,
+        .k-sprite {
+            margin-inline-end: var( --kno-icon-spacing, k-spacing(2) );
+        }
+    }
+}

@@ -1,0 +1,32 @@
+@use "../_variables.scss" as *;
+@use "../core/_index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/menu/_layout.scss" as *;
+
+
+@mixin kno-menu--layout() {
+
+    @include kno-menu--layout-base();
+
+    // Menubar
+
+    .k-menu-expand-arrow {
+        margin-inline-end: 0;
+    }
+
+    // Scrolling
+    .k-menu-scroll-wrapper {
+
+        .k-menu-scroll-button {
+            box-shadow: none;
+        }
+
+        &.horizontal .k-menu-scroll-button {
+            width: calc( #{$kno-line-height-em} + #{k-spacing(1)});
+        }
+
+        &.vertical .k-menu-scroll-button {
+            height: calc( #{$kno-line-height-em} + #{k-spacing(1)});
+        }
+    }
+
+}

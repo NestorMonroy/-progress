@@ -1,0 +1,39 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/tabstrip/_theme.scss" as *;
+
+@mixin kno-tabstrip--theme() {
+    @include kno-tabstrip--theme-base();
+
+    .k-tabstrip-items-wrapper {
+
+        .k-tabstrip-item:active,
+        .k-tabstrip-item.k-active,
+        .k-tabstrip-item.k-selected,
+        .k-item:active,
+        .k-item.k-active,
+        .k-item.k-selected {
+
+            &:hover,
+            &.k-hover {
+                background-color: $kno-tabstrip-item-hover-bg;
+            }
+        }
+        
+         .k-tabstrip-item.k-tabstrip-dragging,
+         .k-item.k-tabstrip-dragging {
+            color: $kno-tabstrip-item-dragging-text;
+         }
+    }
+
+        // Selected indicator
+    @if ($kno-tabstrip-indicator-size) {
+        .k-tabstrip-items-wrapper {
+            .k-tabstrip-item.k-active::after,
+            .k-item.k-active::after {
+                background-color: $kno-tabstrip-indicator-color;
+            }
+        }
+    }
+
+}

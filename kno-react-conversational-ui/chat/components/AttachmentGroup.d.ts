@@ -1,0 +1,24 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { AttachmentGroup as AttachmentGroupModel } from '../ViewItem.js';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface AttachmentGroupProps {
+    group: AttachmentGroupModel;
+    itemTemplate?: any;
+    selected: boolean;
+    isLastGroup: boolean;
+    onRequestSelection: any;
+}
+/**
+ * @hidden
+ */
+declare const AttachmentGroup: React.FC<AttachmentGroupProps>;
+export default AttachmentGroup;

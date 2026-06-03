@@ -1,0 +1,5 @@
+@use "@progress/kno-theme-core/scss/components/action-buttons/_theme.scss" as *;
+
+@mixin kno-action-buttons--theme() {
+    @include kno-action-buttons--theme-base();
+}

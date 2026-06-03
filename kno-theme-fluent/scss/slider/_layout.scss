@@ -1,0 +1,139 @@
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "../core/z-index/index.scss" as *;
+@use "@progress/kno-theme-core/scss/components/slider/_layout.scss" as *;
+
+@mixin kno-slider--layout() {
+
+    @include kno-slider--layout-base();
+
+    .k-slider {
+        gap: $kno-slider-spacing;
+
+        .k-label {
+            font-size: var(--kno-font-size-sm);
+            pointer-events: all;
+        }
+
+        &[disabled],
+        &.k-disabled {
+            .k-slider-tick,
+            .k-slider-track,
+            .k-slider-thumb {
+                cursor: default;
+            }
+        }
+
+        .k-draghandle {
+
+            &::after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 12px;
+                height: 12px;
+                border-radius: k-border-radius(full);
+            }
+        }
+    }
+
+    // Fluent uses k-slider-thumb instead of k-draghandle
+    .k-slider-track-wrap {
+        flex-grow: 1;
+        justify-content: space-between;
+    }
+    .k-slider-track {
+        border-radius: $kno-slider-track-border-radius;
+        z-index: k-z-index("base", 2);
+    }
+    .k-slider-selection {
+        border-radius: $kno-slider-track-border-radius;
+
+        &:active,
+        &.k-active {
+            transition: none;
+        }
+    }
+
+    .k-slider-thumb {
+        width: $kno-slider-thumb-size;
+        height: $kno-slider-thumb-size;
+        border-style: solid;
+        border-width: $kno-slider-thumb-border-width;
+        border-radius: $kno-slider-thumb-border-radius;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        outline: 0;
+        text-align: center;
+        text-decoration: none;
+        position: absolute;
+
+        &:active,
+        &.k-active {
+            transition: none;
+        }
+    }
+
+    // Slider ticks
+    .k-slider-items {
+        display: contents;
+        pointer-events: none;
+    }
+
+    .k-slider-tick {
+        background-color: transparent;
+        background-position: center center;
+        background-repeat: no-repeat;
+        flex: 0 0 1px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        cursor: pointer;
+        position: relative;
+    }
+    .k-slider-tick-horizontal {
+        width: 100%;
+        min-height: 1px;
+    }
+    .k-slider-tick-vertical {
+        width: 1px;
+        min-height: 100%;
+    }
+
+    // Horizontal slider
+    .k-horizontal-slider {
+
+        .k-slider-track-wrap {
+            height: $kno-slider-alt-size;
+        }
+
+        .k-slider-thumb {
+            inset-block-start: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .k-slider-thumb:focus,
+        .k-slider-thumb:active {
+            transform: translate(-50%, -50%) scale($kno-slider-thumb-active-scale);
+        }
+        .k-slider-thumb-start {
+            inset-inline-start: calc( var( --kno-slider-start, 0) * 1% );
+        }
+        .k-slider-thumb-end {
+            inset-inline-start: calc( var( --kno-slider-end, 0) * 1% );
+        }
+    }
+
+    // Aliases - fluent specific thumb classes
+    .k-tick { @extend .k-slider-tick !optional; }
+    .k-draghandle { @extend .k-slider-thumb !optional; }
+    .k-draghandle-start { @extend .k-slider-thumb-start !optional; }
+    .k-draghandle-end { @extend .k-slider-thumb-end !optional; }
+    .k-slider-horizontal { @extend .k-horizontal-slider !optional; }
+    .k-tick-horizontal { @extend .k-slider-tick-vertical !optional; }
+    .k-tick-vertical { @extend .k-slider-tick-horizontal !optional; }
+
+}

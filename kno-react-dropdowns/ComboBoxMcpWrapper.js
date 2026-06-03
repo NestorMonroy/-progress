@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const u=require("react"),b=require("./ComboBox/ComboBox.js"),n=require("@progress/kno-react-common");function i(e){const t=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(e){for(const o in e)if(o!=="default"){const r=Object.getOwnPropertyDescriptor(e,o);Object.defineProperty(t,o,r.get?r:{enumerable:!0,get:()=>e[o]})}}return t.default=e,Object.freeze(t)}const c=i(u),a=c.forwardRef((e,t)=>{const[o,r]=n.useMergedRef(t);return n.useWebMcpRegister("combobox",o,e,e.webMcp),c.createElement(b.ComboBox,{...e,ref:r})});a.displayName="knoReactComboBox";exports.ComboBoxWrapper=a;

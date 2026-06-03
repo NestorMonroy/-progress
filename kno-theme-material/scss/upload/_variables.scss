@@ -1,0 +1,153 @@
+@use "sass:math";
+@use "../core/_index.scss" as *;
+@use "../icons/_variables.scss" as *;
+
+// Upload
+
+/// The width of the border around the Upload.
+/// @group upload
+$kno-upload-border-width: 1px !default;
+/// The border radius of the Upload.
+/// @group upload
+$kno-upload-border-radius: null !default;
+/// The font family of the Upload.
+/// @group upload
+$kno-upload-font-family: var(--kno-font-family) !default;
+/// The font size of the Upload.
+/// @group upload
+$kno-upload-font-size: var(--kno-font-size) !default;
+/// The line height of the Upload.
+/// @group upload
+$kno-upload-line-height: var(--kno-line-height) !default;
+/// The maximum height of the list with uploaded items.
+/// @group upload
+$kno-upload-max-height: 300px !default;
+
+/// The text color of the Upload.
+/// @group upload
+$kno-upload-text: k-color(on-app-surface) !default;
+/// The background color of the Upload.
+/// @group upload
+$kno-upload-bg: k-color(surface) !default;
+/// The border color of the Upload.
+/// @group upload
+$kno-upload-border: k-color(border) !default;
+
+/// The horizontal padding of the Upload dropzone.
+/// @group upload
+$kno-upload-dropzone-padding-x: k-spacing(2) !default;
+/// The vertical padding of the Upload dropzone.
+/// @group upload
+$kno-upload-dropzone-padding-y: k-spacing(2) !default;
+/// The text color of the Upload dropzone.
+/// @group upload
+$kno-upload-dropzone-text: k-color(on-app-surface) !default;
+/// The background color of the Upload dropzone.
+/// @group upload
+$kno-upload-dropzone-bg: k-color(surface) !default;
+/// The border color of the Upload dropzone.
+/// @group upload
+$kno-upload-dropzone-border: $kno-upload-border !default;
+/// The background color of the hovered Upload dropzone.
+/// @group upload
+$kno-upload-dropzone-hover-bg: k-color(base-hover) !default;
+
+/// The text color of the Upload status message.
+/// @group upload
+$kno-upload-status-text: k-color(subtle) !default;
+/// The opacity of the Upload status message.
+/// @group upload
+$kno-upload-status-text-opacity: null !default;
+
+/// The horizontal padding of an uploaded item.
+/// @group upload
+$kno-upload-item-padding-x: k-spacing(4) !default;
+/// The vertical padding of an uploaded item.
+/// @group upload
+$kno-upload-item-padding-y: k-spacing(4) !default;
+
+/// The vertical spacing between uploaded batch items.
+/// @group upload
+$kno-upload-multiple-items-spacing: k-spacing(3) !default;
+
+/// The font size of the Upload validation message.
+/// @group upload
+$kno-upload-validation-font-size: var(--kno-font-size-sm) !default;
+/// The line height of the Upload validation message.
+/// @group upload
+$kno-upload-validation-line-height: var(--kno-line-height-xs) !default;
+/// The horizontal spacing of the Upload status icon.
+/// @group upload
+$kno-upload-icon-spacing: $kno-icon-spacing !default;
+/// The color of the uploaded items icon.
+/// @group upload
+$kno-upload-icon-color: k-color(subtle) !default;
+
+/// The thickness of the Upload progress bar.
+/// @group upload
+$kno-upload-progress-thickness: 2px !default;
+/// The background color of the Upload progress bar.
+/// @group upload
+$kno-upload-progress-bg: k-color(info) !default;
+
+/// The success text color of the Upload.
+/// @group upload
+$kno-upload-success-text: k-color(success-on-surface) !default;
+/// The success background color of the Upload progress bar.
+/// @group upload
+$kno-upload-success-bg: k-color(success) !default;
+
+/// The error text color of the Upload.
+/// @group upload
+$kno-upload-error-text: k-color(error-on-surface) !default;
+/// The error background color of the Upload progress bar.
+/// @group upload
+$kno-upload-error-bg: k-color(error) !default;
+
+/// The shadow of the focused Upload button, actions and uploaded items.
+/// @group upload
+$kno-upload-focus-shadow: 0 0 0 2px color-mix(in srgb, k-color(inverse) 13%, transparent) !default;
+
+/// The margin of the Upload list.
+/// @group upload
+$kno-upload-files-list-margin: calc( -1 * #{k-spacing(1)} ) !default;
+
+/// The margin of the Upload.
+/// @group upload
+$kno-upload-file-info-margin: k-spacing(4) !default;
+
+@forward "@progress/kno-theme-core/scss/components/upload/_variables.scss" with (
+    $kno-upload-border-width: $kno-upload-border-width,
+    $kno-upload-border-radius: $kno-upload-border-radius,
+    $kno-upload-font-family: $kno-upload-font-family,
+    $kno-upload-font-size: $kno-upload-font-size,
+    $kno-upload-line-height: $kno-upload-line-height,
+    $kno-upload-max-height: $kno-upload-max-height,
+    $kno-upload-text: $kno-upload-text,
+    $kno-upload-bg: $kno-upload-bg,
+    $kno-upload-border: $kno-upload-border,
+    $kno-upload-dropzone-padding-x: $kno-upload-dropzone-padding-x,
+    $kno-upload-dropzone-padding-y: $kno-upload-dropzone-padding-y,
+    $kno-upload-dropzone-text: $kno-upload-dropzone-text,
+    $kno-upload-dropzone-bg: $kno-upload-dropzone-bg,
+    $kno-upload-dropzone-border: $kno-upload-dropzone-border,
+    $kno-upload-dropzone-hover-bg: $kno-upload-dropzone-hover-bg,
+    $kno-upload-status-text: $kno-upload-status-text,
+    $kno-upload-status-text-opacity: $kno-upload-status-text-opacity,
+    $kno-upload-item-padding-x: $kno-upload-item-padding-x,
+    $kno-upload-item-padding-y: $kno-upload-item-padding-y,
+    $kno-upload-multiple-items-spacing: $kno-upload-multiple-items-spacing,
+    $kno-upload-validation-font-size: $kno-upload-validation-font-size,
+    $kno-upload-validation-line-height: $kno-upload-validation-line-height,
+    $kno-upload-icon-spacing: $kno-upload-icon-spacing,
+    $kno-upload-icon-color: $kno-upload-icon-color,
+    $kno-upload-progress-thickness: $kno-upload-progress-thickness,
+    $kno-upload-progress-bg: $kno-upload-progress-bg,
+    $kno-upload-success-text: $kno-upload-success-text,
+    $kno-upload-success-bg: $kno-upload-success-bg,
+    $kno-upload-error-text: $kno-upload-error-text,
+    $kno-upload-error-bg: $kno-upload-error-bg,
+    $kno-upload-focus-shadow: $kno-upload-focus-shadow,
+    $kno-upload-files-list-margin: $kno-upload-files-list-margin,
+    $kno-upload-file-info-margin: $kno-upload-file-info-margin
+);

@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/wizard/_layout.scss" as *;
+
+
+@mixin kno-wizard--layout() {
+    @include kno-wizard--layout-base();
+}

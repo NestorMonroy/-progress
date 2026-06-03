@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+class a {
+  /**
+   * @hidden
+   */
+  constructor(t, e, r, n) {
+    this.target = t, this.prevIndex = e, this.nextIndex = r, this.newState = n;
+  }
+}
+export {
+  a as SortableOnDragOverEvent
+};

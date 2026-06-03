@@ -1,0 +1,35 @@
+@forward "./_accent-color.scss";
+@forward "./_appearance.scss";
+@forward "./_caret-color.scss";
+@forward "./_cursor.scss";
+@forward "./_pointer-events.scss";
+@forward "./_resize.scss";
+@forward "./_scroll.scss";
+@forward "./_touch-action.scss";
+@forward "./_user-select.scss";
+@forward "./_will-change.scss";
+
+@use "./_accent-color.scss" as *;
+@use "./_appearance.scss" as *;
+@use "./_caret-color.scss" as *;
+@use "./_cursor.scss" as *;
+@use "./_pointer-events.scss" as *;
+@use "./_resize.scss" as *;
+@use "./_scroll.scss" as *;
+@use "./_touch-action.scss" as *;
+@use "./_user-select.scss" as *;
+@use "./_will-change.scss" as *;
+
+
+@mixin kno-utils--interactivity() {
+    @include kno-utils--interactivity--accent-color();
+    @include kno-utils--interactivity--appearance();
+    @include kno-utils--interactivity--caret-color();
+    @include kno-utils--interactivity--cursor();
+    @include kno-utils--interactivity--pointer-events();
+    @include kno-utils--interactivity--resize();
+    @include kno-utils--interactivity--scroll();
+    @include kno-utils--interactivity--touch-action();
+    @include kno-utils--interactivity--user-select();
+    @include kno-utils--interactivity--will-change();
+}

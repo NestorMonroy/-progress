@@ -1,0 +1,36 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+declare const find: (data: object[], comparer: (item: object) => boolean) => object | undefined;
+/**
+ * @hidden
+ */
+declare const findIndex: (data: object[], comparer: (item: object) => boolean) => number;
+/**
+ * @hidden
+ */
+declare const toClassList: (classNames: string) => string[];
+/**
+ * @hidden
+ */
+declare const hasClasses: (element: any, classNames: string) => boolean;
+/**
+ * @hidden
+ */
+declare const isFocusable: (element: any) => boolean;
+/**
+ * @hidden
+ */
+declare const closest: (node: any, predicate: any) => any;
+/**
+ * @hidden
+ */
+declare const relativeContextElement: (element: any) => any;
+export { find, findIndex, toClassList, hasClasses, isFocusable, closest, relativeContextElement };

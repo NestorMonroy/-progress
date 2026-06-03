@@ -1,0 +1,16 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-avatar--styles() {
+    @include import-once( "avatar" ) {
+        @include core-styles();
+        @include kno-avatar--layout();
+        @include kno-avatar--theme();
+    }
+}

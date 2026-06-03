@@ -1,0 +1,33 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { Scale } from './scale.interface';
+import { Line } from './line.interface';
+import { Range } from './range.interface';
+/**
+ * The scale options of the Gauge.
+ */
+export interface LinearScale extends Scale {
+    /**
+     * Configures the scale line.
+     */
+    line?: Line;
+    /**
+     * The ranges of the scale.
+     */
+    ranges?: Range[];
+    /**
+     * Mirrors the scale labels and ticks. If the labels are normally on the left side of the scale, the mirroring of the scale will render them to the right.
+     */
+    mirror?: boolean;
+    /**
+     * Specifies if the scale will be vertical ([see example](components/gauges/lineargauge/orientation)).
+     *
+     * @default true
+     */
+    vertical?: boolean;
+}

@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/skeleton/_layout.scss" as *;
+
+
+@mixin kno-skeleton--layout() {
+    @include kno-skeleton--layout-base();
+}

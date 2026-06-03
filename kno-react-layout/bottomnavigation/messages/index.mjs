@@ -1,0 +1,14 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+const a = "bottomNavigation.ariaLabel", o = {
+  [a]: "Bottom navigation"
+};
+export {
+  a as bottomNavigationAriaLabel,
+  o as messages
+};

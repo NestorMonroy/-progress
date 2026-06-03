@@ -1,0 +1,309 @@
+@use "sass:color";
+@use "sass:math";
+@use "sass:map";
+@use "../core/_index.scss" as *;
+
+
+// Stepper
+
+/// The horizontal margin the Stepper.
+/// @group stepper
+$kno-stepper-margin-x: null !default;
+/// The vertical margin the Stepper.
+/// @group stepper
+$kno-stepper-margin-y: null !default;
+/// The horizontal padding the Stepper.
+/// @group stepper
+$kno-stepper-padding-x: null !default;
+/// The vertical padding the Stepper.
+/// @group stepper
+$kno-stepper-padding-y: null !default;
+/// The horizontal margin the Stepper label.
+/// @group stepper
+$kno-stepper-label-margin-x: k-spacing(3) !default;
+/// The horizontal padding the Stepper label.
+/// @group stepper
+$kno-stepper-label-padding-x: k-spacing(3) !default;
+/// The vertical padding the Stepper label.
+/// @group stepper
+$kno-stepper-label-padding-y: k-spacing(1.5) !default;
+/// The border radius of the Stepper label.
+/// @group stepper
+$kno-stepper-label-border-radius: k-border-radius(xxl) !default;
+/// The width of the border around the Stepper.
+/// @group stepper
+$kno-stepper-border-width: 0px !default;
+
+/// The horizontal padding of the Stepper content.
+/// @group stepper
+$kno-stepper-inline-content-padding-x: k-spacing(5) !default;
+/// The vertical padding of the Stepper content.
+/// @group stepper
+$kno-stepper-inline-content-padding-y: k-spacing(2.5) !default;
+
+/// The font size of the Stepper.
+/// @group stepper
+$kno-stepper-font-size: var(--kno-font-size) !default;
+/// The line height of the Stepper.
+/// @group stepper
+$kno-stepper-line-height: var(--kno-line-height) !default;
+/// The font family of the Stepper.
+/// @group stepper
+$kno-stepper-font-family: var(--kno-font-family) !default;
+
+/// The background color of the Stepper.
+/// @group stepper
+$kno-stepper-bg: null !default;
+/// The text color of the Stepper.
+/// @group stepper
+$kno-stepper-text: k-color(on-app-surface) !default;
+/// The border color of the Stepper.
+/// @group stepper
+$kno-stepper-border: null !default;
+
+/// The width of the Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-width: 28px !default;
+/// The height of the Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-height: $kno-stepper-indicator-width !default;
+/// The border radius of the Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-border-radius: 50% !default;
+/// The border width of the Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-border-width: 1px !default;
+
+/// The border width of the focused Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-focus-border-width: 1px !default;
+/// The size of the focused Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-focus-size: 2px !default;
+/// The offset of the Stepper's focused indicator.
+/// @group stepper
+$kno-stepper-indicator-focus-offset: 3px !default;
+/// The calculated offset of the Stepper's focused indicator.
+/// @group stepper
+$kno-stepper-indicator-focus-calc-offset: calc( #{$kno-stepper-indicator-focus-border-width} + #{$kno-stepper-indicator-focus-offset} ) !default;
+
+/// The background color of the Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-bg: k-color(primary-subtle) !default;
+/// The text color of the Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-text: k-color(primary-on-subtle) !default;
+/// The border color of the Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-border: k-color(primary-emphasis) !default;
+
+/// The background color of the hovered Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-hover-bg: k-color(primary-subtle-hover) !default;
+/// The text color of the hovered Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-hover-text: null !default;
+/// The border color of the hovered Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-hover-border: null !default;
+
+/// The background color of the disabled Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-disabled-bg: color-mix(in srgb, k-color(primary-subtle), k-color(surface)) !default;
+/// The text color of the disabled Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-disabled-text: color-mix(in srgb, $kno-stepper-indicator-text 38%, transparent) !default;
+/// The border color of the disabled Stepper indicator.
+/// @group stepper
+$kno-stepper-indicator-disabled-border: color-mix(in srgb, $kno-stepper-indicator-border 38%, transparent) !default;
+
+/// The background color of the Stepper's done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-bg: k-color(primary) !default;
+/// The text color of the Stepper's done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-text: k-color(on-primary) !default;
+/// The border color of the Stepper's done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-border: $kno-stepper-indicator-done-bg !default;
+
+/// The background color of the Stepper's hovered done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-hover-bg: k-color(primary-hover) !default;
+/// The text color of the Stepper's hovered done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-hover-text: null !default;
+/// The border color of the Stepper's hovered done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-hover-border: null !default;
+
+/// The background color of the Stepper's disabled done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-disabled-bg: color-mix(in srgb, k-color(primary) 38%, transparent) !default;
+/// The text color of the Stepper's disabled done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-disabled-text: k-color(on-primary) !default;
+/// The border color of the Stepper's disabled done indicator.
+/// @group stepper
+$kno-stepper-indicator-done-disabled-border: $kno-stepper-indicator-done-disabled-bg !default;
+
+/// The background color of the Stepper current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-bg: $kno-stepper-indicator-done-bg !default;
+/// The text color of the Stepper current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-text: $kno-stepper-indicator-done-text !default;
+/// The border color of the Stepper current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-border: k-color(primary) !default;
+
+/// The background color of the Stepper's hovered current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-hover-bg: $kno-stepper-indicator-done-hover-bg !default;
+/// The text color of the Stepper's hovered current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-hover-text: $kno-stepper-indicator-done-hover-text !default;
+/// The border color of the Stepper's hovered current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-hover-border: $kno-stepper-indicator-done-hover-border !default;
+
+/// The background color of the Stepper's disabled current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-disabled-bg: $kno-stepper-indicator-done-disabled-bg !default;
+/// The text color of the Stepper's disabled current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-disabled-text: $kno-stepper-indicator-done-disabled-text !default;
+/// The border color of the Stepper's disabled current indicator.
+/// @group stepper
+$kno-stepper-indicator-current-disabled-border: $kno-stepper-indicator-done-disabled-border !default;
+
+/// The text color of the Stepper label.
+/// @group stepper
+$kno-stepper-label-text: null !default;
+/// The success text color of the Stepper label.
+/// @group stepper
+$kno-stepper-label-success-text: k-color(success) !default;
+/// The error text color of the Stepper label.
+/// @group stepper
+$kno-stepper-label-error-text: k-color(error-on-surface) !default;
+/// The text color of the hovered Stepper label.
+/// @group stepper
+$kno-stepper-label-hover-text: inherit !default;
+/// The text color of the disabled Stepper label.
+/// @group stepper
+$kno-stepper-label-disabled-text: color-mix(in srgb, k-color(on-app-surface) 38%, transparent) !default;
+/// The font weight of the current Stepper label.
+/// @group stepper
+$kno-stepper-label-current-font-weight: var(--kno-font-weight-semibold) !default;
+
+/// The text color of the optional Stepper label.
+/// @group stepper
+$kno-stepper-optional-label-text: k-color(subtle) !default;
+/// The opacity of the optional Stepper label.
+/// @group stepper
+$kno-stepper-optional-label-opacity: null !default;
+/// The font size of the optional Stepper label.
+/// @group stepper
+$kno-stepper-optional-label-font-size: var(--kno-font-size-sm) !default;
+/// The font style of the optional Stepper label.
+/// @group stepper
+$kno-stepper-optional-label-font-style: unset !default;
+
+/// The size of the Stepper ProgressBar.
+/// @group stepper
+$kno-stepper-progressbar-size: 4px !default;
+/// The background color of the Stepper ProgressBar.
+/// @group stepper
+$kno-stepper-progressbar-bg: null !default;
+/// The text color of the Stepper ProgressBar.
+/// @group stepper
+$kno-stepper-progressbar-text: null !default;
+/// The background color of the selected Stepper ProgressBar.
+/// @group stepper
+$kno-stepper-progressbar-fill-bg: null !default;
+/// The text color of the selected Stepper ProgressBar.
+/// @group stepper
+$kno-stepper-progressbar-fill-text: null !default;
+
+/// The property name of the Stepper transition.
+/// @group stepper
+$kno-stepper-content-transition-property: height !default;
+/// The duration of the Stepper transition.
+/// @group stepper
+$kno-stepper-content-transition-duration: k-duration(speedy) !default;
+/// The timing function of the Stepper transition.
+/// @group stepper
+$kno-stepper-content-transition-timing-function: k-easing(standard) !default;
+
+@forward "@progress/kno-theme-core/scss/components/stepper/_variables.scss" with (
+    $kno-stepper-margin-x: $kno-stepper-margin-x,
+    $kno-stepper-margin-y: $kno-stepper-margin-y,
+    $kno-stepper-padding-x: $kno-stepper-padding-x,
+    $kno-stepper-padding-y: $kno-stepper-padding-y,
+    $kno-stepper-label-margin-x: $kno-stepper-label-margin-x,
+    $kno-stepper-label-padding-x: $kno-stepper-label-padding-x,
+    $kno-stepper-label-padding-y: $kno-stepper-label-padding-y,
+    $kno-stepper-label-border-radius: $kno-stepper-label-border-radius,
+    $kno-stepper-border-width: $kno-stepper-border-width,
+    $kno-stepper-inline-content-padding-x: $kno-stepper-inline-content-padding-x,
+    $kno-stepper-inline-content-padding-y: $kno-stepper-inline-content-padding-y,
+    $kno-stepper-font-size: $kno-stepper-font-size,
+    $kno-stepper-line-height: $kno-stepper-line-height,
+    $kno-stepper-font-family: $kno-stepper-font-family,
+    $kno-stepper-bg: $kno-stepper-bg,
+    $kno-stepper-text: $kno-stepper-text,
+    $kno-stepper-border: $kno-stepper-border,
+    $kno-stepper-indicator-width: $kno-stepper-indicator-width,
+    $kno-stepper-indicator-height: $kno-stepper-indicator-height,
+    $kno-stepper-indicator-border-radius: $kno-stepper-indicator-border-radius,
+    $kno-stepper-indicator-border-width: $kno-stepper-indicator-border-width,
+    $kno-stepper-indicator-focus-border-width: $kno-stepper-indicator-focus-border-width,
+    $kno-stepper-indicator-focus-size: $kno-stepper-indicator-focus-size,
+    $kno-stepper-indicator-focus-offset: $kno-stepper-indicator-focus-offset,
+    $kno-stepper-indicator-focus-calc-offset: $kno-stepper-indicator-focus-calc-offset,
+    $kno-stepper-indicator-bg: $kno-stepper-indicator-bg,
+    $kno-stepper-indicator-text: $kno-stepper-indicator-text,
+    $kno-stepper-indicator-border: $kno-stepper-indicator-border,
+    $kno-stepper-indicator-hover-bg: $kno-stepper-indicator-hover-bg,
+    $kno-stepper-indicator-hover-text: $kno-stepper-indicator-hover-text,
+    $kno-stepper-indicator-hover-border: $kno-stepper-indicator-hover-border,
+    $kno-stepper-indicator-disabled-bg: $kno-stepper-indicator-disabled-bg,
+    $kno-stepper-indicator-disabled-text: $kno-stepper-indicator-disabled-text,
+    $kno-stepper-indicator-disabled-border: $kno-stepper-indicator-disabled-border,
+    $kno-stepper-indicator-done-bg: $kno-stepper-indicator-done-bg,
+    $kno-stepper-indicator-done-text: $kno-stepper-indicator-done-text,
+    $kno-stepper-indicator-done-border: $kno-stepper-indicator-done-border,
+    $kno-stepper-indicator-done-hover-bg: $kno-stepper-indicator-done-hover-bg,
+    $kno-stepper-indicator-done-hover-text: $kno-stepper-indicator-done-hover-text,
+    $kno-stepper-indicator-done-hover-border: $kno-stepper-indicator-done-hover-border,
+    $kno-stepper-indicator-done-disabled-bg: $kno-stepper-indicator-done-disabled-bg,
+    $kno-stepper-indicator-done-disabled-text: $kno-stepper-indicator-done-disabled-text,
+    $kno-stepper-indicator-done-disabled-border: $kno-stepper-indicator-done-disabled-border,
+    $kno-stepper-indicator-current-bg: $kno-stepper-indicator-current-bg,
+    $kno-stepper-indicator-current-text: $kno-stepper-indicator-current-text,
+    $kno-stepper-indicator-current-border: $kno-stepper-indicator-current-border,
+    $kno-stepper-indicator-current-hover-bg: $kno-stepper-indicator-current-hover-bg,
+    $kno-stepper-indicator-current-hover-text: $kno-stepper-indicator-current-hover-text,
+    $kno-stepper-indicator-current-hover-border: $kno-stepper-indicator-current-hover-border,
+    $kno-stepper-indicator-current-disabled-bg: $kno-stepper-indicator-current-disabled-bg,
+    $kno-stepper-indicator-current-disabled-text: $kno-stepper-indicator-current-disabled-text,
+    $kno-stepper-indicator-current-disabled-border: $kno-stepper-indicator-current-disabled-border,
+    $kno-stepper-label-text: $kno-stepper-label-text,
+    $kno-stepper-label-success-text: $kno-stepper-label-success-text,
+    $kno-stepper-label-error-text: $kno-stepper-label-error-text,
+    $kno-stepper-label-hover-text: $kno-stepper-label-hover-text,
+    $kno-stepper-label-disabled-text: $kno-stepper-label-disabled-text,
+    $kno-stepper-label-current-font-weight: $kno-stepper-label-current-font-weight,
+    $kno-stepper-optional-label-text: $kno-stepper-optional-label-text,
+    $kno-stepper-optional-label-opacity: $kno-stepper-optional-label-opacity,
+    $kno-stepper-optional-label-font-size: $kno-stepper-optional-label-font-size,
+    $kno-stepper-optional-label-font-style: $kno-stepper-optional-label-font-style,
+    $kno-stepper-progressbar-size: $kno-stepper-progressbar-size,
+    $kno-stepper-progressbar-bg: $kno-stepper-progressbar-bg,
+    $kno-stepper-progressbar-text: $kno-stepper-progressbar-text,
+    $kno-stepper-progressbar-fill-bg: $kno-stepper-progressbar-fill-bg,
+    $kno-stepper-progressbar-fill-text: $kno-stepper-progressbar-fill-text,
+    $kno-stepper-content-transition-property: $kno-stepper-content-transition-property,
+    $kno-stepper-content-transition-duration: $kno-stepper-content-transition-duration,
+    $kno-stepper-content-transition-timing-function: $kno-stepper-content-transition-timing-function
+);

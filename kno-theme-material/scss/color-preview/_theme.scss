@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/color-preview/_theme.scss" as *;
+
+
+@mixin kno-color-preview--theme() {
+    @include kno-color-preview--theme-base();
+}

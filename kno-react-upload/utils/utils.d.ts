@@ -1,0 +1,24 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { UploadFileInfo } from '../interfaces/UploadFileInfo';
+import { GroupedFiles } from '../interfaces/FileGroup';
+/**
+ * @hidden
+ */
+declare const _default: {
+    fileHasValidationErrors: Function;
+    filesHaveValidationErrors: Function;
+    getTotalFilesSizeMessage: Function;
+    getAllFileInfo: Function;
+    getFileInfo: Function;
+    getFileExtension: Function;
+    htmlEncode: Function;
+    assignGuidToFiles: Function;
+    getFileStatus: (currentFiles: GroupedFiles | UploadFileInfo[]) => boolean[];
+};
+export default _default;

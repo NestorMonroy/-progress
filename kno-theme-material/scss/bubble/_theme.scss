@@ -1,0 +1,23 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/bubble/_theme.scss" as *;
+
+
+@mixin kno-bubble--theme() {
+    @include kno-bubble--theme-base();
+
+    .k-bubble {
+        &:focus,
+        &.k-focus {
+            outline-color: k-color(base-emphasis);
+            box-shadow: inset 0 0 0 calc( #{$kno-bubble-border-width} * 3 ) k-color(app-surface),
+                        inset 0 0 0 calc( #{$kno-bubble-border-width} * 5 ) $kno-bubble-border;;
+
+            &:hover,
+            &.k-hover {
+                box-shadow: inset 0 0 0 calc( #{$kno-bubble-border-width} * 3 ) k-color(app-surface),
+                            inset 0 0 0 calc( #{$kno-bubble-border-width} * 5 ) $kno-bubble-hover-border;
+            }
+        }
+    }
+}

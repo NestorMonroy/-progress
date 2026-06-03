@@ -1,0 +1,24 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+export interface TableEditableSettings {
+    /**
+     * Determines if the editing is enabled.
+     *
+     * @default false
+     */
+    enabled?: boolean;
+    /**
+     * Determines the editing mode.
+     * The available values are:
+     * * `inline`
+     * * `incell`
+     *
+     * @default 'incell
+     */
+    mode?: 'inline' | 'incell' | 'dialog';
+}

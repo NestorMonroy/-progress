@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const r=require("./base-event.js");class a extends r.BaseEvent{constructor(e,t){super(t),this.marker=e.marker,this.layer=e.layer}}exports.MarkerActivateEvent=a;

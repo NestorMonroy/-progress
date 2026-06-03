@@ -1,0 +1,284 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { default as PropTypes } from 'prop-types';
+import { FormComponent, FormComponentValidity } from '@progress/kno-react-common';
+import { TagData } from './TagList.js';
+import { default as DropDownBase } from '../common/DropDownBase.js';
+import { MultiSelectProps } from './MultiSelectProps';
+import { DropDownStateBase, InternalState, ActiveDescendant } from './../common/settings.js';
+import * as React from 'react';
+/** @hidden */
+export interface MultiSelectState extends DropDownStateBase {
+    selectedItems?: Array<any>;
+    focusedIndex?: number;
+    focusedTag?: TagData;
+    activedescendant?: ActiveDescendant;
+    value?: Array<any>;
+    currentValue?: Array<any>;
+    windowWidth?: number;
+}
+/** @hidden */
+export interface MultiSelectInternalState extends InternalState {
+    data: MultiSelectState;
+}
+/** @hidden */
+export declare class MultiSelectWithoutContext extends React.Component<MultiSelectProps, MultiSelectState> implements FormComponent {
+    static displayName: string;
+    /** @hidden */
+    static propTypes: {
+        autoClose: PropTypes.Requireable<boolean>;
+        value: PropTypes.Requireable<any[]>;
+        defaultValue: PropTypes.Requireable<any[]>;
+        dataItemKey: PropTypes.Requireable<string>;
+        placeholder: PropTypes.Requireable<string>;
+        tags: PropTypes.Requireable<(PropTypes.InferProps<{
+            text: PropTypes.Requireable<string>;
+            data: PropTypes.Requireable<any[]>;
+        }> | null | undefined)[]>;
+        tagRender: PropTypes.Requireable<(...args: any[]) => any>;
+        id: PropTypes.Requireable<string>;
+        ariaLabelledBy: PropTypes.Requireable<string>;
+        ariaDescribedBy: PropTypes.Requireable<string>;
+        groupField: PropTypes.Requireable<string>;
+        list: PropTypes.Requireable<any>;
+        adaptive: PropTypes.Requireable<boolean>;
+        adaptiveTitle: PropTypes.Requireable<string>;
+        adaptiveSubtitle: PropTypes.Requireable<string>;
+        onCancel: PropTypes.Requireable<(...args: any[]) => any>;
+        skipDisabledItems: PropTypes.Requireable<boolean>;
+        inputAttributes: PropTypes.Requireable<object>;
+        filterable: PropTypes.Requireable<boolean>;
+        filter: PropTypes.Requireable<string>;
+        virtual: PropTypes.Requireable<PropTypes.InferProps<{
+            pageSize: PropTypes.Validator<number>;
+            skip: PropTypes.Validator<number>;
+            total: PropTypes.Validator<number>;
+        }>>;
+        onFilterChange: PropTypes.Requireable<(...args: any[]) => any>;
+        onPageChange: PropTypes.Requireable<(...args: any[]) => any>;
+        opened: PropTypes.Requireable<boolean>;
+        disabled: PropTypes.Requireable<boolean>;
+        dir: PropTypes.Requireable<string>;
+        tabIndex: PropTypes.Requireable<number>;
+        accessKey: PropTypes.Requireable<string>;
+        data: PropTypes.Requireable<any[]>;
+        textField: PropTypes.Requireable<string>;
+        className: PropTypes.Requireable<string>;
+        label: PropTypes.Requireable<string>;
+        loading: PropTypes.Requireable<boolean>;
+        popupSettings: PropTypes.Requireable<PropTypes.InferProps<{
+            animate: PropTypes.Requireable<NonNullable<boolean | PropTypes.InferProps<{
+                openDuration: PropTypes.Requireable<number>; /** @hidden */
+                closeDuration: PropTypes.Requireable<number>;
+            }> | null | undefined>>;
+            popupClass: PropTypes.Requireable<string>;
+            className: PropTypes.Requireable<string>;
+            appendTo: PropTypes.Requireable<any>;
+            width: PropTypes.Requireable<NonNullable<string | number | null | undefined>>;
+            /** @hidden */
+            height: PropTypes.Requireable<NonNullable<string | number | null | undefined>>;
+        }>>;
+        onOpen: PropTypes.Requireable<(...args: any[]) => any>;
+        onClose: PropTypes.Requireable<(...args: any[]) => any>;
+        onFocus: PropTypes.Requireable<(...args: any[]) => any>;
+        onBlur: PropTypes.Requireable<(...args: any[]) => any>;
+        onChange: PropTypes.Requireable<(...args: any[]) => any>;
+        itemRender: PropTypes.Requireable<(...args: any[]) => any>;
+        listNoDataRender: PropTypes.Requireable<(...args: any[]) => any>;
+        focusedItemIndex: PropTypes.Requireable<(...args: any[]) => any>;
+        header: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+        footer: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+    };
+    /** @hidden */
+    static defaultProps: {
+        autoClose: boolean;
+        required: boolean;
+        size: "small" | "medium" | "large" | undefined;
+        rounded: "small" | "none" | "medium" | "large" | "full" | undefined;
+        fillMode: "flat" | "solid" | "outline" | undefined;
+        skipDisabledItems: boolean;
+        prefix: undefined;
+        suffix: undefined;
+        popupSettings: {
+            height: string;
+        };
+        validityStyles: boolean;
+    };
+    /** @hidden */
+    readonly state: MultiSelectState;
+    private _element;
+    private _valueItemsDuringOnChange;
+    private get _inputId();
+    protected readonly base: DropDownBase;
+    private readonly _tags;
+    private _input;
+    private _adaptiveInput;
+    private _skipFocusEvent;
+    private _lastSelectedOrDeslectedItemIndex;
+    private itemHeight;
+    protected scrollToFocused: boolean;
+    private observerResize?;
+    private get document();
+    private showLicenseWatermark;
+    private readonly licenseMessage?;
+    private knoPaste?;
+    private validate;
+    constructor(props: MultiSelectProps);
+    /** @hidden */
+    focus: () => void;
+    /** @hidden */
+    get element(): HTMLSpanElement | null;
+    /** @hidden */
+    get opened(): boolean;
+    /** @hidden */
+    get tagsToRender(): Array<TagData>;
+    /**
+     * The mobile mode of the MultiSelect.
+     */
+    get mobileMode(): boolean;
+    /**
+     * Represents the value of the MultiSelect.
+     */
+    get value(): Array<any>;
+    /**
+     * Gets the `name` property of the MultiSelect.
+     */
+    get name(): string | undefined;
+    /**
+     * Represents the validity state into which the MultiSelect is set.
+     */
+    get validity(): FormComponentValidity;
+    /** @hidden */
+    protected get required(): boolean;
+    protected get validityStyles(): boolean;
+    /** @hidden */
+    componentDidUpdate(prevProps: MultiSelectProps, prevState: MultiSelectState): void;
+    /** @hidden */
+    componentDidMount(): void;
+    /** @hidden */
+    componentWillUnmount(): void;
+    private readonly handleknoPasteValue;
+    /** @hidden */
+    handleItemSelect: (index: number, state: MultiSelectInternalState) => void;
+    /** @hidden */
+    onTagDelete: (itemsToRemove: Array<any>, event: React.MouseEvent<HTMLSpanElement>) => void;
+    /** @hidden */
+    onNavigate(state: MultiSelectInternalState, keyCode: number, skipItems?: number): void;
+    /** @hidden */
+    itemFocus: (index: number, state: MultiSelectInternalState) => void;
+    /** @hidden */
+    render(): React.JSX.Element;
+    private componentRef;
+    private renderSearchBar;
+    private searchbarRef;
+    private onChangeHandler;
+    private clearButtonClick;
+    private onInputKeyDown;
+    private onTagsNavigate;
+    private triggerOnChange;
+    private selectFocusedItem;
+    private setItems;
+    private getFocusedState;
+    private listContainerContent;
+    private renderListContainer;
+    private renderAdaptiveListContainer;
+    private closePopup;
+    private onCancel;
+    private renderList;
+    private onScroll;
+    private customItemSelect;
+    private handleWrapperClick;
+    private handleItemClick;
+    private handleBlur;
+    private handleFocus;
+    private onPopupOpened;
+    private onPopupClosed;
+    private focusElement;
+    private applyState;
+    private setValidity;
+    private calculateMedia;
+    /**
+     * Updates the state of the MultiSelect when the complex keyboard navigation that
+     * includes key combinations with the Ctrl/Command, Shift, Home and End keys
+     *
+     * @param {Array<string | Object>} dataToSet Defines the array of new values that will be applied to the MultiSelect
+     * @param {MultiSelectInternalState} state The current state of the MultiSelect
+     */
+    private updateStateOnKeyboardNavigation;
+    /**
+     * Returns the last element that was selected or deselected. Needed for the keyboard navigation specifications
+     *
+     * @param {number} correction A correction is needed depending on if UP or DOWN key is pressed
+     */
+    private getLastSelectedOrDeselectedIndex;
+}
+/**
+ * Represents the PropsContext of the `MultiSelect` component.
+ * Used for global configuration of all `MultiSelect` instances.
+ *
+ * For more information, refer to the [Dropdowns Props Context](components/dropdowns/props-context) article.
+ */
+export declare const MultiSelectPropsContext: React.Context<(p: MultiSelectProps) => MultiSelectProps>;
+/**
+ * Represent the `ref` of the MultiSelect component.
+ */
+export interface MultiSelectHandle extends Pick<MultiSelectWithoutContext, keyof MultiSelectWithoutContext> {
+    /**
+     * The MultiSelect element.
+     */
+    element: HTMLSpanElement | null;
+    /**
+     * Gets the mobile mode of the MultiSelect component.
+     */
+    mobileMode: boolean;
+    /**
+     * Gets the `name` property of the MultiSelect.
+     */
+    name: string | undefined;
+    /**
+     * Gets whether the MultiSelect popup is open.
+     */
+    opened: boolean;
+    /**
+     * The tags to render in the MultiSelect.
+     */
+    tagsToRender: Array<TagData>;
+    /**
+     * Represents the validity state into which the MultiSelect is set.
+     */
+    validity: FormComponentValidity;
+    /**
+     * Represents the value of the MultiSelect.
+     */
+    value: Array<any>;
+}
+/** @hidden */
+export type MultiSelect = MultiSelectHandle;
+/**
+ * Represents the [knoReact MultiSelect component](components/dropdowns/multiselect).
+ *
+ * Accepts properties of type [MultiSelectProps](components/dropdowns/api/multiselectprops).
+ * Obtaining the `ref` returns an object of type [MultiSelectHandle](components/dropdowns/api/multiselecthandle).
+ *
+ * @example
+ * ```jsx
+ * const App = () => {
+ *    const multiselect = React.useRef(null);
+ *    return (
+ *       <div>
+ *           <MultiSelect
+ *               data={[ "Albania", "Andorra", "Austria", "Belarus" ]}
+ *               ref={multiselect}
+ *           />
+ *           <Button onClick={() => alert(multiselect.current.value)}>alert value</Button>
+ *       </div>
+ *    );
+ * }
+ * ```
+ */
+export declare const MultiSelect: React.ForwardRefExoticComponent<MultiSelectProps & React.RefAttributes<any>>;

@@ -1,0 +1,23 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/searchbox/_layout.scss" as *;
+
+@mixin kno-searchbox--layout() {
+    @include kno-searchbox--layout-base();
+
+    .k-searchbox {
+
+        .k-input-icon {
+            transition: width k-transition(rapid), opacity k-transition(rapid);
+        }
+
+        &:focus,
+        &:focus-within,
+        &.k-focus {
+            .k-input-icon {
+                width: 0;
+                opacity: 0;
+            }
+        }
+    }
+}

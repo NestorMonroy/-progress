@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/** @hidden */
+export interface RecurrenceEditorProps {
+    value: string;
+    start: Date;
+    timezone: string;
+    onChange: ({ value }: {
+        value: string | null;
+    }) => void;
+}
+/** @hidden */
+export declare const RecurrenceEditor: React.FunctionComponent<RecurrenceEditorProps>;

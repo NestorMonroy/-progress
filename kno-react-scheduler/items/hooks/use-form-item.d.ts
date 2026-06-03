@@ -1,0 +1,25 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { DataItem } from '../../models/index.js';
+/** @hidden */
+export declare enum FORM_ITEM_ACTION {
+    set = "FORM_ITEM_SET",
+    setMaster = "FORM_ITEM_SET_MASTER",
+    reset = "FORM_ITEM_RESET",
+    complete = "FORM_ITEM_COMPLETE"
+}
+/** @hidden */
+export type SchedulerItemFormItemAction = {
+    type: FORM_ITEM_ACTION;
+    payload?: DataItem;
+};
+/** @hidden */
+export declare const useFormItem: (config: {
+    series: boolean;
+    onDataAction?: any;
+}, state: [DataItem, DataItem, any]) => any[];

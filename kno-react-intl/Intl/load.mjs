@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { load as c } from "@progress/kno-intl";
+const o = {}, l = (...i) => {
+  i.forEach((e) => {
+    const n = Object.keys(e)[0];
+    if (["main", "supplemental"].includes(n)) {
+      const s = Object.keys(e[n])[0];
+      s in o ? o[s].includes(e) || (o[s] = [...o[s], e]) : o[s] = [e];
+    }
+  }), c(...i);
+};
+export {
+  l as load,
+  o as locales
+};

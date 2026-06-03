@@ -1,0 +1,16 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { MenuProps } from '../MenuProps';
+/**
+ * @hidden
+ */
+export declare function getHoverOpenDelay(props: MenuProps): number;
+/**
+ * @hidden
+ */
+export declare function getHoverCloseDelay(props: MenuProps): number;

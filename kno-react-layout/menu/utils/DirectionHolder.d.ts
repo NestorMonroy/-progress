@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export declare class DirectionHolder {
+    private phase;
+    private previousIsDirectionRightToLeft?;
+    private isDirectionRightToLeft?;
+    getIsDirectionRightToLeft(): boolean | undefined;
+    setIsDirectionRightToLeft(value: boolean): void;
+    hasDirectionChanged(): boolean;
+}

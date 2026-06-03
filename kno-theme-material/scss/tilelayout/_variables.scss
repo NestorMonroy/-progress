@@ -1,0 +1,53 @@
+@use "../core/_index.scss" as *;
+@use "../card/_variables.scss" as *;
+
+// TileLayout
+
+/// The width of the border around the TileLayout.
+/// @group tile-layout
+$kno-tile-layout-border-width: 0px !default;
+/// The background color of the TileLayout.
+/// @group tile-layout
+$kno-tile-layout-bg: k-color(surface) !default;
+
+/// The horizontal padding of the TileLayout.
+/// @group tile-layout
+$kno-tile-layout-padding-x: k-spacing(2.5) !default;
+
+/// The vertical padding of the TileLayout
+/// @group tile-layout
+$kno-tile-layout-padding-y: $kno-tile-layout-padding-x !default;
+
+/// The width of the border around the TileLayout card.
+/// @group tile-layout
+$kno-tile-layout-card-border-width: 1px !default;
+/// The focus box shadow of the TileLayout card.
+/// @group tile-layout
+$kno-tile-layout-card-focus-shadow: $kno-card-focus-shadow !default;
+
+/// The width of the border around the TileLayout hint.
+/// @group tile-layout
+$kno-tile-layout-hint-border-width: 1px !default;
+/// The radius of the border around the TileLayout hint.
+/// @group tile-layout
+$kno-tile-layout-hint-border-radius: k-border-radius(md) !default;
+/// The color of the border around the TileLayout hint.
+/// @group tile-layout
+$kno-tile-layout-hint-border: k-color(border) !default;
+/// The background color of the TileLayout hint.
+/// @group tile-layout
+$kno-tile-layout-hint-bg: color-mix(in srgb, k-color(surface-alt) .2, transparent ) !default;
+
+
+@forward "@progress/kno-theme-core/scss/components/tilelayout/_variables.scss" with (
+    $kno-tile-layout-border-width: $kno-tile-layout-border-width,
+    $kno-tile-layout-bg: $kno-tile-layout-bg,
+    $kno-tile-layout-padding-x: $kno-tile-layout-padding-x,
+    $kno-tile-layout-padding-y: $kno-tile-layout-padding-y,
+    $kno-tile-layout-card-border-width: $kno-tile-layout-card-border-width,
+    $kno-tile-layout-card-focus-shadow: $kno-tile-layout-card-focus-shadow,
+    $kno-tile-layout-hint-border-width: $kno-tile-layout-hint-border-width,
+    $kno-tile-layout-hint-border-radius: $kno-tile-layout-hint-border-radius,
+    $kno-tile-layout-hint-border: $kno-tile-layout-hint-border,
+    $kno-tile-layout-hint-bg: $kno-tile-layout-hint-bg
+);

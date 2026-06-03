@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { HeaderCellProps } from './HeaderCell.js';
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface HeaderSelectionCellProps extends HeaderCellProps {
+    inputId: string;
+}
+/**
+ * @hidden
+ */
+export declare function HeaderSelectionCell(props: HeaderSelectionCellProps): React.JSX.Element;

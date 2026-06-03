@@ -1,0 +1,18 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+class r {
+  /**
+   * @hidden
+   */
+  constructor(t, e, n, s) {
+    this.target = t, this.prevIndex = e, this.nextIndex = n, this.newState = s;
+  }
+}
+export {
+  r as SortableOnNavigateEvent
+};

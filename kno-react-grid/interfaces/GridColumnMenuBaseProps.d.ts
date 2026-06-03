@@ -1,0 +1,21 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { GridColumnMenuColumnProps } from './GridColumnMenuColumnProps';
+/**
+ * @hidden
+ */
+export interface GridColumnMenuBaseProps {
+    /**
+     * The current column options.
+     */
+    column: GridColumnMenuColumnProps;
+    /**
+     * The method that will be called to close the column menu.
+     */
+    onCloseMenu?: Function;
+}

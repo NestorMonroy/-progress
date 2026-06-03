@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { BaseEvent as t } from "./base-event.mjs";
+class i extends t {
+  /**
+   * @hidden
+   */
+  constructor(e, s) {
+    super(s), this.layer = e.layer, this.shape = e.shape, this.originalEvent = e.originalEvent;
+  }
+}
+export {
+  i as ShapeMouseLeaveEvent
+};

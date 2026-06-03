@@ -1,0 +1,80 @@
+{
+  "name": "@progress/kno-react-animation",
+  "version": "15.0.0",
+  "description": "React Animation component assists with animating HTML elements. knoReact Animation package",
+  "author": "Progress",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "homepage": "",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./index.d.mts",
+        "default": "./index.mjs"
+      },
+      "require": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    },
+    "./package.json": {
+      "default": "./package.json"
+    }
+  },
+  "sideEffects": false,
+  "peerDependencies": {
+    "@progress/kno-licensing": "^1.7.2",
+    "@progress/kno-react-common": "15.0.0",
+    "@progress/kno-svg-icons": "^4.9.0 || ^5.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "react-transition-group": "^4.4.2"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0"
+  },
+  "keywords": [
+    "Kno UI",
+    "React",
+    "Progress",
+    "Animation",
+    "knoReact",
+    "knoReact",
+    "reactjs",
+    "UI",
+    "components",
+    "React component",
+    "",
+    "Telerik",
+    "expand animation",
+    "fade animation",
+    "push animation",
+    "reveal animation",
+    "slide animation",
+    "zoom animation"
+  ],
+  "@progress": {
+    "friendlyName": "Animations",
+    "framework": "knoReact",
+    "package": {
+      "productName": "knoReact",
+      "productCode": "knoUIREACT",
+      "publishDate": "",
+      "licensingDocsUrl": ""
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependenciesMeta": {
+    "@progress/kno-svg-icons": {
+      "optional": true
+    }
+  }
+}

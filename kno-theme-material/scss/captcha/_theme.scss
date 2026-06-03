@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/captcha/_theme.scss" as *;
+
+
+@mixin kno-captcha--theme() {
+    @include kno-captcha--theme-base();
+}

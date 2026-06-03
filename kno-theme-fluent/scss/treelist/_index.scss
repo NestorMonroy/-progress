@@ -1,0 +1,20 @@
+// Dependencies
+@use "../core/_index.scss" as *;
+@use "../icons/_index.scss" as *;
+@use "../grid/_index.scss" as *;
+
+// Component
+@forward "./_variables.scss";
+@use "./_layout.scss" as *;
+@use "./_theme.scss" as *;
+
+// Expose
+@mixin kno-treelist--styles() {
+    @include import-once( "treelist" ) {
+        @include core-styles();
+        @include kno-grid--styles();
+        @include kno-icon--styles();
+        @include kno-treelist--layout();
+        @include kno-treelist--theme();
+    }
+}

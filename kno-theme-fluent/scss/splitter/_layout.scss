@@ -1,0 +1,30 @@
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/splitter/_layout.scss" as *;
+
+@mixin kno-splitter--layout() {
+    @include kno-splitter--layout-base();
+
+    .k-splitbar-static-horizontal {
+        width: $kno-splitter-splitbar-static-size;
+    }
+    .k-splitbar-static-vertical {
+        height: $kno-splitter-splitbar-static-size;
+    }
+
+    .k-splitbar-horizontal .k-collapse-prev {
+        margin-block-end: $kno-splitter-drag-icon-margin;
+    }
+
+    .k-splitbar-horizontal .k-collapse-next {
+        margin-block-start: $kno-splitter-drag-icon-margin;
+    }
+
+    .k-splitbar-vertical .k-collapse-prev {
+        margin-inline-end: $kno-splitter-drag-icon-margin;
+    }
+
+    .k-splitbar-vertical .k-collapse-next {
+        margin-inline-start: $kno-splitter-drag-icon-margin;
+    }
+}

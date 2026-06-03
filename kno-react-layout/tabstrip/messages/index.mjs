@@ -1,0 +1,16 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+const r = "prevArrow.title", t = "nextArrow.title", e = {
+  [r]: "Previous tab arrow",
+  [t]: "Next tab arrow"
+};
+export {
+  e as messages,
+  t as nextArrowTitle,
+  r as prevArrowTitle
+};

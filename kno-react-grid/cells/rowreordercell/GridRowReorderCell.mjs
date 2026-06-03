@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use client";
+import * as e from "react";
+import { ReorderRowIcon as n } from "../../components/icons/reorder-row-svg.mjs";
+import { getRowReorderCellTdProps as c } from "./utils.mjs";
+import { useRowReorderCellClientTdProps as s } from "./useRowReorderCellClientTdProps.mjs";
+const R = (r) => {
+  const { cellProps: o } = r, { tdProps: t } = c(o), l = s(o);
+  return /* @__PURE__ */ e.createElement("td", { ...t, ...l, style: { touchAction: "none" } }, /* @__PURE__ */ e.createElement(n, null));
+};
+export {
+  R as GridRowReorderCell
+};

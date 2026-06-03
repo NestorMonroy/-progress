@@ -1,0 +1,44 @@
+/// This is equivalent to `text-overflow: clip;`.
+/// @example text-overflow: clip;
+/// @name .k-text-clip
+/// @group text-overflow
+/// @contextType css
+
+/// This is equivalent to `text-overflow: ellipsis; white-space: nowrap; overflow: hidden;`.
+/// @example text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+/// @name .k-text-ellipsis
+/// @group text-overflow
+/// @contextType css
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--typography--text-overflow() {
+    @include import-once("utils-typography-text-overflow") {
+
+        // Text overflow utility classes
+        $kno-utils-text-overflow: map.get( $kno-utils, "text-overflow" ) !default;
+        @include generate-utils( text, text-overflow, $kno-utils-text-overflow );
+
+
+        // Text truncate utility classes
+        .#{$kno-prefix}text-truncate {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .\!#{$kno-prefix}text-truncate {
+            white-space: nowrap !important; // stylelint-disable-line declaration-no-important
+            overflow: hidden !important; // stylelint-disable-line declaration-no-important
+            text-overflow: ellipsis !important; // stylelint-disable-line declaration-no-important
+        }
+
+        // Legacy aliases
+        .#{$kno-prefix}text-ellipsis { @extend .#{$kno-prefix}text-truncate !optional; }
+        .\!#{$kno-prefix}text-ellipsis { @extend .\!#{$kno-prefix}text-truncate !optional; }
+
+    }
+}

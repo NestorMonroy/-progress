@@ -1,0 +1,22 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import { PopupProps } from '@progress/kno-react-popup';
+export interface DateInputsPopupSettings extends PopupProps {
+    /**
+     * Controls the popup animation. By default, the open and close animations are enabled.
+     */
+    animate?: boolean;
+    /**
+     * Controls the popup container. By default, the popup is appended to the [`body`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/body) element.
+     */
+    appendTo?: HTMLElement;
+    /**
+     * Specifies a list of CSS classes that are used for styling the popup.
+     */
+    popupClass?: string;
+}

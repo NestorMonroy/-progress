@@ -1,0 +1,8 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const u=require("react"),p=require("@progress/kno-react-buttons"),g=require("../dialogs/FindReplace.js"),m=require("./utils.js"),f=require("../messages/index.js"),h=require("../config/toolsSettings.js"),l=require("@progress/kno-react-intl"),b=require("@progress/kno-react-common");function R(o){const t=Object.create(null,{[Symbol.toStringTag]:{value:"Module"}});if(o){for(const e in o)if(e!=="default"){const s=Object.getOwnPropertyDescriptor(o,e);Object.defineProperty(t,e,s.get?s:{enumerable:!0,get:()=>o[e]})}}return t.default=o,Object.freeze(t)}const i=R(u),r=h.EditorToolsSettings.findAndReplace;let c=class extends i.Component{constructor(){super(...arguments),this.state={showDialog:!1},this.onClose=()=>this.setState({showDialog:!1}),this.onOpen=()=>this.setState({showDialog:!0})}render(){const{view:t,...e}=this.props,{props:s}=r,d=l.provideLocalizationService(this),a=r.messages.findReplaceToolTitle,n=!t;return[i.createElement(p.Button,{onClick:n?void 0:this.onOpen,"aria-disabled":n?!0:void 0,...m.onDownPreventDefault,title:d.toLanguageString(a,f.messages[a]),key:"tool",...s,...e,className:b.classNames(e.className,s.className,{"k-disabled":n})}),this.state.showDialog&&t&&i.createElement(g.FindAndReplaceDialog,{view:t,onClose:this.onClose,dir:e.dir,key:"dialog"})]}};l.registerForLocalization(c);exports.FindAndReplace=c;

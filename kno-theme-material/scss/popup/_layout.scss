@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/popup/_layout.scss" as *;
+
+
+@mixin kno-popup--layout() {
+    @include kno-popup--layout-base();
+}

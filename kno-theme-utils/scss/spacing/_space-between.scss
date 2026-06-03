@@ -1,0 +1,26 @@
+// TODO: Check if this is still needed as we do not generate spacing utilities at the moment
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--spacing--space-between() {
+    @include import-once("utils-spacing-space-between") {
+
+        // Space between utility classes
+        $kno-utils-space-between: map.get( $kno-utils, "space-between" ) !default;
+        @each $key, $value in $kno-utils-space-between {
+            $_key: k-escape-class-name( $key );
+
+            .#{$kno-prefix}space-x-#{$_key} > * + * {
+                margin-inline-start: $value;
+            }
+            .#{$kno-prefix}space-y-#{$_key} > * + * {
+                margin-block-start: $value;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * @hidden
+ */
+export interface DragClueState {
+    visible: boolean;
+    top: number;
+    left: number;
+    innerText: string;
+    status: 'k-i-cancel' | 'k-i-plus';
+}
+/**
+ * @hidden
+ */
+export declare class DragClue extends React.PureComponent<any, DragClueState> {
+    private elementRef;
+    readonly state: DragClueState;
+    hiddenElementRef: React.RefObject<HTMLDivElement | null>;
+    get element(): HTMLDivElement | null;
+    constructor(props: any);
+    render(): React.JSX.Element;
+}

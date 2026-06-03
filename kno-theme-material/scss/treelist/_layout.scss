@@ -1,0 +1,7 @@
+@use "@progress/kno-theme-core/scss/components/treelist/_layout.scss" as *;
+
+
+@mixin kno-treelist--layout() {
+
+    @include kno-treelist--layout-base();
+}

@@ -1,0 +1,76 @@
+
+@use "sass:map";
+@use "../core/_index.scss" as *;
+@use "./_variables.scss" as *;
+@use "@progress/kno-theme-core/scss/components/tabstrip/_layout.scss" as *;
+
+@mixin kno-tabstrip--layout() {
+    @include kno-tabstrip--layout-base();
+
+    .k-tabstrip-content,
+    .k-tabstrip > .k-content {
+        border-width: 0;
+    }
+
+    // Selected indicator
+    @if ($kno-tabstrip-indicator-size) {
+
+        .k-tabstrip-items-wrapper {
+
+            .k-tabstrip-item.k-active::after,
+            .k-item.k-active::after {
+                border: none;
+                height: $kno-tabstrip-indicator-size;
+                border-radius: k-border-radius(md);
+                margin: 0 k-spacing(2.5);
+            }
+        }
+
+        .k-tabstrip-top {
+
+           > .k-tabstrip-items-wrapper {
+
+                .k-tabstrip-item.k-active::after,
+                .k-item.k-active::after {
+                    top: unset;
+                }
+            }
+        }
+        .k-tabstrip-left {
+
+           > .k-tabstrip-items-wrapper {
+
+                .k-tabstrip-item.k-active::after,
+                .k-item.k-active::after {
+                    left: unset;
+                }
+            }
+        }
+        .k-tabstrip-right {
+
+           > .k-tabstrip-items-wrapper {
+
+                .k-tabstrip-item.k-active::after,
+                .k-item.k-active::after {
+                    right: unset;
+                }
+            }
+        }
+
+        .k-tabstrip-left,
+        .k-tabstrip-right {
+
+            > .k-tabstrip-items-wrapper {
+
+                .k-tabstrip-item.k-active::after,
+                .k-item.k-active::after {
+                    width: $kno-tabstrip-indicator-size;
+                    height: auto;
+                    margin: k-spacing(3) 0;
+                }
+            }
+        }
+
+    }
+
+}

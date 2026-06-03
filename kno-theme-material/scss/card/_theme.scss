@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/card/_theme.scss" as *;
+
+
+@mixin kno-card--theme() {
+    @include kno-card--theme-base();
+}

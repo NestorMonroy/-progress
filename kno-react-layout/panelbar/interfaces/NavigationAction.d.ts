@@ -1,0 +1,19 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+/**
+ * @hidden
+ */
+export declare enum NavigationAction {
+    Toggle = 0,
+    Next = 1,
+    Previous = 2,
+    First = 3,
+    Last = 4,
+    Left = 5,
+    Right = 6
+}

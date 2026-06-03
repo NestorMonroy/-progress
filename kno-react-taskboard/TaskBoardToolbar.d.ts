@@ -1,0 +1,29 @@
+/**
+ * @license
+ *-------------------------------------------------------------------------------------------
+ * 
+ *  See LICENSE.md in the package root for more information
+ *-------------------------------------------------------------------------------------------
+ */
+import * as React from 'react';
+/**
+ * Represents the props of the TaskBoardToolbar component
+ */
+export interface TaskBoardToolbarProps {
+    /**
+     * The React elements that will be rendered inside the toolbar of the TaskBoard.
+     */
+    children?: any;
+    /**
+     * Specifies a list of CSS classes that will be added to the TaskBoardToolbar element.
+     */
+    className?: string | Array<string>;
+    /**
+     * Represents the styles that are applied to the TaskBoardToolbar.
+     */
+    style?: React.CSSProperties;
+}
+/**
+ * Represents the TaskBoardToolbar component.
+ */
+export declare const TaskBoardToolbar: React.FunctionComponent<TaskBoardToolbarProps>;

@@ -1,0 +1,58 @@
+/// This is equivalent to `position: static;`.
+/// @example position: static;
+/// @name .k-pos-static
+/// @group position
+/// @contextType css
+
+/// This is equivalent to `position: relative;`.
+/// @example position: relative;
+/// @name .k-pos-relative
+/// @group position
+/// @contextType css
+
+/// This is equivalent to `position: absolute;`.
+/// @example position: absolute;
+/// @name .k-pos-absolute
+/// @group position
+/// @contextType css
+
+/// This is equivalent to `position: fixed;`.
+/// @example position: fixed;
+/// @name .k-pos-fixed
+/// @group position
+/// @contextType css
+
+/// This is equivalent to `position: sticky;`.
+/// @example position: sticky;
+/// @name .k-pos-sticky
+/// @group position
+/// @contextType css
+
+@use "sass:map";
+@use "../_globals.scss" as *;
+
+// Register
+@use "@progress/kno-theme-core/scss/mixins/import-once.scss" as *;
+
+@mixin kno-utils--layout--position() {
+    @include import-once("utils-layout-position") {
+
+        // Position utility classes
+        $kno-utils-position: map.get( $kno-utils, "position" ) !default;
+        @include generate-utils( pos, position, $kno-utils-position );
+
+
+        // Legacy aliases
+        .#{$kno-prefix}static { @extend .#{$kno-prefix}pos-static !optional; }
+        .\!#{$kno-prefix}static { @extend .\!#{$kno-prefix}pos-static !optional; }
+        .#{$kno-prefix}relative { @extend .#{$kno-prefix}pos-relative !optional; }
+        .\!#{$kno-prefix}relative { @extend .\!#{$kno-prefix}pos-relative !optional; }
+        .#{$kno-prefix}absolute { @extend .#{$kno-prefix}pos-absolute !optional; }
+        .\!#{$kno-prefix}absolute { @extend .\!#{$kno-prefix}pos-absolute !optional; }
+        .#{$kno-prefix}fixed { @extend .#{$kno-prefix}pos-fixed !optional; }
+        .\!#{$kno-prefix}fixed { @extend .\!#{$kno-prefix}pos-fixed !optional; }
+        .#{$kno-prefix}sticky { @extend .#{$kno-prefix}pos-sticky !optional; }
+        .\!#{$kno-prefix}sticky { @extend .\!#{$kno-prefix}pos-sticky !optional; }
+
+    }
+}

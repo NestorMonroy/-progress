@@ -1,0 +1,6 @@
+@use "@progress/kno-theme-core/scss/components/action-sheet/_theme.scss" as *;
+
+
+@mixin kno-action-sheet--theme() {
+    @include kno-action-sheet--theme-base();
+}
