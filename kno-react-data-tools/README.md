@@ -1,4 +1,4 @@
-[![knoReact NPM Banner](https://raw.githubusercontent.com/tlk/kno-react/master/images/knoreact-github-banner.png)](components/getting-started/free-vs-premium?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-datatools&utm_content=banner)
+[![knoReact NPM Banner](https://raw.githubusercontent.com/tlk/kno-react/master/images/knoreact-github-banner.png)](components/getting-started/?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-datatools&utm_content=banner)
 
 # knoReact Data Tools Library for React
 

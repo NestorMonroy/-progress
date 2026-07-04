@@ -7,11 +7,11 @@
  */
 import { getLicenseStatus as u, validatePackage as d } from "@progress/kno-licensing";
 import { canUseDOM as g } from "./canUseDOM.mjs";
-const h = ["tlk.com", "progress.com", "stackblitz.io", "csb.app"], k = "components/getting-started/free-vs-premium?utm_medium=product&utm_source=console&utm_campaign=dt_kendoreact_freemium", o = /* @__PURE__ */ new Map(), f = () => {
+const h = ["tlk.com", "progress.com", "stackblitz.io", "csb.app"], k = "components/getting-started/?utm_medium=product&utm_source=console&utm_campaign=dt_kendoreact_freemium", o = /* @__PURE__ */ new Map(), f = () => {
   const t = Array.from(o, ([e, n]) => `- ${e}: ${Array.from(n).join(", ") || "all"}`).join(`
 `);
   console.group("[WARN][Telerik and Kno UI Licensing] knoReact"), console.warn(
-    `License check was triggered by these premium knoReact components/features
+    `License check was triggered by these knoReact components/features
 ${t}
 See the full list of components here: ${k}`
   ), console.groupEnd(), o.clear();

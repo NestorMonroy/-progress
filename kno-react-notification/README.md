@@ -1,13 +1,7 @@
-[![knoReact NPM Banner](https://raw.githubusercontent.com/tlk/kno-react/master/images/knoreact-github-banner.png)](components/getting-started/free-vs-premium?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-notification&utm_content=banner)
+[![knoReact NPM Banner](https://raw.githubusercontent.com/tlk/kno-react/master/images/knoreact-github-banner.png)](components/getting-started/?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-notification&utm_content=banner)
 
 # knoReact Notification Component for React
 
-> **Important**
->
-> -   This package is а part of [knoReact](/kno-react-ui?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-notification)&mdash;an enterprise-grade UI library with 120+ free and premium components.
-> -   This is a free React Notification component. You can use it even in production, no sign-up or license required. If you're looking for more free React components, check out [Get Started with ].
-> -   Installing and working with this package indicates that you [accept the knoReact License Agreement](/purchase/license-agreement/progress-knoreact?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-notification).
-> -   The [30-day free trial](/try/kno-react-ui?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-notification) gives you access to all knoReact components and their full functionality. Additionally, for the period of your trial, you can use our legendary technical support provided directly by the knoReact dev team!
 
 The [React Notification](notification), part of , renders a brief message to the user with information about the status of an application process and enables you to animate its rendering and control its position.
 

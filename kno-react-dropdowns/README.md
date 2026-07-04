@@ -1,4 +1,4 @@
-[![knoReact NPM Banner](https://raw.githubusercontent.com/tlk/kno-react/master/images/knoreact-github-banner.png)](components/getting-started/free-vs-premium?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-dropdowns&utm_content=banner)
+[![knoReact NPM Banner](https://raw.githubusercontent.com/tlk/kno-react/master/images/knoreact-github-banner.png)](components/getting-started/?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-dropdowns&utm_content=banner)
 
 # knoReact DropDowns Library for React
 
@@ -14,10 +14,10 @@ What's in this package:
 -   [React DropDowns Components Library Features](#react-dropdowns-components-library-features)
 -   [React AutoComplete component ](#react-autocomplete-component)
 -   [React ComboBox component ](#react-combobox-component)
--   [React DropDownList component (free with premium features)](#react-dropdownlist-component)
+-   [React DropDownList component (features)](#react-dropdownlist-component)
 -   [React DropDownTree component ](#react-dropdowntree-component)
 -   [React MultiColumnComboBox component ](#react-multicolumncombobox-component)
--   [React MultiSelect component (free with premium features)](#react-multiselect-component)
+-   [React MultiSelect component (features)](#react-multiselect-component)
 -   [React MultiSelectTree component ](#react-multiselecttree-component)
 
 Additional information:

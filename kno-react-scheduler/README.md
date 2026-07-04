@@ -1,18 +1,7 @@
-[![knoReact NPM Banner](https://raw.githubusercontent.com/tlk/kno-react/master/images/knoreact-github-banner.png)](components/getting-started/free-vs-premium?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-scheduler&utm_content=banner)
+[![knoReact NPM Banner](https://raw.githubusercontent.com/tlk/kno-react/master/images/knoreact-github-banner.png)](components/getting-started/?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-scheduler&utm_content=banner)
 
 # knoReact Scheduler Component for React
 
-> **Important**
->
-> -   This package is а part of [knoReact](/kno-react-ui?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-scheduler)&mdash;an enterprise-grade UI library with 120+ free and premium components.
-> -   To use this package, you must install a license key file, whether you are on a paid license or a 30-day free trial. To receive a license key, either [purchase a license](pricing) or start a [free trial](/download-login-v2-kno-react-ui).
-> -   It provides a premium knoReact component. You will need to install a license key when adding the package to your project. For more information, please refer to the [knoReact My License page](?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-scheduler).
-> -   To receive a license key, you need to either [purchase a license](pricing?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-scheduler) or register for a [free trial](/try/kno-react-ui?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-scheduler). Doing so indicates that you [accept the knoReact License Agreement](/purchase/license-agreement/progress-knoreact?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-scheduler).
-> -   The 30-day free trial gives you access to all knoReact components and their full functionality. Additionally, for the period of your trial, you can use our legendary technical support provided directly by the knoReact dev team!
->
-> [Start using knoReact](/try/kno-react-ui?utm_medium=referral&utm_source=npm&utm_campaign=kno-ui-react-trial-npm-scheduler) and speed up your development process!
->
-> If you're looking for free React components, check out [Get Started with ].
 
 The [React Scheduler](components/scheduler), part of knoReact, provides out-of-the-box support for timezone conversion, resources visualization, grouping, editing, and recurring events.
 

@@ -10,7 +10,7 @@ import * as e from "react";
 import * as L from "react-dom";
 const v = { current: !0 }, x = 'system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", "Liberation Sans", sans-serif', d = {
   TKL201: {
-    title: (n, o) => `Premium feature detected in ${n} v${o}.`,
+    title: (n, o) => `feature detected in ${n} v${o}.`,
     description: "",
     buttonText: "Start Free Trial",
     buttonLink: "https://prgress.co/NoLicenseWatermarkknoReact"
